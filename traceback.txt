@@ -1,0 +1,22 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 25, in script
+    l "About bloody time! I've been waiting for this for years." (multiple=2)
+Exception: Sayer 'l' is not defined.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 25, in script
+    l "About bloody time! I've been waiting for this for years." (multiple=2)
+  File "C:\Users\nedev\OneDrive - ualberta.ca\Documents\MST 350\renpy-8.0.3-sdk\renpy\ast.py", line 881, in execute
+    who = eval_who(self.who, self.who_fast)
+  File "C:\Users\nedev\OneDrive - ualberta.ca\Documents\MST 350\renpy-8.0.3-sdk\renpy\ast.py", line 774, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who)
+Exception: Sayer 'l' is not defined.
+
+Windows-10-10.0.19043 AMD64
+Ren'Py 8.0.3.22090809
+untitled_rat_escape_game 1.0
+Wed Sep 21 17:12:35 2022
