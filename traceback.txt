@@ -1,22 +1,95 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/script.rpy", line 25, in script
-    l "About bloody time! I've been waiting for this for years." (multiple=2)
-Exception: Sayer 'l' is not defined.
+While loading <renpy.display.im.Image object ('frame.png') at 0x0000000005a69550>:
+  File "game/script.rpy", line 18, in script
+    r "You are a rat"
+  File "game/script.rpy", line 18, in script
+    r "You are a rat"
+  File "renpy/common/00nvl_mode.rpy", line 377, in do_display
+    renpy.display_say(
+OSError: Couldn't find file 'frame.png'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 25, in script
-    l "About bloody time! I've been waiting for this for years." (multiple=2)
-  File "C:\Users\nedev\OneDrive - ualberta.ca\Documents\MST 350\renpy-8.0.3-sdk\renpy\ast.py", line 881, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "C:\Users\nedev\OneDrive - ualberta.ca\Documents\MST 350\renpy-8.0.3-sdk\renpy\ast.py", line 774, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who)
-Exception: Sayer 'l' is not defined.
+  File "C:\Users\nedev\OneDrive - ualberta.ca\Documents\MST 350\renpy-8.0.3-sdk\renpy\bootstrap.py", line 277, in bootstrap
+    renpy.main.main()
+  File "C:\Users\nedev\OneDrive - ualberta.ca\Documents\MST 350\renpy-8.0.3-sdk\renpy\main.py", line 660, in main
+    run(restart)
+  File "C:\Users\nedev\OneDrive - ualberta.ca\Documents\MST 350\renpy-8.0.3-sdk\renpy\main.py", line 146, in run
+    renpy.execution.run_context(True)
+  File "C:\Users\nedev\OneDrive - ualberta.ca\Documents\MST 350\renpy-8.0.3-sdk\renpy\execution.py", line 938, in run_context
+    context.run()
+  File "game/script.rpy", line 18, in script
+    r "You are a rat"
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/site-packages/future/utils/__init__.py", line 441, in raise_
+  File "game/script.rpy", line 18, in script
+    r "You are a rat"
+  File "C:\Users\nedev\OneDrive - ualberta.ca\Documents\MST 350\renpy-8.0.3-sdk\renpy\ast.py", line 921, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Users\nedev\OneDrive - ualberta.ca\Documents\MST 350\renpy-8.0.3-sdk\renpy\exports.py", line 1373, in say
+    who(what, *args, **kwargs)
+  File "C:\Users\nedev\OneDrive - ualberta.ca\Documents\MST 350\renpy-8.0.3-sdk\renpy\character.py", line 1266, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "renpy/common/00nvl_mode.rpy", line 377, in do_display
+    renpy.display_say(
+  File "C:\Users\nedev\OneDrive - ualberta.ca\Documents\MST 350\renpy-8.0.3-sdk\renpy\character.py", line 666, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "C:\Users\nedev\OneDrive - ualberta.ca\Documents\MST 350\renpy-8.0.3-sdk\renpy\ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\nedev\OneDrive - ualberta.ca\Documents\MST 350\renpy-8.0.3-sdk\renpy\display\core.py", line 3377, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\nedev\OneDrive - ualberta.ca\Documents\MST 350\renpy-8.0.3-sdk\renpy\display\core.py", line 3912, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "C:\Users\nedev\OneDrive - ualberta.ca\Documents\MST 350\renpy-8.0.3-sdk\renpy\display\core.py", line 2602, in draw_screen
+    surftree = renpy.display.render.render_screen(
+  File "render.pyx", line 495, in renpy.display.render.render_screen
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\nedev\OneDrive - ualberta.ca\Documents\MST 350\renpy-8.0.3-sdk\renpy\display\layout.py", line 884, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\nedev\OneDrive - ualberta.ca\Documents\MST 350\renpy-8.0.3-sdk\renpy\display\layout.py", line 884, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\nedev\OneDrive - ualberta.ca\Documents\MST 350\renpy-8.0.3-sdk\renpy\display\layout.py", line 884, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\nedev\OneDrive - ualberta.ca\Documents\MST 350\renpy-8.0.3-sdk\renpy\display\screen.py", line 704, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\nedev\OneDrive - ualberta.ca\Documents\MST 350\renpy-8.0.3-sdk\renpy\display\layout.py", line 884, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\nedev\OneDrive - ualberta.ca\Documents\MST 350\renpy-8.0.3-sdk\renpy\display\layout.py", line 1334, in render
+    surf = render(child,
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\nedev\OneDrive - ualberta.ca\Documents\MST 350\renpy-8.0.3-sdk\renpy\display\layout.py", line 1105, in render
+    surf = render(d, width - x, rh, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\nedev\OneDrive - ualberta.ca\Documents\MST 350\renpy-8.0.3-sdk\renpy\display\layout.py", line 1369, in render
+    back = render(style.background, bw, bh, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\nedev\OneDrive - ualberta.ca\Documents\MST 350\renpy-8.0.3-sdk\renpy\display\im.py", line 627, in render
+    return cache.get(self, render=True)
+  File "C:\Users\nedev\OneDrive - ualberta.ca\Documents\MST 350\renpy-8.0.3-sdk\renpy\display\im.py", line 295, in get
+    surf = image.load()
+  File "C:\Users\nedev\OneDrive - ualberta.ca\Documents\MST 350\renpy-8.0.3-sdk\renpy\display\im.py", line 720, in load
+    raise e
+  File "C:\Users\nedev\OneDrive - ualberta.ca\Documents\MST 350\renpy-8.0.3-sdk\renpy\display\im.py", line 685, in load
+    filelike = renpy.loader.load(self.filename)
+  File "C:\Users\nedev\OneDrive - ualberta.ca\Documents\MST 350\renpy-8.0.3-sdk\renpy\loader.py", line 820, in load
+    raise IOError("Couldn't find file '%s'." % name)
+OSError: Couldn't find file 'frame.png'.
 
 Windows-10-10.0.19043 AMD64
 Ren'Py 8.0.3.22090809
 untitled_rat_escape_game 1.0
-Wed Sep 21 17:12:35 2022
+Thu Oct 27 10:33:10 2022
