@@ -10,19 +10,19 @@ define narrator = nvl_narrator
 # The game starts here.
 
 label start:
-    scene black
+    #scene black
     "{i}hello i am the narrator{\i}"
     "{i}look at me speak{\i}"
     "{i}is this working?{\i}"
     r "You are a rat"
     r "rats are dope"
     r "Enjoyghhhhhhhhhhhhhhhhhhhhhhhh\nhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh\nhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh"
-    menu:
-        "Where do I go?"
-        "Go left.":
-            "there was a monster"
-        "Go right.":
-            "there was cheese"
+    # menu:
+    #     "Where do I go?"
+    #     "Go left.":
+    #         "there was a monster"
+    #     "Go right.":
+    #         "there was cheese"
 
 
     "{i}hello i am the narrator{\i}"
