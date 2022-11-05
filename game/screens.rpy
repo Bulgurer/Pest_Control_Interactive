@@ -9,6 +9,7 @@ init offset = -1
 ## Styles
 ################################################################################
 
+
 style default:
     properties gui.text_properties()
     language gui.language
@@ -74,6 +75,7 @@ style vslider:
 style frame:
     padding gui.frame_borders.padding
     background Frame("gui/frame.png", gui.frame_borders, tile=gui.frame_tile)
+
 
 
 
@@ -1287,7 +1289,6 @@ screen nvl(dialogue, items=None):
 
     window:
         style "nvl_window"
-
         has vbox:
             spacing gui.nvl_spacing
 
@@ -1351,7 +1352,7 @@ style nvl_window:
     xfill True
     yfill True
 
-    background "gui/nvl.png"
+    background "gui/blackred.png"
     padding gui.nvl_borders.padding
 
 style nvl_entry:
@@ -1374,6 +1375,7 @@ style nvl_dialogue:
     xsize gui.nvl_text_width
     min_width gui.nvl_text_width
     text_align gui.nvl_text_xalign
+    bottom_padding 100
     layout ("subtitle" if gui.nvl_text_xalign else "tex")
 
 style nvl_thought:

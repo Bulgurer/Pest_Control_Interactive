@@ -2,9 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/gui.rpy", line 466: invalid syntax
-        gui.nvl_text_width = 
+File "game/script.rpy", line 43: invalid syntax
+    txt(define r = Character("Rat:", kind=nvl, color="#b30000"))
+                ^
     
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Thu Oct 27 11:27:31 2022
+Fri Nov  4 13:43:07 2022
