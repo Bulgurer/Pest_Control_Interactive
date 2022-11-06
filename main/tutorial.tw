@@ -1,10 +1,8 @@
-:: begtut
-We are now in the tutorial
-check out [[option1]] or even [[option2]]
-
-
-:: option1
-amazing it worked
-
-:: option2
-oh he dead
+:: tut0
+<<set $p to "@@color:blue;" + "You" + "@@">>
+<<set $n to "@@color:biege;" + "Narrator" "@@">>
+$p: //Ow.//
+$n: You get up, look around the laboratory and somehow know what things are. 
+That giant whirlwind of steel covering the only space small enough 
+to build a new home is called a fan, 
+and the ferocious beast with dagger teeth that nearly killed you before is called a cat. 

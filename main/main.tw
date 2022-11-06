@@ -6,6 +6,7 @@
     "zoom": 1
 }
 
+
 :: StoryTitle
 The Great Ratscape
 
@@ -14,4 +15,8 @@ The Great Ratscape
 
 by The Boys
 
-[[Play|begtut]]
+[[Play|intro0]]
+/* uncomment script below to remove backtrack feature */
+/* <<script>>
+config.history.controls = false;
+<</script>>  */
