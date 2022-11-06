@@ -1,8 +1,3 @@
 {
-    "files.exclude": {
-        "**/*.rpyc": true,
-        "**/*.rpa": true,
-        "**/*.rpymc": true,
-        "**/cache/": true
-    }
+    "twee3LanguageTools.storyformat.current": "sugarcube-2"
 }
