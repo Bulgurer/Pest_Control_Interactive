@@ -6,6 +6,8 @@
     "zoom": 1
 }
 
+:: JavaScript
+
 
 :: StoryTitle
 The Great Ratscape
@@ -15,4 +17,11 @@ The Great Ratscape
 
 by The Boys
 
-[[Play|intro0]]
+[[Play|tut15]]
+    {
+    (set: $player to [(text-colour:blue)[You]])
+    (set: $n to [(text-colour:#F5F5DC)[Narrator]])
+    (set: $b to [(text-colour:green)[Blinky]])
+    (set: $bunknown to [(text-colour:green)[???]])
+    (set: $c to [(text-colour:red)[???]])
+}

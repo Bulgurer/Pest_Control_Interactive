@@ -15,7 +15,7 @@ $n: Blinky shows you where it is on the keyboard and it is the same QWERTY setup
 _ _ _ _ _ _   _ _   _ _ _ _ _   _ _ _ _ _ _    _ _ _ _ _   _ _   _ _ _   
 (link: "continue") [
 (put: (prompt: [What do you type?], "") into $player_input)
-(if:$player_input is "sphinx of black quartz judge my vow")[
+(if:$player_input is "sphinx of black quartz judge my vow")
     
 ]
 (else: ) [(text-colour:red)[$player_input]]
