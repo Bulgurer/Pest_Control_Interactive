@@ -1,6 +1,10 @@
 :: tut0
-(set: $p to [(text-colour:blue)[You]])
+
+(set: $player to [(text-colour:blue)[You]])
 (set: $n to [(text-colour:#F5F5DC)[Narrator]])
+(set: $b to [(text-colour:green)[Blinky]])
+(set: $c to [(text-colour:red)[???]])
+
 $p: //Ow.//
 $n: You get up, look around the laboratory and somehow know what things are. 
 That giant whirlwind of steel covering the only space small enough 

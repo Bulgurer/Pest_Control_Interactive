@@ -1,0 +1,53 @@
+:: tutpuz2_0
+
+$n: The two of you reach the source of the beeps and boops, and you ask Blinky what it is.
+
+$b: Uhh…there is a table with a long square with little squares on top. Behind it, there is a window, but it’s all green on the other side. Something on it is flashing? Oh, the window and little rectangles have some squiggly lines on them, and there are three circle lights at the top!
+
+$b: It looks like the window has a string to another tunnel with a “gate” thing you said before. This one leads outside!
+
+[$player]: He means there are letters on the window and squares? Is this a computer setup? Why is there one small enough for us connected to an exit?
+
+[$player]: Hey, Blinky, is there a triangle with legs on one of the small rectangles? Can you show me where it is?
+
+$n: Blinky shows you where it is on the keyboard and it is the same QWERTY setup that you somehow know a keyboard is supposed to be. You know that you have to type something in, but you don’t know what, and Blinky can’t read what is written on the screen that might have given you a hint. He does tell you that there are 29 lines to fill in, and some are grouped together, which you imagine like this:
+
+_ _ _ _ _ _   _ _   _ _ _ _ _   _ _ _ _ _ _    _ _ _ _ _   _ _   _ _ _   
+(link: "continue") [
+(put: (prompt: [What do you type?], "") into $player_input)
+(if:$player_input is "sphinx of black quartz judge my vow")[
+    
+]
+(else: ) [(text-colour:red)[$player_input]]
+
+$b: Hey! One of those three lights went out! Are you sure you know what you’re doing? 
+
+$n: Sometimes, when failing a puzzle, companions will become distrustful of your skills and leadership. This can lead to disagreements, and companions may start ignoring your advice to solve the puzzle on their own.
+
+You have two more tries. What do you type?
+
+PLAYER TEXT INPUT
+Two fails: 
+$n: The second light goes out with an audible Brmmmmm, and Blinky pushes you out of the way.
+
+$b: Let me try! This can’t be too crazy, right? I mean, maybe I just push them all at once? 
+Blinky smashes his hand onto the keyboard, and another Brmmmmm is heard, immediately followed by the BEEEH BEEEH BEEEH of an alarm.
+
+[$player]: Blinky, what did you do?! What’s happening!?
+
+$b: I, I don’t know… I just touched rect-
+
+$n: You hear a familiar sound over the ringing of the alarm.
+ A vicious roar.
+ A merciless growl.
+ A monster approaches.
+
+$c MEREOOWWW!
+
+[$player]: Blinky, we have to get out of here! Get back into the tunnel!
+
+$n: Before Blinky can get so much as two blinks into responding to you, the Madman’s cat pounces on him from across the room. You hear fangs sink into Blinky, who struggles for dear life, and smell the fresh scent of blood in the air.
+
+[$player]: I can’t let Blinky die!
+
+$n: You run at the monster, squeaking a final war cry and feel something furry hit you hard. You fall unconscious.
