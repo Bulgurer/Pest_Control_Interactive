@@ -37,21 +37,81 @@ and brought back to the madman&#39;s tower.
 Spells, curses, blessings, runes, and enchantments were all used on you,
 and after all the additional poking, prodding, electrifying and sizzling, 
 you had a real cognizant thought.
-[[continue|tut0]]</tw-passagedata><tw-passagedata pid="6" name="Start" tags="" position="725,100" size="100,100">The Great Ratscape
+{(set: $player to [(text-colour:blue)[You]])
+(set: $n to [(text-colour:#F5F5DC)[Narrator]])
+(set: $b to [(text-colour:green)[Blinky]])
+(set: $c to [(text-colour:red)[???]])
+[[continue|tutpuz2_0]]}</tw-passagedata><tw-passagedata pid="6" name="Start" tags="" position="725,100" size="100,100">The Great Ratscape
 
 by The Boys
 
-[[Play|intro0]]
-/* uncomment script below to remove backtrack feature */
-/* &lt;&lt;script&gt;&gt;
-config.history.controls = false;
-&lt;&lt;/script&gt;&gt;  */</tw-passagedata><tw-passagedata pid="7" name="tut0" tags="" position="850,100" size="100,100">&lt;&lt;set $p to &quot;@@color:blue;&quot; + &quot;You&quot; + &quot;@@&quot;&gt;&gt;
-&lt;&lt;set $n to &quot;@@color:biege;&quot; + &quot;Narrator&quot; &quot;@@&quot;&gt;&gt;
+[[Play|intro0]]</tw-passagedata><tw-passagedata pid="7" name="puz1_0" tags="" position="850,100" size="100,100"></tw-passagedata><tw-passagedata pid="8" name="tut0" tags="" position="975,100" size="100,100">(set: $player to [(text-colour:blue)[You]])
+(set: $n to [(text-colour:#F5F5DC)[Narrator]])
+(set: $b to [(text-colour:green)[Blinky]])
+(set: $c to [(text-colour:red)[???]])
+
 $p: //Ow.//
 $n: You get up, look around the laboratory and somehow know what things are. 
 That giant whirlwind of steel covering the only space small enough 
 to build a new home is called a fan, 
-and the ferocious beast with dagger teeth that nearly killed you before is called a cat.</tw-passagedata></tw-storydata>
+and the ferocious beast with dagger teeth that nearly killed you before is called a cat.</tw-passagedata><tw-passagedata pid="9" name="tutpuz2_0" tags="" position="1100,100" size="100,100">$n: The two of you reach the source of the beeps and boops, and you ask Blinky what it is.
+
+$b: Uhh…there is a table with a long square with little squares on top. Behind it, there is a window, but it’s all green on the other side. Something on it is flashing? Oh, the window and little rectangles have some squiggly lines on them, and there are three circle lights at the top!
+
+$b: It looks like the window has a string to another tunnel with a “gate” thing you said before. This one leads outside!
+
+$player: He means there are letters on the window and squares? Is this a computer setup? Why is there one small enough for us connected to an exit?
+
+$player: Hey, Blinky, is there a triangle with legs on one of the small rectangles? Can you show me where it is?
+[[continue|tutpuz2_1]]</tw-passagedata><tw-passagedata pid="10" name="tutpuz2_1" tags="" position="1225,100" size="100,100">$n: Blinky shows you where it is on the keyboard and it is the same QWERTY setup that you somehow know a keyboard is supposed to be. You know that you have to type something in, but you don’t know what, and Blinky can’t read what is written on the screen that might have given you a hint. He does tell you that there are 29 lines to fill in, and some are grouped together, which you imagine like this:
+
+------ -- ----- ------ ----- -- ---
+[[make a guess|guess1]]</tw-passagedata><tw-passagedata pid="11" name="guess1" tags="" position="100,225" size="100,100">{(put: (prompt: [What do you type?], &quot;&quot;) into $player_input)
+(if:$player_input is &quot;sphinx of black quartz judge my vow&quot;)[ 
+    (text-colour:green)[$player_input]
+    $n: You hear a //dodododo DING// and metal screeching against stone. The gate [[opens...-&gt;end1]] 
+]}
+(else: ) [(text-colour:red)[$player_input]
+
+
+$b: Hey! One of those three lights went out! Are you sure you know what you’re doing? 
+
+$n: Sometimes, when failing a puzzle, companions will become distrustful of your skills and leadership. This can lead to disagreements, and companions may start ignoring your advice to solve the puzzle on their own.
+
+------ -- ----- ------ ----- -- ---
+[[make another guess|guess2]]
+]</tw-passagedata><tw-passagedata pid="12" name="guess2" tags="" position="225,225" size="100,100">{(put: (prompt: [You have two more tries. What do you type?], &quot;&quot;) into $player_input)
+(if:$player_input is &quot;sphinx of black quartz judge my vow&quot;)[ 
+    (text-colour:green)[$player_input]
+    $n: You hear a //dodododo DING// and metal screeching against stone. The gate [[opens...-&gt;end1]] 
+]}
+(else: ) [(text-colour:red)[$player_input]
+
+$n: The second light goes out with an audible //Brmmmmm/, and Blinky pushes you out of the way.
+]
+[[continue|tutpuz2_2]]</tw-passagedata><tw-passagedata pid="13" name="tutpuz2_2" tags="" position="350,225" size="100,100">$b: Let me try! This can’t be too crazy, right? I mean, maybe I just push them all at once? 
+Blinky smashes his hand onto the keyboard, and another //Brmmmmm.. is heard, immediately followed by the //BEEEH BEEEH BEEEH// of an alarm.
+
+$player: Blinky, what did you do?! What’s happening!?
+
+$b: I, I don’t know… I just touched rect-
+
+$n: You hear a familiar sound over the ringing of the alarm.
+ A vicious roar.
+ A merciless growl.
+ A monster approaches.
+
+$c //MEREOOWWW!//
+
+[[continue|tutpuz2_3]]</tw-passagedata><tw-passagedata pid="14" name="tutpuz2_3" tags="" position="475,225" size="100,100">$player: Blinky, we have to get out of here! Get back into the tunnel!
+
+$n: Before Blinky can get so much as two blinks into responding to you, the Madman’s cat pounces on him from across the room. You hear fangs sink into Blinky, who struggles for dear life, and smell the fresh scent of blood in the air.
+
+$player: I can’t let Blinky die!
+
+$n: You run at the monster, squeaking a final war cry and feel something furry hit you hard. You fall unconscious.
+
+[[continue|]]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
