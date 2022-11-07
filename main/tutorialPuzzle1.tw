@@ -36,5 +36,62 @@ $b: No, sir, did not move a single hair.
 [[continue|tutpuz1_8]]
 
 :: tutpuz1_8
-$player:
+$player: What moved down there, then?
+[[continue|tutpuz1_9]]
+(set: $counter = 0)
+
+:: tutpuz1_9
+(if: $counter is < 3)[$n: Something moved over there when you pushed the button. You could go explore to find out what it was,
+
+or I suppose you could stay here and try to lift the gate, though I doubt that would work. What do you do?]
+
+(if: $counter is >= 3)[$n:  IT. DOESN'T. WORK. Just go exploring, damn it.]
+
+[[EXPLORE|tutpuz1_11]]
+
+(if: $counter is < 3)[[TRY TO LIFT THE GATE|tutpuz1_10]]
+
+:: tutpuz1_10
+$n: You and $b try your best to lift the heavy metal gate, but to no avail.
+(set: $counter to ($counter + 1))
+[[Reconsider|tutpuz1_9]]
+
+:: tutpuz1_11
+$n: You and $b decide to find what moved, and soon $b stops you.
+[[continue|tutpuz1_12]]
+
+:: tutpuz1_12
+$b: There's a tunnel here! This one looks tiny, though. I think I can see another circle at the end.
+[[continue|tutpuz1_13]]
+
+:: tutpuz1_13
+$n: Oh boy, another choice! You can either try crawling in yourself or send $b to press the new button for you.
+What do you do?
+
+[[Send Blinky|tutpuz1_15]]
+
+[[Send Yourself|tutpuz1_14]]
+
+:: tutpuz1_14
+$n: You try to crawl through the space that $b found but find it much too small for a rat of your size. 
+You barely manage to prevent yourself from getting stuck while trying to get out.
+
+[[Reconsider|tutpuz1_13]]
+
+:: tutpuz1_15
+$b: Oh, that's easy, boss. I got this!
+
+$n: $b slithers through the tunnel without any trouble and presses the button. 
+A click and more gears move, this time back toward the gated tunnel.
+[[continue|tutpuz1_16]]
+
+:: tutpuz1_16
+$player: Good job, $b! I think that worked!
+[[tutpuz1_17]]
+
+:: tutpuz1_17
+$n: Once $b comes out, you both make your way back to the gate and find it lifted, clearing the way.
+[[continue|tut59]]
+
+
 

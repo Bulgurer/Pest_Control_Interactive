@@ -268,6 +268,61 @@ $player: //A circle? But what does it do?//
 
 <!-- THIS NOW JUMPS TO TUTORIALPUZZLE1 FILE -->
 
+:: tut59
+$n: You walk down the tunnel, which seems to twist and turn without reason.
+Do you want to talk to $b while you walk?
+
+[[YES|tut60]]
+
+[[NO|tut60-1]]
+
+:: tut60-1
+$n: I mean, there's nobody else here to talk to. Talk to your fellow rat: you might learn something. 
+I promise you will get more choices next time.
+[[Talk to Blinky|tut60]]
+
+:: tut60
+$player: Hey $b, are there any signs telling us where we are going?
+[[continue|tut61]]
+
+:: tut61
+$b: Signs? Oh, you mean the rectangles with lines pointing this way?
+[[continue|tut62]]
+
+:: tut62
+$player:Uhh… yeah, the rectangles. Is there anything written on them?
+[[continue|tut63]]
+
+:: tut63
+$b: There are some squiggly lines on them, but I don't think whoever put them on there knew how to make a proper rectangle or triangle. 
+Like this triangle has two sides that are too long! It's like legs holding up a triangle.
+[[continue|tut64]]
+
+:: tut64
+$p: //Legs holding up a triangle? An “A”? It sounds like $b can't read letters. Then why do I know what letters are?//
+[[continue|tut65]]
+
+:: tut65
+$n: You continue down until you start hearing loud beeps and boops, as if an old robot toy was left on maximum volume, 
+though you're not sure what a robot is. $b tells you you've entered a new room.
+[[continue|tut66]]
+
+:: tut66
+$b: Wow, this room is shiny! We're on everything! Left, right, up and down!
+[[continue|tut67]]
+
+:: tut67
+$player: //Huh? Are there mirrors everywhere, or is everything just reflective?//
+[[continue|tut68]]
+
+:: tut68
+$n: The two of you reach the source of the beeps and boops, and you ask $b what it is.
+[[continue|tutpuz2_0]]
+
+<!-- THIS NOW JUMPS TO TUTORIALPUZZLE2 FILE -->
+
+
+
 
 
 

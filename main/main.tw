@@ -17,7 +17,7 @@ The Great Ratscape
 
 by The Boys
 
-[[Play|tutpuz2_0]]
+[[Play|tutpuz1_8]]
     {
     (set: $player to [(text-colour:blue)[You]])
     (set: $n to [(text-colour:#F5F5DC)[Narrator]])
@@ -25,4 +25,5 @@ by The Boys
     (set: $bunknown to [(text-colour:green)[???]])
     (set: $c to [(text-colour:red)[???]])
     (set: $m to [(text-colour:#8c03fc)[Mad Scientist]])
+    (set: $counter to 0)
 }

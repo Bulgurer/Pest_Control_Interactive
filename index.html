@@ -41,7 +41,7 @@ you had a real cognizant thought.
 
 by The Boys
 
-[[Play|tutpuz2_0]]
+[[Play|tutpuz1_8]]
     {
     (set: $player to [(text-colour:blue)[You]])
     (set: $n to [(text-colour:#F5F5DC)[Narrator]])
@@ -49,6 +49,7 @@ by The Boys
     (set: $bunknown to [(text-colour:green)[???]])
     (set: $c to [(text-colour:red)[???]])
     (set: $m to [(text-colour:#8c03fc)[Mad Scientist]])
+    (set: $counter to 10)
 }</tw-passagedata><tw-passagedata pid="8" name="tut0" tags="" position="975,100" size="100,100">$player: //Ow.//
 [[continue|tut1]]</tw-passagedata><tw-passagedata pid="9" name="tut1" tags="" position="1100,100" size="100,100">$n: You get up, look around the laboratory and somehow know what things are. 
 That giant whirlwind of steel covering the only space small enough 
@@ -162,7 +163,19 @@ For now, [[INVESTIGATE THE “CIRCLE”|tutpuz1_1]].</tw-passagedata><tw-passage
 [[continue|tutpuz1_5]]</tw-passagedata><tw-passagedata pid="70" name="tutpuz1_5" tags="" position="1225,850" size="100,100">$b: What was that?!
 [[continue|tutpuz1_6]]</tw-passagedata><tw-passagedata pid="71" name="tutpuz1_6" tags="" position="100,975" size="100,100">$player: Something moved somewhere in the wall over there. Did the gate in front of us move at all?
 [[continue|tutpuz1_7]]</tw-passagedata><tw-passagedata pid="72" name="tutpuz1_7" tags="" position="225,975" size="100,100">$b: No, sir, did not move a single hair.
-[[continue|tutpuz1_8]]</tw-passagedata><tw-passagedata pid="73" name="tutpuz1_8" tags="" position="350,975" size="100,100">$player:</tw-passagedata><tw-passagedata pid="74" name="tutpuz2_0" tags="" position="475,975" size="100,100">$n: The two of you reach the source of the beeps and boops, and you ask Blinky what it is.
+[[continue|tutpuz1_8]]</tw-passagedata><tw-passagedata pid="73" name="tutpuz1_8" tags="" position="350,975" size="100,100">$player: What moved down there, then?
+[[continue|tutpuz1_9]]
+(set: $counter = 0)</tw-passagedata><tw-passagedata pid="74" name="tutpuz1_9" tags="" position="475,975" size="100,100">(if: $counter is &lt; 3)[$n: Something moved over there when you pushed the button. You could go explore to find out what it was,
+
+or I suppose you could stay here and try to lift the gate, though I doubt that would work. What do you do?]
+
+(if: $counter is &gt;= 3)[$n:  IT. DOESN&#39;T. WORK. Just go exploring, damn it.]
+
+[[EXPLORE|tutpuz1_11]]
+
+(if: $counter is &lt; 3)[[TRY TO LIFT THE GATE|tutpuz1_10]]</tw-passagedata><tw-passagedata pid="75" name="tutpuz1_10" tags="" position="600,975" size="100,100">$n: You and $b try your best to lift the heavy metal gate, but to no avail.
+(set: $counter to ($counter + 1))
+[[Reconsider|tutpuz1_9]]</tw-passagedata><tw-passagedata pid="76" name="tutpuz1_11" tags="" position="725,975" size="100,100">$n: You and $b decide to find what moved, and soon $b stops you.</tw-passagedata><tw-passagedata pid="77" name="tutpuz2_0" tags="" position="850,975" size="100,100">$n: The two of you reach the source of the beeps and boops, and you ask Blinky what it is.
 
 $b: Uhh…there is a table with a long square with little squares on top. Behind it, there is a window, but it’s all green on the other side. Something on it is flashing? Oh, the window and little rectangles have some squiggly lines on them, and there are three circle lights at the top!
 
@@ -171,10 +184,10 @@ $b: It looks like the window has a string to another tunnel with a “gate” th
 $player: He means there are letters on the window and squares? Is this a computer setup? Why is there one small enough for us connected to an exit?
 
 $player: Hey, Blinky, is there a triangle with legs on one of the small rectangles? Can you show me where it is?
-[[continue|tutpuz2_1]]</tw-passagedata><tw-passagedata pid="75" name="tutpuz2_1" tags="" position="600,975" size="100,100">$n: Blinky shows you where it is on the keyboard and it is the same QWERTY setup that you somehow know a keyboard is supposed to be. You know that you have to type something in, but you don’t know what, and Blinky can’t read what is written on the screen that might have given you a hint. He does tell you that there are 29 lines to fill in, and some are grouped together, which you imagine like this:
+[[continue|tutpuz2_1]]</tw-passagedata><tw-passagedata pid="78" name="tutpuz2_1" tags="" position="975,975" size="100,100">$n: Blinky shows you where it is on the keyboard and it is the same QWERTY setup that you somehow know a keyboard is supposed to be. You know that you have to type something in, but you don’t know what, and Blinky can’t read what is written on the screen that might have given you a hint. He does tell you that there are 29 lines to fill in, and some are grouped together, which you imagine like this:
 
 ------ -- ----- ------ ----- -- ---
-[[make a guess|guess1]]</tw-passagedata><tw-passagedata pid="76" name="guess1" tags="" position="725,975" size="100,100">{(put: (prompt: [What do you type?], &quot;&quot;) into $player_input)
+[[make a guess|guess1]]</tw-passagedata><tw-passagedata pid="79" name="guess1" tags="" position="1100,975" size="100,100">{(put: (prompt: [What do you type?], &quot;&quot;) into $player_input)
 (if:$player_input is &quot;sphinx of black quartz judge my vow&quot;)[ 
     (text-colour:green)[$player_input]
     $n: You hear a //dodododo DING// and metal screeching against stone. The gate [[opens...-&gt;end1]] 
@@ -188,7 +201,7 @@ $n: Sometimes, when failing a puzzle, companions will become distrustful of your
 
 ------ -- ----- ------ ----- -- ---
 [[make another guess|guess2]]
-]</tw-passagedata><tw-passagedata pid="77" name="guess2" tags="" position="850,975" size="100,100">{(put: (prompt: [You have two more tries. What do you type?], &quot;&quot;) into $player_input)
+]</tw-passagedata><tw-passagedata pid="80" name="guess2" tags="" position="1225,975" size="100,100">{(put: (prompt: [You have two more tries. What do you type?], &quot;&quot;) into $player_input)
 (if:$player_input is &quot;sphinx of black quartz judge my vow&quot;)[ 
     (text-colour:green)[$player_input]
     $n: You hear a //dodododo DING// and metal screeching against stone. The gate [[opens...-&gt;end1]] 
@@ -197,7 +210,7 @@ $n: Sometimes, when failing a puzzle, companions will become distrustful of your
 
 $n: The second light goes out with an audible //Brmmmmm//, and Blinky pushes you out of the way.
 ]
-[[continue|tutpuz2_2]]</tw-passagedata><tw-passagedata pid="78" name="tutpuz2_2" tags="" position="975,975" size="100,100">$b: Let me try! This can’t be too crazy, right? I mean, maybe I just push them all at once? 
+[[continue|tutpuz2_2]]</tw-passagedata><tw-passagedata pid="81" name="tutpuz2_2" tags="" position="100,1100" size="100,100">$b: Let me try! This can’t be too crazy, right? I mean, maybe I just push them all at once? 
 Blinky smashes his hand onto the keyboard, and another //Brmmmmm.. is heard, immediately followed by the //BEEEH BEEEH BEEEH// of an alarm.
 
 $player: Blinky, what did you do?! What’s happening!?
@@ -211,7 +224,7 @@ $n: You hear a familiar sound over the ringing of the alarm.
 
 $c //MEREOOWWW!//
 
-[[continue|tutpuz2_3]]</tw-passagedata><tw-passagedata pid="79" name="tutpuz2_3" tags="" position="1100,975" size="100,100">$player: Blinky, we have to get out of here! Get back into the tunnel!
+[[continue|tutpuz2_3]]</tw-passagedata><tw-passagedata pid="82" name="tutpuz2_3" tags="" position="225,1100" size="100,100">$player: Blinky, we have to get out of here! Get back into the tunnel!
 
 $n: Before Blinky can get so much as two blinks into responding to you, the Madman’s cat pounces on him from across the room. You hear fangs sink into Blinky, who struggles for dear life, and smell the fresh scent of blood in the air.
 
