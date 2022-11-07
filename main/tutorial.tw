@@ -1,6 +1,6 @@
 :: tut0
-<<set $p to "@@color:blue;" + "You" + "@@">>
-<<set $n to "@@color:biege;" + "Narrator" "@@">>
+(set: $p to [(text-colour:blue)[You]])
+(set: $n to [(text-colour:#F5F5DC)[Narrator]])
 $p: //Ow.//
 $n: You get up, look around the laboratory and somehow know what things are. 
 That giant whirlwind of steel covering the only space small enough 
