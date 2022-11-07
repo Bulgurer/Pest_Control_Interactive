@@ -120,8 +120,7 @@ $m: oooooOOOOh?
 
 :: tut24
 $n: …he says with a wide, pearly white grin.
-[[continue|tut25]]
-
+[[continue|tut26]]
 
 :: tut26
 $m: Do you, perhaps, understand me, little rat?<!--Daly wants this to pause at every comma/should be doable-->
@@ -162,7 +161,7 @@ A door rumbles open and slams closed.
 
 :: tut34
 $b: Hey! $player, are you alright? What did that crazy do to you?
-[[continue|tut35]]
+[[continue|tut36]]
 
 :: tut36
 $n: You look toward where you heard the other rat but can see nothing, 
@@ -321,16 +320,43 @@ $n: The two of you reach the source of the beeps and boops, and you ask $b what 
 
 <!-- THIS NOW JUMPS TO TUTORIALPUZZLE2 FILE -->
 
+:: tut69
+$b: Let me try! This can't be too crazy, right? I mean, maybe I just push them all at once? 
+$b smashes his hand onto the keyboard, and another //Brmmmmm..// is heard, immediately followed by the //BEEEH BEEEH BEEEH// of an alarm.
+(link: "continue")[
+$player: $b, what did you do?! What's happening!?
+(link: "continue")[
+$b: I, I don't know… I just touched rect-
+(link: "continue")[
+$n: You hear a familiar sound over the ringing of the alarm.
+ A vicious roar.
+ A merciless growl.
+ A monster approaches.
+
+$c //MEREOOWWW!//
+[[continue|tut70]]]]]
+
+:: tut70
+$player: $b, we have to get out of here! Get back into the tunnel!
+(link: "continue")[
+$n: Before $b can get so much as two blinks into responding to you, the Madman's (text-colour:red)[cat] pounces on him from across the room. You hear fangs sink into $b, who struggles for dear life, and smell the fresh scent of blood in the air.
+
+$player: I can't let $b die!
+(link: "continue")[
+$n: You run at the monster, squeaking a final war cry and feel something furry hit you hard. You fall unconscious.
+
+(text-colour:red)[//To be continued...//]]]
 
 
+:: end1
+$b: It's open! I knew you could do it, buddy. Let's get out of here!
+(link: "continue")[
+$n: This isn't supposed to happen! You can't just leave! There are supposed to be more puzzles, learning about friendship, teamwork and accepting each other's faults and all that fun and cool stuff. There's a whole game planned! C'mon, there were mysteries I wanted to reveal, jokes I wanted to make, and fourth walls I wanted to break! How did you even get that puzzle?! What are you?! 
+(link: "continue")[
+$player: Couldn't have done it without you, $b; I'm glad neither of us died while trying to escape. We'll have to come back and save all the other animals trapped in here someday. That madman can't continue hurting others.  
+(link: "continue")[
+$n: You can't make me narrate this end. This is ridiculous. Wait, what are yo- *audible scuffle* 
+….
+$n: $player and $b leave through the exit and enter a grand magic forest. Over the next few weeks, you somehow convince hundreds of animals from across multiple species to join a forest militia force with you at its head. Dozens of rune bears break down the gate of the magic tower, harpy-hawks fly through the windows and cause havoc inside, and strike teams of razor-tusk Otters to save the other animals. In the chaos, The Madman escaped on a pair of leathery cow wings, carrying his favourite cat with him, never to return.  
 
-
-
-
-
-
-
-
-
-
-
+(text-colour:green)[THE END]]]]

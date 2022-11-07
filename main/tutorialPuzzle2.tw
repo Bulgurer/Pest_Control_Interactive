@@ -1,8 +1,6 @@
 :: tutpuz2_0
 
-$n: The two of you reach the source of the beeps and boops, and you ask $b what it is.
-(link: "continue")[
-$b: Uhh…there is a table with a long square with little squares on top. Behind it, there is a window, but it’s all green on the other side. Something on it is flashing? Oh, the window and little rectangles have some squiggly lines on them, and there are three circle lights at the top!
+$b: Uhh…there is a table with a long square with little squares on top. Behind it, there is a window, but it's all green on the other side. Something on it is flashing? Oh, the window and little rectangles have some squiggly lines on them, and there are three circle lights at the top!
 (link: "continue")[
 $b: It looks like the window has a string to another tunnel with a “gate” thing you said before. This one leads outside!
 (link: "continue")[
@@ -12,7 +10,7 @@ $player: Hey, $b, is there a triangle with legs on one of the small rectangles? 
 [[continue|tutpuz2_1]]]]]]
 
 :: tutpuz2_1
-$n: $b shows you where it is on the keyboard and it is the same QWERTY setup that you somehow know a keyboard is supposed to be. You know that you have to type something in, but you don’t know what, and $b can’t read what is written on the screen that might have given you a hint. He does tell you that there are 29 lines to fill in, and some are grouped together, which you imagine like this:
+$n: $b shows you where it is on the keyboard and it is the same QWERTY setup that you somehow know a keyboard is supposed to be. You know that you have to type something in, but you don't know what, and $b can't read what is written on the screen that might have given you a hint. He does tell you that there are 29 lines to fill in, and some are grouped together, which you imagine like this:
 
 ------ -- ----- ------ ----- -- ---
 [[make a guess|guess1]]
@@ -26,7 +24,7 @@ $n: $b shows you where it is on the keyboard and it is the same QWERTY setup tha
 (else: ) [(text-colour:red)[$player_input]
 
 
-$b: Hey! One of those three lights went out! Are you sure you know what you’re doing? 
+$b: Hey! One of those three lights went out! Are you sure you know what you're doing? 
 
 $n: Sometimes, when failing a puzzle, companions will become distrustful of your skills and leadership. This can lead to disagreements, and companions may start ignoring your advice to solve the puzzle on their own.
 
@@ -44,45 +42,4 @@ $n: Sometimes, when failing a puzzle, companions will become distrustful of your
 
 $n: The second light goes out with an audible //Brmmmmm//, and $b pushes you out of the way.
 ]
-[[continue|tutpuz2_2]]
-
-:: tutpuz2_2
-$b: Let me try! This can’t be too crazy, right? I mean, maybe I just push them all at once? 
-$b smashes his hand onto the keyboard, and another //Brmmmmm..// is heard, immediately followed by the //BEEEH BEEEH BEEEH// of an alarm.
-(link: "continue")[
-$player: $b, what did you do?! What’s happening!?
-(link: "continue")[
-$b: I, I don’t know… I just touched rect-
-(link: "continue")[
-$n: You hear a familiar sound over the ringing of the alarm.
- A vicious roar.
- A merciless growl.
- A monster approaches.
-
-$c //MEREOOWWW!//
-[[continue|tutpuz2_3]]]]]
-
-:: tutpuz2_3
-$player: $b, we have to get out of here! Get back into the tunnel!
-(link: "continue")[
-$n: Before $b can get so much as two blinks into responding to you, the Madman’s (text-colour:red)[cat] pounces on him from across the room. You hear fangs sink into $b, who struggles for dear life, and smell the fresh scent of blood in the air.
-
-$player: I can’t let $b die!
-(link: "continue")[
-$n: You run at the monster, squeaking a final war cry and feel something furry hit you hard. You fall unconscious.
-
-(text-colour:red)[//To be continued...//]]]
-
-
-:: end1
-$b: It’s open! I knew you could do it, buddy. Let’s get out of here!
-(link: "continue")[
-$n: This isn’t supposed to happen! You can’t just leave! There are supposed to be more puzzles, learning about friendship, teamwork and accepting each other's faults and all that fun and cool stuff. There’s a whole game planned! C’mon, there were mysteries I wanted to reveal, jokes I wanted to make, and fourth walls I wanted to break! How did you even get that puzzle?! What are you?! 
-(link: "continue")[
-$player: Couldn’t have done it without you, $b; I’m glad neither of us died while trying to escape. We’ll have to come back and save all the other animals trapped in here someday. That madman can’t continue hurting others.  
-(link: "continue")[
-$n: You can’t make me narrate this end. This is ridiculous. Wait, what are yo- *audible scuffle* 
-….
-$n: $player and $b leave through the exit and enter a grand magic forest. Over the next few weeks, you somehow convince hundreds of animals from across multiple species to join a forest militia force with you at its head. Dozens of rune bears break down the gate of the magic tower, harpy-hawks fly through the windows and cause havoc inside, and strike teams of razor-tusk Otters to save the other animals. In the chaos, The Madman escaped on a pair of leathery cow wings, carrying his favourite cat with him, never to return.  
-
-(text-colour:green)[THE END]]]]
+[[continue|tut69]]
