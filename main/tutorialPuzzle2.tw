@@ -16,11 +16,11 @@ $n: $b shows you where it is on the keyboard and it is the same QWERTY setup tha
 [[make a guess|guess1]]
 
 :: guess1
-{(put: (prompt: [What do you type?], "") into $player_input)
+(put: (prompt: [What do you type?], "") into $player_input)
 (if:$player_input is "sphinx of black quartz judge my vow")[ 
     (text-colour:green)[$player_input]
     $n: You hear a //dodododo DING// and metal screeching against stone. The gate [[opens...|end1]] 
-]}
+]
 (else: ) [(text-colour:red)[$player_input]
 
 
@@ -33,14 +33,14 @@ $n: Sometimes, when failing a puzzle, companions will become distrustful of your
 ]
 
 :: guess2
-{(put: (prompt: [You have two more tries. What do you type?], "") into $player_input)
+(put: (prompt: [You have two more tries. What do you type?], "") into $player_input)
 (if:$player_input is "sphinx of black quartz judge my vow")[ 
     (text-colour:green)[$player_input]
     $n: You hear a //dodododo DING// and metal screeching against stone. The gate [[opens...|end1]] 
-]}
+]
 (else: ) [(text-colour:red)[$player_input]
 
 $n: The second light goes out with an audible //Brmmmmm//, and $b pushes you out of the way.
 //$b no longer trusts you to lead him// (set: $blinky_faith to 0)
-]
-[[continue|tut69]]
+
+[[continue|tut69]]]

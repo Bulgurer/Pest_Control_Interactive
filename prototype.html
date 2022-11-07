@@ -256,11 +256,11 @@ $player: Hey, $b, is there a triangle with legs on one of the small rectangles? 
 [[continue|tutpuz2_1]]]]]</tw-passagedata><tw-passagedata pid="97" name="tutpuz2_1" tags="" position="850,1225" size="100,100">$n: $b shows you where it is on the keyboard and it is the same QWERTY setup that you somehow know a keyboard is supposed to be. You know that you have to type something in, but you don&#39;t know what, and $b can&#39;t read what is written on the screen that might have given you a hint. He does tell you that there are 29 lines to fill in, and some are grouped together, which you imagine like this:
 
 ------ -- ----- ------ ----- -- ---
-[[make a guess|guess1]]</tw-passagedata><tw-passagedata pid="98" name="guess1" tags="" position="975,1225" size="100,100">{(put: (prompt: [What do you type?], &quot;&quot;) into $player_input)
+[[make a guess|guess1]]</tw-passagedata><tw-passagedata pid="98" name="guess1" tags="" position="975,1225" size="100,100">(put: (prompt: [What do you type?], &quot;&quot;) into $player_input)
 (if:$player_input is &quot;sphinx of black quartz judge my vow&quot;)[ 
     (text-colour:green)[$player_input]
     $n: You hear a //dodododo DING// and metal screeching against stone. The gate [[opens...|end1]] 
-]}
+]
 (else: ) [(text-colour:red)[$player_input]
 
 
@@ -270,17 +270,17 @@ $n: Sometimes, when failing a puzzle, companions will become distrustful of your
 
 ------ -- ----- ------ ----- -- ---
 [[make another guess|guess2]]
-]</tw-passagedata><tw-passagedata pid="99" name="guess2" tags="" position="1100,1225" size="100,100">{(put: (prompt: [You have two more tries. What do you type?], &quot;&quot;) into $player_input)
+]</tw-passagedata><tw-passagedata pid="99" name="guess2" tags="" position="1100,1225" size="100,100">(put: (prompt: [You have two more tries. What do you type?], &quot;&quot;) into $player_input)
 (if:$player_input is &quot;sphinx of black quartz judge my vow&quot;)[ 
     (text-colour:green)[$player_input]
     $n: You hear a //dodododo DING// and metal screeching against stone. The gate [[opens...|end1]] 
-]}
+]
 (else: ) [(text-colour:red)[$player_input]
 
 $n: The second light goes out with an audible //Brmmmmm//, and $b pushes you out of the way.
 //$b no longer trusts you to lead him// (set: $blinky_faith to 0)
-]
-[[continue|tut69]]</tw-passagedata></tw-storydata>
+
+[[continue|tut69]]]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
