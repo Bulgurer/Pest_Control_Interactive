@@ -13,7 +13,7 @@ For now, [[INVESTIGATE THE “CIRCLE”|tutpuz1_1]].
 
 :: tutpuz1_1
 $n: You walk over and feel around for the circle. You find it and nearly slip when the circle moves inwards when you push on it.
-[[continue|tutpuz1_2]]
+[[continue|tutpuz1_3]]
 
 :: tutpuz1_3
 $player: It's a button! It could open this gate.

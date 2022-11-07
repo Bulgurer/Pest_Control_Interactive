@@ -82,11 +82,6 @@ $n: Are… you sure you want that to be your name?
 [[Yeah, what's wrong with it?|tut18]]
 [[No, wait, go back|tut16]]
 
-:: tut17
-$n: Are… you sure you want that to be your name?
-[[Yeah, what's wrong with it?|tut18]]
-[[No, wait, go back|tut16]]
-
 :: tut18
 $b: Wow! That's a weird name! $playerName, nice to meet you!
 //$b waves aggressively from his cage.//
@@ -164,7 +159,7 @@ A door rumbles open and slams closed.
 [[continue|tut34]]
 
 :: tut34
-$b: Hey! $player, are you alright? What did that crazy do to you?
+$b: Hey! $playerName, are you alright? What did that crazy do to you?
 [[continue|tut36]]
 
 :: tut36
