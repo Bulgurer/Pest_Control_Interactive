@@ -87,7 +87,7 @@ A click and more gears move, this time back toward the gated tunnel.
 
 :: tutpuz1_16
 $player: Good job, $b! I think that worked!
-[[tutpuz1_17]]
+[[continue|tutpuz1_17]]
 
 :: tutpuz1_17
 $n: Once $b comes out, you both make your way back to the gate and find it lifted, clearing the way.

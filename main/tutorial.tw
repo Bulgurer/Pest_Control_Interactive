@@ -332,13 +332,13 @@ $n: You hear a familiar sound over the ringing of the alarm.
  A merciless growl.
  A monster approaches.
 
-$c //MEREOOWWW!//
+$cunknown: //MEREOOWWW!//
 [[continue|tut70]]]]]
 
 :: tut70
 $player: $b, we have to get out of here! Get back into the tunnel!
 (link: "continue")[
-$n: Before $b can get so much as two blinks into responding to you, the Madman's $c pounces on him from across the room. You hear fangs sink into $b, who struggles for dear life, and smell the fresh scent of blood in the air.
+$n: Before $b can get so much as two blinks into responding to you, the $m's $c pounces on him from across the room. You hear fangs sink into $b, who struggles for dear life, and smell the fresh scent of blood in the air.
 
 $player: I can't let $b die!
 (link: "continue")[
