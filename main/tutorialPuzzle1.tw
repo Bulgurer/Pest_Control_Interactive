@@ -1,14 +1,97 @@
 
 :: tutpuz1_0
-    {
-    (set: $p to [(text-colour:blue)[You]])
-    (set: $n to [(text-colour:#F5F5DC)[Narrator]])
-    (set: $b to [(text-colour:green)[Blinky]])
-    (set: $c to [(text-colour:red)[???]])
-}
-$p: //Ow.//
+$n: Tutorial time! Man, it took a while to get here, huh? 
+Companions have things they are good at and bad at.
 
-$n: You get up, look around the laboratory and somehow know what things are. 
-That giant whirlwind of steel covering the only space small enough 
-to build a new home is called a fan, 
-and the ferocious beast with dagger teeth that nearly killed you before is called a cat. 
+$b (and most companions) do not recognize objects as you do, but $b excels at most physical activities and crawling through tight spaces. 
+
+Each companion will describe the situation to you in their own unique way, and it will be up to you to piece together their information to solve the puzzle. 
+
+Later, You will have the chance to interact with one companion before each puzzle (no time to chat with everyone!)  to find out their special traits that may or may not help in each challenge. 
+
+For now, [[INVESTIGATE THE “CIRCLE”|tutpuz1_1]].
+
+:: tutpuz1_1
+$n: You walk over and feel around for the circle. You find it and nearly slip when the circle moves inwards when you push on it.
+[[continue|tutpuz1_2]]
+
+:: tutpuz1_3
+$player: It's a button! It could open this gate.
+[[Push the button|tutpuz1_4]]
+
+:: tutpuz1_4
+$n: You push the button in. It stops, clicks and remains pressed in. You hear something to your left, like gears moving.
+[[continue|tutpuz1_5]]
+
+:: tutpuz1_5
+$b: What was that?!
+[[continue|tutpuz1_6]]
+
+:: tutpuz1_6
+$player: Something moved somewhere in the wall over there. Did the gate in front of us move at all?
+[[continue|tutpuz1_7]]
+
+:: tutpuz1_7
+$b: No, sir, did not move a single hair.
+[[continue|tutpuz1_8]]
+
+:: tutpuz1_8
+$player: What moved down there, then?
+[[continue|tutpuz1_9]]
+(set: $counter = 0)
+
+:: tutpuz1_9
+(if: $counter is < 3)[$n: Something moved over there when you pushed the button. You could go explore to find out what it was,
+
+or I suppose you could stay here and try to lift the gate, though I doubt that would work. What do you do?]
+
+(if: $counter is >= 3)[$n:  IT. DOESN'T. WORK. Just go exploring, damn it.]
+
+[[EXPLORE|tutpuz1_11]]
+
+(if: $counter is < 3)[[TRY TO LIFT THE GATE|tutpuz1_10]]
+
+:: tutpuz1_10
+$n: You and $b try your best to lift the heavy metal gate, but to no avail.
+(set: $counter to ($counter + 1))
+[[Reconsider|tutpuz1_9]]
+
+:: tutpuz1_11
+$n: You and $b decide to find what moved, and soon $b stops you.
+[[continue|tutpuz1_12]]
+
+:: tutpuz1_12
+$b: There's a tunnel here! This one looks tiny, though. I think I can see another circle at the end.
+[[continue|tutpuz1_13]]
+
+:: tutpuz1_13
+$n: Oh boy, another choice! You can either try crawling in yourself or send $b to press the new button for you.
+What do you do?
+
+[[Send Blinky|tutpuz1_15]]
+
+[[Send Yourself|tutpuz1_14]]
+
+:: tutpuz1_14
+$n: You try to crawl through the space that $b found but find it much too small for a rat of your size. 
+You barely manage to prevent yourself from getting stuck while trying to get out.
+
+[[Reconsider|tutpuz1_13]]
+
+:: tutpuz1_15
+$b: Oh, that's easy, boss. I got this!
+
+$n: $b slithers through the tunnel without any trouble and presses the button. 
+A click and more gears move, this time back toward the gated tunnel.
+[[continue|tutpuz1_16]]
+
+:: tutpuz1_16
+$player: Good job, $b! I think that worked!
+[[tutpuz1_17]]
+
+:: tutpuz1_17
+$n: Once $b comes out, you both make your way back to the gate and find it lifted, clearing the way.
+[[continue|tut59]]
+
+
+
