@@ -65,7 +65,7 @@ $c //MEREOOWWW!//
 :: tutpuz2_3
 $player: $b, we have to get out of here! Get back into the tunnel!
 (link: "continue")[
-$n: Before $b can get so much as two blinks into responding to you, the Madman’s cat pounces on him from across the room. You hear fangs sink into $b, who struggles for dear life, and smell the fresh scent of blood in the air.
+$n: Before $b can get so much as two blinks into responding to you, the Madman’s (text-colour:red)[cat] pounces on him from across the room. You hear fangs sink into $b, who struggles for dear life, and smell the fresh scent of blood in the air.
 
 $player: I can’t let $b die!
 (link: "continue")[

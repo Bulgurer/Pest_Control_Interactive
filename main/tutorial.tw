@@ -6,11 +6,11 @@ $player: //Ow.//
 $n: You get up, look around the laboratory and somehow know what things are. 
 That giant whirlwind of steel covering the only space small enough 
 to build a new home is called a fan, 
-and the ferocious beast with dagger teeth that nearly killed you before is called a cat.
+and the ferocious beast with dagger teeth that nearly killed you before is called a (text-colour:red)[cat].
 [[continue|tut2]]
 
 :: tut2
-$player: //A cat? Really? It was more like a devil-faced leopard. Hmm? What is a leopard? What is a devil?//
+$player: //A (text-colour:red)[cat]? Really? It was more like a devil-faced leopard. Hmm? What is a leopard? What is a devil?//
 [[continue|tut3]]
 
 :: tut3
@@ -30,11 +30,11 @@ $player: Who are you? And where are we?
 [[continue|tut6]]
 
 :: tut6
-$bunknown: Me? Well, I don't know why, but the others call me Blinky. *blink….blink….blink*
+$bunknown: Me? Well, I don't know why, but the others call me $b. *blink….blink….blink*
 [[continue|tut7]]
 
 :: tut7
-$n: Please just imagine Blinky here is blinking all the time,
+$n: Please just imagine $b here is blinking all the time,
 in the background, from here on. Saves us both some time.
 [[continue|tut8]]
 
@@ -48,7 +48,7 @@ but she won't let me eat her food, so maybe she isn't nice after all?
 [[continue|tut10]]
 
 :: tut10
-$n:  Blinky tilts his head with his hand on his chin: *Blink, blink.* 
+$n:  $b tilts his head with his hand on his chin: *Blink, blink.* 
 (I reserve the right to bring back the blinks when I want to.)
 [[continue|tut11]]
 
@@ -88,7 +88,7 @@ $n: Are… you sure you want that to be your name?
 
 :: tut18
 $b: Wow! That's a weird name! $player, nice to meet you!
-//Blinky waves aggressively from his cage.//
+//$b waves aggressively from his cage.//
 
 
 
