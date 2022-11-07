@@ -7,7 +7,7 @@ $b: It looks like the window has a string to another tunnel with a “gate” th
 $player: He means there are letters on the window and squares? Is this a computer setup? Why is there one small enough for us connected to an exit?
 (link: "continue")[
 $player: Hey, $b, is there a triangle with legs on one of the small rectangles? Can you show me where it is?
-[[continue|tutpuz2_1]]]]]]
+[[continue|tutpuz2_1]]]]]
 
 :: tutpuz2_1
 $n: $b shows you where it is on the keyboard and it is the same QWERTY setup that you somehow know a keyboard is supposed to be. You know that you have to type something in, but you don't know what, and $b can't read what is written on the screen that might have given you a hint. He does tell you that there are 29 lines to fill in, and some are grouped together, which you imagine like this:
