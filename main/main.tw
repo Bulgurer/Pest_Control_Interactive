@@ -1,8 +1,8 @@
 :: StoryData
 {
     "ifid": "34B53A1A-F64F-41C9-9333-883DBAF01D4C",
-    "format": "SugarCube",
-    "format-version": "2.36.1",
+    "format": "Harlowe",
+    "format-version": "3.3.3",
     "zoom": 1
 }
 
@@ -16,7 +16,3 @@ The Great Ratscape
 by The Boys
 
 [[Play|intro0]]
-/* uncomment script below to remove backtrack feature */
-/* <<script>>
-config.history.controls = false;
-<</script>>  */
