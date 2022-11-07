@@ -6,11 +6,11 @@ $player: //Ow.//
 $n: You get up, look around the laboratory and somehow know what things are. 
 That giant whirlwind of steel covering the only space small enough 
 to build a new home is called a fan, 
-and the ferocious beast with dagger teeth that nearly killed you before is called a cat.
+and the ferocious beast with dagger teeth that nearly killed you before is called a $c.
 [[continue|tut2]]
 
 :: tut2
-$player: //A cat? Really? It was more like a devil-faced leopard. Hmm? What is a leopard? What is a devil?//
+$player: //A $c? Really? It was more like a devil-faced leopard. Hmm? What is a leopard? What is a devil?//
 [[continue|tut3]]
 
 :: tut3
@@ -76,7 +76,8 @@ $b: So, what's your name?
 [[Declare your name to the world|tut16]]
 
 :: tut16
-(put: (prompt: [What is your name?], "") into $player)
+{(put: (prompt: [What is your name?], "") into $playerName_data)
+(set: $playerName to [(text-colour:blue)[$playerName_data]])}
 $n: Are… you sure you want that to be your name?
 [[Yeah, what's wrong with it?|tut18]]
 [[No, wait, go back|tut16]]
@@ -87,8 +88,11 @@ $n: Are… you sure you want that to be your name?
 [[No, wait, go back|tut16]]
 
 :: tut18
-$b: Wow! That's a weird name! $player, nice to meet you!
+$b: Wow! That's a weird name! $playerName, nice to meet you!
 //$b waves aggressively from his cage.//
+
+//$b trusts you//
+
 [[continue|tut19]]
 
 :: tut19
@@ -339,7 +343,7 @@ $c //MEREOOWWW!//
 :: tut70
 $player: $b, we have to get out of here! Get back into the tunnel!
 (link: "continue")[
-$n: Before $b can get so much as two blinks into responding to you, the Madman's (text-colour:red)[cat] pounces on him from across the room. You hear fangs sink into $b, who struggles for dear life, and smell the fresh scent of blood in the air.
+$n: Before $b can get so much as two blinks into responding to you, the Madman's $c pounces on him from across the room. You hear fangs sink into $b, who struggles for dear life, and smell the fresh scent of blood in the air.
 
 $player: I can't let $b die!
 (link: "continue")[
@@ -357,6 +361,6 @@ $player: Couldn't have done it without you, $b; I'm glad neither of us died whil
 (link: "continue")[
 $n: You can't make me narrate this end. This is ridiculous. Wait, what are yo- *audible scuffle* 
 ….
-$n: $player and $b leave through the exit and enter a grand magic forest. Over the next few weeks, you somehow convince hundreds of animals from across multiple species to join a forest militia force with you at its head. Dozens of rune bears break down the gate of the magic tower, harpy-hawks fly through the windows and cause havoc inside, and strike teams of razor-tusk Otters to save the other animals. In the chaos, The Madman escaped on a pair of leathery cow wings, carrying his favourite cat with him, never to return.  
+$n: $player and $b leave through the exit and enter a grand magic forest. Over the next few weeks, you somehow convince hundreds of animals from across multiple species to join a forest militia force with you at its head. Dozens of rune bears break down the gate of the magic tower, harpy-hawks fly through the windows and cause havoc inside, and strike teams of razor-tusk Otters to save the other animals. In the chaos, The Madman escaped on a pair of leathery cow wings, carrying his favourite $c with him, never to return.  
 
 (text-colour:green)[THE END]]]]

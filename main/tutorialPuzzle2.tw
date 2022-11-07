@@ -25,7 +25,7 @@ $n: $b shows you where it is on the keyboard and it is the same QWERTY setup tha
 
 
 $b: Hey! One of those three lights went out! Are you sure you know what you're doing? 
-
+//$b doubts your abilities as a leader//
 $n: Sometimes, when failing a puzzle, companions will become distrustful of your skills and leadership. This can lead to disagreements, and companions may start ignoring your advice to solve the puzzle on their own.
 
 ------ -- ----- ------ ----- -- ---
@@ -41,5 +41,6 @@ $n: Sometimes, when failing a puzzle, companions will become distrustful of your
 (else: ) [(text-colour:red)[$player_input]
 
 $n: The second light goes out with an audible //Brmmmmm//, and $b pushes you out of the way.
+//$b no longer trusts you to lead him//
 ]
 [[continue|tut69]]
