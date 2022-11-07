@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play The Great Ratscape.</tw-noscript></noscript></tw-story>
-<!-- UUID://34B53A1A-F64F-41C9-9333-883DBAF01D4C// --><tw-storydata name="The Great Ratscape" startnode="6" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="34B53A1A-F64F-41C9-9333-883DBAF01D4C" zoom="1" format="Harlowe" format-version="3.3.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="intro0" tags="" position="100,100" size="100,100">A madman once had the thought: 
+<!-- UUID://34B53A1A-F64F-41C9-9333-883DBAF01D4C// --><tw-storydata name="The Great Ratscape" startnode="7" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="34B53A1A-F64F-41C9-9333-883DBAF01D4C" zoom="1" format="Harlowe" format-version="3.3.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="intro0" tags="" position="100,100" size="100,100">A madman once had the thought: 
 //what if I could talk to my cat? 
 Well, he mused, that would be just wonderful.//
 [[continue|intro1]]</tw-passagedata><tw-passagedata pid="2" name="intro1" tags="" position="225,100" size="100,100">See, this man had made a name for himself in the world 
@@ -37,24 +37,132 @@ and brought back to the madman&#39;s tower.
 Spells, curses, blessings, runes, and enchantments were all used on you,
 and after all the additional poking, prodding, electrifying and sizzling, 
 you had a real cognizant thought.
-{(set: $player to [(text-colour:blue)[You]])
-(set: $n to [(text-colour:#F5F5DC)[Narrator]])
-(set: $b to [(text-colour:green)[Blinky]])
-(set: $c to [(text-colour:red)[???]])
-[[continue|tutpuz2_0]]}</tw-passagedata><tw-passagedata pid="6" name="Start" tags="" position="725,100" size="100,100">The Great Ratscape
+[[continue|tut0]]</tw-passagedata><tw-passagedata pid="6" name="JavaScript" tags="" position="725,100" size="100,100"></tw-passagedata><tw-passagedata pid="7" name="Start" tags="" position="850,100" size="100,100">The Great Ratscape
 
 by The Boys
 
-[[Play|intro0]]</tw-passagedata><tw-passagedata pid="7" name="puz1_0" tags="" position="850,100" size="100,100"></tw-passagedata><tw-passagedata pid="8" name="tut0" tags="" position="975,100" size="100,100">(set: $player to [(text-colour:blue)[You]])
-(set: $n to [(text-colour:#F5F5DC)[Narrator]])
-(set: $b to [(text-colour:green)[Blinky]])
-(set: $c to [(text-colour:red)[???]])
-
-$p: //Ow.//
-$n: You get up, look around the laboratory and somehow know what things are. 
+[[Play|tutpuz2_0]]
+    {
+    (set: $player to [(text-colour:blue)[You]])
+    (set: $n to [(text-colour:#F5F5DC)[Narrator]])
+    (set: $b to [(css: &quot;color: green;&quot;)[Blinky]])
+    (set: $bunknown to [(text-colour:green)[???]])
+    (set: $c to [(text-colour:red)[???]])
+    (set: $m to [(text-colour:#8c03fc)[Mad Scientist]])
+}</tw-passagedata><tw-passagedata pid="8" name="tut0" tags="" position="975,100" size="100,100">$player: //Ow.//
+[[continue|tut1]]</tw-passagedata><tw-passagedata pid="9" name="tut1" tags="" position="1100,100" size="100,100">$n: You get up, look around the laboratory and somehow know what things are. 
 That giant whirlwind of steel covering the only space small enough 
 to build a new home is called a fan, 
-and the ferocious beast with dagger teeth that nearly killed you before is called a cat.</tw-passagedata><tw-passagedata pid="9" name="tutpuz2_0" tags="" position="1100,100" size="100,100">$n: The two of you reach the source of the beeps and boops, and you ask Blinky what it is.
+and the ferocious beast with dagger teeth that nearly killed you before is called a cat.
+[[continue|tut2]]</tw-passagedata><tw-passagedata pid="10" name="tut2" tags="" position="1225,100" size="100,100">$player: //A cat? Really? It was more like a devil-faced leopard. Hmm? What is a leopard? What is a devil?//
+[[continue|tut3]]</tw-passagedata><tw-passagedata pid="11" name="tut3" tags="" position="100,225" size="100,100">$n: Thoughts are weird, aren&#39;t they? Well, don&#39;t worry about that part. 
+You walk over to the large water depository in your cell; its tap is slowly dripping, 
+and you take some sips. On the water&#39;s surface, you see a fuzzy, grey-haired, 
+beady-eyed little creature that you know is called a rat. It&#39;s you. 
+You are a rat. A lab rat, to be specific, and you know that&#39;s a bad thing.
+[[continue|tut4]]</tw-passagedata><tw-passagedata pid="12" name="tut4" tags="" position="225,225" size="100,100">$bunknown: Hey! You&#39;re finally awake!
+[[continue|tut5]]</tw-passagedata><tw-passagedata pid="13" name="tut5" tags="" position="350,225" size="100,100">$player: Who are you? And where are we?
+[[continue|tut6]]</tw-passagedata><tw-passagedata pid="14" name="tut6" tags="" position="475,225" size="100,100">$bunknown: Me? Well, I don&#39;t know why, but the others call me $b. *blink….blink….blink*
+[[continue|tut7]]</tw-passagedata><tw-passagedata pid="15" name="tut7" tags="" position="600,225" size="100,100">$n: Please just imagine $b here is blinking all the time,
+in the background, from here on. Saves us both some time.
+[[continue|tut8]]</tw-passagedata><tw-passagedata pid="16" name="tut8" tags="" position="725,225" size="100,100">$player: The others?
+[[continue|tut9]]</tw-passagedata><tw-passagedata pid="17" name="tut9" tags="" position="850,225" size="100,100">$b: Yeah, the others! They aren&#39;t very nice, except Patty, 
+but she won&#39;t let me eat her food, so maybe she isn&#39;t nice after all?
+[[continue|tut10]]</tw-passagedata><tw-passagedata pid="18" name="tut10" tags="" position="975,225" size="100,100">$n:  $b tilts his head with his hand on his chin: *Blink, blink.* 
+(I reserve the right to bring back the blinks when I want to.)
+[[continue|tut11]]</tw-passagedata><tw-passagedata pid="19" name="tut11" tags="" position="1100,225" size="100,100">$b: Anyway! What&#39;s your name?
+[[continue|tut12]]</tw-passagedata><tw-passagedata pid="20" name="tut12" tags="" position="1225,225" size="100,100">$player: I... Don&#39;t have one?
+[[continue|tut13]]</tw-passagedata><tw-passagedata pid="21" name="tut13" tags="" position="100,350" size="100,100">$n: You look back on your memories and hear a lot of squeaking 
+you swore used to mean things to you but are now indecipherable.
+[[continue|tut14]]</tw-passagedata><tw-passagedata pid="22" name="tut14" tags="" position="225,350" size="100,100">$b: OOoooOOh… That means you can pick one! That&#39;s what the others did. 
+I tried to name myself too, but for some reason, the others won&#39;t call me by my rightful name: 
+Bandorious Lyncoln Isaac Nezin Korrin Yosuf the Eleventh.
+[[continue|tut15]]</tw-passagedata><tw-passagedata pid="23" name="tut15" tags="" position="350,350" size="100,100">$b: So, what&#39;s your name?
+[[Declare your name to the world|tut16]]</tw-passagedata><tw-passagedata pid="24" name="tut16" tags="" position="475,350" size="100,100">(put: (prompt: [What is your name?], &quot;&quot;) into $player)
+$n: Are… you sure you want that to be your name?
+[[Yeah, what&#39;s wrong with it?|tut18]]
+[[No, wait, go back|tut16]]</tw-passagedata><tw-passagedata pid="25" name="tut17" tags="" position="600,350" size="100,100">$n: Are… you sure you want that to be your name?
+[[Yeah, what&#39;s wrong with it?|tut18]]
+[[No, wait, go back|tut16]]</tw-passagedata><tw-passagedata pid="26" name="tut18" tags="" position="725,350" size="100,100">$b: Wow! That&#39;s a weird name! $player, nice to meet you!
+//$b waves aggressively from his cage.//
+[[continue|tut19]]</tw-passagedata><tw-passagedata pid="27" name="tut19" tags="" position="850,350" size="100,100">$n: Rumblings from the giant door across the room interrupt you.
+[[continue|tut20]]</tw-passagedata><tw-passagedata pid="28" name="tut20" tags="" position="975,350" size="100,100">$b: Shhhh! Don&#39;t let him hear you speak! 
+The other others didn&#39;t come back when he heard them!
+[[continue|tut21]]</tw-passagedata><tw-passagedata pid="29" name="tut21" tags="" position="1100,350" size="100,100">$b: $b runs out of his bed of paper scraps and goes quiet.
+[[continue|tut22]]</tw-passagedata><tw-passagedata pid="30" name="tut22" tags="" position="1225,350" size="100,100">$n: The door opens. 
+A man in a bright, colourful flower suit with slicked-back black hair and a pencil moustache walks in 
+and starts inspecting each piece of equipment in the room with exquisite care, 
+as if each were his favourite thing in the world. The mad scientist turns to look at you. 
+At first, just a bored glance; a double take; a triple take; and then he stops and focuses on you, 
+standing in the center of your cage curiously looking at him. 
+Your hair inexplicably stands on end and your stomach turns with his every move.
+[[continue|tut23]]</tw-passagedata><tw-passagedata pid="31" name="tut23" tags="" position="100,475" size="100,100">$m: oooooOOOOh?
+[[continue|tut24]]</tw-passagedata><tw-passagedata pid="32" name="tut24" tags="" position="225,475" size="100,100">$n: …he says with a wide, pearly white grin.
+[[continue|tut25]]</tw-passagedata><tw-passagedata pid="33" name="tut26" tags="" position="350,475" size="100,100">$m: Do you, perhaps, understand me, little rat?&lt;!--Daly wants this to pause at every comma/should be doable--&gt;
+[[continue|tut27]]</tw-passagedata><tw-passagedata pid="34" name="tut27" tags="" position="475,475" size="100,100">$n: You continue staring at him, frozen in place.
+[[continue|tut28]]</tw-passagedata><tw-passagedata pid="35" name="tut28" tags="" position="600,475" size="100,100">$m: Hmmm, Smart enough to stay quiet? Well, no matter. 
+You, little one, may have given me what I need to move on to the next batch of subjects. 
+I won&#39;t need you after a few more tests.
+[[continue|tut29]]</tw-passagedata><tw-passagedata pid="36" name="tut29" tags="" position="725,475" size="100,100">$n: His grin turns to annoyance.
+[[continue|tut30]]</tw-passagedata><tw-passagedata pid="37" name="tut30" tags="" position="850,475" size="100,100">$m: As thankful as I am to you, I&#39;m not a fan of that look you&#39;re giving me.
+[[continue|tut31]]</tw-passagedata><tw-passagedata pid="38" name="tut31" tags="" position="975,475" size="100,100">$n: He claps his hands twice while looking at you, and the room goes dark. 
+Or rather, it does for you. You drop from your hind legs onto all fours and regain your balance. 
+[[continue|tut32]]</tw-passagedata><tw-passagedata pid="39" name="tut32" tags="" position="1100,475" size="100,100">$m: **HAHAHAHA!** Enjoy what remains of your life in the dark, little Rat. 
+[[continue|tut33]]</tw-passagedata><tw-passagedata pid="40" name="tut33" tags="" position="1225,475" size="100,100">$n: You can hear quick steps on the ground, 
+and smell the scientist&#39;s sterile, blood-tinged scent, get farther away. 
+A door rumbles open and slams closed.
+[[continue|tut34]]</tw-passagedata><tw-passagedata pid="41" name="tut34" tags="" position="100,600" size="100,100">$b: Hey! $player, are you alright? What did that crazy do to you?
+[[continue|tut35]]</tw-passagedata><tw-passagedata pid="42" name="tut36" tags="" position="225,600" size="100,100">$n: You look toward where you heard the other rat but can see nothing, 
+not even your paws in front of your face.
+[[continue|tut37]]</tw-passagedata><tw-passagedata pid="43" name="tut37" tags="" position="350,600" size="100,100">$player: I think….He blinded me somehow. I can&#39;t see.
+[[continue|tut38]]</tw-passagedata><tw-passagedata pid="44" name="tut38" tags="" position="475,600" size="100,100">$b: Oh…Well, as long as you have your nose, I think things will be alright! Probably!
+[[continue|tut39]]</tw-passagedata><tw-passagedata pid="45" name="tut39" tags="" position="600,600" size="100,100">$player: //Probably?!//
+[[continue|tut40]]</tw-passagedata><tw-passagedata pid="46" name="tut40" tags="" position="725,600" size="100,100">$player: Wait, we&#39;ve gotta get out of here! He said he was going to kill us!
+[[continue|tut41]]</tw-passagedata><tw-passagedata pid="47" name="tut41" tags="" position="850,600" size="100,100">$b: //Blinkblinkblink//, But you didn&#39;t talk! He doesn&#39;t take people away unless they talk in front of him!
+[[continue|tut42]]</tw-passagedata><tw-passagedata pid="48" name="tut42" tags="" position="975,600" size="100,100">$player: You heard him, $b. He said he wouldn&#39;t “need us” anymore.
+He&#39;s gonna kill us; we have to run before he does.
+[[continue|tut43]]</tw-passagedata><tw-passagedata pid="49" name="tut43" tags="" position="1100,600" size="100,100">$n: You hear (css: &quot;color: green;&quot;)[Blinky&#39;s] cage rattling and a metal door squeak open.
+[[continue|tut44]]</tw-passagedata><tw-passagedata pid="50" name="tut44" tags="" position="1225,600" size="100,100">$b: C&#39;mon, let&#39;s go then! There&#39;s a tunnel over here.
+[[continue|tut45]]</tw-passagedata><tw-passagedata pid="51" name="tut45" tags="" position="100,725" size="100,100">$n: $b may have forgotten you could use help getting out of the cage. But do you really need help? 
+You remember that the cage door sat to your left, toward where (css: &quot;color: green;&quot;)[Blinky&#39;s] cage is. 
+You walk over to where it should be, feeling around for the metal cage.
+You find it!
+[[continue|tut46]]</tw-passagedata><tw-passagedata pid="52" name="tut46" tags="" position="225,725" size="100,100">$n: You use your paws to reach around and check the contraption. 
+It seems like you could move this handle part over to the right, and the cage would be unlocked. 
+[[continue|tut47]]</tw-passagedata><tw-passagedata pid="53" name="tut47" tags="" position="350,725" size="100,100">$player: //It couldn&#39;t be that simple, could it?//
+[[continue|tut48]]</tw-passagedata><tw-passagedata pid="54" name="tut48" tags="" position="475,725" size="100,100">$n: You give it a try, and sure enough, the door swings open. You follow $b by smell and sound,
+carefully feeling your way around so you don&#39;t bump into the many other things you can smell on the table, 
+and eventually reach where the other rat sits waiting.
+[[continue|tut49]]</tw-passagedata><tw-passagedata pid="55" name="tut49" tags="" position="600,725" size="100,100">$b: Oh! There you are. Look! Just down there is a hole in the wall we can crawl through
+[[continue|tut50]]</tw-passagedata><tw-passagedata pid="56" name="tut50" tags="" position="725,725" size="100,100">$n: $b leans in close to you conspiratorially.
+[[continue|tut51]]</tw-passagedata><tw-passagedata pid="57" name="tut51" tags="" position="850,725" size="100,100">$b: (css: &quot;font-size: 50%;&quot;)[I don&#39;t think the crazy man knows about it.]
+[[continue|tut52]]</tw-passagedata><tw-passagedata pid="58" name="tut52" tags="" position="975,725" size="100,100">$player: $b, I //can&#39;t// look over there. I can&#39;t see anything.
+[[continue|tut53]]</tw-passagedata><tw-passagedata pid="59" name="tut53" tags="" position="1100,725" size="100,100">$b: Oh….That&#39;s right. Sorry about that! Bit forgetful, you see, I mean, uhhh… Well- anyway, let&#39;s go down there.
+[[continue|tut54]]</tw-passagedata><tw-passagedata pid="60" name="tut54" tags="" position="1225,725" size="100,100">$n: You roll your non-seeing eyes in opposite directions for maximum sass 
+(&#39;cause rats can do that) and follow him. This time, he helps you from ledge to ledge as you both descend to the ground.
+[[continue|tut55]]</tw-passagedata><tw-passagedata pid="61" name="tut55" tags="" position="100,850" size="100,100">$b: Here we are! Oh… there&#39;s a cage over our escape hole?
+[[continue|tut56]]</tw-passagedata><tw-passagedata pid="62" name="tut56" tags="" position="225,850" size="100,100">$player: What? Like a gate?
+[[continue|tut57]]</tw-passagedata><tw-passagedata pid="63" name="tut57" tags="" position="350,850" size="100,100">$b: Yeah, that! There&#39;s also this thing sticking out of the wall beside it. Like a big circle. 
+It kind of looks like those things we pressed to get food with the crazy man but bigger - a lot bigger.
+[[continue|tut58]]</tw-passagedata><tw-passagedata pid="64" name="tut58" tags="" position="475,850" size="100,100">$player: //A circle? But what does it do?//
+[[continue|tutpuz1_0]]
+
+&lt;!-- THIS NOW JUMPS TO TUTORIALPUZZLE1 FILE --&gt;</tw-passagedata><tw-passagedata pid="65" name="puz1_0" tags="" position="600,850" size="100,100"></tw-passagedata><tw-passagedata pid="66" name="tutpuz1_0" tags="" position="725,850" size="100,100">$n: Tutorial time! Man, it took a while to get here, huh? 
+Companions have things they are good at and bad at.
+
+$b (and most companions) do not recognize objects as you do, but $b excels at most physical activities and crawling through tight spaces. 
+
+Each companion will describe the situation to you in their own unique way, and it will be up to you to piece together their information to solve the puzzle. 
+
+Later, You will have the chance to interact with one companion before each puzzle (no time to chat with everyone!)  to find out their special traits that may or may not help in each challenge. 
+
+For now, [[INVESTIGATE THE “CIRCLE”|tutpuz1_1]].</tw-passagedata><tw-passagedata pid="67" name="tutpuz1_1" tags="" position="850,850" size="100,100">$n: You walk over and feel around for the circle. You find it and nearly slip when the circle moves inwards when you push on it.
+[[continue|tutpuz1_2]]</tw-passagedata><tw-passagedata pid="68" name="tutpuz1_3" tags="" position="975,850" size="100,100">$player: It&#39;s a button! It could open this gate.
+[[Push the button|tutpuz1_4]]</tw-passagedata><tw-passagedata pid="69" name="tutpuz1_4" tags="" position="1100,850" size="100,100">$n: You push the button in. It stops, clicks and remains pressed in. You hear something to your left, like gears moving.
+[[continue|tutpuz1_5]]</tw-passagedata><tw-passagedata pid="70" name="tutpuz1_5" tags="" position="1225,850" size="100,100">$b: What was that?!
+[[continue|tutpuz1_6]]</tw-passagedata><tw-passagedata pid="71" name="tutpuz1_6" tags="" position="100,975" size="100,100">$player: Something moved somewhere in the wall over there. Did the gate in front of us move at all?
+[[continue|tutpuz1_7]]</tw-passagedata><tw-passagedata pid="72" name="tutpuz1_7" tags="" position="225,975" size="100,100">$b: No, sir, did not move a single hair.
+[[continue|tutpuz1_8]]</tw-passagedata><tw-passagedata pid="73" name="tutpuz1_8" tags="" position="350,975" size="100,100">$player:</tw-passagedata><tw-passagedata pid="74" name="tutpuz2_0" tags="" position="475,975" size="100,100">$n: The two of you reach the source of the beeps and boops, and you ask Blinky what it is.
 
 $b: Uhh…there is a table with a long square with little squares on top. Behind it, there is a window, but it’s all green on the other side. Something on it is flashing? Oh, the window and little rectangles have some squiggly lines on them, and there are three circle lights at the top!
 
@@ -63,10 +171,10 @@ $b: It looks like the window has a string to another tunnel with a “gate” th
 $player: He means there are letters on the window and squares? Is this a computer setup? Why is there one small enough for us connected to an exit?
 
 $player: Hey, Blinky, is there a triangle with legs on one of the small rectangles? Can you show me where it is?
-[[continue|tutpuz2_1]]</tw-passagedata><tw-passagedata pid="10" name="tutpuz2_1" tags="" position="1225,100" size="100,100">$n: Blinky shows you where it is on the keyboard and it is the same QWERTY setup that you somehow know a keyboard is supposed to be. You know that you have to type something in, but you don’t know what, and Blinky can’t read what is written on the screen that might have given you a hint. He does tell you that there are 29 lines to fill in, and some are grouped together, which you imagine like this:
+[[continue|tutpuz2_1]]</tw-passagedata><tw-passagedata pid="75" name="tutpuz2_1" tags="" position="600,975" size="100,100">$n: Blinky shows you where it is on the keyboard and it is the same QWERTY setup that you somehow know a keyboard is supposed to be. You know that you have to type something in, but you don’t know what, and Blinky can’t read what is written on the screen that might have given you a hint. He does tell you that there are 29 lines to fill in, and some are grouped together, which you imagine like this:
 
 ------ -- ----- ------ ----- -- ---
-[[make a guess|guess1]]</tw-passagedata><tw-passagedata pid="11" name="guess1" tags="" position="100,225" size="100,100">{(put: (prompt: [What do you type?], &quot;&quot;) into $player_input)
+[[make a guess|guess1]]</tw-passagedata><tw-passagedata pid="76" name="guess1" tags="" position="725,975" size="100,100">{(put: (prompt: [What do you type?], &quot;&quot;) into $player_input)
 (if:$player_input is &quot;sphinx of black quartz judge my vow&quot;)[ 
     (text-colour:green)[$player_input]
     $n: You hear a //dodododo DING// and metal screeching against stone. The gate [[opens...-&gt;end1]] 
@@ -80,16 +188,16 @@ $n: Sometimes, when failing a puzzle, companions will become distrustful of your
 
 ------ -- ----- ------ ----- -- ---
 [[make another guess|guess2]]
-]</tw-passagedata><tw-passagedata pid="12" name="guess2" tags="" position="225,225" size="100,100">{(put: (prompt: [You have two more tries. What do you type?], &quot;&quot;) into $player_input)
+]</tw-passagedata><tw-passagedata pid="77" name="guess2" tags="" position="850,975" size="100,100">{(put: (prompt: [You have two more tries. What do you type?], &quot;&quot;) into $player_input)
 (if:$player_input is &quot;sphinx of black quartz judge my vow&quot;)[ 
     (text-colour:green)[$player_input]
     $n: You hear a //dodododo DING// and metal screeching against stone. The gate [[opens...-&gt;end1]] 
 ]}
 (else: ) [(text-colour:red)[$player_input]
 
-$n: The second light goes out with an audible //Brmmmmm/, and Blinky pushes you out of the way.
+$n: The second light goes out with an audible //Brmmmmm//, and Blinky pushes you out of the way.
 ]
-[[continue|tutpuz2_2]]</tw-passagedata><tw-passagedata pid="13" name="tutpuz2_2" tags="" position="350,225" size="100,100">$b: Let me try! This can’t be too crazy, right? I mean, maybe I just push them all at once? 
+[[continue|tutpuz2_2]]</tw-passagedata><tw-passagedata pid="78" name="tutpuz2_2" tags="" position="975,975" size="100,100">$b: Let me try! This can’t be too crazy, right? I mean, maybe I just push them all at once? 
 Blinky smashes his hand onto the keyboard, and another //Brmmmmm.. is heard, immediately followed by the //BEEEH BEEEH BEEEH// of an alarm.
 
 $player: Blinky, what did you do?! What’s happening!?
@@ -103,7 +211,7 @@ $n: You hear a familiar sound over the ringing of the alarm.
 
 $c //MEREOOWWW!//
 
-[[continue|tutpuz2_3]]</tw-passagedata><tw-passagedata pid="14" name="tutpuz2_3" tags="" position="475,225" size="100,100">$player: Blinky, we have to get out of here! Get back into the tunnel!
+[[continue|tutpuz2_3]]</tw-passagedata><tw-passagedata pid="79" name="tutpuz2_3" tags="" position="1100,975" size="100,100">$player: Blinky, we have to get out of here! Get back into the tunnel!
 
 $n: Before Blinky can get so much as two blinks into responding to you, the Madman’s cat pounces on him from across the room. You hear fangs sink into Blinky, who struggles for dear life, and smell the fresh scent of blood in the air.
 

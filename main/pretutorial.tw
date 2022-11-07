@@ -1,0 +1,281 @@
+:: tut0
+$player: //Ow.//
+[[continue|tut1]]
+
+:: tut1
+$n: You get up, look around the laboratory and somehow know what things are. 
+That giant whirlwind of steel covering the only space small enough 
+to build a new home is called a fan, 
+and the ferocious beast with dagger teeth that nearly killed you before is called a cat.
+[[continue|tut2]]
+
+:: tut2
+$player: //A cat? Really? It was more like a devil-faced leopard. Hmm? What is a leopard? What is a devil?//
+[[continue|tut3]]
+
+:: tut3
+$n: Thoughts are weird, aren't they? Well, don't worry about that part. 
+You walk over to the large water depository in your cell; its tap is slowly dripping, 
+and you take some sips. On the water's surface, you see a fuzzy, grey-haired, 
+beady-eyed little creature that you know is called a rat. It's you. 
+You are a rat. A lab rat, to be specific, and you know that's a bad thing.
+[[continue|tut4]]
+
+:: tut4
+$bunknown: Hey! You're finally awake!
+[[continue|tut5]]
+
+:: tut5
+$player: Who are you? And where are we?
+[[continue|tut6]]
+
+:: tut6
+$bunknown: Me? Well, I don't know why, but the others call me $b. *blink….blink….blink*
+[[continue|tut7]]
+
+:: tut7
+$n: Please just imagine $b here is blinking all the time,
+in the background, from here on. Saves us both some time.
+[[continue|tut8]]
+
+:: tut8
+$player: The others?
+[[continue|tut9]]
+
+:: tut9
+$b: Yeah, the others! They aren't very nice, except Patty, 
+but she won't let me eat her food, so maybe she isn't nice after all?
+[[continue|tut10]]
+
+:: tut10
+$n:  $b tilts his head with his hand on his chin: *Blink, blink.* 
+(I reserve the right to bring back the blinks when I want to.)
+[[continue|tut11]]
+
+:: tut11
+$b: Anyway! What's your name?
+[[continue|tut12]]
+
+:: tut12
+$player: I... Don't have one?
+[[continue|tut13]]
+
+:: tut13
+$n: You look back on your memories and hear a lot of squeaking 
+you swore used to mean things to you but are now indecipherable.
+[[continue|tut14]]
+
+:: tut14
+$b: OOoooOOh… That means you can pick one! That's what the others did. 
+I tried to name myself too, but for some reason, the others won't call me by my rightful name: 
+Bandorious Lyncoln Isaac Nezin Korrin Yosuf the Eleventh.
+[[continue|tut15]]
+
+:: tut15
+$b: So, what's your name?
+[[Declare your name to the world|tut16]]
+
+:: tut16
+(put: (prompt: [What is your name?], "") into $player)
+$n: Are… you sure you want that to be your name?
+[[Yeah, what's wrong with it?|tut18]]
+[[No, wait, go back|tut16]]
+
+:: tut17
+$n: Are… you sure you want that to be your name?
+[[Yeah, what's wrong with it?|tut18]]
+[[No, wait, go back|tut16]]
+
+:: tut18
+$b: Wow! That's a weird name! $player, nice to meet you!
+//$b waves aggressively from his cage.//
+[[continue|tut19]]
+
+:: tut19
+$n: Rumblings from the giant door across the room interrupt you.
+[[continue|tut20]]
+
+:: tut20
+$b: Shhhh! Don't let him hear you speak! 
+The other others didn't come back when he heard them!
+[[continue|tut21]]
+
+:: tut21
+$b: $b runs out of his bed of paper scraps and goes quiet.
+[[continue|tut22]]
+
+:: tut22
+$n: The door opens. 
+A man in a bright, colourful flower suit with slicked-back black hair and a pencil moustache walks in 
+and starts inspecting each piece of equipment in the room with exquisite care, 
+as if each were his favourite thing in the world. The mad scientist turns to look at you. 
+At first, just a bored glance; a double take; a triple take; and then he stops and focuses on you, 
+standing in the center of your cage curiously looking at him. 
+Your hair inexplicably stands on end and your stomach turns with his every move.
+[[continue|tut23]]
+
+:: tut23
+$m: oooooOOOOh?
+[[continue|tut24]]
+
+:: tut24
+$n: …he says with a wide, pearly white grin.
+[[continue|tut25]]
+
+
+:: tut26
+$m: Do you, perhaps, understand me, little rat?<!--Daly wants this to pause at every comma/should be doable-->
+[[continue|tut27]]
+
+:: tut27
+$n: You continue staring at him, frozen in place.
+[[continue|tut28]]
+
+:: tut28
+$m: Hmmm, Smart enough to stay quiet? Well, no matter. 
+You, little one, may have given me what I need to move on to the next batch of subjects. 
+I won't need you after a few more tests.
+[[continue|tut29]]
+
+:: tut29
+$n: His grin turns to annoyance.
+[[continue|tut30]]
+
+:: tut30
+$m: As thankful as I am to you, I'm not a fan of that look you're giving me.
+[[continue|tut31]]
+
+:: tut31
+$n: He claps his hands twice while looking at you, and the room goes dark. 
+Or rather, it does for you. You drop from your hind legs onto all fours and regain your balance. 
+[[continue|tut32]]
+
+:: tut32
+$m: **HAHAHAHA!** Enjoy what remains of your life in the dark, little Rat. 
+[[continue|tut33]]
+
+:: tut33
+$n: You can hear quick steps on the ground, 
+and smell the scientist's sterile, blood-tinged scent, get farther away. 
+A door rumbles open and slams closed.
+[[continue|tut34]]
+
+:: tut34
+$b: Hey! $player, are you alright? What did that crazy do to you?
+[[continue|tut35]]
+
+:: tut36
+$n: You look toward where you heard the other rat but can see nothing, 
+not even your paws in front of your face.
+[[continue|tut37]]
+
+:: tut37
+$player: I think….He blinded me somehow. I can't see.
+[[continue|tut38]]
+
+:: tut38
+$b: Oh…Well, as long as you have your nose, I think things will be alright! Probably!
+[[continue|tut39]]
+
+:: tut39
+$player: //Probably?!//
+[[continue|tut40]]
+
+:: tut40
+$player: Wait, we've gotta get out of here! He said he was going to kill us!
+[[continue|tut41]]
+
+:: tut41
+$b: //Blinkblinkblink//, But you didn't talk! He doesn't take people away unless they talk in front of him!
+[[continue|tut42]]
+
+:: tut42
+$player: You heard him, $b. He said he wouldn't “need us” anymore.
+He's gonna kill us; we have to run before he does.
+[[continue|tut43]]
+
+:: tut43
+$n: You hear (css: "color: green;")[Blinky's] cage rattling and a metal door squeak open.
+[[continue|tut44]]
+
+:: tut44
+$b: C'mon, let's go then! There's a tunnel over here.
+[[continue|tut45]]
+
+:: tut45
+$n: $b may have forgotten you could use help getting out of the cage. But do you really need help? 
+You remember that the cage door sat to your left, toward where (css: "color: green;")[Blinky's] cage is. 
+You walk over to where it should be, feeling around for the metal cage.
+You find it!
+[[continue|tut46]]
+
+:: tut46
+$n: You use your paws to reach around and check the contraption. 
+It seems like you could move this handle part over to the right, and the cage would be unlocked. 
+[[continue|tut47]]
+
+:: tut47
+$player: //It couldn't be that simple, could it?//
+[[continue|tut48]]
+
+:: tut48
+$n: You give it a try, and sure enough, the door swings open. You follow $b by smell and sound,
+carefully feeling your way around so you don't bump into the many other things you can smell on the table, 
+and eventually reach where the other rat sits waiting.
+[[continue|tut49]]
+
+:: tut49
+$b: Oh! There you are. Look! Just down there is a hole in the wall we can crawl through
+[[continue|tut50]]
+
+:: tut50
+$n: $b leans in close to you conspiratorially.
+[[continue|tut51]]
+
+:: tut51
+$b: (css: "font-size: 50%;")[I don't think the crazy man knows about it.]
+[[continue|tut52]]
+
+:: tut52
+$player: $b, I //can't// look over there. I can't see anything.
+[[continue|tut53]]
+
+:: tut53
+$b: Oh….That's right. Sorry about that! Bit forgetful, you see, I mean, uhhh… Well- anyway, let's go down there.
+[[continue|tut54]]
+
+:: tut54
+$n: You roll your non-seeing eyes in opposite directions for maximum sass 
+('cause rats can do that) and follow him. This time, he helps you from ledge to ledge as you both descend to the ground.
+[[continue|tut55]]
+
+:: tut55
+$b: Here we are! Oh… there's a cage over our escape hole?
+[[continue|tut56]]
+
+:: tut56
+$player: What? Like a gate?
+[[continue|tut57]]
+
+:: tut57
+$b: Yeah, that! There's also this thing sticking out of the wall beside it. Like a big circle. 
+It kind of looks like those things we pressed to get food with the crazy man but bigger - a lot bigger.
+[[continue|tut58]]
+
+:: tut58
+$player: //A circle? But what does it do?//
+[[continue|tutpuz1_0]]
+
+<!-- THIS NOW JUMPS TO TUTORIALPUZZLE1 FILE -->
+
+
+
+
+
+
+
+
+
+
+
+
