@@ -48,7 +48,7 @@ by The Boys
     (set: $b to [(css: &quot;color: green;&quot;)[Blinky]])
     (set: $bunknown  to [(css: &quot;color: green;&quot;)[???]])
     (set: $cunknown to [(text-colour:red)[???]])
-    (set: $c to [(text-colour:red[cat])])
+    (set: $c to [(text-colour:red)[cat]])
     (set: $m to [(text-colour:#8c03fc)[Mad Scientist]])
     (set: $counter to 0)
     (set: $blinky_faith to 2)
@@ -267,7 +267,7 @@ $player: Hey, $b, is there a triangle with legs on one of the small rectangles? 
 
 
 $b: Hey! One of those three lights went out! Are you sure you know what you&#39;re doing? 
-//$b doubts your abilities as a leader//
+//$b doubts your abilities as a leader// (set: $blinky_faith to 1)
 $n: Sometimes, when failing a puzzle, companions will become distrustful of your skills and leadership. This can lead to disagreements, and companions may start ignoring your advice to solve the puzzle on their own.
 
 ------ -- ----- ------ ----- -- ---
@@ -280,7 +280,7 @@ $n: Sometimes, when failing a puzzle, companions will become distrustful of your
 (else: ) [(text-colour:red)[$player_input]
 
 $n: The second light goes out with an audible //Brmmmmm//, and $b pushes you out of the way.
-//$b no longer trusts you to lead him//
+//$b no longer trusts you to lead him// (set: $blinky_faith to 0)
 ]
 [[continue|tut69]]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";

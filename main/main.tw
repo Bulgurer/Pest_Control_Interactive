@@ -24,7 +24,7 @@ by The Boys
     (set: $b to [(css: "color: green;")[Blinky]])
     (set: $bunknown  to [(css: "color: green;")[???]])
     (set: $cunknown to [(text-colour:red)[???]])
-    (set: $c to [(text-colour:red[cat])])
+    (set: $c to [(text-colour:red)[cat]])
     (set: $m to [(text-colour:#8c03fc)[Mad Scientist]])
     (set: $counter to 0)
     (set: $blinky_faith to 2)
