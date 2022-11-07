@@ -17,11 +17,13 @@ The Great Ratscape
 
 by The Boys
 
-[[Play|tut0]]
+[[Play|intro0]]
     {
     (set: $player to [(text-colour:blue)[You]])
     (set: $n to [(text-colour:#F5F5DC)[Narrator]])
-    (set: $b to [(text-colour:green)[Blinky]])
+    (set: $b to [(css: "color: green;")[Blinky]])
     (set: $bunknown to [(text-colour:green)[???]])
     (set: $c to [(text-colour:red)[???]])
+    (set: $m to [(text-colour:#8c03fc)[Mad Scientist]])
+    (set: $counter to 0)
 }
