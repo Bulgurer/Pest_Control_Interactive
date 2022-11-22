@@ -1,17 +1,15 @@
 :: tut0
 $player: //Ow.//
-[[continue|tut1]]
+(link: "continue")[
 
-:: tut1
 $n: You get up, look around the laboratory and somehow know what things are. 
 That giant whirlwind of steel covering the only space small enough 
 to build a new home is called a fan, 
 and the ferocious beast with dagger teeth that nearly killed you before is called a $c.
-[[continue|tut2]]
+(link: "continue")[
 
-:: tut2
 $player: //A $c? Really? It was more like a devil-faced leopard. Hmm? What is a leopard? What is a devil?//
-[[continue|tut3]]
+[[continue|tut3]]]]
 
 :: tut3
 $n: Thoughts are weird, aren't they? Well, don't worry about that part. 
@@ -23,53 +21,45 @@ You are a rat. A lab rat, to be specific, and you know that's a bad thing.
 
 :: tut4
 $bunknown: Hey! You're finally awake!
-[[continue|tut5]]
+(link: "continue")[
 
-:: tut5
 $player: Who are you? And where are we?
-[[continue|tut6]]
+(link: "continue")[
 
-:: tut6
 $bunknown: Me? Well, I don't know why, but the others call me $b. *blink….blink….blink*
-[[continue|tut7]]
+(link: "continue")[
 
-:: tut7
 $n: Please just imagine $b here is blinking all the time,
 in the background, from here on. Saves us both some time.
-[[continue|tut8]]
+[[continue|tut8]]]]]
 
 :: tut8
 $player: The others?
-[[continue|tut9]]
+(link: "continue")[
 
-:: tut9
 $b: Yeah, the others! They aren't very nice, except Patty, 
 but she won't let me eat her food, so maybe she isn't nice after all?
-[[continue|tut10]]
+(link: "continue")[
 
-:: tut10
 $n:  $b tilts his head with his hand on his chin: *Blink, blink.* 
 (I reserve the right to bring back the blinks when I want to.)
-[[continue|tut11]]
+[[continue|tut11]]]]
 
 :: tut11
 $b: Anyway! What's your name?
-[[continue|tut12]]
+(link: "continue")[
 
-:: tut12
 $player: I... Don't have one?
-[[continue|tut13]]
+(link: "continue")[
 
-:: tut13
 $n: You look back on your memories and hear a lot of squeaking 
 you swore used to mean things to you but are now indecipherable.
-[[continue|tut14]]
+(link: "continue")[
 
-:: tut14
 $b: OOoooOOh… That means you can pick one! That's what the others did. 
 I tried to name myself too, but for some reason, the others won't call me by my rightful name: 
 Bandorious Lyncoln Isaac Nezin Korrin Yosuf the Eleventh.
-[[continue|tut15]]
+[[continue|tut15]]]]]
 
 :: tut15
 $b: So, what's your name?
@@ -85,23 +75,19 @@ $n: Are… you sure you want that to be your name?
 :: tut18
 $b: Wow! That's a weird name! $playerName, nice to meet you!
 //$b waves aggressively from his cage.//
+{(set: $trust to $blink_faith of $faithdm) }
+//$b $trust//
+(link: "continue")[
 
-//$b trusts you//
-
-[[continue|tut19]]
-
-:: tut19
 $n: Rumblings from the giant door across the room interrupt you.
-[[continue|tut20]]
+(link: "continue")[
 
-:: tut20
 $b: Shhhh! Don't let him hear you speak! 
 The other others didn't come back when he heard them!
-[[continue|tut21]]
+(link: "continue")[
 
-:: tut21
 $n: $b runs out of his bed of paper scraps and goes quiet.
-[[continue|tut22]]
+[[continue|tut22]]]]]
 
 :: tut22
 $n: The door opens. 
@@ -115,15 +101,19 @@ Your hair inexplicably stands on end and your stomach turns with his every move.
 
 :: tut23
 $m: oooooOOOOh?
-[[continue|tut24]]
+(link: "continue")[
 
-:: tut24
 $n: …he says with a wide, pearly white grin.
-[[continue|tut26]]
+[[continue|tut26]]]
 
 :: tut26
-$m: Do you, perhaps, understand me, little rat?<!--Daly wants this to pause at every comma/should be doable-->
-[[continue|tut27]]
+{$m: (transition: "fade")+(transition-delay:1s)[Do you, ]  
+(transition: "fade")+(transition-delay:2s)[by chance, ]
+(transition: "fade")+(transition-delay:3s)[understand me, ]
+(transition: "fade")+(transition-delay:4s)[little rat?]
+}
+
+(transition: "fade")+(transition-delay:5s)[[[continue|tut27]]]
 
 :: tut27
 $n: You continue staring at him, frozen in place.

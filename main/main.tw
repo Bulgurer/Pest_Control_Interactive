@@ -6,8 +6,6 @@
     "zoom": 1
 }
 
-:: JavaScript
-
 
 :: StoryTitle
 The Great Ratscape
@@ -17,7 +15,7 @@ The Great Ratscape
 
 by The Boys
 
-[[Play|intro0]]
+[[Play|tut22]]
     {
     (set: $player to [(text-colour:blue)[You]])
     (set: $n to [(text-colour:#F5F5DC)[Narrator]])
@@ -27,5 +25,11 @@ by The Boys
     (set: $c to [(text-colour:red)[cat]])
     (set: $m to [(text-colour:#8c03fc)[Mad Scientist]])
     (set: $counter to 0)
-    (set: $blinky_faith to 2)
+    (set: $blink_faith to 2)
+    (set: $faithdm to (dm: 
+        0, "does not trust you",
+        1, "somewhat trusts you", 
+        2, "trusts you",
+        3, "trusts you completely"
+    ))
 }
