@@ -9,47 +9,45 @@ Each companion will describe the situation to you in their own unique way, and i
 
 Later, You will have the chance to interact with one companion before each puzzle (no time to chat with everyone!)  to find out their special traits that may or may not help in each challenge. 
 
-For now, [[INVESTIGATE THE “CIRCLE”|tutpuz1_1]].
+For now, [[Investigate the “Circle”|tutpuz1_1]].
 
 :: tutpuz1_1
 $n: You walk over and feel around for the circle. You find it and nearly slip when the circle moves inwards when you push on it.
-[[continue|tutpuz1_3]]
-
-:: tutpuz1_3
+(link: "continue")[
 $player: It's a button! It could open this gate.
-[[Push the button|tutpuz1_4]]
+[[Push the button|tutpuz1_4]]]
 
 :: tutpuz1_4
 $n: You push the button in. It stops, clicks and remains pressed in. You hear something to your left, like gears moving.
-[[continue|tutpuz1_5]]
-
-:: tutpuz1_5
+(link: "continue")[
 $b: What was that?!
-[[continue|tutpuz1_6]]
-
-:: tutpuz1_6
+(link: "continue")[
 $player: Something moved somewhere in the wall over there. Did the gate in front of us move at all?
-[[continue|tutpuz1_7]]
-
-:: tutpuz1_7
+(link: "continue")[
 $b: No, sir, did not move a single hair.
-[[continue|tutpuz1_8]]
-
-:: tutpuz1_8
+(link: "continue")[
 $player: What moved down there, then?
-[[continue|tutpuz1_9]]
+[[continue|tutpuz1_9]]]]]]
 (set: $counter = 0)
 
 :: tutpuz1_9
-(if: $counter is < 3)[$n: Something moved over there when you pushed the button. You could go explore to find out what it was,
-
+{
+(if: $counter is < 3)[$n: Something moved over there when you pushed the button. 
+You could go explore to find out what it was,
 or I suppose you could stay here and try to lift the gate, though I doubt that would work. What do you do?]
+(if: $counter is >= 3)[$b: Hey boss, I don't think this is gonna work... maybe we should explore?]
+(if: $counter is >= 3)[(if:$blink_faith is >0)[
+(set: $blink_faith = $blink_faith-1)
+(set: $trust to $blink_faith of $faithdm)]]
+}
+(if: $counter is >= 3)[
+//$b doubts your abilities as a leader//
 
-(if: $counter is >= 3)[$n:  IT. DOESN'T. WORK. Just go exploring, damn it.]
+//$b $trust//]
 
-[[EXPLORE|tutpuz1_11]]
+[[Explore|tutpuz1_11]]
 
-(if: $counter is < 3)[[TRY TO LIFT THE GATE|tutpuz1_10]]
+(if: $counter is < 3)[[Try to lift the gate|tutpuz1_10]]
 
 :: tutpuz1_10
 $n: You and $b try your best to lift the heavy metal gate, but to no avail.
@@ -58,14 +56,13 @@ $n: You and $b try your best to lift the heavy metal gate, but to no avail.
 
 :: tutpuz1_11
 $n: You and $b decide to find what moved, and soon $b stops you.
-[[continue|tutpuz1_12]]
-
-:: tutpuz1_12
+(link: "continue")[
 $b: There's a tunnel here! This one looks tiny, though. I think I can see another circle at the end.
-[[continue|tutpuz1_13]]
+[[continue|tutpuz1_13]]]
+(set: $counter = 0)
 
 :: tutpuz1_13
-$n: Oh boy, another choice! You can either try crawling in yourself or send $b to press the new button for you.
+$n: You can either try crawling in yourself or send $b to press the new button for you.
 What do you do?
 
 [[Send Blinky|tutpuz1_15]]
@@ -73,25 +70,31 @@ What do you do?
 [[Send Yourself|tutpuz1_14]]
 
 :: tutpuz1_14
-$n: You try to crawl through the space that $b found but find it much too small for a rat of your size. 
-You barely manage to prevent yourself from getting stuck while trying to get out.
+{
+(if: $counter < 1)[$n: You try to crawl through the space that $b found but find it much too small for a rat of your size. 
+You barely manage to prevent yourself from getting stuck while trying to get out.]
 
-[[Reconsider|tutpuz1_13]]
+(if: $counter >= 1)[
+$n: You try once more to crawl through the tight space and get slightly farther than before.
+However, this time you get stuck for real. $b has to come in and pull you free.
+(if: $blink_faith > 0)[(set: $blink_faith = $blink_faith - 1)]]
+}
+
+(if: $counter >= 1)[(set: $trust to $blink_faith of $faithdm)//$b doubts your abilities as a leader//
+
+//$b $trust//]
+
+(if: $counter < 2)[[[Reconsider|tutpuz1_13]]]
+\(else: )[[[Send Blinky|tutpuz1_15]]]
+(set: $counter = $counter + 1)
 
 :: tutpuz1_15
 $b: Oh, that's easy, boss. I got this!
-
+(link: "continue")[
 $n: $b slithers through the tunnel without any trouble and presses the button. 
 A click and more gears move, this time back toward the gated tunnel.
-[[continue|tutpuz1_16]]
-
-:: tutpuz1_16
+(link: "continue")[
 $player: Good job, $b! I think that worked!
-[[continue|tutpuz1_17]]
-
-:: tutpuz1_17
+(link: "continue")[
 $n: Once $b comes out, you both make your way back to the gate and find it lifted, clearing the way.
-[[continue|tut59]]
-
-
-
+[[continue|tut59]]]]]

@@ -1,13 +1,11 @@
 :: tut0
 $player: //Ow.//
 (link: "continue")[
-
 $n: You get up, look around the laboratory and somehow know what things are. 
 That giant whirlwind of steel covering the only space small enough 
 to build a new home is called a fan, 
 and the ferocious beast with dagger teeth that nearly killed you before is called a $c.
 (link: "continue")[
-
 $player: //A $c? Really? It was more like a devil-faced leopard. Hmm? What is a leopard? What is a devil?//
 [[continue|tut3]]]]
 
@@ -22,13 +20,10 @@ You are a rat. A lab rat, to be specific, and you know that's a bad thing.
 :: tut4
 $bunknown: Hey! You're finally awake!
 (link: "continue")[
-
 $player: Who are you? And where are we?
 (link: "continue")[
-
 $bunknown: Me? Well, I don't know why, but the others call me $b. *blink….blink….blink*
 (link: "continue")[
-
 $n: Please just imagine $b here is blinking all the time,
 in the background, from here on. Saves us both some time.
 [[continue|tut8]]]]]
@@ -36,11 +31,9 @@ in the background, from here on. Saves us both some time.
 :: tut8
 $player: The others?
 (link: "continue")[
-
 $b: Yeah, the others! They aren't very nice, except Patty, 
 but she won't let me eat her food, so maybe she isn't nice after all?
 (link: "continue")[
-
 $n:  $b tilts his head with his hand on his chin: *Blink, blink.* 
 (I reserve the right to bring back the blinks when I want to.)
 [[continue|tut11]]]]
@@ -48,14 +41,11 @@ $n:  $b tilts his head with his hand on his chin: *Blink, blink.*
 :: tut11
 $b: Anyway! What's your name?
 (link: "continue")[
-
 $player: I... Don't have one?
 (link: "continue")[
-
 $n: You look back on your memories and hear a lot of squeaking 
 you swore used to mean things to you but are now indecipherable.
 (link: "continue")[
-
 $b: OOoooOOh… That means you can pick one! That's what the others did. 
 I tried to name myself too, but for some reason, the others won't call me by my rightful name: 
 Bandorious Lyncoln Isaac Nezin Korrin Yosuf the Eleventh.
@@ -78,14 +68,11 @@ $b: Wow! That's a weird name! $playerName, nice to meet you!
 {(set: $trust to $blink_faith of $faithdm) }
 //$b $trust//
 (link: "continue")[
-
 $n: Rumblings from the giant door across the room interrupt you.
 (link: "continue")[
-
 $b: Shhhh! Don't let him hear you speak! 
 The other others didn't come back when he heard them!
 (link: "continue")[
-
 $n: $b runs out of his bed of paper scraps and goes quiet.
 [[continue|tut22]]]]]
 
@@ -102,7 +89,6 @@ Your hair inexplicably stands on end and your stomach turns with his every move.
 :: tut23
 $m: oooooOOOOh?
 (link: "continue")[
-
 $n: …he says with a wide, pearly white grin.
 [[continue|tut26]]]
 
@@ -117,142 +103,100 @@ $n: …he says with a wide, pearly white grin.
 
 :: tut27
 $n: You continue staring at him, frozen in place.
-[[continue|tut28]]
-
-:: tut28
+(link: "continue")[
 $m: Hmmm, Smart enough to stay quiet? Well, no matter. 
 You, little one, may have given me what I need to move on to the next batch of subjects. 
 I won't need you after a few more tests.
-[[continue|tut29]]
+[[continue|tut29]]]
 
 :: tut29
 $n: His grin turns to annoyance.
-[[continue|tut30]]
-
-:: tut30
+(link: "continue")[
 $m: As thankful as I am to you, I'm not a fan of that look you're giving me.
-[[continue|tut31]]
-
-:: tut31
+(link: "continue")[
 $n: He claps his hands twice while looking at you, and the room goes dark. 
 Or rather, it does for you. You drop from your hind legs onto all fours and regain your balance. 
-[[continue|tut32]]
-
-:: tut32
+(link: "continue")[
 $m: **HAHAHAHA!** Enjoy what remains of your life in the dark, little Rat. 
-[[continue|tut33]]
+[[continue|tut33]]]]]
 
 :: tut33
 $n: You can hear quick steps on the ground, 
 and smell the scientist's sterile, blood-tinged scent, get farther away. 
 A door rumbles open and slams closed.
-[[continue|tut34]]
-
-:: tut34
+(link: "continue")[
 $b: Hey! $playerName, are you alright? What did that crazy do to you?
-[[continue|tut36]]
-
-:: tut36
+(link: "continue")[
 $n: You look toward where you heard the other rat but can see nothing, 
 not even your paws in front of your face.
-[[continue|tut37]]
+[[continue|tut37]]]]
 
 :: tut37
 $player: I think….He blinded me somehow. I can't see.
-[[continue|tut38]]
-
-:: tut38
+(link: "continue")[
 $b: Oh…Well, as long as you have your nose, I think things will be alright! Probably!
-[[continue|tut39]]
-
-:: tut39
+(link: "continue")[
 $player: //Probably?!//
-[[continue|tut40]]
-
-:: tut40
+(link: "continue")[
 $player: Wait, we've gotta get out of here! He said he was going to kill us!
-[[continue|tut41]]
+[[continue|tut41]]]]]
 
 :: tut41
 $b: //Blinkblinkblink//, But you didn't talk! He doesn't take people away unless they talk in front of him!
-[[continue|tut42]]
-
-:: tut42
+(link: "continue")[
 $player: You heard him, $b. He said he wouldn't “need us” anymore.
 He's gonna kill us; we have to run before he does.
-[[continue|tut43]]
-
-:: tut43
+(link: "continue")[
 $n: You hear (css: "color: green;")[Blinky's] cage rattling and a metal door squeak open.
-[[continue|tut44]]
-
-:: tut44
+(link: "continue")[
 $b: C'mon, let's go then! There's a tunnel over here.
-[[continue|tut45]]
+[[continue|tut45]]]]]
 
 :: tut45
 $n: $b may have forgotten you could use help getting out of the cage. But do you really need help? 
 You remember that the cage door sat to your left, toward where (css: "color: green;")[Blinky's] cage is. 
 You walk over to where it should be, feeling around for the metal cage.
 You find it!
-[[continue|tut46]]
-
-:: tut46
+(link: "continue")[
 $n: You use your paws to reach around and check the contraption. 
 It seems like you could move this handle part over to the right, and the cage would be unlocked. 
-[[continue|tut47]]
-
-:: tut47
+(link: "continue")[
 $player: //It couldn't be that simple, could it?//
-[[continue|tut48]]
-
-:: tut48
+(link: "continue")[
 $n: You give it a try, and sure enough, the door swings open. You follow $b by smell and sound,
 carefully feeling your way around so you don't bump into the many other things you can smell on the table, 
 and eventually reach where the other rat sits waiting.
-[[continue|tut49]]
+[[continue|tut49]]]]]
 
 :: tut49
 $b: Oh! There you are. Look! Just down there is a hole in the wall we can crawl through
-[[continue|tut50]]
-
-:: tut50
+(link: "continue")[
 $n: $b leans in close to you conspiratorially.
-[[continue|tut51]]
+[[continue|tut51]]]
 
 :: tut51
-$b: (css: "font-size: 50%;")[I don't think the crazy man knows about it.]
-[[continue|tut52]]
+{$b: (transition: "fade")+(transition-delay:1s)+(size:0.5)[I don't think the crazy man knows about it.]}
+(transition: "fade")+(transition-delay:2s)[[[continue|tut52]]]
 
 :: tut52
 $player: $b, I //can't// look over there. I can't see anything.
-[[continue|tut53]]
-
-:: tut53
+(link: "continue")[
 $b: Oh….That's right. Sorry about that! Bit forgetful, you see, I mean, uhhh… Well- anyway, let's go down there.
-[[continue|tut54]]
-
-:: tut54
+(link: "continue")[
 $n: You roll your non-seeing eyes in opposite directions for maximum sass 
 ('cause rats can do that) and follow him. This time, he helps you from ledge to ledge as you both descend to the ground.
-[[continue|tut55]]
-
-:: tut55
-$b: Here we are! Oh… there's a cage over our escape hole?
-[[continue|tut56]]
+[[continue|tut56]]]]
 
 :: tut56
+$b: Here we are! Oh… there's a cage over our escape hole?
+(link: "continue")[
 $player: What? Like a gate?
-[[continue|tut57]]
-
-:: tut57
+(link: "continue")[
 $b: Yeah, that! There's also this thing sticking out of the wall beside it. Like a big circle. 
 It kind of looks like those things we pressed to get food with the crazy man but bigger - a lot bigger.
-[[continue|tut58]]
-
-:: tut58
+(link: "continue")[
 $player: //A circle? But what does it do?//
-[[continue|tutpuz1_0]]
+[[continue|tutpuz1_0]]]]]
 
 <!-- THIS NOW JUMPS TO TUTORIALPUZZLE1 FILE -->
 
@@ -271,70 +215,61 @@ I promise you will get more choices next time.
 
 :: tut60
 $player: Hey $b, are there any signs telling us where we are going?
-[[continue|tut61]]
-
-:: tut61
+(link: "continue")[
 $b: Signs? Oh, you mean the rectangles with lines pointing this way?
-[[continue|tut62]]
-
-:: tut62
+(link: "continue")[
 $player:Uhh… yeah, the rectangles. Is there anything written on them?
-[[continue|tut63]]
-
-:: tut63
+(link: "continue")[
 $b: There are some squiggly lines on them, but I don't think whoever put them on there knew how to make a proper rectangle or triangle. 
 Like this triangle has two sides that are too long! It's like legs holding up a triangle.
-[[continue|tut64]]
+[[continue|tut64]]]]]
 
 :: tut64
 $p: //Legs holding up a triangle? An “A”? It sounds like $b can't read letters. Then why do I know what letters are?//
-[[continue|tut65]]
-
-:: tut65
+(link: "continue")[
 $n: You continue down until you start hearing loud beeps and boops, as if an old robot toy was left on maximum volume, 
 though you're not sure what a robot is. $b tells you you've entered a new room.
-[[continue|tut66]]
-
-:: tut66
+(link: "continue")[
 $b: Wow, this room is shiny! We're on everything! Left, right, up and down!
-[[continue|tut67]]
-
-:: tut67
+(link: "continue")[
 $player: //Huh? Are there mirrors everywhere, or is everything just reflective?//
-[[continue|tut68]]
-
-:: tut68
+(link: "continue")[
 $n: The two of you reach the source of the beeps and boops, and you ask $b what it is.
-[[continue|tutpuz2_0]]
+[[continue|tutpuz2_0]]]]]]
 
 <!-- THIS NOW JUMPS TO TUTORIALPUZZLE2 FILE -->
 
 :: tut69
-$b: Let me try! This can't be too crazy, right? I mean, maybe I just push them all at once? 
-$b smashes his hand onto the keyboard, and another //Brmmmmm..// is heard, immediately followed by the //BEEEH BEEEH BEEEH// of an alarm.
+$b: Let me try! This can't be too crazy, right? I mean, maybe I just push them all at once?
+(link: "continue")[
+$b smashes his hand onto the keyboard, and a //Brmmmmm..// is heard, immediately followed by the //BEEEH BEEEH BEEEH// of an alarm.
 (link: "continue")[
 $player: $b, what did you do?! What's happening!?
 (link: "continue")[
 $b: I, I don't know… I just touched rect-
-(link: "continue")[
-$n: You hear a familiar sound over the ringing of the alarm.
- A vicious roar.
- A merciless growl.
- A monster approaches.
+[[continue|tut69-1]]]]]
 
+:: tut69-1
+$n: You hear a familiar sound over the ringing of the alarm.
+A vicious roar.
+A merciless growl.
+A monster approaches.
+(link: "continue")[
 $cunknown: //MEREOOWWW!//
-[[continue|tut70]]]]]
+[[continue|tut70]]]
 
 :: tut70
 $player: $b, we have to get out of here! Get back into the tunnel!
 (link: "continue")[
-$n: Before $b can get so much as two blinks into responding to you, the $m's $c pounces on him from across the room. You hear fangs sink into $b, who struggles for dear life, and smell the fresh scent of blood in the air.
-
+$n: Before $b can get so much as two blinks into responding to you, the (text-colour:#8c03fc)[Mad Scientist's] $c pounces on him from across the room. 
+You hear fangs sink into $b, who struggles for dear life, 
+and smell the fresh scent of blood in the air.
+(link: "continue")[
 $player: I can't let $b die!
 (link: "continue")[
 $n: You run at the monster, squeaking a final war cry and feel something furry hit you hard. You fall unconscious.
 
-(text-colour:red)[//To be continued...//]]]
+(text-colour:red)[//To be continued...//]]]]
 
 
 :: end1

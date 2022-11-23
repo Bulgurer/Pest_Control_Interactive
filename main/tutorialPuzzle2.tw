@@ -3,44 +3,61 @@
 $b: Uhh…there is a table with a long square with little squares on top. Behind it, there is a window, but it's all green on the other side. Something on it is flashing? Oh, the window and little rectangles have some squiggly lines on them, and there are three circle lights at the top!
 (link: "continue")[
 $b: It looks like the window has a string to another tunnel with a “gate” thing you said before. This one leads outside!
-(link: "continue")[
+[[continue|tutpuz2_1-1]]]
+
+:: tutpuz2_1-1
 $player: He means there are letters on the window and squares? Is this a computer setup? Why is there one small enough for us connected to an exit?
 (link: "continue")[
 $player: Hey, $b, is there a triangle with legs on one of the small rectangles? Can you show me where it is?
-[[continue|tutpuz2_1]]]]]
+[[continue|tutpuz2_1]]]
+(set: $counter = 3)
 
 :: tutpuz2_1
-$n: $b shows you where it is on the keyboard and it is the same QWERTY setup that you somehow know a keyboard is supposed to be. You know that you have to type something in, but you don't know what, and $b can't read what is written on the screen that might have given you a hint. He does tell you that there are 29 lines to fill in, and some are grouped together, which you imagine like this:
+$n: $b shows you where it is on the keyboard and it is the same QWERTY setup that you somehow know a keyboard is supposed to be. 
+You know that you have to type something in, 
+but you don't know what, 
+and $b can't read what is written on the screen that might have given you a hint. 
+He does tell you that there are 29 lines to fill in, and some are grouped together, which you imagine like this:
 
 ------ -- ----- ------ ----- -- ---
-[[make a guess|guess1]]
 
-:: guess1
-(put: (prompt: [What do you type?], "") into $player_input)
+{
+    (set: $trust to $blink_faith of $faithdm)
+    //$b $trust//
+}
+
+(if: $blink_faith > 0)[[[Make a guess|guess]]]
+(else: )[[[Blinky pushes you out of the way|tut69]]]
+
+:: guess
+{
+(if: $counter is 3)[(put: (prompt: [What do you type?], "") into $player_input)]
+(if: $counter < 3)[(put: (prompt: [Judging off the lights, you have $counter tries remaining, What do you type?], "") into $player_input)]
 (if:$player_input is "sphinx of black quartz judge my vow")[ 
     (text-colour:green)[$player_input]
     $n: You hear a //dodododo DING// and metal screeching against stone. The gate [[opens...|end1]] 
 ]
-(else: ) [(text-colour:red)[$player_input]
+}
+(else: ) [(set: $counter = $counter - 1)(text-colour:red)[$player_input]
 
+{
+(if: $counter is 2)[$b: Hey! One of those three lights went out! Are you sure you know what you're doing?]
+(else: ) [$b: Another light just went out...]
+}
 
-$b: Hey! One of those three lights went out! Are you sure you know what you're doing? 
-//$b doubts your abilities as a leader// (set: $blinky_faith to 1)
-$n: Sometimes, when failing a puzzle, companions will become distrustful of your skills and leadership. This can lead to disagreements, and companions may start ignoring your advice to solve the puzzle on their own.
+//$b doubts your abilities as a leader// (if:$blink_faith > 0)[(set: $blink_faith = $blink_faith - 1)]
+
+(if: $counter is 2)[$n: Sometimes, when making the wrong decision, companions will become distrustful of your skills and leadership. This can lead to disagreements, and companions may start ignoring your advice to solve the puzzle on their own.]
 
 ------ -- ----- ------ ----- -- ---
-[[make another guess|guess2]]
+
+{
+    (set: $trust to $blink_faith of $faithdm)
+    //$b $trust//
+}
+
+{
+(if: $blink_faith > 0)[[[Make a another guess|guess]]]
+(else: )[[[Blinky pushes you out of the way|tut69]]]
+}
 ]
-
-:: guess2
-(put: (prompt: [You have two more tries. What do you type?], "") into $player_input)
-(if:$player_input is "sphinx of black quartz judge my vow")[ 
-    (text-colour:green)[$player_input]
-    $n: You hear a //dodododo DING// and metal screeching against stone. The gate [[opens...|end1]] 
-]
-(else: ) [(text-colour:red)[$player_input]
-
-$n: The second light goes out with an audible //Brmmmmm//, and $b pushes you out of the way.
-//$b no longer trusts you to lead him// (set: $blinky_faith to 0)
-
-[[continue|tut69]]]
