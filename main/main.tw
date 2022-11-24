@@ -15,7 +15,7 @@ The Great Ratscape
 
 by The Boys
 
-[[Play|intro0]]
+[[Play|test::]]
     {
     (set: $player to [(text-colour:blue)[You]])
     (set: $n to [(text-colour:grey)[Narrator]])

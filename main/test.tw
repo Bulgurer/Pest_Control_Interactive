@@ -1,0 +1,28 @@
+test::
+(set: $promptStr = [
+      e
+      f
+      g
+    a - c d
+      h
+      i 
+    ])
+[(put: (prompt: [$promptStr], "") into $player_input)]
+(if:$player_input is "b")[
+    (set: $promptStr = [
+      e
+      f
+      g
+    a (text-colour:green)[$player_input] c d
+      h
+      i 
+    ])]
+(else: ) [ (set: $promptStr = [
+      e
+      f
+      g
+    a (text-colour:red)[$player_input] c d
+      h
+      i 
+    ])]
+[[Make a another guess|guess]]
