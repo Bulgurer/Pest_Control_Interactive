@@ -15,7 +15,7 @@ The Great Ratscape
 
 by The Boys
 
-[[Play|test::]]
+[[Play|test]]
     {
     (set: $player to [(text-colour:blue)[You]])
     (set: $n to [(text-colour:grey)[Narrator]])
@@ -32,4 +32,10 @@ by The Boys
         2, "trusts you",
         3, "trusts you completely"
     ))
+    
+    (set: $b = [-])
+    (set: $d = [-])
+    (set: $guessedB = false)
+    (set: $guessedD = false)
+
 }
