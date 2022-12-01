@@ -1,0 +1,76 @@
+:: test
+j k e 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;f
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g l m n o
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a [[$b|test1]] c [[$d|test2]]
+&nbsp;&nbsp;p h q r
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;i
+
+:: test1
+{
+  (if: $guessedB is false)[
+  (set: $q = [(text-colour:red)[$b]])]
+  (set: $promptStr = [
+    e
+    f
+    g
+    a $q c $d
+    h
+    i 
+    ])
+
+[(put: (prompt: [$promptStr], "") into $b)]
+(if:$b is "b")[
+    
+    (set: $guessedB = true)
+    (set: $q = [(text-colour:green)[$b]])
+    ]
+    
+        (set: $promptStr = [
+    e
+    f
+    g
+    a $q c $d
+    h
+    i 
+    ])
+}
+    $promptStr
+    (if: $guessedB is false)[
+    [[Make a another guess|test2]]]
+    [[Back|test]]
+
+    
+:: test2
+{
+  (if: $guessedD is false)[
+  (set: $q = [(text-colour:red)[$d]])]
+  (set: $promptStr = [
+    e
+    f
+    g
+    a $b c $q
+    h
+    i 
+    ])
+
+[(put: (prompt: [$promptStr], "") into $d)]
+(if:$d is "d")[
+    
+    (set: $guessedD = true)
+    (set: $q = [(text-colour:green)[$d]])
+    ]
+    
+        (set: $promptStr = [
+    e
+    f
+    g
+    a $b c $q
+    h
+    i 
+    ])
+}
+    $promptStr
+    (if: $guessedD is false)[
+    [[Make a another guess|test2]]]
+    [[Back|test]]
