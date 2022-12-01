@@ -17,13 +17,19 @@ by The Boys
 
 [[Play|test]]
     {
-    (set: $player to [(text-colour:blue)[You]])
+    (set: $player to [(text-colour:#00cad1)[You]])
     (set: $n to [(text-colour:grey)[Narrator]])
     (set: $b to [(css: "color: green;")[Blinky]])
     (set: $bunknown  to [(css: "color: green;")[???]])
     (set: $cunknown to [(text-colour:red)[???]])
-    (set: $c to [(text-colour:red)[cat]])
-    (set: $m to [(text-colour:#8c03fc)[Mad Scientist]])
+    (set: $c to [(text-colour:#c20000)[cat]])
+    (set: $m to [(text-colour:#7c00e2)[Mad Scientist]])
+    (set: $f to [(text-colour:#d3d3af)[Fritz]])
+    (set: $p to [(text-colour:#dfb300)[Patty]])
+    (set: $e to [(text-colour:#8c0088)[Edgar]])
+    (set: $funknown to [(text-colour:#ff0064)[???]])
+    (set: $punknown to [(text-colour:#dfb300)[???]])
+    (set: $eunknown to [(text-colour:#8c0088)[???]])
     (set: $counter to 0)
     (set: $blink_faith to 2)
     (set: $faithdm to (dm: 
