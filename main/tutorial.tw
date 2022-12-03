@@ -269,7 +269,7 @@ $player: I can't let $b die!
 (link: "continue")[
 $n: You run at the monster, squeaking a final war cry and feel something furry hit you hard. You fall unconscious.
 
-(text-colour:red)[//To be continued...//]]]]
+[[continue|posttut0]]]]]
 
 
 :: end1

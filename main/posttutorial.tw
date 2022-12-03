@@ -1,0 +1,27 @@
+:: posttut0
+$n: Weak and mind bleary, you wake, roll around and still feel weary.
+$player get up, eyes open, but still there is not a light or colour, you can adore.
+(link: "continue")[
+$n: When out of the forever dark, from beyond your trapping, you hear a rapping
+Someone is gently tapping, tapping at a metal door.
+(link: "continue")[
+$n: //$player think Ah that must be $b, $b tapping at my cage's door//
+But you remember that $b is no more. 
+(link: "continue")[
+$n: Alright, that's enough of that. I'm not built for this poetry nonsense. I'll let //him// take over the bad verses and stick to the narration.
+
+[[continue|posttut1]]]]]
+
+:: posttut1
+$n: Anyway, uh… Yeah, you hear tapping at the door of your cage. 
+What do you do?
+
+[[Ask who they are|posttut2_0]]
+[[Throw the nearest object in the tapping's direction|posttut2_1]]
+
+:: posttut2_0
+
+:: posttut2_1
+
+
+
