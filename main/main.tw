@@ -15,17 +15,25 @@ The Great Ratscape
 
 by The Boys
 
-[[Play|intro0]]
+[[Play|posttut9]]
     {
     (set: $player to [(text-colour:blue)[You]])
     (set: $n to [(text-colour:grey)[Narrator]])
     (set: $b to [(css: "color: green;")[Blinky]])
+    (set: $p to [(text-colour: red+white)[Patty]])
+    (set: $e to [(text-colour: orange)[Edgar]])
+    (set: $eac to [(text-colour: orange)[Edgar Allan Crow]])
+    (set: $ear to [(text-colour: orange)[Edgar Allan Raven]])
+    (set: $f to [(text-colour: yellow)[Fritz]])
     (set: $bunknown  to [(css: "color: green;")[???]])
     (set: $cunknown to [(text-colour:red)[???]])
-    (set: $c to [(text-colour:red)[cat]])
+    (set: $c to [(text-colour:red)[Cat]])
     (set: $m to [(text-colour:#8c03fc)[Mad Scientist]])
     (set: $counter to 0)
     (set: $blink_faith to 2)
+    (set: $edgar_faith to 1)
+    (set: $patty_faith to 1)
+    (set: $fritz_faith to 1)
     (set: $faithdm to (dm: 
         0, "does not trust you",
         1, "somewhat trusts you", 
