@@ -80,7 +80,7 @@ $n: $b runs out of his bed of paper scraps and goes quiet.
 $n: The door opens. 
 A man in a bright, colourful flower suit with slicked-back black hair and a pencil moustache walks in 
 and starts inspecting each piece of equipment in the room with exquisite care, 
-as if each were his favourite thing in the world. The mad scientist turns to look at you. 
+as if each were his favourite thing in the world. The $m turns to look at you. 
 At first, just a bored glance; a double take; a triple take; and then he stops and focuses on you, 
 standing in the center of your cage curiously looking at him. 
 Your hair inexplicably stands on end and your stomach turns with his every move.
@@ -269,7 +269,7 @@ $player: I can't let $b die!
 (link: "continue")[
 $n: You run at the monster, squeaking a final war cry and feel something furry hit you hard. You fall unconscious.
 
-(text-colour:red)[//To be continued...//]]]]
+[[continue|posttut0]]]]]
 
 
 :: end1

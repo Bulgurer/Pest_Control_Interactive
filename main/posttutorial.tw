@@ -1,0 +1,289 @@
+:: posttut0
+$n: Weak and mind bleary, you wake, roll around and still feel weary.
+$player get up, eyes open, but still there is not a light or colour, you can adore.
+(link: "continue")[
+$n: When out of the forever dark, from beyond your trapping, you hear a rapping
+Someone is gently tapping, tapping at a metal door.
+(link: "continue")[
+$n: //$player think Ah that must be $b, $b tapping at my cage's door//
+But you remember that $b is no more. 
+(link: "continue")[
+$n: Alright, that's enough of that. I'm not built for this poetry nonsense. I'll let //him// take over the bad verses and stick to the narration.
+
+[[continue|posttut1]]]]]
+
+:: posttut1
+$n: Anyway, uh… Yeah, you hear tapping at the door of your cage. 
+What do you do?
+
+[[Ask who they are|posttut2_0]]
+[[Throw the nearest object in the tapping's direction|posttut2_1]]
+
+:: posttut2_0
+$player: Hello? Is anyone there? I uh, can't see anything.
+(link: "continue")[
+$eunknown: It awakes from the land of dreams! He says he cannot see yet he stares in my direction; he lies, he schemes! 
+[[continue|posttut3]]]
+
+:: posttut2_1
+$n: $player find something sufficiently heavy enough around you and toss it at the incessant tapping.
+(link: "continue")[
+(if: $edgar_faith > 0)[(set: $edgar_faith = $edgar_faith - 1)] (set: $trust to $edgar_faith of $faithdm)//$bunknown did not like that//
+//$b $trust//
+$eunknown: It attacks unprovoked! Its anger stoked, sympathies revoked, its machinations cloaked!
+[[continue|posttut3]]]
+
+:: posttut3
+$punknown: Oh, give it up, you loud oaf.
+(link: "continue")[
+$n: You hear a **smack**, a surprised //CAW// and a fluttering of wings.
+(link: "continue")[ 
+$punknown: Hey there, name's $p. The resident lab squirrel.
+(link: "continue")[
+$n: $p makes an //oomph// sound; you hear a **clattering**, and what sounds like a heavy sack hits the ground beside her.
+[[continue|posttut4]]]]]
+
+:: posttut4
+$p: That rhyming loudmouth you just heard is Edgar.
+(link: "continue")[
+$e: $p! I am no one name schmo! Do not deceive our suspicious friend and tell it the greatness of $eac!
+(link: "continue")[
+$n: $ear just didn't have the same punch to it, I guess. Though I doubt our corvid friend even knows the works of Mr. Poe. You feel your cage shake and hear a gruff voice from above.
+[[continue|posttut5]]]]
+
+:: posttut5
+$funknown: Leave the kid alone, you two. He just got his first escape attempt done and has to accept the fact that he's stuck here. We all are.
+(link: "continue")[
+$p: That there is $f. He's been here the longest and has failed to escape so many times that he's a cranky old marmoset.
+(link: "continue")[
+$f: I'm not cranky! I'm realistic. There ain't no way any of us are getting out of here. This guy got brought back here, and we haven't seen $b in days. This place either kills you or brings you back here.
+[[continue|posttut6]]]]
+
+:: posttut6
+$player: //They knew $b? These must be the others he was talking about.//
+(link: "continue")[
+$p: Ah, don't let Ol' Monkey get you down. What's your name stranger? 
+(link: "My name is ...")[
+$p: Nice to meet you $playerName! Now why don't you tell us what happened?
+(link: "Well, it all started when ...")
+$n: You tell the three animals of your doomed escape from the lab with $b and that the $m is planning to get rid of all the current test subjects.
+[[continue|posttut7]]]]
+
+:: posttut7
+$e: Aghast! That villain would kill us all. I, for one, do not want to die in this hall.
+(link: "continue")[
+$n: The other two animals nod and agree to help you escape. They open your cage for you and let you out.
+(link: "continue")[
+$f: Even with all of us, we won't make it. Do you think I haven't gathered a team to escape before? We might get farther than being alone, but we won't get out. At best, we end up back here; at worst, we end up food for the $c, like $b.
+[[continue|posttut8]]]]
+
+:: posttut8
+$n: (css: "color: green;")[Blinky's] death squeaks still ring in your head. You shake them away.
+(link: "We need to try")[
+$player: Either we try to escape, or we wait to die. I know which I'm choosing. Now, how do we get out of this room?
+(link: "continue")[
+$n: $f sighs.
+(link: "continue")[
+$f: Come over here. The rooms seem to change whenever we fail and get brought back here. All except this room and the last one. Getting out of this area should be easy.
+[[Lets go|posttut9]]]]]
+
+<!-- PUZZLE EXPLANATION STARTS HERE -->
+
+:: posttut9
+Before you start this escape, you should talk to either $e (please, no), $p, or $f to get a better idea of their abilities. You may only talk to one before escaping each room; we've got a job to do here.
+[[Talk to Edgar Allan Crow|posttut9-0]]
+[[Talk to Patty|posttut9-1]]
+[[Talk to Fritz|posttut9-2]]
+
+<!-- EDGAR OPTION STARTS HERE -->
+
+:: posttut9-0
+$n: Why?! Why the bird? Do you know how many he's driven to their doom with his incessant rhyming?
+(link: "I'm interested that's why")[
+$e: $playerName, our new comrade! I hope that my earlier tapping did not make you (text-style: "sway")[mad.] Many animals seem to run from my //**regal**// presence after some time as if they felt they were not worthy of seeing me in my prime. 
+(link: "continue")[
+$n: No, you did it to them! You drove them insane with your crappy verses! I'm not even convinced you have to do them!
+[[Rightttt|posttut9-0_0]]]]
+
+:: posttut9-0_0
+$player: Uh huh… Well, $e, I'll try to prove myself worthy of your //regal presence// then. By the way, why //do// you rhyme so much?
+(link: "continue")[
+$e: That, my dear $playerName, is because I am cursed! Our captor has stricken me with it in a crazed outburst. I am forever forced to speak in verse.
+(link: "continue")[
+$n: Doubtful. I'm watching you, you damned corvid.
+[[I see, well actually ...|posttut9-0_1]]]]
+
+:: posttut9-0_1
+$player: That's better than what I got at least…
+(link: "continue")[
+$n: $player wave a hand in front of your probably blotchy white eyes to make your point.
+(link: "Edgar assures you")[
+$e: Once we flee from this house of horrors, my rat friend, your lost eyesight, we will mend.
+(link: "I hope so ...")[
+$player: After we do get out, is there anything you personally want to do $e? Maybe get your curse fixed? 
+[[You hear Edgar shuffle around|posttut9-0_2]]]]]
+
+:: posttut9-0_2
+{$e: (transition: "fade")+(transition-delay:1s)[Fi-]
+(transition: "fade")+(transition-delay:2s)[ fixed?!]
+(transition: "fade")+(transition-delay:3s)[ Uhh no, no, my problem should not come between you and your curse. Uhh it should not be betwixt.]
+}
+(link: "wait a second ...")[
+$n: Did he just forget to rhyme?!
+[[continue|posttut9-0_3]]]
+
+:: posttut9-0_3
+{$n: (transition: "fade")+(transition-delay:1s)[//Son//]
+(transition: "fade")+(transition-delay:1.5s)[ //of//] 
+(transition: "fade")+(transition-delay:2s)[ //a//]
+(transition: "fade")+(transition-delay:2.5s)[ //bitch//]
+}
+(link: "continue")[
+$player: Alright, I suppose? Oh, while I have you here, is there anything you can tell me about these traps and how you've gotten past them?
+(link: "continue")[
+$e: That I can gladly do! As the only resident flying creature within our retinue, I am indeed the only solution for some rooms in our crew. **Trust me**, //trust me//, it is true. 
+[[Good to know|posttut9-0_4]]]]
+
+:: posttut9-0_4
+$player: So, you can fly? That's great! //I was afraid his wings were clipped.// Is there anything else?
+(link: "continue")[
+$e: In fact, there is more!  My beak allows me to grab objects that would be, for others, a chore.
+[[Hmm|posttut9-0_5]]]
+
+:: posttut9-0_5
+$player: Flying and grabbing hard-to-reach items. Got it. Thanks for talking to me, $e. We'll all get out of here soon, you'll see.
+(link: "continue")[
+$e: I look forward to seeing the sky once again. Being stuck in this limited space has been quite the drain.
+(link: "continue")[
+(if: $edgar_faith < 3)[(set: $edgar_faith = $edgar_faith + 1)] (set: $trust to $edgar_faith of $faithdm)//$e enjoyed talking to you//
+//$e $trust//
+[[Proceed to puzzle|puz1_0]]]]
+
+<!-- PATTY OPTION STARTS HERE -->
+
+:: posttut9-1
+$n: Great, (text-colour: red+white)[Patty's] cool. You'll like $p. Just don't ask for any of her foo-
+(link: "Man I'm hungry")[
+$player: Hey $p, I haven't eaten at all since I first woke up. May I have some of that food you keep carrying around?
+(link: "continue")[
+$n: Why do I bother?
+[[Patty responds|posttut9-1_1]]]]
+
+:: posttut9-1_1
+$p: I have //**nothing**// for $player! This food is for //**my**// babies back in //**my**// home tree. They are waiting patiently for their Momma to come back with meals for the winter!
+(link: "Hold on")[
+$player: //Wasn't it spring when I got captured?//
+
+$player: Alright, alright, I didn't know it was that important. But, $p, how long have you been here?
+(link: "Patty responds")[
+$p: Hmm-bit hard to keep track, seein' how there's no windows around, but $f tells me it's been about three years, however long that is.
+[[What?!|posttut9-1_2]]]]
+
+:: posttut9-1_2
+$player: //Three years?! Aren't squirrel life spans only 5-10 years?//
+(link: "continue")[
+$n: Yeah, those kids aren't waiting for their Momma anymore.
+(link: "That's, actually really sad")[
+$n: Feeling overcome by the poor squirrel's plight, you stand up and try reaching out your hand to put on her shoulder.
+(link: "Before you find her shoulder")[
+$n: $p slaps it away.
+[[Patty begins to speak|posttut9-1_3]]]]]
+
+:: posttut9-1_3
+$p: Now, don't you go feeling pity for me. Don't say you aren't 'cause I can see it on yer face.
+(link: "continue")[
+$p: Us four are gonna get out of here, and things will be better. I'll see my babies, you'll get your seeing back, and maybe $f won't be so darn cranky.
+(link: "continue")[
+$player: What about $e?
+[[Patty's tone gets lighter|posttut9-1_4]]]]
+
+:: posttut9-1_4
+$p: Ha! That old crow will probably go bother some other human. He says he's been wanting to scare people like he used to. Something about an old word he learned before he came here? //Never-something// or whatever.
+(link: "Probably")[
+$n: $e isn't even a raven! That's a //**raven**// thing. He can't just **steal** it!
+(link: "continue")[
+$player: Well, we'll make sure he gets the chance to do that. Speaking of getting out of here, $p, do you have any suggestions for getting past some of these traps? How should I direct you?
+[[Patty begins to speak|posttut9-1_5]]]]
+
+:: posttut9-1_5
+$p: As you can hear-
+(link: "Patty smacks her food bag")[
+$p: -this bag here is real **heavy**, meaning I am the **strongest** little rodent you'll ever meet!
+(link: "Impressive")[
+$p: I can even climb with it! Usually, something comes up in these traps that I can use either my strength or the extra weight this thing brings. Not sure why, though. It seems a little too easy sometimes, but that's when we mess up and get brought back here.
+[[Interesting|posttut9-1_6]]]]
+
+:: posttut9-1_6
+$player: That does seem weird. But extra power and foo- I mean weight sounds like it could be useful. Thanks for telling me, $p.
+(link: "continue")[
+$p: Ain't no problem, friend!
+(link: "continue")[
+(if: $patty_faith < 3)[(set: $patty_faith = $patty_faith + 1)] (set: $trust to $patty_faith of $faithdm)//$p enjoyed talking to you//
+//$p $trust//
+[[Proceed to puzzle|puz1_0]]]]
+
+<!-- FRITZ OPTION STARTS HERE -->
+
+:: posttut9-2
+$n: Good ole $f. He's been here so long he's probably forgotten what it's like outside. His failures weigh him down as if they were all his fault and not because of an overly confident escape partner…I wonder if you'll add to his burden or help lift it from his shoulders?
+(link: "You approach Fritz")[
+$f: What do you want, kid? I'm already on this suicide mission like you wanted. What more do you need?
+(link: "I was thinking ...")[
+$player: Well, I mean, I just thought you might have wanted to talk.
+[[Fritz begins to respond|posttut9-2_0]]]]
+
+:: posttut9-2_0
+$f: Was it my sunny disposition that gave $player that impression? I'm only here cause $player managed to convince the other two, and I want to keep them out of trouble if possible.
+(link: "He seems to have some trauma")[
+$player: What happened to you, $f, for you to be so against escaping?
+(link: "Fritz responds")[
+$f: What //happened// was that each and every friend I've known in these past five years have either died to traps or to that madman's experiments. And somehow, I'm always left behind.  
+[[continue|posttut9-2_1]]]]
+
+:: posttut9-2_1
+{$f: (transition: "fade")+(transition-delay:0.5s)[There's no way out of here,]
+(transition: "fade")+(transition-delay:2s)[ so I decided a while ago to protect who I can and enjoy what time we have.]
+(transition: "fade")+(transition-delay:4.5s)[ Then some foolish creature like you comes along,]
+(transition: "fade")+(transition-delay:6s)[ with a little more intellect than is safe,]
+(transition: "fade")+(transition-delay:7.5s)[ and dreams of escape…]
+(transition: "fade")+(transition-delay:9.5s)[ and the whole process plays out again.]
+}
+(transition: "fade")+(transition-delay:10s)[(link: "continue")[
+$n: You stay silent, not knowing what to say. You know you're putting all of them in danger, though not more than if they stayed still. This way, they at least have a chance, right? Or it could end with you alone in the dark, only a madman's laughter to keep you company.
+[[continue|posttut9-2_2]]]]
+
+:: posttut9-2_2
+$n: You shake away the morbid thoughts.
+(link: "continue")[
+$player: This won't end that way, $f. I won't let it. We will all get out of here, I promise.
+(link: "continue")[
+$n: $f stays silent for a few seconds, perhaps contemplating your words as you did his. The old monkey sighs.
+(link: "continue")[
+$f: Well, If you're gonna be leading this expedition, I suppose you should know what I can do. 
+[[That would be helpful|posttut9-2_3]]]]]
+
+:: posttut9-2_3
+$f: The biggest thing I can bring to the team is that I can **read**. At least one room always needs someone that can **read** to complete it. At least, they have whenever I have tried to escape. I am also a little more **dexterous** than the others, which means if we come across a **lock** that needs **picking**, I can do that for us. 
+(link: "continue")[
+$n: You can hear a bag of tools, he shakes it to demonstrate his readiness.
+(link: "Oh thank the rat gods")[
+$player: //Someone else who can read! This will definitely help if we see that computer puzzle again.// 
+[[continue|posttut9-2_4]]]]
+
+:: posttut9-2_4
+$player: Thank you, $f. I won't let you down.
+(link: "Fritz responds")[
+$f: See that $player don't kid, we're putting a lot of trust in $player here.
+(link: "continue")[
+(if: $fritz_faith < 3)[(set: $fritz_faith = $fritz_faith + 1)] (set: $trust to $fritz_faith of $faithdm)//$f feels more confident in your abilities//
+//$f $trust//
+[[Proceed to puzzle|puz1_0]]]]
+
+
+
+
+
+
+
+
+

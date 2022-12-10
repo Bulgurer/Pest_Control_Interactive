@@ -15,33 +15,29 @@ The Great Ratscape
 
 by The Boys
 
-[[Play|intro0]]
+[[Play|posttut9]]
     {
-    (set: $player to [(text-colour:#00cad1)[You]])
+    (set: $player to [(text-colour:blue)[You]])
     (set: $n to [(text-colour:grey)[Narrator]])
     (set: $b to [(css: "color: green;")[Blinky]])
+    (set: $p to [(text-colour: red+white)[Patty]])
+    (set: $e to [(text-colour: orange)[Edgar]])
+    (set: $eac to [(text-colour: orange)[Edgar Allan Crow]])
+    (set: $ear to [(text-colour: orange)[Edgar Allan Raven]])
+    (set: $f to [(text-colour: yellow)[Fritz]])
     (set: $bunknown  to [(css: "color: green;")[???]])
-    (set: $cunknown to [(text-colour:c20000)[???]])
-    (set: $c to [(text-colour:#c20000)[cat]])
-    (set: $m to [(text-colour:#7c00e2)[Mad Scientist]])
-    (set: $f to [(text-colour:#d3d3af)[Fritz]])
-    (set: $p to [(text-colour:#dfb300)[Patty]])
-    (set: $e to [(text-colour:#8c0088)[Edgar]])
-    (set: $funknown to [(text-colour:#ff0064)[???]])
-    (set: $punknown to [(text-colour:#dfb300)[???]])
-    (set: $eunknown to [(text-colour:#8c0088)[???]])
+    (set: $cunknown to [(text-colour:red)[???]])
+    (set: $c to [(text-colour:red)[Cat]])
+    (set: $m to [(text-colour:#8c03fc)[Mad Scientist]])
     (set: $counter to 0)
     (set: $blink_faith to 2)
+    (set: $edgar_faith to 1)
+    (set: $patty_faith to 1)
+    (set: $fritz_faith to 1)
     (set: $faithdm to (dm: 
         0, "does not trust you",
         1, "somewhat trusts you", 
         2, "trusts you",
         3, "trusts you completely"
     ))
-    
-    (set: $b = [-])
-    (set: $d = [-])
-    (set: $guessedB = false)
-    (set: $guessedD = false)
-
 }
