@@ -22,7 +22,7 @@ What do you do?
 :: posttut2_0
 $player: Hello? Is anyone there? I uh, can't see anything.
 (link: "continue")[
-$bunknown: It awakes from the land of dreams! He says he cannot see yet he stares in my direction; he lies, he schemes! 
+$eunknown: It awakes from the land of dreams! He says he cannot see yet he stares in my direction; he lies, he schemes! 
 [[continue|posttut3]]]
 
 :: posttut2_1
@@ -30,15 +30,15 @@ $n: $player find something sufficiently heavy enough around you and toss it at t
 (link: "continue")[
 (if: $edgar_faith > 0)[(set: $edgar_faith = $edgar_faith - 1)] (set: $trust to $edgar_faith of $faithdm)//$bunknown did not like that//
 //$b $trust//
-$bunknown: It attacks unprovoked! Its anger stoked, sympathies revoked, its machinations cloaked!
+$eunknown: It attacks unprovoked! Its anger stoked, sympathies revoked, its machinations cloaked!
 [[continue|posttut3]]]
 
 :: posttut3
-$bunknown: Oh, give it up, you loud oaf.
+$punknown: Oh, give it up, you loud oaf.
 (link: "continue")[
 $n: You hear a **smack**, a surprised //CAW// and a fluttering of wings.
 (link: "continue")[ 
-$bunknown: Hey there, name's $p. The resident lab squirrel.
+$punknown: Hey there, name's $p. The resident lab squirrel.
 (link: "continue")[
 $n: $p makes an //oomph// sound; you hear a **clattering**, and what sounds like a heavy sack hits the ground beside her.
 [[continue|posttut4]]]]]
@@ -52,7 +52,7 @@ $n: $ear just didn't have the same punch to it, I guess. Though I doubt our corv
 [[continue|posttut5]]]]
 
 :: posttut5
-$bunknown: Leave the kid alone, you two. He just got his first escape attempt done and has to accept the fact that he's stuck here. We all are.
+$funknown: Leave the kid alone, you two. He just got his first escape attempt done and has to accept the fact that he's stuck here. We all are.
 (link: "continue")[
 $p: That there is $f. He's been here the longest and has failed to escape so many times that he's a cranky old marmoset.
 (link: "continue")[
