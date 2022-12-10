@@ -1,16 +1,18 @@
 :: posttut0
 $n: Weak and mind bleary, you wake, roll around and still feel weary.
+
 $player get up, eyes open, but still there is not a light or colour, you can adore.
 (link: "continue")[
-$n: When out of the forever dark, from beyond your trapping, you hear a rapping
+$n: When out of the forever dark, from beyond your trapping, you hear a rapping 
 Someone is gently tapping, tapping at a metal door.
-(link: "continue")[
+[[continue|posttut0-1]]]
+
+:: posttut0-1
 $n: //$player think Ah that must be $b, $b tapping at my cage's door//
 But you remember that $b is no more. 
 (link: "continue")[
 $n: Alright, that's enough of that. I'm not built for this poetry nonsense. I'll let //him// take over the bad verses and stick to the narration.
-
-[[continue|posttut1]]]]]
+[[continue|posttut1]]]
 
 :: posttut1
 $n: Anyway, uh… Yeah, you hear tapping at the door of your cage. 
@@ -28,8 +30,8 @@ $eunknown: It awakes from the land of dreams! He says he cannot see yet he stare
 :: posttut2_1
 $n: $player find something sufficiently heavy enough around you and toss it at the incessant tapping.
 (link: "continue")[
-(if: $edgar_faith > 0)[(set: $edgar_faith = $edgar_faith - 1)] (set: $trust to $edgar_faith of $faithdm)//$bunknown did not like that//
-//$b $trust//
+(if: $edgar_faith > 0)[(set: $edgar_faith = $edgar_faith - 1)] (set: $trust to $edgar_faith of $faithdm)//$eunknown did not like that//
+//$eunknown $trust//
 $eunknown: It attacks unprovoked! Its anger stoked, sympathies revoked, its machinations cloaked!
 [[continue|posttut3]]]
 
@@ -44,7 +46,7 @@ $n: $p makes an //oomph// sound; you hear a **clattering**, and what sounds like
 [[continue|posttut4]]]]]
 
 :: posttut4
-$p: That rhyming loudmouth you just heard is Edgar.
+$p: That rhyming loudmouth you just heard is $e.
 (link: "continue")[
 $e: $p! I am no one name schmo! Do not deceive our suspicious friend and tell it the greatness of $eac!
 (link: "continue")[
@@ -65,9 +67,9 @@ $player: //They knew $b? These must be the others he was talking about.//
 $p: Ah, don't let Ol' Monkey get you down. What's your name stranger? 
 (link: "My name is ...")[
 $p: Nice to meet you $playerName! Now why don't you tell us what happened?
-(link: "Well, it all started when ...")
+(link: "Well, it all started when ...")[
 $n: You tell the three animals of your doomed escape from the lab with $b and that the $m is planning to get rid of all the current test subjects.
-[[continue|posttut7]]]]
+[[continue|posttut7]]]]]
 
 :: posttut7
 $e: Aghast! That villain would kill us all. I, for one, do not want to die in this hall.
@@ -141,13 +143,13 @@ $n: Did he just forget to rhyme?!
 (link: "continue")[
 $player: Alright, I suppose? Oh, while I have you here, is there anything you can tell me about these traps and how you've gotten past them?
 (link: "continue")[
-$e: That I can gladly do! As the only resident flying creature within our retinue, I am indeed the only solution for some rooms in our crew. **Trust me**, //trust me//, it is true. 
+$e: That I can gladly do! As the only resident **flying** creature within our retinue, I am indeed the only solution for some rooms in our crew. **Trust me**, //trust me//, it is true. 
 [[Good to know|posttut9-0_4]]]]
 
 :: posttut9-0_4
-$player: So, you can fly? That's great! //I was afraid his wings were clipped.// Is there anything else?
+$player: So, you can **fly?** That's great! //I was afraid his wings were clipped.// Is there anything else?
 (link: "continue")[
-$e: In fact, there is more!  My beak allows me to grab objects that would be, for others, a chore.
+$e: In fact, there is more!  My beak allows me to **grab objects** that would be, for others, a chore.
 [[Hmm|posttut9-0_5]]]
 
 :: posttut9-0_5
