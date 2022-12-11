@@ -39,6 +39,7 @@ $player: Hey, Patty, what did you do right before the door closed again?
 $p: Me? I stepped off of this ground button here.
 $player: Good to know. Thanks, Patty.
 $p: No problem!
+(set: $talkedToPatty to "true")
 [[Go back to the pressure plate|pattypuz1_0]]
 [[Examine the door|pattypuz1_2]]
 
@@ -49,6 +50,146 @@ $p: Oh, sure! It's right over here.
 $n: You follow the sound of her voice, and sure enough, you quickly run into a raised ridge on the ground. Stepping over it, the texture 
 of the floor changes, and you quickly conclude that you are now standing on top of the pressure plate. However, the door does not open.
 $player: I guess I'm not heavy enough to open it. Makes sense.
-[If player has not talked to companions yet, copy that dialogue to here]
+(if: $talkedtoPatty is not "true")[
+    $player: Hey, Patty, what did you do right before the door closed again?
+    $p: Me? I stepped off of this ground button here.
+    $player: Good to know. Thanks, Patty.
+    $p: No problem!
+]
+$n: You sniff the air and sigh.
+$player: I think we need to put something heavy on this to keep the door open. Obviously, it can't be one of us, but I'm not sure about our other options.
+$p: What should we do?
+$f: $e and I could search for something suitable.
+$player: I'd appreciate that.
+$f: Alright, we'll be back soon.
+$n: $f begins walking down the hall, back the way you came. A moment later, you hear $e take to the air after him, leaving you alone 
+to ponder the pressure plate with $p. You hear her sigh and adjust the sack of food slung over her shoulder.
+[[Wait, her sack!|pattypuz2]]
+
+:: pattypuz2
+$player: Wait, your sack! That could work, I think.
+$p: Pardon? No! We ain't usin' this. We should just wait to see what the boys find.
+$player: Alright, don't worry, I won't make you do anything that you don't want to... You know, you never did say why you're bringing it around everywhere. Could you tell me?  
+$p: ...
+$p: It's for my young'uns back home. Y'know, if there's one way that I can redeem myself for bein' gone for so long, 
+it's by bringin' this back to them. That's the least I can do.
+[[Encourage her to face reality|pattypuz2_0]]
+[[Remind her of your plans to escape|pattypuz2_1]]
+
+:: pattypuz2_0
+$player: How long has it been since you were brought here?
+$p: Don't. I know where you're goin' with that thought... Hell, I think about it all the time, too. But even if they're already gone, 
+I still have to hope. How else am I supposed to keep goin'?
+$player: Ah... I'm sorry. Forget I asked, then.
+(set $pattyNegotiation to "failure")
+[[Continue|pattypuz3]]
 
 
+:: pattypuz2_1
+$player: You remember why we're here, right?
+$player: There's a great, big forest out there. It's bound to have a lot more food in it than we get here, and I'd bet that that food is much better, too. 
+We just have to escape in order to get to it.
+$p: What're you sayin'? You think it's worth it to sacrifice what I've already got just 'cause I could get more later?
+$player: I think it's worth considering, at least. I know it's asking a lot, but we've all sacrificed or lost things already, haven't we?
+$player: You were taken from your family. The scientist blinded me. I'm sure $e and $f have lost things of their own as well. But, now we have a chance.
+$player: Food is replaceable. Our lives aren't, and I want all of us to get out alive, obviously. If $e and $f aren't able to find anything, 
+I hope you'll consider letting us use your sack. We can't leave anyone behind, after all.
+$n: Patty is silent for several moments while she ruminates over your words.
+$p: Fine. I'll think about it.
+(set $pattyNegotiation to "success")
+[[Continue|pattypuz3]]
+
+:: pattypuz3
+(if: $pattyNegotiation is "success")[
+    $n: Some time later, you hear the swish of footsteps and wings as $e and $f return.
+    $f: Hey, $player. Sorry, we searched everywhere we could, but we couldn't find anything.
+    $player: Damn.
+    $n: You hear $p sigh.
+    $p: Alright, fine. Here, you can use my sack.
+    $player: You're sure?
+    $p: Yes. Now hurry up, before I change my mind.
+    $player: Okay. Thank you, $p. $f, can you take her sack and put it on the pressure plate?
+    $n: $p hands her sack to $f, who deftly places it on the pressure plate as you scurry off. Not a moment later, you hear the whir of machinery as the door opens.
+    $player: Alright, that worked. Let's keep going, then.
+]
+(if: $pattyNegotiation is "failure")[
+    Narrator: Some time later, you hear the swish of footsteps and wings as Edgar and Fritz return.
+    Fritz: We found something that might work. Step aside, Player. We'll see if it's heavy enough or not.
+    Narrator: You scurry off of the pressure plate while Fritz hefts an object onto the plate. It makes a loud clunk as he drops it, and not a moment later, you hear the whir of machinery as the door opens.
+    Patty: See? That did the trick. You didn't even need my sack for that, Player. You should've had a bit more faith in them.
+    (set: $patty_faith = $patty_faith - 1)
+]
+[[Continue|pattypuz4]]
+
+
+:: pattypuz4
+$n: You pass through the opened door unimpeded, and emerge in a large, open, cylindrical room. There is a great downdraft in the room, 
+coming from what you can only assume is high above, and this prompts $e to squawk indignantly.
+$e: Here would be too dangerous to fly; I would rather not die!
+$n: I mean, how dangerous could it really be? You can't know until you try right? 
+$player: Alright, what are we looking at in here?
+$p: This whole room's a great, big circle.
+$f: There isn't a ceiling here. I can see the sky, but there's that strange wind...
+$p: Looks like the exit's over there. It's another metal door. I'll go check it out.
+$n: $p patters off towards the closed door.
+$f: There's something in the middle of the room, too. Some kind of raised platform, I think—no, it's almost like a desk.
+$player: Do you think we can get up there?
+$f: I can climb up it and carry you.
+[[Head up|pattypuz5]]
+
+
+:: pattypuz6
+$player: Alright, let's go there.
+$n: $f carries you up onto the desk in the middle of the room.
+$f: Okay. There are six buttons here. Two red, two green, two blue.
+$n: Before you can pursue any further line of thought, $p returns, scurrying up to join you and $f on the desk. 
+Her squeaky “Hmm” sound contains a mother's concentrated, unimpressed energy. I don't like it. 
+$p: Don't tell me y'all haven't noticed that long pipe spirallin' up all of them walls.
+$player: A pipe?
+$p: Yup. There's a long pipe windin' up the walls. I noticed it ends near the exit, but it looks like it's broken in some places.
+$player: What do you mean?
+$p: Some of them pieces ain't connected to each other, though they're still stuck to the wall. Do you reckon they have something to do with how we're supposed to continue?
+$player: Now that you mention it, they might... Is there anything else that you two notice about the room?
+$f: No, aside from the fact that we can see the sky. The pipes don't come close to reaching that far, though.
+$player: Alright...
+[Ask about the pipes again]
+[Examine the buttons]
+
+
+:: pattypuzEnd0
+Player: Is that it? Are all the pipes connected now?
+Patty: That they are! Thanks for figuring that out, Player.
+Player: Hey, since you're the fastest runner out of all of us, and you helped out so much, do you want to go see what's at the top?
+Patty: Sure thing! I'll be right back.
+Narrator: Patty patters off once more towards the exit. You idle around for some time before you hear a very distant, very faint click echo through the room, followed by rumbling and banging.
+Player: What's going on?
+Fritz: Patty is running down the pipe. I guess she found something up on the top.
+Narrator: You and Fritz climb down from the desk, and together with Edgar, you walk over to the exit to wait for Patty. A few more moments pass... The rumbling gets louder. A few more... Something comes rolling out of the pipe with a solid thunk, gently coming to a stop before Fritz.
+Player: What is it?
+Narrator: Patty arrives not a moment later, out of breath.
+Patty: There was a button on the top. I pushed it, and suddenly there was this noise... Is this what caused it?
+Patty: Oh, it's... A sack.
+Fritz: It seems to say [Vow] on it. I wonder what it means. 
+Player: What's in it?
+[[Let's see...|pattypuzEnd1]]
+
+
+:: pattypuzEnd1
+(if: pattyNegotiation is "success")[
+    $n: $p nervously approaches the sack, pulling it open and then gasping in surprise.
+    $p: It's full of nuts! Good ones! Oh, and looks like there's somethin' else, too...
+    $n: $p retrieves something from the sack and wordlessly hands it to $f.
+    $f: I've seen these before. It's a keycard. We can use it to unlock the door.
+    $player: That's our way forward, then. Thank you, $p.
+    $p: No, thank you. I wouldn't've given you so much trouble if I'd known there was another sack waiting for me.
+    $n: You nod solemnly at her, before you all turn your attention towards the door.
+]
+(if: pattyNegotiation is "failure")[
+    $n: $p approaches the sack, pulling it open.
+    $p: Huh. Are these... Rocks? Oh, but looks like there's somethin' else, too...
+    $n: $p retrieves something from the sack and wordlessly hands it to $f.
+    $f: I've seen these before. It's a keycard. We can use it to unlock the door.
+    $player: That's our way forward, then. Thank you, $p.
+    $p: Right. Let's get goin'.
+]
+[[Continue|]]
