@@ -1,1 +1,54 @@
 :: pattypuz0
+{(set: $key to [(text-color:#e9c901)[key]])
+(set: $keys to [(text-color:#e9c901)[keys]])
+}
+$p: Whoa, hold on, now.
+$n: The party stops in its tracks, and processing the commotion, you skid to a halt as well.
+$player: What's wrong?
+$p: There's a great, big door blockin' this way. Maybe we ought to find a different path.
+$player: Is there anything that looks like it might open it?
+$p: Can't say there is. Doesn't look to be any of them buttons and keys that you lot had to fiddle with before. 'Cept...
+$n: You hear a subdued click from a short distance in front of you.
+[[What was that?|pattypuz1]]
+
+
+:: pattypuz1
+$p: Whoa!
+$n: Suddenly, the whir of machinery fills the hall, and the door slides open.
+$player: Is the door opening? What'd you do?
+$p: Nothin', I only stepped onto this raised tile on the ground.
+$n: There is a palpable pause.
+$p: Ohh. This gadget here's a ground button?
+$n: Spurred by her description, the words "pressure plate" pop into your mind. Not that you know what that is, of course.
+$player: Well, if the door is open, I guess we can keep going. Nice work, $p.
+$n: You hear her huff pridefully, and you resume walking. However...
+(link: "Continue")[
+$n: The second $p steps off of the pressure plate, the door slams shut in front of you once more.
+A chorus of yelps fills the air. Was that $e swearing? Did he rhyme it? He better have... Stupid annoying crow.
+[[Go back to the pressure plate|pattypuz1_0]]
+[[Talk to companions|pattypuz1_1]]
+[[Examine the door|pattypuz1_2]]]
+
+:: pattypuz1_2
+$n: You approach the door and press your tiny rat hands against it. As expected, it does not budge. Maybe you should try something else.
+[[Go back to the pressure plate|pattypuz1_0]]
+[[Talk to companions|pattypuz1_1]]
+
+:: pattypuz1_1
+$player: Hey, Patty, what did you do right before the door closed again?
+$p: Me? I stepped off of this ground button here.
+$player: Good to know. Thanks, Patty.
+$p: No problem!
+[[Go back to the pressure plate|pattypuz1_0]]
+[[Examine the door|pattypuz1_2]]
+
+:: pattypuz1_0
+$n: As you slowly skitter away from the door, you ponder what sort of path forward you could take.
+$player: $p, could you guide me to the ground button?
+$p: Oh, sure! It's right over here.
+$n: You follow the sound of her voice, and sure enough, you quickly run into a raised ridge on the ground. Stepping over it, the texture 
+of the floor changes, and you quickly conclude that you are now standing on top of the pressure plate. However, the door does not open.
+$player: I guess I'm not heavy enough to open it. Makes sense.
+[If player has not talked to companions yet, copy that dialogue to here]
+
+
