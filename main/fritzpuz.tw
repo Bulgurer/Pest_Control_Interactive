@@ -130,185 +130,299 @@ $n: You hear $f dig out some trinket and tumble the metal through his fingers. T
 [[You ask ...|fritzpuz3-0_1]]
 
 :: fritzpuz4
+$f: The $m, he gave us tags: a single letter for every one of us. Each night, he would come for “inspection.” When we stood by our cages, the tags would beep, and shine. Some of the... slower animals would be punished for standing near the wrong cage. Their tags would buzz and the animals would scream dreadfully.
+(link: "continue")[
+$f: Every time an animal died, the $s left their tag hanging, for the rest of us to see: their sleep eternal and their tags shining bright. I can only remember standing in one spot, over and over, every single night. This place feels very familiar. But something has changed. I…
+[[You stand silent|fritzpuz5]]]
 
-FRITZ: The scientist, he gave us tags: a single letter for every one of us. Each night, he would come for “inspection.” When we stood by our cages, the tags would beep, and shine. Some of the…slower animals would be punished for standing near the wrong cage. Their tags would buzz and the animals would scream dreadfully.
+:: fritzpuz5
+{$n: (transition: "fade")+(transition-delay:0.5s)[$f is silent.]
+(transition: "fade")+(transition-delay:1s)[ $player hear a gentle drip of teardrops on the concrete floor.]
+(transition: "fade")+(transition-delay:3s)[ He mentions names ...]
+(transition: "fade")+(transition-delay:4.5s)[ names of his old friends.]
+}
+(transition: "fade")+(transition-delay:5s)[[[Fritz continues|fritzpuz6]]]
 
-Every time an animal died, the scientist left their tag hanging, for the rest of us to see: their sleep eternal and their tags shining bright. I can only remember standing in one spot, over and over, every single night. This place feels very familiar. But something has changed. I…
+:: fritzpuz6
+{$f: (transition: "fade")+(transition-delay:0.5s)[There is Sam;]
+(transition: "fade")+(transition-delay:1s)[ and Elly;]
+(transition: "fade")+(transition-delay:1.5s)[ Trixie;]
+(transition: "fade")+(transition-delay:2s)[ Nash...]
+(transition: "fade")+(transition-delay:2.5s)[ and others too;]
+(transition: "fade")+(transition-delay:3.5s)[ Rockso;]
+(transition: "fade")+(transition-delay:4s)[ Vincent;]
+(transition: "fade")+(transition-delay:4.5s)[ Radish.]
+}
+[[Fritz falls silent|fritzpuz7]]
 
-NARRATOR: Fritz is silent. You hear a gentle drip of teardrops on the concrete floor. He mentions names…names of his old friends.
+:: fritzpuz7
+$player: Did the $s give you those names? I thought you only had initials on your tags…S-E-T-N ... R-
+(link: "Fritz cuts you off")[
+$f: **WE** named ourselves. At least **WE** had control of that. The madman treats us like things. Like ... samples. Keys. Tests. **NOTHING!** These tags...
+(link: "continue")[
+$n: $f becomes extremely annoyed, and starts to breathe heavily. He grumbles under his breath. It seems that the tags are a touchy subject for him.
+[[Fritz continues|fritzpuz8]]]]
+(set: $counter to 0)
+(set: $fritzExp to 0)
+(set: $fritzRoom to 0)
+(set: $fritzAsk to 0)
 
-FRITZ: There is Sam; and Elly; Trixie; Nash…and others too; Rockso; Vincent; Radish.
+:: fritzpuz8
+{$f: (transition: "fade")+(transition-delay:0.5s)[These tags...]
+(transition: "fade")+(transition-delay:1.5s)[ these belonged to members of my expedition. (Fritz anxiously tugs at his sash, and you hear tags clacking together.)]
+}
 
-$PLAYER: Did the scientist give you those names? I thought you only had initials on your tags…S-E-T-N…R-V-R—
+{(if: $fritzRoom is 0)[(if: $counter is 0)[[[Ask about the tags|fritzpuz8-0]]]
+(if: $counter is 1)[[[Ask about the tags|fritzpuz8-0-1]]]
+(if: $counter is 2)[[[Ask about the tags|fritzpuz8-0-2]]]](else: )[(text-style: "strike")[Ask about the tags]]}
 
-FRITZ: WE named ourselves. At least WE had control of that. The madman treats us like things. Like…samples. Keys. Tests. NOTHING! These tags…
+(if: $fritzExp is 0)[[[Ask about the expedition|fritzpuz8-1]]](else: )[(text-style: "strike")[Ask about the expedition]]
 
-NARRATOR: Fritz becomes extremely annoyed, and starts to breathe heavily. He grumbles under his breath. It seems that the tags are a touchy subject for him.
+(if: $fritzRoom is 0)[[[Ask about the room|fritzpuz8-2]]](else: )[(text-style: "strike")[Ask about the room]]
 
-FRITZ: These tags…these belonged to members of my expedition. (Fritz anxiously tugs at his sash, and you hear tags clacking together.)
+(if: $fritzRoom is 1)[(if: $fritzAsk is 0)[[[Ask about Fritz|fritzpuz8-3]]](else: )[(text-style: "strike")[Ask about Fritz]]]
 
-[Ask about the tags]
+(if: $fritzAsk is 1)[[[Arrange the tags|fritzpuz8-4]]]
 
-[Ask about the expedition]
+(set: $N1 to "_")
+(set: $I1 to "_")
+(set: $E2 to "_")
+(set: $L1 to "_")
+(set: $E1 to "_")
 
-[Ask about the room]
+:: fritzpuz8-0
+$player: Why do you have your friend's tags, $f?
+(link: "continue")[
+$f: “Have them”? I steward these tags, so that $s may never taint them again with his cruelty! They're mine!
+(link: "continue")[
+(if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)] (set: $trust to $fritz_faith of $faithdm)//$f really doesn't want to talk about the tags//
+//$f $trust//
+[[Okay|fritzpuz8]]]]
+(set: $counter to 1)
 
-[Ask about Fritz]
+:: fritzpuz8-0-1
+$player: $f. The tags. You need to tell me about the tags. It's the only way I can solve this (text-colour:#7c00e2)[Scientist's] riddle!
+(link: "continue")[
+$f: I owe you nothing, Kid! Or, should I say, $playerName? Yes, $playerName, that name you chose for yourself, that means something to you, that **YOU MADE.** We were like you, Kid. We fought back, and we were rewarded with pain! Want to feel how we felt, when we were called nothing but a letter?
+[[Fritz reaches towards you|fritzpuz8-0-1_0]]]
 
-[Arrange the tags] - THIS OPTION BECOMES AVAILABLE AFTER ASKING ABOUT FRITZ
+:: fritzpuz8-0-1_0
+$n: $f wraps a tag around your body and tosses you toward a nearby stone. Before you hit the ground, thousands of prickling hairs turn out from your skin, and then…
 
-[TAGS #1]
+//**BLAM!**// 
+(link: "continue")[
+$n: Your muscles burn as if a volcano erupted in your body; as if a freight train smashed through your brainstem. Every tiny finger on your rat hands clasps into itself so tightly you swear the joints break. As you hit the floor, you hear a faint **BZZZT!** sound, once, twice……
+[[continue|fritzpuz8-0-1_1]]]
 
-$PLAYER: Why do you have your friends’ tags, Fritz?
+:: fritzpuz8-0-1_1
+$f: You'd better move away, Kid... before the buzzer stops buzzing!
+(link: "Fritz continues")[
+$f: Imagine. Every night, your home is the same. Until some random day: your home is not yours anymore. Now everyone must read... but how? How do you undo months of training on a whim? Months, blast. Years! Years of training, to reset in a day? Zap, zap, zap. And when you learn where your new home is? Changed, again!
+[[continue|fritzpuz8-0-1_2]]]
 
-FRITZ: “Have them”? I steward these tags, so that scientist may never taint them again with his cruelty! They’re mine!
+:: fritzpuz8-0-1_2
+$f: We **HAD** to escape, Rat... we tried to escape.
+(link: "He continues")[
+$f: You ask me to read you the tags of the dead? That, I will not do.
+(link: "continue")[
+$n: Fritz seems incredibly serious. His breathing is calm, and frighteningly regular. If you ask him about the tags again, he's going to snap.
+(link: "continue")[
+(if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)] (set: $trust to $fritz_faith of $faithdm)//$f seems at his wits end//
+//$f $trust//
+[[Okay|fritzpuz8]]]]]
+(set: $counter to 2)
 
-(Fritz loses faith.)
+:: fritzpuz8-0-2
+$player: $f—I understand how troubling this is for you. I'm not trying to hurt you. But I can't read the tags, $f: I'm blind. All we need are the letters. That's all I'm asking for.
+(link: "Fritz snaps")[
+$f: I won't read you the tags, Rat. In fact, I never want to see the damned tags ever again. For such a secure laboratory, you would be surprised how many trash chutes one can discover. Networks of chutes, even. Ones that friends followed, and ones that trapped friends forever in the lab. Oh! Would you look at this? How convenient.
+[[Fritz walks to a wall|fritzpuz8-0-2_0]]]
 
-[TAGS #2]
+:: fritzpuz8-0-2_0
+$n: $f taps on a wall panel, and something creaks open. You hear the clattering of tags as they bounce into nothingness. It seems this puzzle is out of reach now.
+(link: "continue")[
+$n: An alarm starts to wail: opening the trash chute has triggered a security system! $e and $p rush into the room.
+[[Patty starts...|fritzpuz8-0-2_0]]]
 
-$PLAYER: Fritz. The tags. You need to tell me about the tags. It’s the only way I can solve this scientist’s riddle!
-
-(Fritz loses faith.)
-
-FRITZ: I owe you nothing, Kid! Or, should I say, $PLAYER? Yes, $PLAYER, that name you chose for yourself, that means something to you, that YOU MADE. We were like you, Kid. We fought back, and we were rewarded with pain! Want to feel how we felt, when we were called nothing but a letter?
-
-NARRATOR: Fritz wraps a tag around your body and tosses you toward a nearby stone. Before you hit the ground, thousands of prickling hairs turn out from your skin, and then…
-
-*BLAM!* 
-
-It feels like a volcano’s lava rips through every muscle; as if a freight train smashes through your brainstem. Every tiny finger on your rat hands clasps into itself so tightly you swear the joints break. As you hit the floor, you hear a faint *BZZZT!* sound, once, twice……
-
-FRITZ: You’d better move away, Kid…before the buzzer stops buzzing!
-
-Imagine. Every night, your home is the same. Until some random day: your home is not yours anymore. Now everyone must readjust…but how? How do you undo months of training on a whim? Months, blast. Years! Years of training, to reset in a day? Zap, zap, zap. And when you learn where your new home is? Changed, again!
-
-We HAD to escape, Rat…we tried to escape.
-
-You ask me to read you the tags of the dead? That, I will not do.
-
-NARRATOR: Fritz seems incredibly serious. His breathing is calm, and frighteningly regular. If you ask him about the tags again, he’s going to snap.
-
-[TAGS #3]
-
-$PLAYER: Fritz—I understand how troubling this is for you. I’m not trying to hurt you. But I can’t read the tags, Fritz: I’m blind. All we need are the letters. That’s all I’m asking for.
-
-FRITZ: I won’t read you the tags, Rat. In fact, I never want to see the damned tags ever again. For such a secure laboratory, you would be surprised how many trash chutes one can discover. Networks of chutes, even. Ones that friends followed, and ones that trapped friends forever in the lab. Oh! Would you look at this? How convenient.
-
-NARRATOR: Fritz taps on a wall panel, and something creaks open. You hear the clattering of tags as they bounce into nothingness. It seems this puzzle is out of reach, now.
-
-An alarm starts to wail: opening the trash chute has triggered a security system! EDGAR and PATTY rush into the room.
-
-PATTY: Fritz, dag’nabbit! What did’ja do that for, you knucklehead? This place ain’t safe no more!
-
-EDGAR: Look, look, within his hand: Fie! A tag, it glows, and catches my eye!
+:: fritzpuz8-0-2_1
+$p: $f, dag'nabbit! What did'ja do that for, you knucklehead? This place ain't safe no more!
+(link: "continue")[
+$e: Look, look, within his hand: Fie! A tag, it glows, and catches my eye!
 Rat, Rat, what did you do—did you query, and quarrel, and act a fool?
+(link: "I only...")[
+$p: $f! It's time to git outta here; why are you jus' standin' around?
+[[continue|fritzpuz8-0-2_2]]]]
 
-PATTY: Fritz! It’s time to git outta here; why are you jus’ standin’ around?
+:: fritzpuz8-0-2_2
+$n: $f heaves the last tag with all his fury into the trash chute, and he loses it. You hear nothing but primal screeches and his nails as they dig into stone and wood.
+(link: "He screams")[
+$f: (text-style: "shudder")[//**I HATE THIS PLACE! LET ME OUT!**//]
+(link: "continue")[
+$n: $f clamps on to the wall and cries out loudly. Everyone is motionless as they watch him. He furiously claws and scratches at a small crack…and suddenly, the wall starts to break apart.
+[[fritzpuz8-0-2_3]]]]
 
-NARRATOR: Fritz heaves the last tag with all his fury into the trash chute, and he loses it. You hear nothing but primal screeches and his nails as they dig into stone and wood.
-
-FRITZ: I HATE THIS PLACE! LET ME OUT!
-
-NARRATOR: Fritz clamps on to the wall and cries out loudly. Everyone is motionless as they watch him. He furiously claws and scratches at a small crack…and suddenly, the wall starts to break apart.
-
-PATTY: It’s gonna be okay, Fritz! Stay with us!
-
-EDGAR: A hole? Fresh air? Fritz’s rage is swell’d;
-Near the monkey, this crow won’t position.
+:: fritzpuz8-0-2_3
+$p: It's gonna be okay, $f! Stay with us!
+(link: "Edgar chimes in")[
+$e: A hole? Fresh air? (text-colour:#d3d3af)[Fritz's] rage is swell'd;
+Near the monkey, this crow won't position.
 Rat, you fiend, you reminded him of Hell—
 Miraculous, though: we continue our expedition!
+[[continue|fritzpuz8-0-2_4]]]
 
-FRITZ: *RARRRRAGGGHHH*!!
+:: fritzpuz8-0-2_4
+$f: //**RARRRRAGGGHHH!!**//
+(link: "No way...")[
+$n: $f ripped a hole in a wall. With his bare hands. Which was awesome! Except—it came at the expense of his good memories of all of his old friends. Ooof.
+(link: "Not ideal")[
+$n: $player follow the cold air and scamper through the hole in the wall.
+(link: "continue")[
+(set: $fritz_faith = 0)] (set: $trust to $fritz_faith of $faithdm)//$f had a mental breakdown//
+//$f $trust//
+[[Onwards|$ePuzz]]]]
+(set: $counter to 0)
 
-NARRATOR: Fritz ripped a hole in a wall. With his bare hands. Which was awesome! Except—it came at the expense of his good memories of all of his old friends. Ooof.
+:: fritzpuz8-1
+$player: Can you tell me about your expedition?
+(link: "continue")[
+$f: Every night the $c would come and steal our tags while we slept. The $c would tease us, bringing tags to the wrong cages. Every night someone would be blasted awake. We never slept in peace!
+(link: "Thats terrible!")[
+$f: So we banded together, sick of being tortured! And Engy…oh, she was brilliant! She reversed the polarity on her tag: instead of issuing a blast, it stored the power within.
+[[Hmm|fritzpuz8-1_0]]]]
 
-You follow the cold air and scamper through the hole in the wall.
+:: fritzpuz8-1_0
+$player: And…?
+(link: "continue")[
+$f: Genius, really. She waited until the $c stole her tag... and unleashed the power! 
 
-(Fritz loses all faith in you.)
-[BAD ENDING OF PUZZLE]
+**BLAM!**
+(link: "Amazing!")[
+$f: In its panic, the cat lept through a hidden opening in the wall... its collar unlocked all the doors in the laboratory, you know. The collar was our key! Eventually, we stole it.
+[[Thats our key too!|fritzpuz8-1_2]]]]
 
-[EXPEDITION]
+:: fritzpuz8-1_2
+$player: What did you do with it? Where is it? Let's go!
+(link: "No...")[
+$f: It was damaged during our escape. I hid what remained in an opening in the wall. The wall only opened when all the animals stood by their cages. But—there aren't any cages here.
+(link: "continue")[
+(if: $fritz_faith < 3)[(set: $fritz_faith = $fritz_faith + 1)] (set: $trust to $fritz_faith of $faithdm)//$f seems hopeful//
+//$f $trust//
+[[What next?|fritzpuz8]]]]
+(set: $fritzExp to 1)
 
-$PLAYER: Can you tell me about your expedition?
+:: fritzpuz8-2
+$p: Tell me about the room, $f.
+(link: "Fritz explains")[
+$f: There are gravestones, lined up in rows. But looking at them makes me sick. They are the resting places of my friends. There are empty ones...
+(link: "continue")[
+$n: You understand why $f was tearing up, earlier. This can't be easy for him.
+(link: "You search for the right words to say")[
+$player: $f— the tags. They don't have to be burdens. They can be emblems, reminders of your friends and their bravery.
+[[Fritz perks up a little|fritzpuz8-2_0]]]]]
 
-FRITZ: Every night the cat would come and steal our tags while we slept. The cat would tease us, bringing tags to the wrong cages. Every night someone would be blasted awake. We never slept in peace!
+:: fritzpuz8-2_0
+$f: Maybe you're right, kid. It has been years since someone talked to me like you do. But: what happens if we fail again? I'm not sure I can face that. Every day, I have to face my failures.
+(link: "Fritz nervously fumbles with the tags.")[
+$player: Your friends were glad that you tried $f. They refused to be trapped here, just like you. Try to imagine the good times with your friends; try to think of their qualities, or something they enjoyed! I need your help... you know, since I can't read anymore.
+(link: "continue")[
+(if: $fritz_faith < 3)[(set: $fritz_faith = $fritz_faith + 1)] (set: $trust to $fritz_faith of $faithdm)//$f seems hopeful//
+//$f $trust//
+[[continue|fritzpuz8-2_1]]]]
 
-So we banded together, sick of being tortured! And Engy…oh, she was brilliant! She reversed the polarity on her tag: instead of issuing a blast, it stored the power within.
+:: fritzpuz8-2_1
+$f: I will be your Eyes, Kid. Let us see: Engy! Ellie! Lovely! Neko! And... me.
+(link: "continue")[
+$n: $f drops the tags in order... except for one.
+[[What's next?|fritzpuz8]]]
+(set: $fritzRoom to 1)
 
-$PLAYER: And…?
+:: fritzpuz8-3
+$player: What about you, $f?
+(link: "Fritz begins to speak")[
+$f: The $s loves his words, Kid. He uses them throughout the laboratory, because he knows they are out of reach for many of his creations. He taunts us with them.
+(link: "continue")[
+$player: Is that why he took my sight?
+[[Fritz responds|fritzpuz8-3_0]]]]
 
-FRITZ: Genius, really. She waited until the cat stole her tag…and unleashed the power! 
+:: fritzpuz8-3_0
+$f: Exactly. And before $player, many more struggled. I could tell words were special, but I did not understand their power until one night.
+(link: "continue")[
+$f: One of my companions gave me my name. I was not always $f.
+(link: "It's a good name!")[
+$player: You've always been $f to me. I like $f.
+[[Fritz responds|fritzpuz8-3_1]]]]
 
-*BLAM!*
+:: fritzpuz8-3_1
+$f: And so do I, more than you will ever know, Rat.
+(link: "continue")[
+$f: I was //“Subject I”//, before. The $s called me Insolence.
+(link: "continue")[
+$f: When I was gifted a name— not having one forced upon me— that was the beginning of my freedom.
+[[continue|fritzpuz8-3_2]]]]
 
-In its panic, the cat lept through a hidden opening in the wall…its collar unlocked all the doors in the laboratory, you know. The collar was our key! Eventually, we stole it.
+:: fritzpuz8-3_2
+$f: The old times are burned into me. I feel hurt when I remember my old friends.
+(link: "Reassure Fritz")[
+$p: We can always move forward, $f. The letters on your tags. They can spell a different destiny: we just have to... rearrange them... hey! Wait a minute! 
+[[continue|fritzpuz8-3_3]]]
 
-$PLAYER: What did you do with it? Where is it? Let’s go!
-
-FRITZ: It was damaged during our escape. I hid what remained in an opening in the wall. The wall only opened when all the animals stood by their cages. But—there aren’t any cages here.
-
-(Fritz gains faith in you.)
-
-[ROOM]
-
-$PLAYER: Tell me about the room, Fritz.
-
-FRITZ: There are gravestones–gravestones, lined up in rows. But looking at them makes me sick. They are the resting places of my friends. There are empty ones…
-
-NARRATOR: You understand why Fritz was tearing up, earlier. This can’t be easy for him.
-
-$PLAYER: Fritz—the tags. They don’t have to be burdens. They can be emblems, reminders of your friends and their bravery.
-
-FRITZ: Maybe you’re right, kid. It has been years since someone talked to me like you do. But: what happens if we fail again? I’m not sure I can face that. Every day, I have to face my failures. (Fritz nervously fumbles with the tags.)
-
-$PLAYER: Your friends were glad that you tried Fritz: they refused to be trapped here, just like you. Try to imagine the good times with your friends: try to think of their qualities, or something they enjoyed! I need your help…you know, since I can’t read anymore.
-
-(Fritz gains faith in you.)
-
-FRITZ: I will be your Eyes, Kid. Let us see: Engy! Ellie! Lovely! Neko! And…me.
-
-NARRATOR: Fritz drops the tags in order…except for one.
-
-[NO MORE ROOM PROMPT]
-
-[ASK ABOUT FRITZ]
-
-$PLAYER: What about you, Fritz?
-
-FRITZ: The scientist loves his words, Kid. He uses them throughout the laboratory, because he knows they are out of reach for many of his creations. He taunts us with them.
-
-$PLAYER: Is that why he took my sight?
-
-FRITZ: Exactly. And before you, many more struggled. I could tell words were special, but I did not understand their power until one night.
-
-One of my companions gave me my name. I was not always Fritz.
-
-$PLAYER: You’ve always been Fritz to me. I like Fritz.
-
-FRITZ: And so do I: more than you will ever know, Rat.
-
-I was “Subject I”, before. The scientist called me Insolence.
-
-When I was gifted a name—not having one forced upon me—that was the beginning of my freedom.
-
-The old times are burned into me. I feel hurt when I remember my old friends.
-
-$PLAYER: We can always move forward, Fritz. The letters on your tags. They can spell a different destiny: we just have to…rearrange them…hey! Wait a minute! 
-
+:: fritzpuz8-3_3
 S, E, _, T, _, N, _, _
 R, _, V, _, R!
 
-Your friends’ names! The initials! The tags fill in the gaps!
+$player: Your friend's names! The initials! The tags fill in the gaps!
+[[continue|fritzpuz8-3_4]]
 
-NARRATOR: There is a brief moment of silence. You stammer…the gaps: they’re empty graves.
+:: fritzpuz8-3_4
+$n: There is a brief moment of silence. You stammer... the gaps: they're empty graves.
+(link: "continue")[
+$f: Then we shall bury them by the names I give them! E for Engy! E for Ellie! L for Lovely! N for Neko! AND I for I!
+(link: "continue")[
+$player: That gives us E, E, L, N, and I... let's place those tags!
+[[Lets do it|fritzpuz8]]]]
+(set: $fritzAsk to 1)
 
-FRITZ: Then we shall bury them by the names I give them! E for Engy! E for Ellie! L for Lovely! N for Neko! AND I for I!
+:: fritzpuz8-4
+**The Crossword:**
 
-$PLAYER: That gives us E, E, L, N, and I…let’s place those tags!
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R
+S E $N1 T $I1 N $E2 $L1
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[[$E1|fritzpuz9_0]]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R
 
-[ARRANGE THE TAGS]
+:: fritzpuz9_0
+{
+  (if: $guessedB is false)[
+  (set: $q = [(text-colour:red)[$E1]])]
+  (set: $promptStr = [
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R
+    S E $N1 T $I1 N $E2 $L1
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$q
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R
+    ])
 
+[(put: (prompt: [$promptStr], "") into $E1)]
+(if:$E1 is "e")[
+    
+    (set: $guessedB = true)
+    (set: $q = [(text-colour:green)[$E1]])
+    ]
+    (set: $promptStr = [
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R
+    S E $N1 T $I1 N $E2 $L1
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$q
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R
+    ])
+}
+    $promptStr
+    (if: $guessedB is false)[
+    [[Make a another guess|fritzpuz8-4]]]
+
+
+:: goaway
 Display the crossword puzzle:
              R
 S E _ T _ N E _
