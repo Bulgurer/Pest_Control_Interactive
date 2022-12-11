@@ -1,4 +1,7 @@
-:: $ePuzz 
+:: ePuzz
+{(set: $key to [(text-color:gold)[key]])
+(set: $keys to [(text-color:gold)[keys]])
+}
 $n: $player and your not-so-merry crew of lab animals enter the next room. 
 $player, $p, and $f slip and fall as soon as your feet touch the floor. $e takes to the air, flapping his wings above the three of you. 
 (link: "continue")[
@@ -47,14 +50,16 @@ $e: Wait, Sir [$playerName], listen! Four tubes are in front of us, with water i
 :: ePuzz1
 [$player]: So, what about them?  
 (link: "continue")[
-$e: There is one tube, two tube, (text-color:red)[red] tube, (text-color:#1a0fc6)blue tube. 
+$e: There is one tube, two tube, (text-color:red)[red] tube, (text-color:#1a0fc6)[blue] tube. 
 (link: "continue")[
 $n: Isn't that copyright infringement?! 
 (link: "continue")[
 [$player]: Ok? And? 
 (link: "continue")[
 $e: Earlier, I saw a door with multiple keyholes. The means to escape floats on the water,  ready to pay the gate's tolls. 
-(link: "continue")[
+[[So we need keys...|ePuzz2]]]]]]
+
+:: ePuzz2
 [$player]: So there are tubes with keys we need floating in them? 
 (link: "continue")[
 $e: The tubes with the colours are connected and share their water in some sort of hoof shape. There is only one key between the two, on the blue 
@@ -63,7 +68,9 @@ side,  that will help us reach a new landscape.
 [$player]: Can you reach the keys? 
 (link: "continue")[
 $e: Fear not, Sir rat. I can secure the objects and bring them to you right stat. 
-(link: "continue")[
+[[Edgar makes his exit|ePuzz3]]]]]
+
+:: ePuzz3
 $n: Hahaha, I'm looking forward to this. 
 $e hops away from you, and you hear small flaps of his wings as he approaches the tubes. 
 $player hear $e as he whispers to himself
@@ -75,7 +82,9 @@ $n: Several **loud**, **frustrated** caws later $e hops back over to you, silent
 [$player]: Did…did you get them? 
 (link: "continue")[
 $e:  No, you fool, I did not “get them.” The tubes are too tall or too thin to reach. How low they float is where our problems stem. 
-(link: "continue")[
+[[What if we raised the water?|ePuzz4]]]]]]
+
+:: ePuzz4
 [$player]: Well, what if we made them float higher somehow? 
 (link: "continue")[
 $n: $e Caws in realization and suddenly takes off from where he was in front of you, wings audible with each flap. $player hear things drop on the table a 
@@ -85,31 +94,89 @@ $e: I have found what we need to proceed! I have brought many weights that can p
 (link: "continue")[
 $n: Dear god, let me save us some rhyming. He explains that he brought weights of different shapes and sizes. He's also found a plunger that can push 
 water down if more weight pushes the plunger down. 
-(link: "continue")[
-[$player]: Alright, I think I can solve this. Grab the weights I tell you to and put them into the tubes I tell you to. 
-(set: $nTubeL)[(text-color:red)[low]]
-(set: $wTubeL)[(text-color:red)[low]]
-(set: $cTubeL)[(text-color:red)[low]]
-[[continue|ePuzz2]]]]]]]]]]]]]]]]]]]]
+[[I got this|ePuzz5]]]]]
 
-:: ePuzz2
+:: ePuzz5
+[$player]: Alright, I think I can solve this. Grab the weights I tell you to and put them into the tubes I tell you to. 
+{
+(set: $nTubeL to [(text-color:red)[low]])
+(set: $wTubeL to [(text-color:red)[low]])
+(set: $cTubeL to [(text-color:red)[low]])
+(set: $nKey to 1)
+(set: $wKey to 2)
+(set: $cKey to 3)
+(set: $keyNum = 0)
+}[[continue|ePuzz6]]
+
+:: ePuzz6
 //The narrow tube's water is $nTubeL  
 
 
  The wide tube's water is $wTubeL          
 
 
-The connected tube's water is even on both the (text-color:red)[red] and (text-color:#1a0fc6)[blue] (key) sides. (text-color:#1a0fc6)[Blue] side 
+The connected tube's water is even on both the (text-color:red)[red] and (text-color:#1a0fc6)[blue] ($key) sides. (text-color:#1a0fc6)[Blue] side 
 is $cTubeL//
 [[Tell Edgar to grab a weight|weights]]
 
 :: weights
+{
+(dialog: bind $weightChoice, [//What kind of weight do you want to use?//], "large weight", "small weight", "use the plunger")
 
-(dialog: bind $weightChoice, [//What kind of weight do you want to use?//], [large weight], [small weight], [use the plunger])
+(dialog: bind $tubeChoice, [//Which tube should the weight go into?//], "narrow tube", "wide tube", "red side of U-shaped tube", "blue side of U-shaped tube")
+ 
+ (if: $weightChoice is "large weight" and $tubeChoice is "wide tube")[(go-to: "success")]
+ (if: $weightChoice is "small weight" and $tubeChoice is "narrow tube")[(go-to: "success")]
+ (if: $weightChoice is "use the plunger" and $tubeChoice is "red side of U-shaped tube")[(go-to: "success")]
+ (if: $weightChoice is "large weight" and ($tubeChoice is "narrow tube"))[]
+ (if: $weightChoice is "large weight" and ($tubeChoice is "red side of U-shaped tube" or $tubeChoice is "blue side of U-shaped tube"))[]
+ (if: $weightChoice is "small weight" and $tubeChoice is "wide tube")[]
+ (if: $weightChoice is "small weight" and ($tubeChoice is "red side of U-shaped tube" or $tubeChoice is "blue side of U-shaped tube"))[]
+ (if: $weightChoice is "use the plunger" and ($tubeChoice is "blue side of U-shaped tube" or $tubeChoice is "wide tube" or $tubeChoice is "narrow tube"))[]
+ }
+ 
+:: success
+{
+(if: $tubeChoice is "narrow tube")[
+    (set: $tubeLevel to $nTubeL)
+    (set: $tubeKey to $nKey)]
+(else-if: $tubeChoice is "wide tube")[
+    (set: $tubeLevel to $wTubeL)
+    (set: $tubeKey to $wKey)]
+(else:)[
+    (if: $cKey is not "NULL")[
+    $e: The water level in the connected tube is rising, thanks to your advising!<br>]
+    (set: $cTubeL to [(text-color:green)[high]])
+    (set: $tubeChoice to $cTubeL)
+    (set: $tubeKey to $cKey)]
+(if: $tubeLevel is [(text-color:red)[low]])[
+$e: The water level in the $tubeChoice is rising, thanks to your advising!<br>
+    (if: $tubeChoice is "narrow tube")[(set: $nTubeL to [(text-color:orange)[medium]])]
+    (if: $tubeChoice is "wide tube")[(set: $wTubeL to [(text-color:orange)[medium]])]]
 
-(dialog: bind $tubeChoice, [//Which tube should the weight go into?//], [narrow tube], [wide tube], [(text-color:red)[red] side of U-shaped tube], [(text-color:#1a0fc6)[blue] side of U-shaped tube])
- 
- 
+(if: $tubeLevel is [(text-color:orange)[medium]])[
+$e: The water level in the $tubeChoice is rising, thanks to your advising!<br>
+    (if: $tubeChoice is "narrow tube")[(set: $nTubeL to [(text-color:green)[high]])]
+    (if: $tubeChoice is "wide tube")[(set: $wTubeL to [(text-color:green)[high]])]]
+
+(if: $tubeChoice is "narrow tube")[(set: $tubeLevel to $nTubeL)]
+(else-if: $tubeChoice is "wide tube")[(set: $tubeLevel to $wTubeL)]
+(else:)[(set: $tubeLevel to $cTubeL)]
+
+(if: $tubeLevel is [(text-color:green)[high]] and $tubeKey is not "NULL")[ 
+//The $key rises to the top of the narrow tube//<br>
+$n: $e swoops down and grabs the $key.
+(set: $keyNum = $keyNum + 1)
+(if: $tubeChoice is "narrow tube")[(set: $nKey to "NULL")]
+(else-if: $tubeChoice is "wide tube")[(set: $wKey to "NULL")]
+(else:)[(set: $cKey to "NULL")]
+]
+(else-if: $tubeKey is "NULL")[
+    //You have already gotten the key from that tube.//
+]<br>
+(if: $keyNum < 3)[[[You still need more keys for the door|ePuzz6]]]<br>
+(if: $keyNum is 3)[[[You have enough keys to open the door|ePuzzWin]]]}
+
 <!--large weight goes into the wide tube but does not fit into the narrow tube, and the small weight goes into the narrow tube. The small weight can 
 go into the wide tube but does not raise the water level noticeably, so it counts as a failure by $e. The plunger goes into the red side of the U 
 shaped tube and lifts the water on the blue side. Once each side is high water level (which will take two successful weight placements each) then, $e will grab the key from each.)-->  
@@ -121,14 +188,18 @@ $e: No, I don't think that's right. Try again and save our plight!
 <!--Wrong weight twice or more:--> 
 :: faithLoss
 $e: Wrong, wrong, wrong. I do not wish to be here all day long! 
+//$e is starting to lose faith in your abilities//
+{
 (if: $edgar_faith > 0)[(set: $edgar_faith = $edgar_faith - 1)]
-(if: $edgar_faith > 0)[[Try again?|weights]]
-(else:)[[Edgar doesn't trust you|ePuzzFail]]
-
+(if: $edgar_faith > 0)[[[Try again?|weights]]]
+(else:)[
+    //$e has lost all faith in your leadership//
+    [[Edgar doesn't trust you|ePuzzFail]]]
+}
 <!--When faith reaches zero:-->
 :: ePuzzFail
 $e: Insufferable! My patience is completely irrecoverable! 
-$e flies off and grabs both $p and $f. Together the three of them put two of the large weights into the wide tube, two small weights into the narrow tube and use the plunger to push the water down on the red tube to raise the water in the blue tube. $e reaches each Key and flies off with them. In the distance, you hear three keys turning and a large door opens. 
+$e flies off and grabs both $p and $f. Together the three of them put two of the large weights into the wide tube, two small weights into the narrow tube and use the plunger to push the water down on the red tube to raise the water in the blue tube. $e reaches each Key and flies off with them. In the distance, you hear three $keys turning and a large door opens. 
 $e picks up the three of you one by one, scoffing as he picks you up, not even bothering to rhyme. 
 $n: All four of you move on to the next area. 
 
@@ -140,7 +211,7 @@ One and won, huh…. Is rhyming homophones lazy? I'm gonna say yes. Stupid crow.
 [$player]: Perfect! I couldn't have done it without you $e! Turns out we really clicked! 
 
 $n: Wait, are you trying to rhyme too?! Oh no, we already have enough of those here. I won't stand for it, damn it! 
-The corvid notices your attempt at rhymes and lets out a happy “caw,” then takes off with the keys jingling in his talons. In the distance, you hear clicking and a large door opening. 
+The corvid notices your attempt at rhymes and lets out a happy “caw,” then takes off with the $keys jingling in his talons. In the distance, you hear clicking and a large door opening. 
 $e picks you up again, and you meet with $p and $f. The pygmy monkey calls out to you. 
 $f: Good job solving that. Maybe we have a chance to get out of here after all, though I won't bet on it. 
 $e: Sir $f, you must have faith in our intrepid friend. I have learned his skills are something on which we can depend. 
