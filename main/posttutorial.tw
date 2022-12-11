@@ -159,7 +159,7 @@ $e: I look forward to seeing the sky once again. Being stuck in this limited spa
 (link: "continue")[
 (if: $edgar_faith < 3)[(set: $edgar_faith = $edgar_faith + 1)] (set: $trust to $edgar_faith of $faithdm)//$e enjoyed talking to you//
 //$e $trust//
-[[Proceed to puzzle|puz1_0]]]]
+[[Proceed to puzzle|pattypuz0]]]]
 
 <!-- PATTY OPTION STARTS HERE -->
 
@@ -222,7 +222,7 @@ $p: Ain't no problem, friend!
 (link: "continue")[
 (if: $patty_faith < 3)[(set: $patty_faith = $patty_faith + 1)] (set: $trust to $patty_faith of $faithdm)//$p enjoyed talking to you//
 //$p $trust//
-[[Proceed to puzzle|puz1_0]]]]
+[[Proceed to puzzle|pattypuz0]]]]
 
 <!-- FRITZ OPTION STARTS HERE -->
 
@@ -279,7 +279,7 @@ $f: See that $player don't kid, we're putting a lot of trust in $player here.
 (link: "continue")[
 (if: $fritz_faith < 3)[(set: $fritz_faith = $fritz_faith + 1)] (set: $trust to $fritz_faith of $faithdm)//$f feels more confident in your abilities//
 //$f $trust//
-[[Proceed to puzzle|puz1_0]]]]
+[[Proceed to puzzle|pattypuz0]]]]
 
 
 

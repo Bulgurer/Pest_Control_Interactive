@@ -1,0 +1,351 @@
+:: fritzpuz0
+$n: You walk into a darker, dirtier part of the laboratory. Your feet slip on the tiled floor, filled with dust. Eventually the tiles stop: everything gets rockier; colder.
+(link: "continue")[
+$e: Blind as the rat, we are in here;
+What sound is that, that buzz, so clear?
+(link: "continue")[
+$p: I hear it too. Sounds like sum' kinda humming; ooh! Like one of them big, huge power poles outside the lab!
+[[Fritz's steps grow louder|fritzpuz1]]]]
+
+:: fritzpuz1
+$n: $f stops in his tracks. He looks furious.
+(link: "uh oh")[
+$f: If you mention (text-style: "shudder")[“buzzes”], (text-style: "rumble")[“hums”], or (text-style: "wavy-underline")[//“zaps”//] again—I have a //special// sandwich for you to eat: main ingredient, //**knuckle**//.
+(link: "Edgar starts shuffling in place")[
+$e: My beak is closed, I will not bother.
+[[Patty jumps in|fritzpuz2]]]]
+
+:: fritzpuz2
+$p: Geez $f, you're scaring him. It's okay, $e. Let 'em have some space. Come 'ere! I think I see some twigs and hay!
+(link: "Edgar stops shuffling")[
+$e: A nesting spot, for me? Hee hee! I'll be with $p, okay, okay!
+(link: "Approach Fritz")[
+$n: Fritz flicks something metal between his fingers, before quickly turning toward a huge archway. The others leave you and Fritz alone.
+[[What's up?|fritzpuz3]]]]
+
+:: fritzpuz3
+{$f: (transition: "fade")+(transition-delay:0.5s)[You know,]
+(transition: "fade")+(transition-delay:1.5s)[ it's probably for the best that you're blind, Kid.]
+(transition: "fade")+(transition-delay:3s)[Some of the things I've seen-]
+(transition: "fade")+(transition-delay:4.5s)[ they stay with a monkey.]
+}
+(transition: "fade")+(transition-delay:5s)[(link: "continue")[
+$n: $f grasps the metal and hides it in a pocket on his sash. His movement sounds soft, swift, and well-practiced. $player notice it frequently as you follow the sounds.
+
+[[Ask Fritz about the horrors he's seen|fritzpuz3-0]]
+
+[[Tell Fritz to focus on freedom|fritzpuz3-1]]]]
+
+:: fritzpuz3-0
+{$f: **//Never//** ask me that again! Kid- (transition: "fade")+(transition-delay:1.5s)[there are machines here that have split my best friends in two; contraptions that tortured us day and night. You force me to replay that horror and expect me to say //**“SURE THING, KID!”?**//]}
+(link: "Whoops")[
+(if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)] (set: $trust to $fritz_faith of $faithdm)//$f did not appreciate you asking about his past//
+//$f $trust//
+[[continue|fritzpuz3-0_0]]]
+
+:: fritzpuz3-0_0
+$player: $f, I barely know you. I'm just trying to make conversation.
+(link: "Fritz is still seething")[
+$f: OK. When you ask someone about their worst memories, don't be shocked when they don't want to //**SHARE THEM!**//
+(link: "Fritz seems to calm down a bit")[
+$n: $player hear something fall out of (text-colour:#d3d3af)[Fritz's] sash. It **clunks** on the floor, you hear him //hastily// snatch it.
+[[If only I could see|fritzpuz3-0_1]]]]
+
+:: fritzpuz3-0_1
+$player: What is that?
+(link: "Fritz begins to fidget")[
+{$f: (transition: "fade")+(transition-delay:0.5s)[I had a partner-]
+(transition: "fade")+(transition-delay:1s)[ no,]
+(transition: "fade")+(transition-delay:2s)[ a team-]
+(transition: "fade")+(transition-delay:3s)[ we tried our own Great Escape,]
+(transition: "fade")+(transition-delay:4s)[ once.]
+(transition: "fade")+(transition-delay:5s)[ It was perfect:]
+(transition: "fade")+(transition-delay:6s)[ we had an engineer;]
+(transition: "fade")+(transition-delay:7s)[ one with wings;]
+(transition: "fade")+(transition-delay:8s)[ one with a good heart;]
+(transition: "fade")+(transition-delay:9s)[ me with my strength;]
+(transition: "fade")+(transition-delay:10s)[ and another,]
+(transition: "fade")+(transition-delay:11s)[ with a brilliant mind.]
+}
+(transition: "fade")+(transition-delay:12s)[(link: "continue")[
+$n: $f stops fidgeting for a moment. He regains his composure: the motions resume their practiced quality, and $player hear the rustling of his sash as he replaces his trinket.
+[[continue|fritzpuz3-0_2]]]]]
+
+:: fritzpuz3-0_2
+{$f: (transition: "fade")+(transition-delay:0.5s)[I once misplaced my faith in that //“brilliant”// mind. And our engineer… ]
+(transition: "fade")+(transition-delay:3s)[ was crushed.]
+(transition: "fade")+(transition-delay:4s)[ The others?]
+(transition: "fade")+(transition-delay:5.5s)[ Lost.]
+(transition: "fade")+(transition-delay:6.5s)[ Destroyed by this laboratory.]
+(transition: "fade")+(transition-delay:8s)[ Destroyed by knowledge.]
+}
+(transition: "fade")+(transition-delay:9s)[ [[I'm sorr-|fritzpuz3-0_3]]]
+
+:: fritzpuz3-0_3
+$n: $f grabs your tail — **HARD.**
+(link: "Ouch!")[
+$f: I will not make that mistake again. We're here. Let me show you this: I can't figure it out.
+[[continue|fritzpuz4]]]
+
+:: fritzpuz3-1
+$player: The outside world won't be so cruel, $f.
+(link: "Fritz begins to respond")[
+{$f: (transition: "fade")+(transition-delay:0.5s)[**I'VE BEEN OUTSIDE**,]
+(transition: "fade")+(transition-delay:1s)[ $playerName.]
+(transition: "fade")+(transition-delay:2s)[ So have you!]
+(transition: "fade")+(transition-delay:3s)[ Do you remember anything?]
+(transition: "fade")+(transition-delay:4s)[ No? I have tried,]
+(transition: "fade")+(transition-delay:5s)[ tried,]
+(transition: "fade")+(transition-delay:6s)[ and tried again to think about my life before this prison…]
+(transition: "fade")+(transition-delay:8s)[ and nothing.]
+(transition: "fade")+(transition-delay:9s)[ It's maddening!]
+}   
+(transition: "fade")+(transition-delay:10s)[[[continue|fritzpuz3-1_0]]]]
+
+:: fritzpuz3-1_0
+{$player: (transition: "fade")+(transition-delay:0.5s)[I don't remember much,]
+(transition: "fade")+(transition-delay:1.5s)[ now that you mention it.]
+(transition: "fade")+(transition-delay:3s)[ But isn't that a neat thought-]
+(transition: "fade")+(transition-delay:4.5s)[ we can forge a new path,]
+(transition: "fade")+(transition-delay:5.5s)[ write a new story for ourselves!]
+}
+(transition: "fade")+(transition-delay:6s)[(link: "continue")[
+$n: $f chuckles. Then harrumphs.
+[[The atmosphere lightens|fritzpuz3-1_1]]]]
+
+:: fritzpuz3-1_1
+{$f: (transition: "fade")+(transition-delay:0.5s)[Rat,]
+(transition: "fade")+(transition-delay:1s)[ rat,]
+(transition: "fade")+(transition-delay:1.5s)[ rat...]
+(transition: "fade")+(transition-delay:2s)[ You remind me of someone from long ago.]
+}
+(transition: "fade")+(transition-delay:2.5s)[(link: "continue")[
+(if: $fritz_faith < 3)[(set: $fritz_faith = $fritz_faith + 1)] (set: $trust to $fritz_faith of $faithdm)//$f associates you with someone he likes//
+//$f $trust//
+
+[[continue|fritzpuz3-1_2]]]]
+
+:: fritzpuz3-1_2
+$n: You hear $f dig out some trinket and tumble the metal through his fingers. The motion sounds confused, stressed. $f is shaking.
+[[You ask ...|fritzpuz3-0_1]]
+
+:: fritzpuz4
+
+FRITZ: The scientist, he gave us tags: a single letter for every one of us. Each night, he would come for “inspection.” When we stood by our cages, the tags would beep, and shine. Some of the…slower animals would be punished for standing near the wrong cage. Their tags would buzz and the animals would scream dreadfully.
+
+Every time an animal died, the scientist left their tag hanging, for the rest of us to see: their sleep eternal and their tags shining bright. I can only remember standing in one spot, over and over, every single night. This place feels very familiar. But something has changed. I…
+
+NARRATOR: Fritz is silent. You hear a gentle drip of teardrops on the concrete floor. He mentions names…names of his old friends.
+
+FRITZ: There is Sam; and Elly; Trixie; Nash…and others too; Rockso; Vincent; Radish.
+
+$PLAYER: Did the scientist give you those names? I thought you only had initials on your tags…S-E-T-N…R-V-R—
+
+FRITZ: WE named ourselves. At least WE had control of that. The madman treats us like things. Like…samples. Keys. Tests. NOTHING! These tags…
+
+NARRATOR: Fritz becomes extremely annoyed, and starts to breathe heavily. He grumbles under his breath. It seems that the tags are a touchy subject for him.
+
+FRITZ: These tags…these belonged to members of my expedition. (Fritz anxiously tugs at his sash, and you hear tags clacking together.)
+
+[Ask about the tags]
+
+[Ask about the expedition]
+
+[Ask about the room]
+
+[Ask about Fritz]
+
+[Arrange the tags] - THIS OPTION BECOMES AVAILABLE AFTER ASKING ABOUT FRITZ
+
+[TAGS #1]
+
+$PLAYER: Why do you have your friends’ tags, Fritz?
+
+FRITZ: “Have them”? I steward these tags, so that scientist may never taint them again with his cruelty! They’re mine!
+
+(Fritz loses faith.)
+
+[TAGS #2]
+
+$PLAYER: Fritz. The tags. You need to tell me about the tags. It’s the only way I can solve this scientist’s riddle!
+
+(Fritz loses faith.)
+
+FRITZ: I owe you nothing, Kid! Or, should I say, $PLAYER? Yes, $PLAYER, that name you chose for yourself, that means something to you, that YOU MADE. We were like you, Kid. We fought back, and we were rewarded with pain! Want to feel how we felt, when we were called nothing but a letter?
+
+NARRATOR: Fritz wraps a tag around your body and tosses you toward a nearby stone. Before you hit the ground, thousands of prickling hairs turn out from your skin, and then…
+
+*BLAM!* 
+
+It feels like a volcano’s lava rips through every muscle; as if a freight train smashes through your brainstem. Every tiny finger on your rat hands clasps into itself so tightly you swear the joints break. As you hit the floor, you hear a faint *BZZZT!* sound, once, twice……
+
+FRITZ: You’d better move away, Kid…before the buzzer stops buzzing!
+
+Imagine. Every night, your home is the same. Until some random day: your home is not yours anymore. Now everyone must readjust…but how? How do you undo months of training on a whim? Months, blast. Years! Years of training, to reset in a day? Zap, zap, zap. And when you learn where your new home is? Changed, again!
+
+We HAD to escape, Rat…we tried to escape.
+
+You ask me to read you the tags of the dead? That, I will not do.
+
+NARRATOR: Fritz seems incredibly serious. His breathing is calm, and frighteningly regular. If you ask him about the tags again, he’s going to snap.
+
+[TAGS #3]
+
+$PLAYER: Fritz—I understand how troubling this is for you. I’m not trying to hurt you. But I can’t read the tags, Fritz: I’m blind. All we need are the letters. That’s all I’m asking for.
+
+FRITZ: I won’t read you the tags, Rat. In fact, I never want to see the damned tags ever again. For such a secure laboratory, you would be surprised how many trash chutes one can discover. Networks of chutes, even. Ones that friends followed, and ones that trapped friends forever in the lab. Oh! Would you look at this? How convenient.
+
+NARRATOR: Fritz taps on a wall panel, and something creaks open. You hear the clattering of tags as they bounce into nothingness. It seems this puzzle is out of reach, now.
+
+An alarm starts to wail: opening the trash chute has triggered a security system! EDGAR and PATTY rush into the room.
+
+PATTY: Fritz, dag’nabbit! What did’ja do that for, you knucklehead? This place ain’t safe no more!
+
+EDGAR: Look, look, within his hand: Fie! A tag, it glows, and catches my eye!
+Rat, Rat, what did you do—did you query, and quarrel, and act a fool?
+
+PATTY: Fritz! It’s time to git outta here; why are you jus’ standin’ around?
+
+NARRATOR: Fritz heaves the last tag with all his fury into the trash chute, and he loses it. You hear nothing but primal screeches and his nails as they dig into stone and wood.
+
+FRITZ: I HATE THIS PLACE! LET ME OUT!
+
+NARRATOR: Fritz clamps on to the wall and cries out loudly. Everyone is motionless as they watch him. He furiously claws and scratches at a small crack…and suddenly, the wall starts to break apart.
+
+PATTY: It’s gonna be okay, Fritz! Stay with us!
+
+EDGAR: A hole? Fresh air? Fritz’s rage is swell’d;
+Near the monkey, this crow won’t position.
+Rat, you fiend, you reminded him of Hell—
+Miraculous, though: we continue our expedition!
+
+FRITZ: *RARRRRAGGGHHH*!!
+
+NARRATOR: Fritz ripped a hole in a wall. With his bare hands. Which was awesome! Except—it came at the expense of his good memories of all of his old friends. Ooof.
+
+You follow the cold air and scamper through the hole in the wall.
+
+(Fritz loses all faith in you.)
+[BAD ENDING OF PUZZLE]
+
+[EXPEDITION]
+
+$PLAYER: Can you tell me about your expedition?
+
+FRITZ: Every night the cat would come and steal our tags while we slept. The cat would tease us, bringing tags to the wrong cages. Every night someone would be blasted awake. We never slept in peace!
+
+So we banded together, sick of being tortured! And Engy…oh, she was brilliant! She reversed the polarity on her tag: instead of issuing a blast, it stored the power within.
+
+$PLAYER: And…?
+
+FRITZ: Genius, really. She waited until the cat stole her tag…and unleashed the power! 
+
+*BLAM!*
+
+In its panic, the cat lept through a hidden opening in the wall…its collar unlocked all the doors in the laboratory, you know. The collar was our key! Eventually, we stole it.
+
+$PLAYER: What did you do with it? Where is it? Let’s go!
+
+FRITZ: It was damaged during our escape. I hid what remained in an opening in the wall. The wall only opened when all the animals stood by their cages. But—there aren’t any cages here.
+
+(Fritz gains faith in you.)
+
+[ROOM]
+
+$PLAYER: Tell me about the room, Fritz.
+
+FRITZ: There are gravestones–gravestones, lined up in rows. But looking at them makes me sick. They are the resting places of my friends. There are empty ones…
+
+NARRATOR: You understand why Fritz was tearing up, earlier. This can’t be easy for him.
+
+$PLAYER: Fritz—the tags. They don’t have to be burdens. They can be emblems, reminders of your friends and their bravery.
+
+FRITZ: Maybe you’re right, kid. It has been years since someone talked to me like you do. But: what happens if we fail again? I’m not sure I can face that. Every day, I have to face my failures. (Fritz nervously fumbles with the tags.)
+
+$PLAYER: Your friends were glad that you tried Fritz: they refused to be trapped here, just like you. Try to imagine the good times with your friends: try to think of their qualities, or something they enjoyed! I need your help…you know, since I can’t read anymore.
+
+(Fritz gains faith in you.)
+
+FRITZ: I will be your Eyes, Kid. Let us see: Engy! Ellie! Lovely! Neko! And…me.
+
+NARRATOR: Fritz drops the tags in order…except for one.
+
+[NO MORE ROOM PROMPT]
+
+[ASK ABOUT FRITZ]
+
+$PLAYER: What about you, Fritz?
+
+FRITZ: The scientist loves his words, Kid. He uses them throughout the laboratory, because he knows they are out of reach for many of his creations. He taunts us with them.
+
+$PLAYER: Is that why he took my sight?
+
+FRITZ: Exactly. And before you, many more struggled. I could tell words were special, but I did not understand their power until one night.
+
+One of my companions gave me my name. I was not always Fritz.
+
+$PLAYER: You’ve always been Fritz to me. I like Fritz.
+
+FRITZ: And so do I: more than you will ever know, Rat.
+
+I was “Subject I”, before. The scientist called me Insolence.
+
+When I was gifted a name—not having one forced upon me—that was the beginning of my freedom.
+
+The old times are burned into me. I feel hurt when I remember my old friends.
+
+$PLAYER: We can always move forward, Fritz. The letters on your tags. They can spell a different destiny: we just have to…rearrange them…hey! Wait a minute! 
+
+S, E, _, T, _, N, _, _
+R, _, V, _, R!
+
+Your friends’ names! The initials! The tags fill in the gaps!
+
+NARRATOR: There is a brief moment of silence. You stammer…the gaps: they’re empty graves.
+
+FRITZ: Then we shall bury them by the names I give them! E for Engy! E for Ellie! L for Lovely! N for Neko! AND I for I!
+
+$PLAYER: That gives us E, E, L, N, and I…let’s place those tags!
+
+[ARRANGE THE TAGS]
+
+Display the crossword puzzle:
+             R
+S E _ T _ N E _
+             V
+             _
+             R
+
+             R
+S E N T I N E L
+             V
+             E
+             R
+
+If the L is in the wrong spot:
+FRITZ: Lovely never had a cage in the middle. She was always on the end! She was the first test subject…
+
+If the I is in the wrong spot:
+FRITZ: That was me. I was always the center of attention…Insolence, he called me. But I never stood out on purpose, until they named me Fritz.
+
+If the N is in the wrong spot:
+FRITZ: Neko was a curious sort. He liked leftovers and never did anything right. And he hated heights; didn’t like to go up too high or down too low.
+
+If the E is in the wrong spot:
+FRITZ: Engy and Ellie were like glue: they held our team together, even when we were at the edge or stuck in the middle. Links of the chain, they were. Without them, we were lost.
+
+[END OF PUZZLE]
+
+NARRATOR: Fritz dashes between graves, burying the tags beside the headstones. He shrieks in surprise and delight when the tags turn green.
+
+FRITZ: I’ll show you Insolence, scientist!
+
+NARRATOR: As he stands at the foot of his grave, a chime plays through the room. A small drawer opens from the wall. Fritz grabs half of a cat’s collar, with a cute, paw-shaped tag that jingles as he brings it toward you. A door, previously hidden in the wall, opens fully.
+
+FRITZ: Here it is. And it might fit you, if you want it. The collar says “SPHINX”, by the way.
+
+NARRATOR: SPHINX. SPHINX. SPHINX. Such a strange word, when you repeat it over and over. Not many words with X in them, these days. In fact, X is fairly rare. 26 letters in the alphabet, and some don’t get their fair shake. Funny, that.
+
+FRITZ: We might just make it out of here, $PLAYER…let’s go show the others.
+
+NARRATOR: Fritz lifts you into a pouch on his sash, and careens toward the open door. Patty and Edgar seem impressed!
