@@ -1,0 +1,148 @@
+:: $ePuzz 
+$n: $player and your not-so-merry crew of lab animals enter the next room. 
+$player, $p, and $f slip and fall as soon as your feet touch the floor. $e takes to the air, flapping his wings above the three of you. 
+(link: "continue")[
+$e: The floor is as slippery as ice! Careful, my friends, your footwork must be precise! 
+(link: "continue")[
+$n: Despite the bird's advice, the three of you continue slipping as you try to stand; being careful will not suffice. 
+Damn it, I'm rhyming again, aren't I? This is why I hate being around $e. He drags others into his very specific hell.
+(link: "continue")[
+$e: Do not worry! I will look around and find a solution in a hurry. 
+(link: "continue")[
+$n: $player feel the flapping come closer until the crow grabs you with his talons, lifting you off the ground. 
+Years of animal instinct and fear of predators activate as you struggle in his grip. 
+(link: "continue")[
+$e: Calm yourself, little rat! I merely bring you along so we can have a little chat!
+(link: "continue")[ 
+[$player]: Then why did you grab me without saying anything?! 
+(link: "continue")[
+$e: $player seem to figure out these infuriating puzzles. If this room is like the last, then we will need your brains and my muscles! 
+(link: "continue")[
+$n: The bird caws proudly and must be preening for nobody as he brags about his strength. 
+(link: "continue")[
+$f: I guess we're stuck on the floor until those idiots get back here. 
+(link: "continue")[
+$p: So we are. Them boys get along shockingly well, I think. 
+(link: "continue")[
+$f: $p, just because the kid can listen to $e without taking a swing doesn't mean they get along…
+(link: "continue")[
+$n: $player and $e fly around the room as he looks for the exit. 
+(link: "continue")[
+$e: Ah! I have found a way to get out of here. Let us solve the challenge and kick this escape into high gear! 
+(link: "continue")[
+$n: $player suddenly feel weightless for a second when $e repositions himself and to dive towards whatever he saw. 
+(link: "continue")[
+[$player]: $e, wait wait wait wait! 
+(link: "continue")[
+$n: $player are pulled toward the ground by gravity and your crow companion's acceleration. 
+$player scream, or rather, squeak in terror, as you both fall in $e(text-color:#8c0088)['s] (hopefully) controlled dive. $player squeeze shut your already blind eyes and wait 
+for the end. 
+A loud flap of wings and a sudden stop knocks the air out of you. $player feel $e let go of you, and you drop in a heap on a metal surface.
+(link: "continue")[
+[$player]: What the hell, $e! Was there no other way to get-
+(link: "continue")[
+$e: Wait, Sir [$playerName], listen! Four tubes are in front of us, with water in them that sparkles and glistens. 
+[[What tubes?|ePuzz1]]]]]]]]]]]]]]]]]]]]
+
+:: ePuzz1
+[$player]: So, what about them?  
+(link: "continue")[
+$e: There is one tube, two tube, (text-color:red)[red] tube, (text-color:#1a0fc6)blue tube. 
+(link: "continue")[
+$n: Isn't that copyright infringement?! 
+(link: "continue")[
+[$player]: Ok? And? 
+(link: "continue")[
+$e: Earlier, I saw a door with multiple keyholes. The means to escape floats on the water,  ready to pay the gate's tolls. 
+(link: "continue")[
+[$player]: So there are tubes with keys we need floating in them? 
+(link: "continue")[
+$e: The tubes with the colours are connected and share their water in some sort of hoof shape. There is only one key between the two, on the blue 
+side,  that will help us reach a new landscape. 
+(link: "continue")[
+[$player]: Can you reach the keys? 
+(link: "continue")[
+$e: Fear not, Sir rat. I can secure the objects and bring them to you right stat. 
+(link: "continue")[
+$n: Hahaha, I'm looking forward to this. 
+$e hops away from you, and you hear small flaps of his wings as he approaches the tubes. 
+$player hear $e as he whispers to himself
+(link: "continue")[
+$e: (size:0.5)[Argh, blasted thing. Get over….damn it. Almost…. No, why?! I must bring…]
+(link: "continue")[
+$n: Several **loud**, **frustrated** caws later $e hops back over to you, silent. 
+(link: "continue")[
+[$player]: Did…did you get them? 
+(link: "continue")[
+$e:  No, you fool, I did not “get them.” The tubes are too tall or too thin to reach. How low they float is where our problems stem. 
+(link: "continue")[
+[$player]: Well, what if we made them float higher somehow? 
+(link: "continue")[
+$n: $e Caws in realization and suddenly takes off from where he was in front of you, wings audible with each flap. $player hear things drop on the table a 
+little ahead of you one by one.
+(link: "continue")[
+$e: I have found what we need to proceed! I have brought many weights that can push the water up toward us and allow us to finish this with speed. 
+(link: "continue")[
+$n: Dear god, let me save us some rhyming. He explains that he brought weights of different shapes and sizes. He's also found a plunger that can push 
+water down if more weight pushes the plunger down. 
+(link: "continue")[
+[$player]: Alright, I think I can solve this. Grab the weights I tell you to and put them into the tubes I tell you to. 
+(set: $nTubeL)[(text-color:red)[low]]
+(set: $wTubeL)[(text-color:red)[low]]
+(set: $cTubeL)[(text-color:red)[low]]
+[[continue|ePuzz2]]]]]]]]]]]]]]]]]]]]
+
+:: ePuzz2
+//The narrow tube's water is $nTubeL  
+
+
+ The wide tube's water is $wTubeL          
+
+
+The connected tube's water is even on both the (text-color:red)[red] and (text-color:#1a0fc6)[blue] (key) sides. (text-color:#1a0fc6)[Blue] side 
+is $cTubeL//
+[[Tell Edgar to grab a weight|weights]]
+
+:: weights
+
+(dialog: bind $weightChoice, [//What kind of weight do you want to use?//], [large weight], [small weight], [use the plunger])
+
+(dialog: bind $tubeChoice, [//Which tube should the weight go into?//], [narrow tube], [wide tube], [(text-color:red)[red] side of U-shaped tube], [(text-color:#1a0fc6)[blue] side of U-shaped tube])
+ 
+ 
+<!--large weight goes into the wide tube but does not fit into the narrow tube, and the small weight goes into the narrow tube. The small weight can 
+go into the wide tube but does not raise the water level noticeably, so it counts as a failure by $e. The plunger goes into the red side of the U 
+shaped tube and lifts the water on the blue side. Once each side is high water level (which will take two successful weight placements each) then, $e will grab the key from each.)-->  
+<!--Putting the wrong weight into the wrong tube:-->
+
+:: mistake1
+$e: No, I don't think that's right. Try again and save our plight! 
+[[Try again?|weights]]
+<!--Wrong weight twice or more:--> 
+:: faithLoss
+$e: Wrong, wrong, wrong. I do not wish to be here all day long! 
+(if: $edgar_faith > 0)[(set: $edgar_faith = $edgar_faith - 1)]
+(if: $edgar_faith > 0)[[Try again?|weights]]
+(else:)[[Edgar doesn't trust you|ePuzzFail]]
+
+<!--When faith reaches zero:-->
+:: ePuzzFail
+$e: Insufferable! My patience is completely irrecoverable! 
+$e flies off and grabs both $p and $f. Together the three of them put two of the large weights into the wide tube, two small weights into the narrow tube and use the plunger to push the water down on the red tube to raise the water in the blue tube. $e reaches each Key and flies off with them. In the distance, you hear three keys turning and a large door opens. 
+$e picks up the three of you one by one, scoffing as he picks you up, not even bothering to rhyme. 
+$n: All four of you move on to the next area. 
+
+<!--When the puzzle is solved:-->
+:: ePuzzWin
+$e: That is the last one! Thanks to your directions we have won!
+One and won, huh…. Is rhyming homophones lazy? I'm gonna say yes. Stupid crow. 
+
+[$player]: Perfect! I couldn't have done it without you $e! Turns out we really clicked! 
+
+$n: Wait, are you trying to rhyme too?! Oh no, we already have enough of those here. I won't stand for it, damn it! 
+The corvid notices your attempt at rhymes and lets out a happy “caw,” then takes off with the keys jingling in his talons. In the distance, you hear clicking and a large door opening. 
+$e picks you up again, and you meet with $p and $f. The pygmy monkey calls out to you. 
+$f: Good job solving that. Maybe we have a chance to get out of here after all, though I won't bet on it. 
+$e: Sir $f, you must have faith in our intrepid friend. I have learned his skills are something on which we can depend. 
+$f: Uh huh… By the way, while you were unlocking this door, I noticed a word on it that stood out. It said “Quartz” though I don't know if it refers to where we're going. I guess we're going to find out anyway. Let's get out of here so I can actually stand on solid, non-slippery ground.   
+$n: The four of you move on to the next area.  
