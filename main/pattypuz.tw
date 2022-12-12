@@ -1,17 +1,4 @@
 :: pattypuz0
-
-:: StoryData
-{
-        "ifid": "9BDDCEE6-8FD2-4C77-9101-8ABC7E7B66C3"
-}
-
-:: StoryTitle
-patty test
-
-:: Start
-{(set: $key to [(text-color:#e9c901)[key]])
-(set: $keys to [(text-color:#e9c901)[keys]])
-}
 $p: Whoa, hold on, now.
 $n: The party stops in its tracks, and processing the commotion, you skid to a halt as well.
 $player: What's wrong?
