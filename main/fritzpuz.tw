@@ -414,7 +414,12 @@ S E [[$N1|fritzpuz9_4]] T [[$I1|fritzpuz9_3]] N [[$E2|fritzpuz9_2]] [[$L1|fritzp
 
 [(put: (prompt: [$promptStr], "") into $E1)]
 (if:$E1 is "e" or $E1 is "E")[
-    (if: $fritz_faith < 3)[$fritz_faith = $fritz_faith + 1]
+    (if: $fritz_faith < 3)[
+        $fritz_faith = $fritz_faith + 1
+        (set: $trust to $fritz_faith of $faithdm)
+        //$f trusts you more//
+        //$f $trust//
+        ]
     (set: $guessedE1 = true)
     (set: $q = [(text-colour:green)[E]])
     (set: $E1 to [E])
@@ -443,7 +448,12 @@ S E [[$N1|fritzpuz9_4]] T [[$I1|fritzpuz9_3]] N [[$E2|fritzpuz9_2]] [[$L1|fritzp
 
 [(put: (prompt: [$promptStr], "") into $L1)]
 (if:$L1 is "l" or $L1 is "L")[
-    (if: $fritz_faith < 3)[$fritz_faith = $fritz_faith + 1]
+    (if: $fritz_faith < 3)[
+        $fritz_faith = $fritz_faith + 1
+        (set: $trust to $fritz_faith of $faithdm)
+        //$f trusts you more//
+        //$f $trust//
+        ]
     (set: $guessedL1 = true)
     (set: $q = [(text-colour:green)[L]])
     (set: $L1 to [L])
@@ -472,7 +482,11 @@ S E [[$N1|fritzpuz9_4]] T [[$I1|fritzpuz9_3]] N [[$E2|fritzpuz9_2]] [[$L1|fritzp
 
 [(put: (prompt: [$promptStr], "") into $E2)]
 (if:$E2 is "e" or $E2 is "E")[
-    (if: $fritz_faith < 3)[$fritz_faith = $fritz_faith + 1]
+    (if: $fritz_faith < 3)[
+        $fritz_faith = $fritz_faith + 1
+        (set: $trust to $fritz_faith of $faithdm)
+        //$f trusts you more//
+        //$f $trust//]
     (set: $guessedE2 = true)
     (set: $q = [(text-colour:green)[E]])
     (set: $E2 to [E])
@@ -501,7 +515,11 @@ S E [[$N1|fritzpuz9_4]] T [[$I1|fritzpuz9_3]] N [[$E2|fritzpuz9_2]] [[$L1|fritzp
 
 [(put: (prompt: [$promptStr], "") into $I1)]
 (if:$I1 is "i" or $I1 is "I")[
-    (if: $fritz_faith < 3)[$fritz_faith = $fritz_faith + 1]
+    (if: $fritz_faith < 3)[
+        $fritz_faith = $fritz_faith + 1
+        (set: $trust to $fritz_faith of $faithdm)
+        //$f trusts you more//
+        //$f $trust//]
     (set: $guessedI1 = true)
     (set: $q = [(text-colour:green)[I]])
     (set: $I1 to [I])
@@ -530,7 +548,11 @@ S E [[$N1|fritzpuz9_4]] T [[$I1|fritzpuz9_3]] N [[$E2|fritzpuz9_2]] [[$L1|fritzp
 
 [(put: (prompt: [$promptStr], "") into $N1)]
 (if:$N1 is "n" or $N1 is "N")[
-    (if: $fritz_faith < 3)[$fritz_faith = $fritz_faith + 1]
+    (if: $fritz_faith < 3)[
+        $fritz_faith = $fritz_faith + 1
+        (set: $trust to $fritz_faith of $faithdm)
+        //$f trusts you more//
+        //$f $trust//]
     (set: $guessedN1 = true)
     (set: $q = [(text-colour:green)[N]])
     (set: $N1 to [N])
@@ -554,23 +576,39 @@ S E [[$N1|fritzpuz9_4]] T [[$I1|fritzpuz9_3]] N [[$E2|fritzpuz9_2]] [[$L1|fritzp
     (if:$E1 is "l" or "L")[
         $f: $lovely never had a cage in the middle. She was always on the (text-color:#e9c901)[end]! She was the first test subject…
         (if: $numMistakes > 4)[
-        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith > 0)[
+            (set: $fritz_faith = $fritz_faith - 1)
+            //$f is losing faith in your leadership//<br>
+            (set: $trust to $fritz_faith of $faithdm)
+            //$f $trust//]]
         (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
     (else-if:$E1 is "i" or "I")[
         $f: That was me. I was always the (text-color:#e9c901)[center] of attention… $insolence, he called me. But I never stood out on purpose, until they named me $f.
         (if: $numMistakes > 4)[
-        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith > 0)[
+            (set: $fritz_faith = $fritz_faith - 1)
+            //$f is losing faith in your leadership//<br>
+            (set: $trust to $fritz_faith of $faithdm)
+            //$f $trust//]]
         (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
     (else-if:$E1 is "n" or "N")[
         $f: $neko was a curious sort. He liked leftovers and never did anything right. And he hated heights; (text-color:#e9c901)[didn't like to go up too high or down too low].        
         (if: $numMistakes > 4)[
-        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith > 0)[
+            (set: $fritz_faith = $fritz_faith - 1)
+            //$f is losing faith in your leadership//<br>
+            (set: $trust to $fritz_faith of $faithdm)
+            //$f $trust//]]
         (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
     (else:)[
         $f: Were even //**listening**// to **me**? That wasn't even an option! I said E for $engy! E for $ellie! L for $lovely! N for $neko! AND I for $insolence!
 
         (if: $numMistakes > 1)[
-        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith > 0)[
+            (set: $fritz_faith = $fritz_faith - 1)
+            //$f is losing faith in your leadership//<br>
+            (set: $trust to $fritz_faith of $faithdm)
+            //$f $trust//]]
         (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
     <br>[[Make a another guess|fritzpuz9_0]]]}
     [[Back|fritzpuz8-4]]
@@ -583,22 +621,38 @@ S E [[$N1|fritzpuz9_4]] T [[$I1|fritzpuz9_3]] N [[$E2|fritzpuz9_2]] [[$L1|fritzp
     (if:$L1 is "e" or "E")[
         $f: $engy and $ellie were like glue: (text-color:#e9c901)[they held our team together], even when we were at the edge or stuck in the middle. Links of the chain, they were. Without them, we were lost.
         (if: $numMistakes > 4)[
-        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith > 0)[
+            (set: $fritz_faith = $fritz_faith - 1)
+            //$f is losing faith in your leadership//<br>
+            (set: $trust to $fritz_faith of $faithdm)
+            //$f $trust//]]
         (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
     (else-if:$L1 is "i" or "I")[
         $f: That was me. I was always the (text-color:#e9c901)[center] of attention… $insolence, he called me. But I never stood out on purpose, until they named me $f.
         (if: $numMistakes > 4)[
-        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith > 0)[
+            (set: $fritz_faith = $fritz_faith - 1)
+            //$f is losing faith in your leadership//<br>
+            (set: $trust to $fritz_faith of $faithdm)
+            //$f $trust//]]
         (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
     (else-if:$L1 is "n" or "N")[
         $f: $neko was a curious sort. He liked leftovers and never did anything right. And he hated heights; (text-color:#e9c901)[didn't like to go up too high or down too low].        
         (if: $numMistakes > 4)[
-        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith > 0)[
+            (set: $fritz_faith = $fritz_faith - 1)
+            //$f is losing faith in your leadership//<br>
+            (set: $trust to $fritz_faith of $faithdm)
+            //$f $trust//]]
         (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
     (else:)[
         $f: Were even //**listening**// to **me**? That wasn't even an option! I said E for $engy! E for $ellie! L for $lovely! N for $neko! AND I for $insolence!
         (if: $numMistakes > 1)[
-        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith > 0)[
+            (set: $fritz_faith = $fritz_faith - 1)
+            //$f is losing faith in your leadership//<br>
+            (set: $trust to $fritz_faith of $faithdm)
+            //$f $trust//]]
         (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
     <br>[[Make a another guess|fritzpuz9_1]]]}
     [[Back|fritzpuz8-4]]
@@ -611,22 +665,38 @@ S E [[$N1|fritzpuz9_4]] T [[$I1|fritzpuz9_3]] N [[$E2|fritzpuz9_2]] [[$L1|fritzp
     (if:$E2 is "l" or "L")[
         $f: $lovely never had a cage in the middle. She was always on the (text-color:#e9c901)[end]! She was the first test subject…
         (if: $numMistakes > 4)[
-        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith > 0)[
+            (set: $fritz_faith = $fritz_faith - 1)
+            //$f is losing faith in your leadership//<br>
+            (set: $trust to $fritz_faith of $faithdm)
+            //$f $trust//]]
         (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
     (else-if:$E2 is "i" or "I")[
         $f: That was me. I was always the (text-color:#e9c901)[center] of attention… $insolence, he called me. But I never stood out on purpose, until they named me $f.
         (if: $numMistakes > 4)[
-        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith > 0)[
+            (set: $fritz_faith = $fritz_faith - 1)
+            //$f is losing faith in your leadership//<br>
+            (set: $trust to $fritz_faith of $faithdm)
+            //$f $trust//]]
         (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
     (else-if:$E2 is "n" or "N")[
         $f: $neko was a curious sort. He liked leftovers and never did anything right. And he hated heights; (text-color:#e9c901)[didn't like to go up too high or down too low].        
         (if: $numMistakes > 4)[
-        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith > 0)[
+            (set: $fritz_faith = $fritz_faith - 1)
+            //$f is losing faith in your leadership//<br>
+            (set: $trust to $fritz_faith of $faithdm)
+            //$f $trust//]]
         (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
     (else:)[
         $f: Were even //**listening**// to **me**? That wasn't even an option! I said E for $engy! E for $ellie! L for $lovely! N for $neko! AND I for $insolence!
         (if: $numMistakes > 1)[
-        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith > 0)[
+            (set: $fritz_faith = $fritz_faith - 1)
+            //$f is losing faith in your leadership//<br>
+            (set: $trust to $fritz_faith of $faithdm)
+            //$f $trust//]]
         (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
     <br>[[Make a another guess|fritzpuz9_2]]]}
     [[Back|fritzpuz8-4]]
@@ -639,22 +709,38 @@ S E [[$N1|fritzpuz9_4]] T [[$I1|fritzpuz9_3]] N [[$E2|fritzpuz9_2]] [[$L1|fritzp
     (if:$I1 is "l" or "L")[
         $f: $lovely never had a cage in the middle. She was always on the (text-color:#e9c901)[end]! She was the first test subject…
         (if: $numMistakes > 4)[
-        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith > 0)[
+            (set: $fritz_faith = $fritz_faith - 1)
+            //$f is losing faith in your leadership//<br>
+            (set: $trust to $fritz_faith of $faithdm)
+            //$f $trust//]]
         (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
     (else-if:$I1 is "e" or "E")[
         $f: $engy and $ellie were like glue: (text-color:#e9c901)[they held our team together], even when we were at the edge or stuck in the middle. Links of the chain, they were. Without them, we were lost.
         (if: $numMistakes > 4)[
-        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith > 0)[
+            (set: $fritz_faith = $fritz_faith - 1)
+            //$f is losing faith in your leadership//<br>
+            (set: $trust to $fritz_faith of $faithdm)
+            //$f $trust//]]
         (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
     (else-if:$I1 is "n" or "N")[
         $f: $neko was a curious sort. He liked leftovers and never did anything right. And he hated heights; (text-color:#e9c901)[didn't like to go up too high or down too low].        
         (if: $numMistakes > 4)[
-        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith > 0)[
+            (set: $fritz_faith = $fritz_faith - 1)
+            //$f is losing faith in your leadership//<br>
+            (set: $trust to $fritz_faith of $faithdm)
+            //$f $trust//]]
         (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
     (else:)[
         $f: Were even //**listening**// to **me**? That wasn't even an option! I said E for $engy! E for $ellie! L for $lovely! N for $neko! AND I for $insolence!
         (if: $numMistakes > 1)[
-        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith > 0)[
+            (set: $fritz_faith = $fritz_faith - 1)
+            //$f is losing faith in your leadership//<br>
+            (set: $trust to $fritz_faith of $faithdm)
+            //$f $trust//]]
         (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
     <br>[[Make a another guess|fritzpuz9_3]]]}
     [[Back|fritzpuz8-4]]
@@ -667,22 +753,34 @@ S E [[$N1|fritzpuz9_4]] T [[$I1|fritzpuz9_3]] N [[$E2|fritzpuz9_2]] [[$L1|fritzp
     (if:$N1 is "l" or "L")[
         $f: $lovely never had a cage in the middle. She was always on the (text-color:#e9c901)[end]! She was the first test subject…
         (if: $numMistakes > 4)[
-        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)
+        //$f is losing faith in your leadership//<br>
+        (set: $trust to $fritz_faith of $faithdm)
+        //$f $trust//]]
         (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
     (else-if:$N1 is "i" or "I")[
         $f: That was me. I was always the (text-color:#e9c901)[center] of attention… $insolence, he called me. But I never stood out on purpose, until they named me $f.
         (if: $numMistakes > 4)[
-        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)
+        //$f is losing faith in your leadership//<br>
+        (set: $trust to $fritz_faith of $faithdm)
+        //$f $trust//]]
         (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
     (else-if:$N1 is "e" or "E")[
         $f: $engy and $ellie were like glue: (text-color:#e9c901)[they held our team together], even when we were at the edge or stuck in the middle. Links of the chain, they were. Without them, we were lost.
         (if: $numMistakes > 4)[
-        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)
+        //$f is losing faith in your leadership//<br>
+        (set: $trust to $fritz_faith of $faithdm)
+        //$f $trust//]]
         (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
     (else:)[
         $f: Were even //**listening**// to **me**? That wasn't even an option! I said E for $engy! E for $ellie! L for $lovely! N for $neko! AND I for $insolence!
         (if: $numMistakes > 1)[
-        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)
+        //$f is losing faith in your leadership//<br>
+        (set: $trust to $fritz_faith of $faithdm)
+        //$f $trust//]]
         (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
     <br>[[Make a another guess|fritzpuz9_4]]]}
     [[Back|fritzpuz8-4]]
