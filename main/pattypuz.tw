@@ -36,7 +36,7 @@ $player: Hey, Patty, what did you do right before the door closed again?
 $p: Me? I stepped off of this ground button here.
 $player: Good to know. Thanks, Patty.
 $p: No problem!
-(set: $talkedToPatty to "true")
+(set: $talkedtoPatty to "true")
 [[Go back to the pressure plate|pattypuz1_0]]
 [[Examine the door|pattypuz1_2]]
 
@@ -47,7 +47,7 @@ $p: Oh, sure! It's right over here.
 $n: You follow the sound of her voice, and sure enough, you quickly run into a raised ridge on the ground. Stepping over it, the texture 
 of the floor changes, and you quickly conclude that you are now standing on top of the pressure plate. However, the door does not open.
 $player: I guess I'm not heavy enough to open it. Makes sense.
-(if: $talkedtoPatty is not "true")[
+(unless: $talkedtoPatty is "true")[
     $player: Hey, Patty, what did you do right before the door closed again?
     $p: Me? I stepped off of this ground button here.
     $player: Good to know. Thanks, Patty.
@@ -78,7 +78,7 @@ $player: How long has it been since you were brought here?
 $p: Don't. I know where you're goin' with that thought... Hell, I think about it all the time, too. But even if they're already gone, 
 I still have to hope. How else am I supposed to keep goin'?
 $player: Ah... I'm sorry. Forget I asked, then.
-(set $pattyNegotiation to "failure")
+(set: $pattyNegotiation to "failure")
 [[Continue|pattypuz3]]
 
 
@@ -93,7 +93,7 @@ $player: Food is replaceable. Our lives aren't, and I want all of us to get out 
 I hope you'll consider letting us use your sack. We can't leave anyone behind, after all.
 $n: Patty is silent for several moments while she ruminates over your words.
 $p: Fine. I'll think about it.
-(set $pattyNegotiation to "success")
+(set: $pattyNegotiation to "success")
 [[Continue|pattypuz3]]
 
 :: pattypuz3
@@ -133,7 +133,7 @@ $n: $p patters off towards the closed door.
 $f: There's something in the middle of the room, too. Some kind of raised platform, I think—no, it's almost like a desk.
 $player: Do you think we can get up there?
 $f: I can climb up it and carry you.
-[[Head up|pattypuz5]]
+[[Head up|pattypuz6]]
 
 
 :: pattypuz6
@@ -150,13 +150,13 @@ $p: Some of them pieces ain't connected to each other, though they're still stuc
 $player: Now that you mention it, they might... Is there anything else that you two notice about the room?
 $f: No, aside from the fact that we can see the sky. The pipes don't come close to reaching that far, though.
 $player: Alright...
+[[Ask about the pipes again|pattypuz6_0]]
+[[Examine the buttons|pattypuz6_1]]
 (set: $pattypuzButtonsUnlocked to 0)
 (set: $pattyupperrotation to 2)
 (set: $pattymidrotation to 5)
 (set: $pattylowerrotation to 4)
 (set: $pattypuzFirstTime to 1)
-[[Ask about the pipes again|pattypuz6_0]]
-[[Examine the buttons|pattypuz6_1]]
 
 
 :: pattypuz6_0
@@ -172,7 +172,7 @@ $player: Three of them? Hm...
 $n: Even without your sight, you manage to find the buttons fairly quickly. They don't feel all that different from the ones that you pressed 
 during your ill-fated excursion with $b, though that information isn't all that helpful. As far as you can tell, they are arranged in a rectangle.
 $n: You recall the fact that there are six buttons total, divided equally into three colours.
-(set: pattypuzButtonsUnlocked to 1)
+(set: $pattypuzButtonsUnlocked to 1)
 [[Ask about the pipes again|pattypuz6_0]]
 [[Press a button|pattypuz6_2]]
 
@@ -190,7 +190,7 @@ Which button do you press?
 
 :: pattyRedccw
 (if: $pattypuzFirstTime is 1)[
-    (display: pattyRedccwShort)
+    (display: "pattyRedccwShort")
 ] (else:) [
     (set: $pattypuzRot to "ccw")
     How long do you press the button for?
@@ -200,15 +200,15 @@ Which button do you press?
 
 :: pattyRedccwLong
 (set: $pattyupperrotation to it - 2)
-(display: pattyResultsRed)
+(display: "pattyResultsRed")
 
 :: pattyRedccwShort
 (set: $pattyupperrotation to it - 1)
-(display: pattyResultsRed)
+(display: "pattyResultsRed")
 
 :: pattyRedcw
 (if: $pattypuzFirstTime is 1)[
-    (display: pattyRedcwShort)
+    (display: "pattyRedcwShort")
 ] (else:) [
     (set: $pattypuzRot to "cw")
     How long do you press it for?
@@ -218,11 +218,11 @@ Which button do you press?
 
 :: pattyRedcwLong
 (set: $pattyupperrotation to it + 2)
-(display: pattyResultsRed)
+(display: "pattyResultsRed")
 
 :: pattyRedcwShort
 (set: $pattyupperrotation to it + 1)
-(display: pattyResultsRed)
+(display: "pattyResultsRed")
 
 
 :: pattyGreen
@@ -232,7 +232,7 @@ Which button do you press?
 
 :: pattyGreenccw
 (if: $pattypuzFirstTime is 1)[
-    (display: pattyGreenccwShort)
+    (display: "pattyGreenccwShort")
 ] (else:) [
     (set: $pattypuzRot to "ccw")
     How long do you press the button for?
@@ -241,16 +241,16 @@ Which button do you press?
 ]
 
 :: pattyGreenccwLong
-(set: pattymidrotation to it - 2)
-(display: pattyResultsGreen)
+(set: $pattymidrotation to it - 2)
+(display: "pattyResultsGreen")
 
 :: pattyGreenccwShort
-(set: pattymidrotation to it - 1)
-(display: pattyResultsGreen)
+(set: $pattymidrotation to it - 1)
+(display: "pattyResultsGreen")
 
 :: pattyGreencw
 (if: $pattypuzFirstTime is 1)[
-    (display: pattyGreencwShort)
+    (display: "pattyGreencwShort")
 ] (else:)[
     (set: $pattypuzRot to "cw")
     How long do you press the button for?
@@ -259,12 +259,12 @@ Which button do you press?
 ]
 
 :: pattyGreencwLong
-(set: pattymidrotation to it + 2)
-(display: pattyResultsGreen)
+(set: $pattymidrotation to it + 2)
+(display: "pattyResultsGreen")
 
 :: pattyGreencwShort
-(set: pattymidrotation to it + 1)
-(display: pattyResultsGreen)
+(set: $pattymidrotation to it + 1)
+(display: "pattyResultsGreen")
 
 
 :: pattyBlue
@@ -274,9 +274,9 @@ Which button do you press?
 
 :: pattyBlueccw
 (if: $pattypuzFirstTime is 1)[
-    (display: pattyBlueccwShort)
+    (display: "pattyBlueccwShort")
 ] (else:)[
-    (set: pattypuzRot to "ccw")
+    (set: $pattypuzRot to "ccw")
     How long do you press the button for?
     [[Long|pattyBlueccwLong]]
     [[Short|pattyBlueccwShort]]
@@ -284,15 +284,15 @@ Which button do you press?
 
 :: pattyBlueccwLong
 (set: $pattylowerrotation to it - 2)
-(display: pattyResultsBlue)
+(display: "pattyResultsBlue")
 
 :: pattyBlueccwShort
 (set: $pattylowerrotation to it - 1)
-(display: pattyResultsBlue)
+(display: "pattyResultsBlue")
 
 :: pattyBluecw
-(if: pattypuzFirstTime is 1)[
-    (display: pattyBluecwShort)
+(if: $pattypuzFirstTime is 1)[
+    (display: "pattyBluecwShort")
 ] (else:)[
     (set: $pattypuzRot to "cw")
     How long do you press the button for?
@@ -302,23 +302,23 @@ Which button do you press?
 
 :: pattyBluecwLong
 (set: $pattylowerrotation to it + 2)
-(display: pattyResultsBlue)
+(display: "pattyResultsBlue")
 
 :: pattyBluecwShort
 (set: $pattylowerrotation to it + 1)
-(display: pattyResultsBlue)
+(display: "pattyResultsBlue")
 
 
 :: pattyResultsRed
-(if: pattypuzFirstTime is 1)[
-    (set: $pattypuzFirstTime is 0)
+(if: $pattypuzFirstTime is 1)[
+    (set: $pattypuzFirstTime to 0)
     $n: You press the button, and abruptly, a whirring sound echoes through the room. You quickly retract your hand from the button.
     $player: What happened?
     $p: One of them broken pipes moved.
     $player: Which one?
     $p: the highest one.
     $player: Which direction did it move?
-    (if: pattypuzRot is "ccw")[
+    (if: $pattypuzRot is "ccw")[
         $p: The left side went down.
     ] (else:) [
         $p: The right side went down.
@@ -344,27 +344,26 @@ Which button do you press?
         [[Continue|pattypuz6_2]]
     ] (else:) [
         $p: The highest pipe looks connected now!
-        (display: pattyResultsTotal)
+        (display: "pattyResultsTotal")
     ]
 ]
 
 :: pattyResultsGreen
-(if: pattypuzFirstTime is 1)[
-    (set: pattypuzFirstTime is 0)
+(if: $pattypuzFirstTime is 1)[
+    (set: $pattypuzFirstTime to 0)
     $n: You press the button, and abruptly, a whirring sound echoes through the room. You quickly retract your hand from the button.
     $player: What happened?
     $p: One of them broken pipes moved.
     $player: Which one?
     $p: the middle one.
     $player: Which direction did it move?
-    (if: pattypuzRot is "ccw")[
+    (if: $pattypuzRot is "ccw")[
         $p: The left side went down.
     ] (else:) [
         $p: The right side went down.
     ]
     [[Continue|pattypuz6_2]]
 ] (else:) [
-    
     (unless: $pattymidrotation is 2)[
         (if: $pattymidrotation < 2)[
             (if: $pattypuzRot is "ccw")[
@@ -384,20 +383,20 @@ Which button do you press?
         [[Continue|pattypuz6_2]]
     ] (else:) [
         $p: The middle pipe looks connected now!
-        (display: pattyResultsTotal)
+        (display: "pattyResultsTotal")
     ]
 ]
 
 :: pattyResultsBlue
-(if: pattypuzFirstTime is 1)[
-    (set: pattypuzFirstTime is 0)
+(if: $pattypuzFirstTime is 1)[
+    (set: $pattypuzFirstTime to 0)
     $n: You press the button, and abruptly, a whirring sound echoes through the room. You quickly retract your hand from the button.
     $player: What happened?
     $p: One of them broken pipes moved.
     $player: Which one?
     $p: the bottom one.
     $player: Which direction did it move?
-    (if: pattypuzRot is "ccw")[
+    (if: $pattypuzRot is "ccw")[
         $p: The left side went down.
     ] (else:) [
         $p: The right side went down.
@@ -423,23 +422,23 @@ Which button do you press?
         [[Continue|pattypuz6_2]]
     ] (else:) [
         $p The bottom pipe looks connected now!
-        (display: pattyResultsTotal)
+        (display: "pattyResultsTotal")
     ]
 ]
 
 :: pattyResultsTotal
 (if: $pattyupperrotation is 4)[
     (if: $pattymidrotation is 2)[
-        (if: $pattylowerrotation is 1){
-            (display:pattypuzEnd0)
-        } (else:)[
-            (display: pattypuz6_2)
+        (if: $pattylowerrotation is 1)[
+            (display: "pattypuzEnd0")
+        ] (else:)[
+            (display: "pattypuz6_2")
         ]
     ] (else:)[
-        (display: pattypuz6_2)
+        (display: "pattypuz6_2")
     ]
 ] (else:)[
-    (display: pattypuz6_2)
+    (display: "pattypuz6_2")
 ]
 
 :: pattypuzEnd0
@@ -463,7 +462,7 @@ $player: What's in it?
 
 
 :: pattypuzEnd1
-(if: pattyNegotiation is "success")[
+(if: $pattyNegotiation is "success")[
     $n: $p nervously approaches the sack, pulling it open and then gasping in surprise.
     $p: It's full of nuts! Good ones! Oh, and looks like there's somethin' else, too...
     $n: $p retrieves something from the sack and wordlessly hands it to $f.
@@ -472,7 +471,7 @@ $player: What's in it?
     $p: No, thank you. I wouldn't've given you so much trouble if I'd known there was another sack waiting for me.
     $n: You nod solemnly at her, before you all turn your attention towards the door.
 ]
-(if: pattyNegotiation is "failure")[
+(if: $pattyNegotiation is "failure")[
     $n: $p approaches the sack, pulling it open.
     $p: Huh. Are these... Rocks? Oh, but looks like there's somethin' else, too...
     $n: $p retrieves something from the sack and wordlessly hands it to $f.
