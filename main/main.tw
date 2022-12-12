@@ -15,7 +15,7 @@ The Great Ratscape
 
 by The Boys
 
-[[Play|fritzpuz0]]
+[[Play|pattypuz0]]
     {
     (set: $player to [(text-colour:#00cad1)[You]])
     (set: $n to [(text-colour:grey)[Narrator]])
@@ -28,6 +28,7 @@ by The Boys
     (set: $c to [(text-colour:#c20000)[Cat]])
     (set: $m to [(text-colour:#7c00e2)[Mad Scientist]])
     (set: $s to [(text-colour:#7c00e2)[Scientist]])
+    (set: $mad to [(text-colour:#7c00e2)[Madman]])
 
     (set: $funknown to [(text-colour:#d3d3af)[???]])
     (set: $punknown to [(text-colour:#dfb300)[???]])

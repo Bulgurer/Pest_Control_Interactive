@@ -265,6 +265,6 @@ $f: Good job solving that. Maybe we have a chance to get out of here after all, 
 :: ePuzz7
 $e: Sir $f, you must have faith in our intrepid friend. I have learned his skills are something on which we can depend. 
 (link: "continue")[
-$f: Uh huh… By the way, while you were unlocking this door, I noticed a word on it that stood out. It said “Quartz” though I don't know if it refers to where we're going. I guess we're going to find out anyway. Let's get out of here so I can actually stand on solid, non-slippery ground.   
+$f: Uh huh… By the way, while you were unlocking this door, I noticed a word on it that stood out. It said “(text-color:#ebe9da)[Quartz]” though I don't know if it refers to where we're going. I guess we're going to find out anyway. Let's get out of here so I can actually stand on solid, non-slippery ground.   
 $n: The four of you move on to the next area.
 [[continue|]]]

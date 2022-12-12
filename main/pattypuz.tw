@@ -456,7 +456,7 @@ $player: What is it?
 $n: $p arrives not a moment later, out of breath.
 $p: There was a button on the top. I pushed it, and suddenly there was this noise... Is this what caused it?
 $p: Oh, it's... A sack.
-$f: It seems to say [Vow] on it. I wonder what it means. 
+$f: It seems to say (text-color:#ffb4f1)[Vow] on it. I wonder what it means. 
 $player: What's in it?
 [[Let's see...|pattypuzEnd1]]
 

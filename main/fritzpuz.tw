@@ -792,10 +792,10 @@ $f: Perhaps the $s should have named //**$player**// (text-color:#47802e)[Insole
 $n: $f dashes between graves, burying the tags beside the headstones. He glares daggers at $player when the tags turn (text-color:green)[green].
 (link: "continue")[
 $n: As he stands at the foot of his grave, a chime plays through the room. A small drawer opens from the wall. $f grabs half of a cat's collar, with a cute, paw-shaped tag that jingles as he walks past you with it. A door, previously hidden in the wall, opens fully.
-As he passes, $player catch a glimpse of the word (text-color:#4c4c4c)[SPHINX] on the collar.
+As he passes, $player catch a glimpse of the word (text-color:#eee077)[SPHINX] on the collar.
 $player follow behind him; $p and $e watch sullenly.
 (link: "continue")[
-$n: (text-color:#4c4c4c)[SPHINX]. (text-color:#4c4c4c)[SPHINX]. (text-color:#4c4c4c)[SPHINX]. Such a strange word, when you repeat it over and over. Not many words with X in them, these days. In fact, X is fairly rare. 26 letters in the alphabet, and some don't get their fair shake. Funny, that.
+$n: (text-color:#4c4c4c)[SPHINX]. (text-color:#eee077)[SPHINX]. (text-color:#eee077)[SPHINX]. Such a strange word, when you repeat it over and over. Not many words with X in them, these days. In fact, X is fairly rare. 26 letters in the alphabet, and some don't get their fair shake. Funny, that.
 [[I wonder if the word's important...|]]]]]
 
 :: fritzWin
@@ -805,9 +805,9 @@ $f: I'll show you $insolence, $s!
 (link: "continue")[
 $n: As he stands at the foot of his grave, a chime plays through the room. A small drawer opens from the wall. Fritz grabs half of a cat's collar, with a cute, paw-shaped tag that jingles as he brings it toward you. A door, previously hidden in the wall, opens fully.
 (link: "What did you find?")[
-$f: Here it is. And it might fit you, if you want it. The collar says “(text-color:#4c4c4c)[SPHINX]”, by the way.
+$f: Here it is. And it might fit you, if you want it. The collar says “(text-color:#eee077)[SPHINX]”, by the way.
 (link: "Sphinx?")[
-$n: (text-color:#4c4c4c)[SPHINX]. (text-color:#4c4c4c)[SPHINX]. (text-color:#4c4c4c)[SPHINX]. Such a strange word, when you repeat it over and over. Not many words with X in them, these days. In fact, X is fairly rare. 26 letters in the alphabet, and some don't get their fair shake. Funny, that.
+$n: (text-color:#eee077)[SPHINX]. (text-color:#eee077)[SPHINX]. (text-color:#eee077)[SPHINX]. Such a strange word, when you repeat it over and over. Not many words with X in them, these days. In fact, X is fairly rare. 26 letters in the alphabet, and some don't get their fair shake. Funny, that.
 [[I bet it's important.|fritzWin2]]]]]
 
 :: fritzWin2
