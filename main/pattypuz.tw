@@ -1,4 +1,14 @@
 :: pattypuz0
+
+:: StoryData
+{
+        "ifid": "9BDDCEE6-8FD2-4C77-9101-8ABC7E7B66C3"
+}
+
+:: StoryTitle
+patty test
+
+:: Start
 {(set: $key to [(text-color:#e9c901)[key]])
 (set: $keys to [(text-color:#e9c901)[keys]])
 }
@@ -113,10 +123,11 @@ $p: Fine. I'll think about it.
     $player: Alright, that worked. Let's keep going, then.
 ]
 (if: $pattyNegotiation is "failure")[
-    Narrator: Some time later, you hear the swish of footsteps and wings as Edgar and Fritz return.
-    Fritz: We found something that might work. Step aside, Player. We'll see if it's heavy enough or not.
-    Narrator: You scurry off of the pressure plate while Fritz hefts an object onto the plate. It makes a loud clunk as he drops it, and not a moment later, you hear the whir of machinery as the door opens.
-    Patty: See? That did the trick. You didn't even need my sack for that, Player. You should've had a bit more faith in them.
+    $n: Some time later, you hear the swish of footsteps and wings as $e and $f return.
+    $f: We found something that might work. Step aside, $player. We'll see if it's heavy enough or not.
+    $n: You scurry off of the pressure plate while $f hefts an object onto the plate. It makes a loud clunk as he drops it, and not a moment later, 
+    you hear the whir of machinery as the door opens.
+    $p: See? That did the trick. You didn't even need my sack for that, $player. You should've had a bit more faith in them.
     (set: $patty_faith = $patty_faith - 1)
 ]
 [[Continue|pattypuz4]]
@@ -152,25 +163,315 @@ $p: Some of them pieces ain't connected to each other, though they're still stuc
 $player: Now that you mention it, they might... Is there anything else that you two notice about the room?
 $f: No, aside from the fact that we can see the sky. The pipes don't come close to reaching that far, though.
 $player: Alright...
-[Ask about the pipes again]
-[Examine the buttons]
+(set: $pattypuzButtonsUnlocked to 0)
+(set: $pattyupperrotation to 2)
+(set: $pattymidrotation to 5)
+(set: $pattylowerrotation to 4)
+(set: $pattypuzFirstTime to 1)
+[[Ask about the pipes again|pattypuz6_0]]
+[[Examine the buttons|pattypuz6_1]]
 
+
+:: pattypuz6_0
+$player: $p, you said that there are some pipes that aren't connected to any others?
+$p: That's right. There's three of 'em.
+$player: Three of them? Hm...
+[[Examine the buttons|pattypuz6_1]]
+(if: $pattypuzButtonsUnlocked is 1)[
+[[Press a button|pattypuz6_2]]]
+
+
+:: pattypuz6_1
+$n: Even without your sight, you manage to find the buttons fairly quickly. They don't feel all that different from the ones that you pressed 
+during your ill-fated excursion with $b, though that information isn't all that helpful. As far as you can tell, they are arranged in a rectangle.
+$n: You recall the fact that there are six buttons total, divided equally into three colours.
+(set: pattypuzButtonsUnlocked to 1)
+[[Ask about the pipes again|pattypuz6_0]]
+[[Press a button|pattypuz6_2]]
+
+
+:: pattypuz6_2
+Which colour button would you like to press?
+[[Red|pattyRed]]
+[[Green|pattyGreen]]
+[[Blue|pattyBlue]]
+
+:: pattyRed
+Which button do you press?
+[[Left|pattyRedccw]]
+[[Right|pattyRedcw]]
+
+:: pattyRedccw
+(if: $pattypuzFirstTime is 1)[
+    (display: pattyRedccwShort)
+] (else:) [
+    (set: $pattypuzRot to "ccw")
+    How long do you press the button for?
+    [[Long|pattyRedccwLong]]
+    [[Short|pattyRedccwShort]]
+]
+
+:: pattyRedccwLong
+(set: $pattyupperrotation to it - 2)
+(display: pattyResultsRed)
+
+:: pattyRedccwShort
+(set: $pattyupperrotation to it - 1)
+(display: pattyResultsRed)
+
+:: pattyRedcw
+(if: $pattypuzFirstTime is 1)[
+    (display: pattyRedcwShort)
+] (else:) [
+    (set: $pattypuzRot to "cw")
+    How long do you press it for?
+    [[Long|pattyRedcwLong]]
+    [[Short|pattyRedcwShort]]
+]
+
+:: pattyRedcwLong
+(set: $pattyupperrotation to it + 2)
+(display: pattyResultsRed)
+
+:: pattyRedcwShort
+(set: $pattyupperrotation to it + 1)
+(display: pattyResultsRed)
+
+
+:: pattyGreen
+Which button do you press?
+[[Left|pattyGreenccw]]
+[[Right|pattyGreencw]]
+
+:: pattyGreenccw
+(if: $pattypuzFirstTime is 1)[
+    (display: pattyGreenccwShort)
+] (else:) [
+    (set: $pattypuzRot to "ccw")
+    How long do you press the button for?
+    [[Long|pattyGreenccwLong]]
+    [[Short|pattyGreenccwShort]]
+]
+
+:: pattyGreenccwLong
+(set: pattymidrotation to it - 2)
+(display: pattyResultsGreen)
+
+:: pattyGreenccwShort
+(set: pattymidrotation to it - 1)
+(display: pattyResultsGreen)
+
+:: pattyGreencw
+(if: $pattypuzFirstTime is 1)[
+    (display: pattyGreencwShort)
+] (else:)[
+    (set: $pattypuzRot to "cw")
+    How long do you press the button for?
+    [[Long|pattyGreencwLong]]
+    [[Short|pattyGreencwShort]]
+]
+
+:: pattyGreencwLong
+(set: pattymidrotation to it + 2)
+(display: pattyResultsGreen)
+
+:: pattyGreencwShort
+(set: pattymidrotation to it + 1)
+(display: pattyResultsGreen)
+
+
+:: pattyBlue
+Which button do you press?
+[[Left|pattyBlueccw]]
+[[Right|pattyBluecw]]
+
+:: pattyBlueccw
+(if: $pattypuzFirstTime is 1)[
+    (display: pattyBlueccwShort)
+] (else:)[
+    (set: pattypuzRot to "ccw")
+    How long do you press the button for?
+    [[Long|pattyBlueccwLong]]
+    [[Short|pattyBlueccwShort]]
+]
+
+:: pattyBlueccwLong
+(set: $pattylowerrotation to it - 2)
+(display: pattyResultsBlue)
+
+:: pattyBlueccwShort
+(set: $pattylowerrotation to it - 1)
+(display: pattyResultsBlue)
+
+:: pattyBluecw
+(if: pattypuzFirstTime is 1)[
+    (display: pattyBluecwShort)
+] (else:)[
+    (set: $pattypuzRot to "cw")
+    How long do you press the button for?
+    [[Long|pattyBluecwLong]]
+    [[Short|pattyBluecwShort]]
+]
+
+:: pattyBluecwLong
+(set: $pattylowerrotation to it + 2)
+(display: pattyResultsBlue)
+
+:: pattyBluecwShort
+(set: $pattylowerrotation to it + 1)
+(display: pattyResultsBlue)
+
+
+:: pattyResultsRed
+(if: pattypuzFirstTime is 1)[
+    (set: $pattypuzFirstTime is 0)
+    $n: You press the button, and abruptly, a whirring sound echoes through the room. You quickly retract your hand from the button.
+    $player: What happened?
+    $p: One of them broken pipes moved.
+    $player: Which one?
+    $p: the highest one.
+    $player: Which direction did it move?
+    (if: pattypuzRot is "ccw")[
+        $p: The left side went down.
+    ] (else:) [
+        $p: The right side went down.
+    ]
+    [[Continue|pattypuz6_2]]
+] (else:) [
+    (unless: $pattyupperrotation is 4)[
+        (if: $pattyupperrotation < 4)[
+            (if: $pattypuzRot is "ccw")[
+                $p: Oh! That highest pipe looked connected for a second, 
+                but it rotated past where it should've been.
+            ] (else:)[
+                $p:That highest pipe rotated some, but it still don't look connected.
+            ]
+        ] (else:)[
+            (if: $pattypuzRot is "cw")[
+                $p: Oh! That highest pipe looked connected for a second, 
+                but it rotated past where it should've been.
+            ] (else:)[
+                $p:That highest pipe rotated some, but it still don't look connected.
+            ]
+        ]
+        [[Continue|pattypuz6_2]]
+    ] (else:) [
+        $p: The highest pipe looks connected now!
+        (display: pattyResultsTotal)
+    ]
+]
+
+:: pattyResultsGreen
+(if: pattypuzFirstTime is 1)[
+    (set: pattypuzFirstTime is 0)
+    $n: You press the button, and abruptly, a whirring sound echoes through the room. You quickly retract your hand from the button.
+    $player: What happened?
+    $p: One of them broken pipes moved.
+    $player: Which one?
+    $p: the middle one.
+    $player: Which direction did it move?
+    (if: pattypuzRot is "ccw")[
+        $p: The left side went down.
+    ] (else:) [
+        $p: The right side went down.
+    ]
+    [[Continue|pattypuz6_2]]
+] (else:) [
+    
+    (unless: $pattymidrotation is 2)[
+        (if: $pattymidrotation < 2)[
+            (if: $pattypuzRot is "ccw")[
+                $p: Oh! That middle pipe looked connected for a second, 
+                but it rotated past where it should've been.
+            ] (else:)[
+                $p:That middle pipe rotated some, but it still don't look connected.
+            ]
+        ] (else:)[
+            (if: $pattypuzRot is "cw")[
+                $p: Oh! That middle pipe looked connected for a second, 
+                but it rotated past where it should've been.
+            ] (else:)[
+                $p:That middle pipe rotated some, but it still don't look connected.
+            ]
+        ]
+        [[Continue|pattypuz6_2]]
+    ] (else:) [
+        $p: The middle pipe looks connected now!
+        (display: pattyResultsTotal)
+    ]
+]
+
+:: pattyResultsBlue
+(if: pattypuzFirstTime is 1)[
+    (set: pattypuzFirstTime is 0)
+    $n: You press the button, and abruptly, a whirring sound echoes through the room. You quickly retract your hand from the button.
+    $player: What happened?
+    $p: One of them broken pipes moved.
+    $player: Which one?
+    $p: the bottom one.
+    $player: Which direction did it move?
+    (if: pattypuzRot is "ccw")[
+        $p: The left side went down.
+    ] (else:) [
+        $p: The right side went down.
+    ]
+    [[Continue|pattypuz6_2]]
+] (else:) [
+    (unless: $pattylowerrotation is 1)[
+        (if: $pattylowerrotation < 1)[
+            (if: $pattypuzRot is "ccw")[
+                $p: Oh! That bottom pipe looked connected for a second, 
+                but it rotated past where it should've been.
+            ] (else:)[
+                $p:That bottom pipe rotated some, but it still don't look connected.
+            ]
+        ] (else:)[
+            (if: $pattypuzRot is "cw")[
+                $p: Oh! That bottom pipe looked connected for a second, 
+                but it rotated past where it should've been.
+            ] (else:)[
+                $p:That bottom pipe rotated some, but it still don't look connected.
+            ]
+        ]
+        [[Continue|pattypuz6_2]]
+    ] (else:) [
+        $p The bottom pipe looks connected now!
+        (display: pattyResultsTotal)
+    ]
+]
+
+:: pattyResultsTotal
+(if: $pattyupperrotation is 4)[
+    (if: $pattymidrotation is 2)[
+        (if: $pattylowerrotation is 1){
+            (display:pattypuzEnd0)
+        } (else:)[
+            (display: pattypuz6_2)
+        ]
+    ] (else:)[
+        (display: pattypuz6_2)
+    ]
+] (else:)[
+    (display: pattypuz6_2)
+]
 
 :: pattypuzEnd0
-Player: Is that it? Are all the pipes connected now?
-Patty: That they are! Thanks for figuring that out, Player.
-Player: Hey, since you're the fastest runner out of all of us, and you helped out so much, do you want to go see what's at the top?
-Patty: Sure thing! I'll be right back.
-Narrator: Patty patters off once more towards the exit. You idle around for some time before you hear a very distant, very faint click echo through the room, followed by rumbling and banging.
-Player: What's going on?
-Fritz: Patty is running down the pipe. I guess she found something up on the top.
-Narrator: You and Fritz climb down from the desk, and together with Edgar, you walk over to the exit to wait for Patty. A few more moments pass... The rumbling gets louder. A few more... Something comes rolling out of the pipe with a solid thunk, gently coming to a stop before Fritz.
-Player: What is it?
-Narrator: Patty arrives not a moment later, out of breath.
-Patty: There was a button on the top. I pushed it, and suddenly there was this noise... Is this what caused it?
-Patty: Oh, it's... A sack.
-Fritz: It seems to say [Vow] on it. I wonder what it means. 
-Player: What's in it?
+$player: Is that it? Are all the pipes connected now?
+$p: That they are! Thanks for figuring that out, $player.
+$player: Hey, since you're the fastest runner out of all of us, and you helped out so much, do you want to go see what's at the top?
+$p: Sure thing! I'll be right back.
+$n: $p patters off once more towards the exit. You idle around for some time before you hear a very distant, very faint click echo through the room, 
+followed by rumbling and banging.
+$player: What's going on?
+$f: $p is running down the pipe. I guess she found something up on the top.
+$n: You and $f climb down from the desk, and together with $e, you walk over to the exit to wait for $p. A few more moments pass... 
+The rumbling gets louder. A few more... Something comes rolling out of the pipe with a solid thunk, gently coming to a stop before $f.
+$player: What is it?
+$n: $p arrives not a moment later, out of breath.
+$p: There was a button on the top. I pushed it, and suddenly there was this noise... Is this what caused it?
+$p: Oh, it's... A sack.
+$f: It seems to say [Vow] on it. I wonder what it means. 
+$player: What's in it?
 [[Let's see...|pattypuzEnd1]]
 
 
