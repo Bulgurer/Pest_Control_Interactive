@@ -189,6 +189,13 @@ $n: $f becomes extremely annoyed, and starts to breathe heavily. He grumbles und
 (set: $E2 to "_")
 (set: $L1 to "_")
 (set: $E1 to "_")
+(set: $mistakeNum to 0)
+(set: $guessedE1 to false)
+(set: $guessedE2 to false)
+(set: $guessedN1 to false)
+(set: $guessedL1 to false)
+(set: $guessedI1 to false)
+
 
 :: fritzpuz8-0
 $player: Why do you have your friend's tags, $f?
@@ -287,7 +294,7 @@ $player: Can you tell me about your expedition?
 (link: "continue")[
 $f: Every night the $c would come and steal our tags while we slept. The $c would tease us, bringing tags to the wrong cages. Every night someone would be blasted awake. We never slept in peace!
 (link: "Thats terrible!")[
-$f: So we banded together, sick of being tortured! And Engy…oh, she was brilliant! She reversed the polarity on her tag: instead of issuing a blast, it stored the power within.
+$f: So we banded together, sick of being tortured! And $engy… oh, she was brilliant! She reversed the polarity on her tag: instead of issuing a blast, it stored the power within.
 [[Hmm|fritzpuz8-1_0]]]]
 
 :: fritzpuz8-1_0
@@ -297,7 +304,7 @@ $f: Genius, really. She waited until the $c stole her tag... and unleashed the p
 
 **BLAM!**
 (link: "Amazing!")[
-$f: In its panic, the cat lept through a hidden opening in the wall... its collar unlocked all the doors in the laboratory, you know. The collar was our key! Eventually, we stole it.
+$f: In its panic, the $c lept through a hidden opening in the wall... its collar unlocked all the doors in the laboratory, you know. The collar was our key! Eventually, we stole it.
 [[Thats our key too!|fritzpuz8-1_2]]]]
 
 :: fritzpuz8-1_2
@@ -311,7 +318,7 @@ $f: It was damaged during our escape. I hid what remained in an opening in the w
 (set: $fritzExp to 1)
 
 :: fritzpuz8-2
-$p: Tell me about the room, $f.
+$player: Tell me about the room, $f.
 (link: "Fritz explains")[
 $f: There are gravestones, lined up in rows. But looking at them makes me sick. They are the resting places of my friends. There are empty ones...
 (link: "continue")[
@@ -330,7 +337,7 @@ $player: Your friends were glad that you tried $f. They refused to be trapped he
 [[continue|fritzpuz8-2_1]]]]
 
 :: fritzpuz8-2_1
-$f: I will be your Eyes, Kid. Let us see: Engy! Ellie! Lovely! Neko! And... me.
+$f: I will be your Eyes, Kid. Let us see: $engy! $ellie! $lovely! $neko! And... (text-color:#d3d3af)[me].
 (link: "continue")[
 $n: $f drops the tags in order... except for one.
 [[What's next?|fritzpuz8]]]
@@ -355,7 +362,7 @@ $player: You've always been $f to me. I like $f.
 :: fritzpuz8-3_1
 $f: And so do I, more than you will ever know, Rat.
 (link: "continue")[
-$f: I was //“Subject I”//, before. The $s called me Insolence.
+$f: I was //“Subject I”//, before. The $s called me $insolence.
 (link: "continue")[
 $f: When I was gifted a name— not having one forced upon me— that was the beginning of my freedom.
 [[continue|fritzpuz8-3_2]]]]
@@ -376,7 +383,7 @@ $player: Your friend's names! The initials! The tags fill in the gaps!
 :: fritzpuz8-3_4
 $n: There is a brief moment of silence. You stammer... the gaps: they're empty graves.
 (link: "continue")[
-$f: Then we shall bury them by the names I give them! E for Engy! E for Ellie! L for Lovely! N for Neko! AND I for I!
+$f: Then we shall bury them by the names I give them! E for $engy! E for $ellie! L for $lovely! N for $neko! AND I for $insolence!
 (link: "continue")[
 $player: That gives us E, E, L, N, and I... let's place those tags!
 [[Lets do it|fritzpuz8]]]]
@@ -385,43 +392,331 @@ $player: That gives us E, E, L, N, and I... let's place those tags!
 :: fritzpuz8-4
 **The Crossword:**
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R
-S E $N1 T $I1 N $E2 $L1
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[[$E1|fritzpuz9_0]]
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R
-
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R
+S E [[$N1|fritzpuz9_4]] T [[$I1|fritzpuz9_3]] N [[$E2|fritzpuz9_2]] [[$L1|fritzpuz9_1]]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[[$E1|fritzpuz9_0]]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R
+{(if: $guessedE1 is true and $guessedL1 is true and $guessedE2 is true and $guessedI1 is true and $guessedN1 is true)[
+    [[I think that's right!|fritzWin]]
+]}
 :: fritzpuz9_0
 {
-  (if: $guessedB is false)[
+  (if: $guessedE1 is false)[
   (set: $q = [(text-colour:red)[$E1]])]
   (set: $promptStr = [
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R
-    S E $N1 T $I1 N $E2 $L1
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$q
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R
+  S E $N1 T $I1 N $E2 $L1
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$q
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R
     ])
 
 [(put: (prompt: [$promptStr], "") into $E1)]
-(if:$E1 is "e")[
-    
-    (set: $guessedB = true)
-    (set: $q = [(text-colour:green)[$E1]])
+(if:$E1 is "e" or $E1 is "E")[
+    (if: $fritz_faith < 3)[$fritz_faith = $fritz_faith + 1]
+    (set: $guessedE1 = true)
+    (set: $q = [(text-colour:green)[E]])
+    (set: $E1 to [E])
     ]
     (set: $promptStr = [
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R
     S E $N1 T $I1 N $E2 $L1
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$q
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$q
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R
     ])
-}
+(if: $E1 is "" or $E1 is " ")[(set: $E1 to "_")]
+}(go-to: "postGuessE1")
+
+:: fritzpuz9_1
+{
+  (if: $guessedL1 is false)[
+  (set: $q = [(text-colour:red)[$L1]])]
+  (set: $promptStr = [
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R
+  S E $N1 T $I1 N $E2 $q
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$E1
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R
+    ])
+
+[(put: (prompt: [$promptStr], "") into $L1)]
+(if:$L1 is "l" or $L1 is "L")[
+    (if: $fritz_faith < 3)[$fritz_faith = $fritz_faith + 1]
+    (set: $guessedL1 = true)
+    (set: $q = [(text-colour:green)[L]])
+    (set: $L1 to [L])
+    ]
+    (set: $promptStr = [
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R
+    S E $N1 T $I1 N $E2 $q
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$E1
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R
+    ])
+    (if: $L1 is "" or $L1 is " ")[(set: $L1 to "_")]
+}(go-to: "postGuessL1")
+
+:: fritzpuz9_2
+{
+  (if: $guessedE2 is false)[
+  (set: $q = [(text-colour:red)[$E2]])]
+  (set: $promptStr = [
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R
+  S E $N1 T $I1 N $q $L1
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$E1
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R
+    ])
+
+[(put: (prompt: [$promptStr], "") into $E2)]
+(if:$E2 is "e" or $E2 is "E")[
+    (if: $fritz_faith < 3)[$fritz_faith = $fritz_faith + 1]
+    (set: $guessedE2 = true)
+    (set: $q = [(text-colour:green)[E]])
+    (set: $E2 to [E])
+    ]
+    (set: $promptStr = [
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R
+    S E $N1 T $I1 N $q $L1
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$E1
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R
+    ])
+    (if: $E2 is "" or $E2 is " ")[(set: $E2 to "_")]
+}(go-to: "postGuessE2")
+
+:: fritzpuz9_3
+{
+  (if: $guessedI1 is false)[
+  (set: $q = [(text-colour:red)[$I1]])]
+  (set: $promptStr = [
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R
+  S E $N1 T $q N $E2 $L1
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$E1
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R
+    ])
+
+[(put: (prompt: [$promptStr], "") into $I1)]
+(if:$I1 is "i" or $I1 is "I")[
+    (if: $fritz_faith < 3)[$fritz_faith = $fritz_faith + 1]
+    (set: $guessedI1 = true)
+    (set: $q = [(text-colour:green)[I]])
+    (set: $I1 to [I])
+    ]
+    (set: $promptStr = [
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R
+    S E $N1 T $q N $E2 $L1
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$E1
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R
+    ])
+    (if: $I1 is "" or $I1 is " ")[(set: $I1 to "_")]
+}(go-to: "postGuessI1")
+
+:: fritzpuz9_4
+{
+  (if: $guessedN1 is false)[
+  (set: $q = [(text-colour:red)[$N1]])]
+  (set: $promptStr = [
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R
+  S E $q T $I1 N $E2 $L1
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$E1
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R
+    ])
+
+[(put: (prompt: [$promptStr], "") into $N1)]
+(if:$N1 is "n" or $N1 is "N")[
+    (if: $fritz_faith < 3)[$fritz_faith = $fritz_faith + 1]
+    (set: $guessedN1 = true)
+    (set: $q = [(text-colour:green)[N]])
+    (set: $N1 to [N])
+    ]
+    (set: $promptStr = [
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R
+    S E $q T $I1 N $E2 $L1
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;V
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$E1
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R
+    ])
+    (if: $N1 is "" or $N1 is " ")[(set: $N1 to "_")]
+}(go-to: "postGuessN1")
+
+
+:: postGuessE1
     $promptStr
-    (if: $guessedB is false)[
-    [[Make a another guess|fritzpuz8-4]]]
+    {
+    (if: $guessedE1 is false)[
+    (set: $numMistakes = $numMistakes + 1)
+    (if:$E1 is "l" or "L")[
+        $f: $lovely never had a cage in the middle. She was always on the (text-color:#e9c901)[end]! She was the first test subject…
+        (if: $numMistakes > 4)[
+        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
+    (else-if:$E1 is "i" or "I")[
+        $f: That was me. I was always the (text-color:#e9c901)[center] of attention… $insolence, he called me. But I never stood out on purpose, until they named me $f.
+        (if: $numMistakes > 4)[
+        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
+    (else-if:$E1 is "n" or "N")[
+        $f: $neko was a curious sort. He liked leftovers and never did anything right. And he hated heights; (text-color:#e9c901)[didn't like to go up too high or down too low].        
+        (if: $numMistakes > 4)[
+        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
+    (else:)[
+        $f: Were even //**listening**// to **me**? That wasn't even an option! I said E for $engy! E for $ellie! L for $lovely! N for $neko! AND I for $insolence!
 
+        (if: $numMistakes > 1)[
+        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
+    <br>[[Make a another guess|fritzpuz9_0]]]}
+    [[Back|fritzpuz8-4]]
 
+:: postGuessL1
+    $promptStr
+    {
+    (if: $guessedL1 is false)[
+    (set: $numMistakes = $numMistakes + 1)
+    (if:$L1 is "e" or "E")[
+        $f: $engy and $ellie were like glue: (text-color:#e9c901)[they held our team together], even when we were at the edge or stuck in the middle. Links of the chain, they were. Without them, we were lost.
+        (if: $numMistakes > 4)[
+        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
+    (else-if:$L1 is "i" or "I")[
+        $f: That was me. I was always the (text-color:#e9c901)[center] of attention… $insolence, he called me. But I never stood out on purpose, until they named me $f.
+        (if: $numMistakes > 4)[
+        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
+    (else-if:$L1 is "n" or "N")[
+        $f: $neko was a curious sort. He liked leftovers and never did anything right. And he hated heights; (text-color:#e9c901)[didn't like to go up too high or down too low].        
+        (if: $numMistakes > 4)[
+        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
+    (else:)[
+        $f: Were even //**listening**// to **me**? That wasn't even an option! I said E for $engy! E for $ellie! L for $lovely! N for $neko! AND I for $insolence!
+        (if: $numMistakes > 1)[
+        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
+    <br>[[Make a another guess|fritzpuz9_1]]]}
+    [[Back|fritzpuz8-4]]
+
+:: postGuessE2
+    $promptStr
+    {
+    (if: $guessedE2 is false)[
+    (set: $numMistakes = $numMistakes + 1)
+    (if:$E2 is "l" or "L")[
+        $f: $lovely never had a cage in the middle. She was always on the (text-color:#e9c901)[end]! She was the first test subject…
+        (if: $numMistakes > 4)[
+        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
+    (else-if:$E2 is "i" or "I")[
+        $f: That was me. I was always the (text-color:#e9c901)[center] of attention… $insolence, he called me. But I never stood out on purpose, until they named me $f.
+        (if: $numMistakes > 4)[
+        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
+    (else-if:$E2 is "n" or "N")[
+        $f: $neko was a curious sort. He liked leftovers and never did anything right. And he hated heights; (text-color:#e9c901)[didn't like to go up too high or down too low].        
+        (if: $numMistakes > 4)[
+        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
+    (else:)[
+        $f: Were even //**listening**// to **me**? That wasn't even an option! I said E for $engy! E for $ellie! L for $lovely! N for $neko! AND I for $insolence!
+        (if: $numMistakes > 1)[
+        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
+    <br>[[Make a another guess|fritzpuz9_2]]]}
+    [[Back|fritzpuz8-4]]
+
+:: postGuessI1
+    $promptStr
+    {
+    (if: $guessedI1 is false)[
+    (set: $numMistakes = $numMistakes + 1)
+    (if:$I1 is "l" or "L")[
+        $f: $lovely never had a cage in the middle. She was always on the (text-color:#e9c901)[end]! She was the first test subject…
+        (if: $numMistakes > 4)[
+        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
+    (else-if:$I1 is "e" or "E")[
+        $f: $engy and $ellie were like glue: (text-color:#e9c901)[they held our team together], even when we were at the edge or stuck in the middle. Links of the chain, they were. Without them, we were lost.
+        (if: $numMistakes > 4)[
+        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
+    (else-if:$I1 is "n" or "N")[
+        $f: $neko was a curious sort. He liked leftovers and never did anything right. And he hated heights; (text-color:#e9c901)[didn't like to go up too high or down too low].        
+        (if: $numMistakes > 4)[
+        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
+    (else:)[
+        $f: Were even //**listening**// to **me**? That wasn't even an option! I said E for $engy! E for $ellie! L for $lovely! N for $neko! AND I for $insolence!
+        (if: $numMistakes > 1)[
+        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
+    <br>[[Make a another guess|fritzpuz9_3]]]}
+    [[Back|fritzpuz8-4]]
+
+:: postGuessN1
+    $promptStr
+    {
+    (if: $guessedN1 is false)[
+    (set: $numMistakes = $numMistakes + 1)
+    (if:$N1 is "l" or "L")[
+        $f: $lovely never had a cage in the middle. She was always on the (text-color:#e9c901)[end]! She was the first test subject…
+        (if: $numMistakes > 4)[
+        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
+    (else-if:$N1 is "i" or "I")[
+        $f: That was me. I was always the (text-color:#e9c901)[center] of attention… $insolence, he called me. But I never stood out on purpose, until they named me $f.
+        (if: $numMistakes > 4)[
+        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
+    (else-if:$N1 is "e" or "E")[
+        $f: $engy and $ellie were like glue: (text-color:#e9c901)[they held our team together], even when we were at the edge or stuck in the middle. Links of the chain, they were. Without them, we were lost.
+        (if: $numMistakes > 4)[
+        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
+    (else:)[
+        $f: Were even //**listening**// to **me**? That wasn't even an option! I said E for $engy! E for $ellie! L for $lovely! N for $neko! AND I for $insolence!
+        (if: $numMistakes > 1)[
+        (if: $fritz_faith > 0)[(set: $fritz_faith = $fritz_faith - 1)]]
+        (if: $fritz_faith is 0)[(go-to: "fritzFail")]]
+    <br>[[Make a another guess|fritzpuz9_4]]]}
+    [[Back|fritzpuz8-4]]
+
+:: fritzFail
+$n: $f **shoves** you to the side.
+$f: Perhaps the $s should have named //**$player**// (text-color:#47802e)[Insolence]!
+(link: "I have feelings too...")[
+$n: $f dashes between graves, burying the tags beside the headstones. He glares daggers at $player when the tags turn (text-color:green)[green].
+(link: "continue")[
+$n: As he stands at the foot of his grave, a chime plays through the room. A small drawer opens from the wall. $f grabs half of a cat's collar, with a cute, paw-shaped tag that jingles as he walks past you with it. A door, previously hidden in the wall, opens fully.
+As he passes, $player catch a glimpse of the word (text-color:#4c4c4c)[SPHINX] on the collar.
+$player follow behind him; $p and $e watch sullenly.
+(link: "continue")[
+$n: (text-color:#4c4c4c)[SPHINX]. (text-color:#4c4c4c)[SPHINX]. (text-color:#4c4c4c)[SPHINX]. Such a strange word, when you repeat it over and over. Not many words with X in them, these days. In fact, X is fairly rare. 26 letters in the alphabet, and some don't get their fair shake. Funny, that.
+[[I wonder if the word's important...|]]]]]
+
+:: fritzWin
+$n: $f dashes between graves, burying the tags beside the headstones. He shrieks in surprise and delight when the tags turn (text-color:green)[green].
+
+$f: I'll show you $insolence, $s!
+(link: "continue")[
+$n: As he stands at the foot of his grave, a chime plays through the room. A small drawer opens from the wall. Fritz grabs half of a cat's collar, with a cute, paw-shaped tag that jingles as he brings it toward you. A door, previously hidden in the wall, opens fully.
+(link: "What did you find?")[
+$f: Here it is. And it might fit you, if you want it. The collar says “(text-color:#4c4c4c)[SPHINX]”, by the way.
+(link: "Sphinx?")[
+$n: (text-color:#4c4c4c)[SPHINX]. (text-color:#4c4c4c)[SPHINX]. (text-color:#4c4c4c)[SPHINX]. Such a strange word, when you repeat it over and over. Not many words with X in them, these days. In fact, X is fairly rare. 26 letters in the alphabet, and some don't get their fair shake. Funny, that.
+[[I bet it's important.|fritzWin2]]]]]
+
+:: fritzWin2
+$f: We might just make it out of here, $player…let's go show the others.
+
+$n: $f lifts you into a pouch on his sash, and careens toward the open door. $p and $e seem impressed!
+[[Onwards!|]]
 :: goaway
 Display the crossword puzzle:
              R
@@ -437,22 +732,22 @@ S E N T I N E L
              R
 
 If the L is in the wrong spot:
-FRITZ: Lovely never had a cage in the middle. She was always on the end! She was the first test subject…
+$f: $lovely never had a cage in the middle. She was always on the end! She was the first test subject…
 
 If the I is in the wrong spot:
-FRITZ: That was me. I was always the center of attention…Insolence, he called me. But I never stood out on purpose, until they named me Fritz.
+$f: That was me. I was always the center of attention… $insolence, he called me. But I never stood out on purpose, until they named me $f.
 
 If the N is in the wrong spot:
-FRITZ: Neko was a curious sort. He liked leftovers and never did anything right. And he hated heights; didn’t like to go up too high or down too low.
+$f: $neko was a curious sort. He liked leftovers and never did anything right. And he hated heights; didn't like to go up too high or down too low.
 
 If the E is in the wrong spot:
-FRITZ: Engy and Ellie were like glue: they held our team together, even when we were at the edge or stuck in the middle. Links of the chain, they were. Without them, we were lost.
+$f: $engy and $ellie were like glue: they held our team together, even when we were at the edge or stuck in the middle. Links of the chain, they were. Without them, we were lost.
 
 [END OF PUZZLE]
 
 NARRATOR: Fritz dashes between graves, burying the tags beside the headstones. He shrieks in surprise and delight when the tags turn green.
 
-FRITZ: I’ll show you Insolence, scientist!
+FRITZ: I’ll show you $insolence, scientist!
 
 NARRATOR: As he stands at the foot of his grave, a chime plays through the room. A small drawer opens from the wall. Fritz grabs half of a cat’s collar, with a cute, paw-shaped tag that jingles as he brings it toward you. A door, previously hidden in the wall, opens fully.
 

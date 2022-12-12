@@ -246,7 +246,9 @@ All four of you move on to the next area.
 <!--When the puzzle is solved:-->
 :: ePuzzWin
 $e: That is the last one! Thanks to your directions we have won!
-
+{set: $edgar_faith = $edgar_faith + 1 
+//$player have gained some of $e(text-color:#8c0088)['s] trust//
+}
 $n: One and won, huh…. Is rhyming homophones lazy? I'm gonna say yes. Stupid crow. 
 (link: "continue")[
 

@@ -15,7 +15,7 @@ The Great Ratscape
 
 by The Boys
 
-[[Play|ePuzz]]
+[[Play|fritzpuz0]]
     {
     (set: $player to [(text-colour:#00cad1)[You]])
     (set: $n to [(text-colour:grey)[Narrator]])
@@ -34,6 +34,13 @@ by The Boys
     (set: $eunknown to [(text-colour:#8c0088)[???]])
     (set: $bunknown  to [(css: "color: green;")[???]])
     (set: $cunknown to [(text-colour:c20000)[???]])
+
+    (set: $lovely to [(text-color:#e84a75)[Lovely]])
+    (set: $insolence to [(text-color:#d3d3af)[Insolence]])
+    (set: $neko to [(text-color:#fab061)[Neko]])
+    (set: $engy to [(text-color:#60ebaa)[Engy]])
+    (set: $ellie to [(text-color:#1bb76e)[Ellie]])
+
 
     (set: $counter to 0)
 
