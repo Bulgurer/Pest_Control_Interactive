@@ -184,7 +184,7 @@ $player: $b, I //can't// look over there. I can't see anything.
 $b: Oh….That's right. Sorry about that! Bit forgetful, you see, I mean, uhhh… Well- anyway, let's go down there.
 (link: "continue")[
 $n: You roll your non-seeing eyes in opposite directions for maximum sass 
-('cause rats can do that) and follow him. This time, he helps you from ledge to ledge as you both descend to the ground.
+(cause rats can do that) and follow him. This time, he helps you from ledge to ledge as you both descend to the ground.
 [[continue|tut56]]]]
 
 :: tut56
