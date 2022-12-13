@@ -244,7 +244,7 @@ $f: Argh, every damn time with this room. Nearly blinds you with our bright it i
 $p: Well, I think it&#39;s quite nice. Better than that bunkhouse or room I couldn&#39;t stand in.
 [[Edgar&#39;s awful quiet..|finalPuz3]]]]]</tw-passagedata><tw-passagedata pid="28" name="finalPuz3" tags="" position="975,350" size="100,100">$n: $e stays silent as if shocked into it until he says 
 
-$e: (text-color:#fff8c9)[Shiny], (text-color:#ddfff7)[shiny] everywhere, (text-color:#fff8c9)[spa](text-color:#ddfff7)[rkl](text-color:#fff8c9)[ing] (text-color:#ddfff7)[spa](text-color:#fff8c9)[rkl](text-color:#ddfff7)[ing] without care. 
+$e: (text-color:#fff8c9)[Shiny], (text-color:#ddfff7)[shiny] everywhere, (text-color:#fff8c9)[s](text-color:#ddfff7)[p](text-color:#fff8c9)[a](text-color:#ddfff7)[r](text-color:#fff8c9)[k](text-color:#ddfff7)[l](text-color:#fff8c9)[i](text-color:#ddfff7)[n](text-color:#fff8c9)[g] (text-color:#ddfff7)[s](text-color:#fff8c9)[p](text-color:#ddfff7)[a](text-color:#fff8c9)[r](text-color:#ddfff7)[k](text-color:#fff8c9)[l](text-color:#ddfff7)[i](text-color:#fff8c9)[n](text-color:#ddfff7)[g] without care. 
 (link: &quot;He really loves his rhyming&quot;)[
 $n:Uh uh, nope. This ain&#39;t a musical, and I won&#39;t have this. 
 (link: &quot;continue&quot;)[
@@ -275,23 +275,24 @@ $f: Words that seem contrived, huh? What were those words we came across before?
 (link: &quot;So we need all the letters.&quot;)[
 [$player]: The phrase needs to have (text-color:#e9c901)[all of the letters of the alphabet] inside it, but there are three extra….Where do the words we have go, and what are we missing? 
 [[Let&#39;s get started|finalPuz7]]]]
-(set: $counter = 3)</tw-passagedata><tw-passagedata pid="32" name="finalPuz7" tags="" position="225,475" size="100,100">//Just like your first time here, you have to fill in the passcode, and then the door will open. $player remember what happened the last time you (text-color:#991414)[failed].//
+(set: $endcounter = 3)</tw-passagedata><tw-passagedata pid="32" name="finalPuz7" tags="" position="225,475" size="100,100">//Just like your first time here, you have to fill in the passcode, and then the door will open. $player remember what happened the last time you (text-color:#991414)[failed].//
 ------ -- ----- ------ ----- -- ---
 Words known: (text-color:#ffb4f1)[vow], (text-color:#ebe9da)[quartz], (text-color:#eee077)[sphinx], (text-color:#6d6d6d)[black]
 [[Make a guess|endGuess]]</tw-passagedata><tw-passagedata pid="33" name="endGuess" tags="" position="350,475" size="100,100">{
-(if: $counter is 3)[(put: (prompt: [What do you type?], &quot;&quot;) into $player_input)]
-(if: $counter &lt; 3)[(put: (prompt: [Judging off the lights, you have $counter tries remaining, What do you type?], &quot;&quot;) into $player_input)]
+(if: $endcounter is 3)[(put: (prompt: [What do you type?], &quot;&quot;) into $player_input)]
+(if: $endcounter &lt; 3)[(put: (prompt: [Judging off the lights, you have (text-color:red)[$endcounter] tries remaining, What do you type?], &quot;&quot;) into $player_input)]
 (set: $player_input to (lowercase: $player_input))
 (if:$player_input is &quot;sphinx of black quartz judge my vow&quot;)[ 
-    (text-colour:green)[$player_input]
+    (text-colour:green)[$player_input]&lt;br&gt;
     $n: You hear a //dodododo DING// and metal screeching against stone. The gate [[opens...|postFinalPuz]] 
 ]
-}
-(else: ) [(set: $counter = $counter - 1)(text-colour:red)[$player_input]
-(if: $counter = 2)[(go-to: &quot;oneFail&quot;)]
-(if: $counter = 1)[(go-to: &quot;twoFail&quot;)]
-(if: $counter = 0)[(go-to: &quot;threeFail&quot;)]
-]
+
+(else: ) [
+(set: $endcounter = $endcounter - 1)(text-colour:red)[$player_input]
+(if: $endcounter is 2)[(go-to: &quot;oneFail&quot;)]
+(if: $endcounter is 1)[(go-to: &quot;twoFail&quot;)]
+(if: $endcounter is 0)[(go-to: &quot;threeFail&quot;)]
+]}
 &lt;!-- One fail: --&gt;</tw-passagedata><tw-passagedata pid="34" name="oneFail" tags="" position="475,475" size="100,100">Just like with $b you hear a loud //brrrrmmmmm// sound
 $f: One of the lights went out on top. You have two left. Wait! One of the words is filled in! 
 //The screen now displays//
@@ -328,7 +329,7 @@ $n: (size:0.5)[Quiet! Yes, maybe.]
 &lt;!--Passing the puzzle: --&gt;</tw-passagedata><tw-passagedata pid="37" name="postFinalPuz" tags="" position="850,475" size="100,100">$n: $player press enter and wait for the response… 
 Suddenly you hear //Vrrrrrt DING// (excuse me, what?) and the sliding of doors in front of you. 
 (link: &quot;We did it!&quot;)[
-$bunknown: (size:0.5)[They did it! No nerdy squiggly lines can beat [$player]]
+$bunknown: (size:0.5)[They did it! No nerdy squiggly lines can beat [$playername]]
 (link: &quot;I can&#39;t believe it...&quot;)[
 $n: $player did it…. $player freaking did it.
 (link: &quot;continue&quot;)[
@@ -2162,7 +2163,7 @@ He does tell you that there are 29 lines to fill in, and some are grouped togeth
 (if: $counter &lt; 3)[(put: (prompt: [Judging off the lights, you have $counter tries remaining, What do you type?], &quot;&quot;) into $player_input)]
 (set: $player_input to (lowercase: $player_input))
 (if:$player_input is &quot;sphinx of black quartz judge my vow&quot;)[ 
-    (text-colour:green)[$player_input]
+    (text-colour:green)[$player_input]&lt;br&gt;
     $n: You hear a //dodododo DING// and metal screeching against stone. The gate [[opens...|end1]] 
 ]
 }
