@@ -263,9 +263,9 @@ $player: Alright...
 [[Ask about the pipes again|pattypuz6_0]]
 [[Examine the buttons|pattypuz6_1]]]]]
 (set: $pattypuzButtonsUnlocked to 0)
-(set: $pattyupperrotation to 2)
-(set: $pattymidrotation to 5)
-(set: $pattylowerrotation to 4)
+(set: $pattyupperrotation to 0)
+(set: $pattymidrotation to 2)
+(set: $pattylowerrotation to 1)
 (set: $pattypuzFirstTime to 1)
 
 
@@ -313,10 +313,16 @@ $n: You recall the fact that there are **six** buttons total, divided equally in
 
 :: pattyRedccwLong
 (set: $pattylowerrotation to it - 2)
+(if: $pattylowerrotaton < 0)[
+    (set: $pattylowerrotation = $pattylowerrotation + 4)
+]
 (display: "pattyResultsRed")
 
 :: pattyRedccwShort
 (set: $pattylowerrotation to it - 1)
+(if: $pattylowerrotaton < 0)[
+    (set: $pattylowerrotation = $pattylowerrotation + 4)
+]
 (display: "pattyResultsRed")
 
 :: pattyRedcw
@@ -331,10 +337,12 @@ $n: You recall the fact that there are **six** buttons total, divided equally in
 
 :: pattyRedcwLong
 (set: $pattylowerrotation to it + 2)
+(set: $pattylowerrotation = $pattylowerrotation % 4)
 (display: "pattyResultsRed")
 
 :: pattyRedcwShort
 (set: $pattylowerrotation to it + 1)
+(set: $pattylowerrotation = $pattylowerrotation % 4)
 (display: "pattyResultsRed")
 
 
@@ -355,10 +363,16 @@ $n: You recall the fact that there are **six** buttons total, divided equally in
 
 :: pattyGreenccwLong
 (set: $pattymidrotation to it - 2)
+(if: $pattymidrotation < 0)[
+    (set: $pattymidrotation = $pattymidrotation + 4)
+]
 (display: "pattyResultsGreen")
 
 :: pattyGreenccwShort
 (set: $pattymidrotation to it - 1)
+(if: $pattymidrotation < 0)[
+    (set: $pattymidrotation = $pattymidrotation + 4)
+]
 (display: "pattyResultsGreen")
 
 :: pattyGreencw
@@ -373,10 +387,12 @@ $n: You recall the fact that there are **six** buttons total, divided equally in
 
 :: pattyGreencwLong
 (set: $pattymidrotation to it + 2)
+(set: $pattymidrotation = $pattymidrotation % 4)
 (display: "pattyResultsGreen")
 
 :: pattyGreencwShort
 (set: $pattymidrotation to it + 1)
+(set: $pattymidrotation = $pattymidrotation % 4)
 (display: "pattyResultsGreen")
 
 
@@ -397,10 +413,16 @@ $n: You recall the fact that there are **six** buttons total, divided equally in
 
 :: pattyBlueccwLong
 (set: $pattyupperrotation to it - 2)
+(if: $pattylowerrotaton < 0)[
+    (set: $pattylowerrotation = $pattylowerrotation + 4)
+]
 (display: "pattyResultsBlue")
 
 :: pattyBlueccwShort
 (set: $pattyupperrotation to it - 1)
+(if: $pattyupperrotation < 0)[
+    (set: $pattyupperrotation = $pattyupperrotation + 4)
+]
 (display: "pattyResultsBlue")
 
 :: pattyBluecw
@@ -414,12 +436,13 @@ $n: You recall the fact that there are **six** buttons total, divided equally in
 ]
 
 :: pattyBluecwLong
-(if: $pattyupperrotation < 3)
 (set: $pattyupperrotation to it + 2)
+(set: $pattyupperrotation = $pattyupperrotation % 4)
 (display: "pattyResultsBlue")
 
 :: pattyBluecwShort
 (set: $pattyupperrotation to it + 1)
+(set: $pattyupperrotation = $pattyupperrotation % 4)
 (display: "pattyResultsBlue")
 
 
@@ -440,8 +463,8 @@ $n: You recall the fact that there are **six** buttons total, divided equally in
     ]
     [[Continue|pattypuz6_2]]
 ] (else:) [
-    (unless: $pattylowerrotation is 4)[
-        (if: $pattylowerrotation < 4)[
+    (unless: $pattylowerrotation is 3)[
+        (if: $pattylowerrotation < 1)[
             (if: $pattypuzRot is "ccw")[
                 $p: Oh! That bottom pipe looked connected for a second, 
                 but it rotated past where it should've been.
@@ -480,7 +503,7 @@ $n: You recall the fact that there are **six** buttons total, divided equally in
     ]
     [[Continue|pattypuz6_2]]
 ] (else:) [
-    (unless: $pattymidrotation is 2)[
+    (unless: $pattymidrotation is 0)[
         (if: $pattymidrotation < 2)[
             (if: $pattypuzRot is "ccw")[
                 $p: Oh! That middle pipe looked connected for a second, 
@@ -520,7 +543,7 @@ $n: You recall the fact that there are **six** buttons total, divided equally in
     ]
     [[Continue|pattypuz6_2]]
 ] (else:) [
-    (unless: $pattyupperrotation is 1)[
+    (unless: $pattyupperrotation is 3)[
         (if: $pattyupperrotation < 1)[
             (if: $pattypuzRot is "ccw")[
                 $p: Oh! That highest pipe looked connected for a second, 

@@ -9,7 +9,9 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play The Great Ratscape.</tw-noscript></noscript></tw-story>
-<!-- UUID://34B53A1A-F64F-41C9-9333-883DBAF01D4C// --><tw-storydata name="The Great Ratscape" startnode="87" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="34B53A1A-F64F-41C9-9333-883DBAF01D4C" zoom="1" format="Harlowe" format-version="3.3.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="ePuzz" tags="" position="100,100" size="100,100">{(set: $key to [(text-color:#e9c901)[key]])
+<!-- UUID://34B53A1A-F64F-41C9-9333-883DBAF01D4C// --><tw-storydata name="The Great Ratscape" startnode="114" creator="Tweego" creator-version="2.1.1+81d1d71" ifid="34B53A1A-F64F-41C9-9333-883DBAF01D4C" zoom="1" format="Harlowe" format-version="3.3.3" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-sidebar {
+	display: none;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="ePuzz" tags="" position="100,100" size="100,100">{(set: $key to [(text-color:#e9c901)[key]])
 (set: $keys to [(text-color:#e9c901)[keys]])
 }
 $n: $player and your not-so-merry crew of lab animals enter the next room. 
@@ -118,7 +120,7 @@ is $cTubeL//
  (if: $weightChoice is &quot;large weight&quot; and ($tubeChoice is &quot;red side of U-shaped tube&quot; or $tubeChoice is &quot;blue side of U-shaped tube&quot;))[(go-to: &quot;lwct&quot;)]
  (if: $weightChoice is &quot;small weight&quot; and $tubeChoice is &quot;wide tube&quot;)[(go-to: &quot;swwt&quot;)]
  (if: $weightChoice is &quot;small weight&quot; and ($tubeChoice is &quot;red side of U-shaped tube&quot; or $tubeChoice is &quot;blue side of U-shaped tube&quot;))[(go-to: &quot;swct&quot;)]
- (if: $weightChoice is &quot;use the plunger&quot; and ($tubeChoice is &quot;blue side of U-shaped tube&quot; or $tubeChoice is &quot;wide tube&quot; or $tubeChoice is &quot;narrow tube&quot;))[(go-to: plwc)]
+ (if: $weightChoice is &quot;use the plunger&quot; and ($tubeChoice is &quot;blue side of U-shaped tube&quot; or $tubeChoice is &quot;wide tube&quot; or $tubeChoice is &quot;narrow tube&quot;))[(go-to: &quot;plwc&quot;)]
  }</tw-passagedata><tw-passagedata pid="13" name="swwt" tags="" position="350,225" size="100,100">$n: You hear a //clink// as $e drops the small weight into the wide tube.
 $e: With this weight the water barely rises, perhaps we should try weights of other sizes!
 [[Maybe you should put another one in?|mistake]]</tw-passagedata><tw-passagedata pid="14" name="mistake" tags="" position="475,225" size="100,100">(if: $numMistakes &lt; 1)[
@@ -190,10 +192,12 @@ shaped tube and lifts the water on the blue side. Once each side is high water l
 
 $n: $e flies off and grabs both $p and $f. Together the three of them put two of the large weights into the wide tube, two small weights into the narrow tube and use the plunger to push the water down on the red tube to raise the water in the blue tube. $e reaches each Key and flies off with them. In the distance, you hear three $keys turning and a large door opens. 
 $e picks up the three of you one by one, scoffing as he picks you up, not even bothering to rhyme. 
-All four of you move on to the next area. 
+//All four of you move on to the next area. //
+[[continue|finalPuz0]]
+(set: $edgarDone to true)
 
 &lt;!--When the puzzle is solved:--&gt;</tw-passagedata><tw-passagedata pid="23" name="ePuzzWin" tags="" position="350,350" size="100,100">$e: That is the last one! Thanks to your directions we have won!
-{set: $edgar_faith = $edgar_faith + 1 
+{(set: $edgar_faith = $edgar_faith + 1)
 //$player have gained some of $e(text-color:#8c0088)[&#39;s] trust//
 }
 $n: One and won, huh…. Is rhyming homophones lazy? I&#39;m gonna say yes. Stupid crow. 
@@ -209,197 +213,313 @@ $e picks you up again, and you meet with $p and $f. The pygmy monkey calls out t
 $f: Good job solving that. Maybe we have a chance to get out of here after all, though I won&#39;t bet on it. 
 [[Of course we are!|ePuzz7]]]]]</tw-passagedata><tw-passagedata pid="24" name="ePuzz7" tags="" position="475,350" size="100,100">$e: Sir $f, you must have faith in our intrepid friend. I have learned his skills are something on which we can depend. 
 (link: &quot;continue&quot;)[
-$f: Uh huh… By the way, while you were unlocking this door, I noticed a word on it that stood out. It said “Quartz” though I don&#39;t know if it refers to where we&#39;re going. I guess we&#39;re going to find out anyway. Let&#39;s get out of here so I can actually stand on solid, non-slippery ground.   
+$f: Uh huh… By the way, while you were unlocking this door, I noticed a word on it that stood out. It said “(text-color:#ebe9da)[Quartz]” though I don&#39;t know if it refers to where we&#39;re going. I guess we&#39;re going to find out anyway. Let&#39;s get out of here so I can actually stand on solid, non-slippery ground.   
 $n: The four of you move on to the next area.
-[[continue|]]]</tw-passagedata><tw-passagedata pid="25" name="finalPuz0" tags="" position="600,350" size="100,100">&lt;!-- 
-Ending puzzle: 
+[[continue|finalPuz0]]]
+(set: $edgarDone to true)</tw-passagedata><tw-passagedata pid="25" name="finalPuz0" tags="" position="600,350" size="100,100">$n: Haaa, another tunnel, another puzzle. How many are there supposed to be again? Does this just go in a circle? 
+It&#39;s pretty quiet… 
 
-Haaa, another tunnel, another puzzle. How many are there supposed to be again? Does this just go in a circle? 
-It’s pretty quiet… 
+$f: Hey $playername!
+(link: &quot;Yeah?&quot;)[
+$n: Oh thank god. Somebody is talking.
 
-How bout some music? 
-[play “waiting music” for about 3 seconds]
-No, no, not that one                           &lt;--- this part would be nice if it was all one page and it rolled into each other 
-[Play “Elevator music lofi”]                        without player input. Kind of like a unskippable cutscene. But with Elevator music! 
-Yeah that’s better. See this is wh-                 people will love it. - Daly
-Fritz: Hey, [$player]! 
-[music turns off] 
-Oh, thank god. Somebody is talking.    
+$player turn your head towards Fritz, questioningly. 
+(link: &quot;continue&quot;)[
+$f: It looks like we&#39;re getting close. This sign says “exit this way” and usually always leads to the last room. Though we have been fooled before…
+(link: &quot;continue&quot;)[
+$e: Ah yes, the damned room of many doors. We wandered there for days and passed out on the floors. 
+[[Wait, what?|finalPuz1]]]]]</tw-passagedata><tw-passagedata pid="26" name="finalPuz1" tags="" position="725,350" size="100,100">$n: $player hear a smack and a surprised caw from $e
 
+$p: $e, we all promised not to talk about that day. We don&#39;t need to go borin [$player] with that tale, do we?
+(link: &quot;continue&quot;)[
+$n: Wooo, go $p! This is why I always liked her. The only one that can get the bird to shut up.   
+While the others hope the next area doesn&#39;t have an abundance of “exits” you remember your own first trip in this tunnel. 
+(link: &quot;An exit sign, huh?&quot;)[
+[$player]: //That must be the rectangle sign $b told me about before. //
+(link: &quot;continue&quot;)[
+[$player]: //Don&#39;t worry, $b, we&#39;ll get out of here, and someday I&#39;ll avenge you. //
+[[continue|finalPuz2]]]]]</tw-passagedata><tw-passagedata pid="27" name="finalPuz2" tags="" position="850,350" size="100,100">$bunknown: (size:0.5)[Look! They&#39;re worried about me!]
 
-You turn your head towards Fritz, questioningly. 
-Fritz: It looks like we’re getting close. This sign says “exit this way” and usually always leads to the last room. Though we have been fooled before…
-Edgar: Ah yes, the damned room of many doors. We wandered there for days and passed out on the floors. 
-You hear a smack and a surprised caw from Edgar
-Patty: Edgar, we all promised not to talk about that day. We don’t need to go borin [$player] with that tale, do we?
-Wooo, go Patty! This is why I always liked her. The only one that can get the bird to shut up.   
-While the others hope the next area doesn’t have an abundance of “exits” you remember your own first trip in this tunnel. 
-[$player]: That must be the rectangle sign blinky told me about before. 
-[$player]: Don’t worry, Blinky, we’ll get out of here, and someday I’ll avenge you. 
-???: Look! He’s worried about me!
-Shut up, this is my show to narrate. Get out of here, you dope. 
+$n: (size:0.5)[Shut up, this is my show to narrate. Get out of here, you dope. ]
+(link: &quot;continue&quot;)[
 Ahem. The four of you reach the door to the next area, and it opens. 
-Fritz: Argh, every damn time with this room. Nearly blinds you with our bright it is. 
-Patty: Well, I think it’s quite nice. Better than that bunkhouse or room I couldn’t stand in.
-Edgar stays silent as if shocked into it until he says 
-Edgar: Shiny shiny everywhere, sparling sparkling without care~. 
-Uh uh, nope. This ain’t a musical, and I won’t have this. 
-Fritz: Edgar quit that. We don’t got time for music. 
-Thank you, Fritz. 
-[$player]: So it is the same room I was in before. Is there a computer too? 
-Patty: Yessiree, that electric thingamajig is right over there. 
-The four of you reach the computer. 
-Edgar: This damnable riddle always confounds us. How this time to answer it, let’s discuss.  
-[$player]: So there was something on the screen Blinky couldn’t read! 
-???: Reading is for nerds
-Shhhh 
-[$player]: What does it say, Fritz? 
-Fritz: It says “seven words and twenty-nine letters. The alphabet and more trapped in this phrase, like you, in fetters. What trials you have survived. Think back on your journey, what words seemed contrived.” and that’s it. 
-Even the damn puzzles are rhyming now. That scientist knows what he’s doing to me, I swear…
-[$player]: 29 letters… the alphabet and more? Is it a pangram? A phrase with all the letters of the alphabet?
-Fritz: Words that seem contrived, huh? What were those words we came across before? Near the end of every room. Vow, quartz, and sphinx, from before. And the word “black” is printed on the computer itself. Kid, do you know what it means? 
-[$player]: The phrase needs to have all of the letters of the alphabet inside it, but there are three extra….Where do the words we have go, and what are we missing? 
-Just like your first time here, you have to fill in the passcode, and then the door will open. You remember what happened the last time you failed. 
-______ __ _____ ______ _____ __ ___
-Words known: vow, quartz, Sphinx, black
-One fail: 
-Just like with Blinky you hear a loud Brrrrmmmmm sound
-Fritz: One of the lights went out on top. You have two left. Wait! One of the words is filled in! 
-Fritz explains to you that the screen now displays 
-______ of _____ ______ _____ __ ___
-You try again. 
-Two fails: 
-Another Brrrrmmmmm sound, and you can hear the others get fidgety like they are ready to spring into a sudden escape. 
-Patty: C’mon, pal, I know you got this. We made it this far, right? 
-Patty doesn’t sound all too confident in you 
-Fritz: Kid, another word has filled in. It now says: 
-______ of _____ ______ judge __ ___
-You try one last time. 
-Third fail: 
-BEEEHHH BEEEHHH BEEEHHH rings throughout the room and beyond. 
-Fritz: Damn it. I knew there was no getting out of here. Let’s go, you two. 
-Patty: Run, [$player]! 
-Edgar: Sir [$player], goodbye! It was a valiant try!
-You hear the three of them scurry off before you can respond. You turn around, trying to follow their scents when you hear. 
-MEEEOOORRRROOWW 
-You panic, remembering Blinky’s death squeaks all too clearly.  
-???: does this mean he’s coming here soon?    
-Quiet! Yes, maybe. 
-Running for the entrance hall way, you feel you’ve almost made it to safety when sharp, curved daggers stab into your back. You raise your own ear-piercing squeaks. For a second, your sight returns, just in time for a mouth full of fangs to cover your vision. 
-[BAD END] 
-Passing the puzzle: 
-You press enter and wait for the response… 
-Suddenly you hear Vrrrrrt DING (excuse me, what?) and the sliding of doors in front of you. 
-???: They did it! No nerdy squiggly lines can beat [$player]
-You did it…. You freaking did it.
-Fritz: No way…. 
-Patty: Youdidityoudidityoudidit! 
-Edgar: Caw… 
- Wait… You feel the floor rumbling. Go! GO NOW, YOU IDIOTS  
-Madman: HAHAHAHA, I KNEW IT 
-Madman; I KNEW THAT LITTLE RAT HAD ENOUGH OF MY KNOWLEDGE TO FIGURE HIS WAY OUT. Now I can move to bigger experiments once I get a hold of him. Soon you will be able to talk, Mr. Fluffypaws! 
-RUN! RUN! wait has that been the cat&#39;s name this whole time? Uh, I mean, RUN, GO NOW! 
-You feel someone grab you and pick you up, running towards the door you heard open. 
-Fritz: Hold on, Kid! We gotta get to the forest where he can’t get us! Patty, go that way, Edgar, get in the air! 
-You hear the three split, taking different paths to the door, with Fritz carrying you. 
-Madman: HEHEHAHA, NOT SO FAST. 
-You feel and hear something land in front of you and Fritz 
-Fritz: Edgar! Take the kid! 
-You are thrown and it feels like you freefall for a second before you land gently on a feathery back. 
-Edgar: I’ve got you. Hang on! 
-???: wait a minute…
-[$player]: What is Fritz doing!? 
- Edgar: He’s distracting him so we can get past! There! An opening! 
-Edgar swoops and you can feel you stomach drop from under you 
-Madman: You damned insolent monkey! You can’t stop me! 
-If overall team faith is 5 or less:
-Madman: AHA! GOTCHA. 
-You hear Frtiz screeching as only a pygmy monkey can. 
-No…
-The screeching stops.
-Patty: Fritz! No! 
-Edgar: Keep running, you daft squirrel! We can’t help him now! Why is the doorway so far away?! 
-You hear the Madman’s footsteps behind you again, quickly catching up! 
-Edgar sighs. Wait, I don’t like where this is going. Don’t you dare, you sonofabitch 
-Edgar: Patty, take sir [$player]. Get you both outside.
-[$player]: Edgar, what are you doing?! Leave me behind!  
-Patty: What? But what about you, Edgar?! 
-Edgar: Do not worry about Sir Edgar Allan Crow! I would not be defeated by any mere foe! 
-Edgar leans towards Patty, and you slide off, catching yourself on the ground in a sprint beside Patty. 
-You hear the loudest caw Edgar has ever let out since you’ve known him and hear the Madman scream. 
-Madman: You damned bird! You will bother….me …NEVERMORE. 
-You hear a choked squawk behind you. I won’t say more. 
-You and Patty continue running for dear life. You can feel heat rising, closer to the natural heat of outside but not quite there. Something enormous runs past you and stomps, causing you and Patty to stop. 
-Madman: I ….Have ..You ..Now. 
-Patty: I’m sorry we didn’t have faith in you [$player]. None of us thought you could open that last door. Keep runnin straight. I’ll take of him and meet you out there. 
-Oh god, damn it, not her too.   
-[$player]: Patty we can both make it! You don’t have to- 
-Patty: Run, god, durn it! Get out of here so Fritz and Edgar’s deaths will mean something. Oh, and say hello to my babies for me. 
-Patty runs away from you and you start running straight toward the smell of the forest. 
-behind you, the Madman struggles, but you put it out of your mind. 
-You hit what feels like a liquid barrier that you dive straight through and come out the other side. 
-You feel the heat of the multiple suns, hear the sounds of the forest, and continue running. 
-Run until you can’t feel your four legs anymore. Until, somehow, your sight starts coming back in. The vibrant blues and greens of the forest spring to life before you and you know you’ve escaped. 
-Alone. 
-[BAD END] 
-If overall team faith is 6 or more:
-Madman: Argh, my eye! 
-Fritz: I’m not “Insolent!” My name is Fritz! 
-Yes! Get &#39;em, Fritz! 
-Madman: Your name doesn’t matter. Ow! You’ll all be in preservative jars for me to study soon, anyway! 
-Fritz: He’s hurt! Keep running! 
-Edgar pulls close to the ground, and you can hear Patty land beside you and Fritz soon catching up. 
-Steps that shake the ground get closer to the four of you 
-Edgar scoffs
-Edgar: Patty, Fritz! Grab our friend, My talons have a face they need to rend. 
-The other two land-based animals grab you from Edgar and let you run beside them. 
- [$player]: Why are you all attacking him?! Shouldn’t we just run?! 
-Patty: We ain’t gettin far if we don’t slow him down. Don’t worry, youngin, we had faith you could get us here. Now trust us to get you past this!
-From behind you hear: 
-Edgar: No enemy will hurt the friends of Edgar Allan Crow! No monster, no scientist, no foe! 
-You hear the loudest CAW! You’ve ever heard from Edgar and- 
-Madman: OW! My damned cheek! Argh! get away from my leg! 
-Oh damn, I never thought I would be cheering for the crow, but here we are. Eff him up, Edgar! 
+(link: &quot;Through the door&quot;)[
+$f: Argh, every damn time with this room. Nearly blinds you with our bright it is. 
+(link: &quot;continue&quot;)[
+$p: Well, I think it&#39;s quite nice. Better than that bunkhouse or room I couldn&#39;t stand in.
+[[Edgar&#39;s awful quiet..|finalPuz3]]]]]</tw-passagedata><tw-passagedata pid="28" name="finalPuz3" tags="" position="975,350" size="100,100">$n: $e stays silent as if shocked into it until he says 
+
+$e: (text-color:#fff8c9)[Shiny], (text-color:#ddfff7)[shiny] everywhere, (text-color:#fff8c9)[s](text-color:#ddfff7)[p](text-color:#fff8c9)[a](text-color:#ddfff7)[r](text-color:#fff8c9)[k](text-color:#ddfff7)[l](text-color:#fff8c9)[i](text-color:#ddfff7)[n](text-color:#fff8c9)[g] (text-color:#ddfff7)[s](text-color:#fff8c9)[p](text-color:#ddfff7)[a](text-color:#fff8c9)[r](text-color:#ddfff7)[k](text-color:#fff8c9)[l](text-color:#ddfff7)[i](text-color:#fff8c9)[n](text-color:#ddfff7)[g] without care. 
+(link: &quot;He really loves his rhyming&quot;)[
+$n:Uh uh, nope. This ain&#39;t a musical, and I won&#39;t have this. 
+(link: &quot;continue&quot;)[
+$f: $e quit that. We don&#39;t got time for music. 
+(link: &quot;continue&quot;)[
+$n: Thank you, $f. 
+[[Back here again...|finalPuz4]]]]]</tw-passagedata><tw-passagedata pid="29" name="finalPuz4" tags="" position="1100,350" size="100,100">[$player]: So it is the same room I was in before. Is there a computer too? 
+(link: &quot;continue&quot;)[
+$p: Yessiree, that electric thingamajig is right over there. 
+
+//The four of you reach the computer.//
+(link: &quot;continue&quot;)[
+$e: This damnable riddle always confounds us. How this time to answer it, let&#39;s discuss.  
+(link: &quot;Wait, what riddle?&quot;)[
+[$player]: So there was something on the screen $b couldn&#39;t read! 
+[[I can&#39;t believe it..|finalPuz5]]]]]</tw-passagedata><tw-passagedata pid="30" name="finalPuz5" tags="" position="1225,350" size="100,100">$bunknown: (size:0.5)[Reading is for nerds!]
+
+$n: (size:0.5)[//Shhhh//]
+(link: &quot;What&#39;s the riddle?&quot;)[
+[$player]: What does it say, $f? 
+(link: &quot;continue&quot;)[
+$f: It says “seven words and twenty-nine letters. The alphabet and more trapped in this phrase, like you, in fetters. What trials you have survived. Think back on your journey, what words seemed contrived.” and that&#39;s it. 
+(link: &quot;continue&quot;)[
+$n: Even the damn puzzles are rhyming now. That $s knows what he&#39;s doing to me, I swear…
+[[Twenty-nine letters?|finalPuz6]]]]]</tw-passagedata><tw-passagedata pid="31" name="finalPuz6" tags="" position="100,475" size="100,100">[$player]:  (text-color:#e9c901)[29 letters]… the alphabet and more? Is it a pangram? (text-color:#e9c901)[A phrase with all the letters of the alphabet]?
+(link: &quot;continue&quot;)[
+$f: Words that seem contrived, huh? What were those words we came across before? Near the end of every room. (text-color:#ffb4f1)[Vow], (text-color:#ebe9da)[quartz], and (text-color:#eee077)[sphinx], from before. And the word “(text-color:#6d6d6d)[black]” is printed on the computer itself. Kid, do you know what it means? 
+(link: &quot;So we need all the letters.&quot;)[
+[$player]: The phrase needs to have (text-color:#e9c901)[all of the letters of the alphabet] inside it, but there are three extra….Where do the words we have go, and what are we missing? 
+[[Let&#39;s get started|finalPuz7]]]]
+(set: $endcounter = 3)</tw-passagedata><tw-passagedata pid="32" name="finalPuz7" tags="" position="225,475" size="100,100">//Just like your first time here, you have to fill in the passcode, and then the door will open. $player remember what happened the last time you (text-color:#991414)[failed].//
+------ -- ----- ------ ----- -- ---
+Words known: (text-color:#ffb4f1)[vow], (text-color:#ebe9da)[quartz], (text-color:#eee077)[sphinx], (text-color:#6d6d6d)[black]
+[[Make a guess|endGuess]]</tw-passagedata><tw-passagedata pid="33" name="endGuess" tags="" position="350,475" size="100,100">{
+(if: $endcounter is 3)[(put: (prompt: [What do you type?], &quot;&quot;) into $player_input)]
+(if: $endcounter &lt; 3)[(put: (prompt: [Judging off the lights, you have (text-color:red)[$endcounter] tries remaining, What do you type?], &quot;&quot;) into $player_input)]
+(set: $player_input to (lowercase: $player_input))
+(if:$player_input is &quot;sphinx of black quartz judge my vow&quot;)[ 
+    (text-colour:green)[$player_input]&lt;br&gt;
+    $n: You hear a //dodododo DING// and metal screeching against stone. The gate [[opens...|postFinalPuz]] 
+]
+
+(else: ) [
+(set: $endcounter = $endcounter - 1)(text-colour:red)[$player_input]
+(if: $endcounter is 2)[(go-to: &quot;oneFail&quot;)]
+(if: $endcounter is 1)[(go-to: &quot;twoFail&quot;)]
+(if: $endcounter is 0)[(go-to: &quot;threeFail&quot;)]
+]}
+&lt;!-- One fail: --&gt;</tw-passagedata><tw-passagedata pid="34" name="oneFail" tags="" position="475,475" size="100,100">Just like with $b you hear a loud //brrrrmmmmm// sound
+$f: One of the lights went out on top. You have two left. Wait! One of the words is filled in! 
+//The screen now displays//
+------ of ----- ------ ----- -- ---
+[[You try again.|endGuess]]
+
+&lt;!--Two fails: --&gt;</tw-passagedata><tw-passagedata pid="35" name="twoFail" tags="" position="600,475" size="100,100">Another //brrrrmmmmm// sound, and you can hear the others get fidgety like they are ready to spring into a sudden escape. 
+$p: C&#39;mon, pal, I know you got this. We made it this far, right? 
+$p doesn&#39;t sound all too confident in you 
+$f: Kid, another word has filled in. It now says: 
+------ of ----- ------ judge -- ---
+[[You try one last time.|endGuess]]
+
+&lt;!--Third fail:--&gt;</tw-passagedata><tw-passagedata pid="36" name="threeFail" tags="" position="725,475" size="100,100">(text-color:#991414)[//BEEEHHH BEEEHHH BEEEHHH//] rings throughout the room and beyond. 
+$f: Damn it. I knew there was no getting out of here. Let&#39;s go, you two. 
+
+$p: Run, [$player]! 
+
+$e: Sir [$player], goodbye! It was a valiant try!
+
+//$player hear the three of them scurry off before you can respond. $player turn around, trying to follow their scents when you hear. //
+//MEEEOOORRRROOWW//
+
+$player panic, remembering $b(css: &quot;color: green;&quot;)[&#39;s] death squeaks all too clearly.  
+
+$bunknown: (size:0.5)[Does this mean they&#39;re coming here soon? ]  
+
+$n: (size:0.5)[Quiet! Yes, maybe.]
+
+//Running for the entrance hall way, you feel you&#39;ve almost made it to safety when sharp, curved daggers stab into your back. You raise your own ear-piercing squeaks. For a second, your sight returns, just in time for a mouth full of fangs to cover your vision.//
+(text-color:#991414)[BAD END] 
+[[Restart?|intro0]]
+
+&lt;!--Passing the puzzle: --&gt;</tw-passagedata><tw-passagedata pid="37" name="postFinalPuz" tags="" position="850,475" size="100,100">$n: $player press enter and wait for the response… 
+Suddenly you hear //Vrrrrrt DING// (excuse me, what?) and the sliding of doors in front of you. 
+(link: &quot;We did it!&quot;)[
+$bunknown: (size:0.5)[They did it! No nerdy squiggly lines can beat [$playername]]
+(link: &quot;I can&#39;t believe it...&quot;)[
+$n: $player did it…. $player freaking did it.
+(link: &quot;continue&quot;)[
+$f: No way…. 
+
+$p: Youdidityoudidityoudidit! 
+
+$e: Caw… 
+[[Is the floor... rumbling?|postFinalPuz1]]]]]</tw-passagedata><tw-passagedata pid="38" name="postFinalPuz1" tags="" position="975,475" size="100,100">$n: Wait… You feel the floor rumbling. Go! **GO NOW, YOU IDIOTS**  
+(link: &quot;continue&quot;)[
+$m: HAHAHAHA, I KNEW IT 
+
+$m: I KNEW THAT LITTLE RAT HAD ENOUGH OF MY KNOWLEDGE TO FIGURE HIS WAY OUT. Now I can move to bigger experiments once I get a hold of him. Soon you will be able to talk, Mr. Fluffypaws! 
+(link: &quot;We need to get out of here!&quot;)[
+$n: **RUN! RUN!** Wait has that been the cat&#39;s name this whole time? Uh, I mean, **RUN, GO NOW!**
+
+//$player feel someone grab you and pick you up, running towards the door you heard open.//
+(link: &quot;continue&quot;)[
+$f: Hold on, Kid! We gotta get to the forest where he can&#39;t get us! $p, go that way, $e, get in the air! 
+
+//$player hear the three split, taking different paths to the door, with $f carrying you. //
+[[Thanks Fritz!|postFinalPuz2]]]]]</tw-passagedata><tw-passagedata pid="39" name="postFinalPuz2" tags="" position="1100,475" size="100,100">$m: HEHEHAHA, NOT SO FAST. 
+
+//$player feel and hear something land in front of you and $f //
+(link: &quot;continue&quot;)[
+$f: $e! Take the kid! 
+
+//$player are thrown and it feels like you freefall for a second before you land gently on a feathery back. //
+(link: &quot;continue&quot;)[
+$e: I&#39;ve got you. Hang on! 
+(link: &quot;I told you I hate flying!&quot;)[
+$bunknown: (size:0.5)[wait a minute…]
+[[What about Fritz?|postFinalPuz3]]]]]</tw-passagedata><tw-passagedata pid="40" name="postFinalPuz3" tags="" position="1225,475" size="100,100">[$player]: What is $f doing!? 
+(link: &quot;continue&quot;)[
+$e: He&#39;s distracting him so we can get past! There! An opening! 
+
+$n: $e swoops and you can feel you stomach drop from under you 
+(link: &quot;continue&quot;)[
+$m: You damned insolent monkey! You can&#39;t stop me! 
+(link: &quot;FRITZ!&quot;)[
+&lt;!--If overall team faith is 5 or less:--&gt;
+(set: $total_faith = $fritz_faith + $patty_faith + $edgar_faith)
+(if: $total_faith &lt; 6)[(go-to:&quot;end2&quot;)]
+(if: $total_faith &gt;= 6)[(go-to:&quot;end3&quot;)]
+]]]</tw-passagedata><tw-passagedata pid="41" name="end2" tags="" position="100,600" size="100,100">$m: AHA! GOTCHA. 
+//$player hear Frtiz screeching as only a pygmy monkey can. //
+$n: No…
+//The screeching stops.//
+(link: &quot;continue&quot;)[
+
+$p: $f! No! 
+(link: &quot;Fritz is gone&quot;)[
+$e: Keep running, you daft squirrel! We can&#39;t help him now! Why is the doorway so far away?! 
+(link: &quot;continue&quot;)[
+//$player hear the $m&#39;s footsteps behind you again, quickly catching up!//
+[[He&#39;s still after us!|end2_1]]]]]</tw-passagedata><tw-passagedata pid="42" name="end2_1" tags="" position="225,600" size="100,100">$e sighs. Wait, I don&#39;t like where this is going. Don&#39;t you dare, you sonofabitch 
+(link: &quot;continue&quot;)[
+$e: $p, take sir [$player]. Get you both outside.
+(link: &quot;No!&quot;)[
+[$player]: $e, what are you doing?! Leave me behind! 
+(link: &quot;continue&quot;)[
+$p: What? But what about you, $e?! 
+[[Edgar?!|end2_2]]]]]</tw-passagedata><tw-passagedata pid="43" name="end2_2" tags="" position="350,600" size="100,100">$e: Do not worry about Sir $eac! I would not be defeated by any mere foe! 
+(link: &quot;continue&quot;)[
+//$e leans towards $p, and you slide off, catching yourself on the ground in a sprint beside $p. //
+
+//$player hear the loudest caw $e has ever let out since you&#39;ve known him and hear the $m scream. //
+(link: &quot;continue&quot;)[
+$m: You damned bird! You will bother….me …NEVERMORE. 
+(link: &quot;EDGAR!?&quot;)[
+$n: $player hear a choked squawk behind you. I won&#39;t say more. 
+$player and $p continue running for dear life. $player can feel heat rising, closer to the natural heat of outside but not quite there. Something enormous runs past you and stomps, causing you and $p to stop. 
+[[We&#39;re trapped!|end2_3]]]]]</tw-passagedata><tw-passagedata pid="44" name="end2_3" tags="" position="475,600" size="100,100">$m: I ….Have ..You ..Now. 
+(link: &quot;continue&quot;)[
+$p: I&#39;m sorry we didn&#39;t have faith in you [$player]. None of us thought you could open that last door. Keep runnin straight. I&#39;ll take care of him and meet you out there. 
+
+$n: Oh god, damn it, not her too.   
+(link: &quot;We can get out together!&quot;)[
+[$player]: $p we can both make it! You don&#39;t have to- 
+(link: &quot;continue&quot;)[
+$p: Run, god, durn it! Get out of here so $f and $e&#39;s deaths will mean something. Oh, and say hello to my babies for me. 
+[[You run.|end2_4]]]]]</tw-passagedata><tw-passagedata pid="45" name="end2_4" tags="" position="600,600" size="100,100">$n: $p runs away from you and you start running straight toward the smell of the forest. 
+behind you, the $m struggles, but you put it out of your mind. 
+
+//$player hit what feels like a liquid barrier that you dive straight through and come out the other side. 
+
+$player feel the heat of the multiple suns, hear the sounds of the forest, and continue running. 
+
+Run until you can&#39;t feel your four legs anymore. Until, somehow, your sight starts coming back in. The vibrant blues and greens of the forest spring to life before you and you know you&#39;ve escaped. 
+Alone. //
+(text-color:#1a209c)[BAD END] 
+[[Try again?|intro0]]
+
+
+&lt;!--If overall team faith is 6 or more:--&gt;</tw-passagedata><tw-passagedata pid="46" name="end3" tags="" position="725,600" size="100,100">$m: Argh, my eye! 
+(link: &quot;continue&quot;)[
+$f: I&#39;m not “Insolent!” My name is $f! 
+
+$n: Yes! Get &#39;em, $f! 
+(link: &quot;continue&quot;)[
+$m: Your name doesn&#39;t matter. Ow! You&#39;ll all be in preservative jars for me to study soon, anyway! 
+(link: &quot;continue&quot;)[
+$f: He&#39;s hurt! Keep running! 
+[[Good.|end3_1]]]]]</tw-passagedata><tw-passagedata pid="47" name="end3_1" tags="" position="850,600" size="100,100">$n: $e pulls close to the ground, and you can hear $p land beside you and $f soon catching up. 
+
+//Steps that shake the ground get closer to the four of you// 
+$e scoffs
+(link: &quot;continue&quot;)[
+$e: $p, $f! Grab our friend, My talons have a face they need to rend. 
+(link: &quot;continue&quot;)[
+$n: The other two land-based animals grab you from $e and let you run beside them.
+[[Why aren&#39;t we running?|end3_2]]]]</tw-passagedata><tw-passagedata pid="48" name="end3_2" tags="" position="975,600" size="100,100">[$player]: Why are you all attacking him?! Shouldn&#39;t we just run?! 
+(link: &quot;continue&quot;)[
+$p: We ain&#39;t gettin far if we don&#39;t slow him down. Don&#39;t worry, youngin, we had faith you could get us here. Now trust us to get you past this!
+(link: &quot;continue&quot;)[
+//From behind you hear: //
+$e: No enemy will hurt the friends of $e Allan Crow! No monster, no $s, no foe! 
+//$player hear the loudest CAW! You&#39;ve ever heard from $e and-// 
+(link: &quot;Way to go Edgar!&quot;)[
+$m: OW! My damned cheek! Argh! get away from my leg! 
+[[Yes!|end3_3]]]]]</tw-passagedata><tw-passagedata pid="49" name="end3_3" tags="" position="1100,600" size="100,100">$n: Oh damn, I never thought I would be cheering for the crow, but here we are. Eff him up, $e! 
 As you run, you feel the heat rising, close to the forest outside but not quite there. 
-Soon you hear the flapping of wings beside your group again as Edgar returns. 
-Edgar: I’ve hurt his leg! It was as fragile as an egg!  
-The four of you continue getting closer to freedom when you feel the floor shake in front of you, and all of you stop. 
-Madman: You.. Will…Not…Escape. 
-Patty: Keep on going! I have a plan!
-You and Fritz split right from Patty, and Edgar takes to the air again. You can smell the forest now, it’s just beyond the Mad scientist.  
-You hear dozens of things empty out of a bag, and then the scientist yelp. JUMP RIGHT
-Fritz: Jump! 
-The ground shakes more violently than before, and you hear the scientist moan in pain. 
-Patty: Ha! Take that! That’s for all the years you stole from me and my youngins! 
-The four of you, all back together, run for the door, and as your get to it, you feel a liquid barrier that you pierce through and come out the other side. 
-You feel the multiple suns on your face and smell the forest in full. You all continue running until your legs hurt (though not Edgar cause he cheats) and even then, run further. 
-[$player]: I …can’t ….run….anymore. 
-Fritz: Yea….this should be a good place to rest. Take a breather, folks. 
-As you settle down, you realize that more than pitch black is starting to fade back into your vision, the madman&#39;s spell wearing off. The greens and blues of the forest shine with the suns peaking through the trees. It may be the most beautiful scene your little rat brain has ever seen. 
-You turn to Fritz, who has a small red face with many time-worn wrinkles, and grey fur covering the pygmy monkey.
- Patty is a tiny squirrel, even for her species, but holds herself with a strange regal dignity of a mother. 
-Edgar…well, he’s a crow. 
+Soon you hear the flapping of wings beside your group again as $e returns. 
+(link: &quot;continue&quot;)[
+$e: I&#39;ve hurt his leg! It was as fragile as an egg!  
+(link: &quot;continue&quot;)[
+$n: //The four of you continue getting closer to freedom when you feel the floor shake in front of you, and all of you stop.//
+(link: &quot;We&#39;re trapped!&quot;)[
+$m: You.. Will…Not…Escape. 
+[[What now?|end3_4]]]]]</tw-passagedata><tw-passagedata pid="50" name="end3_4" tags="" position="1225,600" size="100,100">$p: Keep on going! I have a plan!
+(link: &quot;continue&quot;)[
+$n: $player and $f split right from $p, and $e takes to the air again. $player can smell the forest now, it&#39;s just beyond the $m.  
+$player hear dozens of things empty out of a bag, and then the $s yelp. **JUMP RIGHT**
+(link: &quot;Guess we&#39;d better jump&quot;)[
+$f: Jump! 
+//The ground shakes more violently than before, and you hear the $s moan in pain.// 
+(link: &quot;continue&quot;)[
+$p: Ha! Take that! That&#39;s for all the years you stole from me and my youngins! 
+[[Way to go $p!|end3_5]]]]]</tw-passagedata><tw-passagedata pid="51" name="end3_5" tags="" position="100,725" size="100,100">$n: The four of you, all back together, run for the door, and as your get to it, you feel a liquid barrier that you pierce through and come out the other side. 
+$player feel the multiple suns on your face and smell the forest in full. $player all continue running until your legs hurt (though not $e cause he cheats) and even then, run further. 
+
+(link: &quot;Too much running...&quot;)[
+[$player]: I …can&#39;t ….run….anymore. 
+
+(link: &quot;continue&quot;)[
+$f: Yea….this should be a good place to rest. Take a breather, folks. 
+[[Rest sound good|end3_6]]]]</tw-passagedata><tw-passagedata pid="52" name="end3_6" tags="" position="225,725" size="100,100">$n: As you settle down, you realize that more than pitch black is starting to fade back into your vision, the $m&#39;s spell wearing off. The greens and blues of the forest shine with the suns peaking through the trees. It may be the most beautiful scene your little rat brain has ever seen. 
+$player turn to $f, who has a small red face with many time-worn wrinkles, and grey fur covering the pygmy monkey.
+$p is a tiny squirrel, even for her species, but holds herself with a strange regal dignity of a mother. 
+$e…well, he&#39;s a crow. 
+(link: &quot;What&#39;s next?&quot;)[
+
 [$player]: So! 
-The others look at you, surprise appearing on their faces, aware you can now see. 
-[$player]: What do we do now? 
-[GOOD END] 
---&gt;</tw-passagedata><tw-passagedata pid="26" name="fritzpuz0" tags="" position="725,350" size="100,100">$n: You walk into a darker, dirtier part of the laboratory. Your feet slip on the tiled floor, filled with dust. Eventually the tiles stop: everything gets rockier; colder.
+//The others look at you, surprise appearing on their faces, aware you can now see. //
+What do we do now? 
+(text-color:green)[GOOD END] 
+[[Play again?|intro0]]]
+
+
+&lt;!--
+//How &#39;bout some music?//
+$n: No, not that one
+
+Yeah that&#39;s better. See this is wh-
+
+$f: Hey, $playername!
+
+$n: Oh thank god. Somebody is talking.
+--&gt;</tw-passagedata><tw-passagedata pid="53" name="fritzpuz0" tags="" position="350,725" size="100,100">$n: You walk into a darker, dirtier part of the laboratory. Your feet slip on the tiled floor, filled with dust. Eventually the tiles stop: everything gets rockier; colder.
 (link: &quot;continue&quot;)[
 $e: Blind as the rat, we are in here;
 What sound is that, that buzz, so clear?
 (link: &quot;continue&quot;)[
 $p: I hear it too. Sounds like sum&#39; kinda humming; ooh! Like one of them big, huge power poles outside the lab!
-[[Fritz&#39;s steps grow louder|fritzpuz1]]]]</tw-passagedata><tw-passagedata pid="27" name="fritzpuz1" tags="" position="850,350" size="100,100">$n: $f stops in his tracks. He looks furious.
+[[Fritz&#39;s steps grow louder|fritzpuz1]]]]</tw-passagedata><tw-passagedata pid="54" name="fritzpuz1" tags="" position="475,725" size="100,100">$n: $f stops in his tracks. He looks furious.
 (link: &quot;uh oh&quot;)[
 $f: If you mention (text-style: &quot;shudder&quot;)[“buzzes”], (text-style: &quot;rumble&quot;)[“hums”], or (text-style: &quot;wavy-underline&quot;)[//“zaps”//] again—I have a //special// sandwich for you to eat: main ingredient, //**knuckle**//.
 (link: &quot;Edgar starts shuffling in place&quot;)[
 $e: My beak is closed, I will not bother.
-[[Patty jumps in|fritzpuz2]]]]</tw-passagedata><tw-passagedata pid="28" name="fritzpuz2" tags="" position="975,350" size="100,100">$p: Geez $f, you&#39;re scaring him. It&#39;s okay, $e. Let &#39;em have some space. Come &#39;ere! I think I see some twigs and hay!
+[[Patty jumps in|fritzpuz2]]]]</tw-passagedata><tw-passagedata pid="55" name="fritzpuz2" tags="" position="600,725" size="100,100">$p: Geez $f, you&#39;re scaring him. It&#39;s okay, $e. Let &#39;em have some space. Come &#39;ere! I think I see some twigs and hay!
 (link: &quot;Edgar stops shuffling&quot;)[
 $e: A nesting spot, for me? Hee hee! I&#39;ll be with $p, okay, okay!
 (link: &quot;Approach Fritz&quot;)[
 $n: Fritz flicks something metal between his fingers, before quickly turning toward a huge archway. The others leave you and Fritz alone.
-[[What&#39;s up?|fritzpuz3]]]]</tw-passagedata><tw-passagedata pid="29" name="fritzpuz3" tags="" position="1100,350" size="100,100">{$f: (transition: &quot;fade&quot;)+(transition-delay:0.5s)[You know,]
+[[What&#39;s up?|fritzpuz3]]]]</tw-passagedata><tw-passagedata pid="56" name="fritzpuz3" tags="" position="725,725" size="100,100">{$f: (transition: &quot;fade&quot;)+(transition-delay:0.5s)[You know,]
 (transition: &quot;fade&quot;)+(transition-delay:1.5s)[ it&#39;s probably for the best that you&#39;re blind, Kid.]
 (transition: &quot;fade&quot;)+(transition-delay:3s)[Some of the things I&#39;ve seen-]
 (transition: &quot;fade&quot;)+(transition-delay:4.5s)[ they stay with a monkey.]
@@ -409,16 +529,16 @@ $n: $f grasps the metal and hides it in a pocket on his sash. His movement sound
 
 [[Ask Fritz about the horrors he&#39;s seen|fritzpuz3-0]]
 
-[[Tell Fritz to focus on freedom|fritzpuz3-1]]]]</tw-passagedata><tw-passagedata pid="30" name="fritzpuz3-0" tags="" position="1225,350" size="100,100">{$f: **//Never//** ask me that again! Kid- (transition: &quot;fade&quot;)+(transition-delay:1.5s)[there are machines here that have split my best friends in two; contraptions that tortured us day and night. You force me to replay that horror and expect me to say //**“SURE THING, KID!”?**//]}
+[[Tell Fritz to focus on freedom|fritzpuz3-1]]]]</tw-passagedata><tw-passagedata pid="57" name="fritzpuz3-0" tags="" position="850,725" size="100,100">{$f: **//Never//** ask me that again! Kid- (transition: &quot;fade&quot;)+(transition-delay:1.5s)[there are machines here that have split my best friends in two; contraptions that tortured us day and night. You force me to replay that horror and expect me to say //**“SURE THING, KID!”?**//]}
 (link: &quot;Whoops&quot;)[
 (if: $fritz_faith &gt; 0)[(set: $fritz_faith = $fritz_faith - 1)] (set: $trust to $fritz_faith of $faithdm)//$f did not appreciate you asking about his past//
 //$f $trust//
-[[continue|fritzpuz3-0_0]]]</tw-passagedata><tw-passagedata pid="31" name="fritzpuz3-0_0" tags="" position="100,475" size="100,100">$player: $f, I barely know you. I&#39;m just trying to make conversation.
+[[continue|fritzpuz3-0_0]]]</tw-passagedata><tw-passagedata pid="58" name="fritzpuz3-0_0" tags="" position="975,725" size="100,100">$player: $f, I barely know you. I&#39;m just trying to make conversation.
 (link: &quot;Fritz is still seething&quot;)[
 $f: OK. When you ask someone about their worst memories, don&#39;t be shocked when they don&#39;t want to //**SHARE THEM!**//
 (link: &quot;Fritz seems to calm down a bit&quot;)[
 $n: $player hear something fall out of (text-colour:#d3d3af)[Fritz&#39;s] sash. It **clunks** on the floor, you hear him //hastily// snatch it.
-[[If only I could see|fritzpuz3-0_1]]]]</tw-passagedata><tw-passagedata pid="32" name="fritzpuz3-0_1" tags="" position="225,475" size="100,100">$player: What is that?
+[[If only I could see|fritzpuz3-0_1]]]]</tw-passagedata><tw-passagedata pid="59" name="fritzpuz3-0_1" tags="" position="1100,725" size="100,100">$player: What is that?
 (link: &quot;Fritz begins to fidget&quot;)[
 {$f: (transition: &quot;fade&quot;)+(transition-delay:0.5s)[I had a partner-]
 (transition: &quot;fade&quot;)+(transition-delay:1s)[ no,]
@@ -435,17 +555,17 @@ $n: $player hear something fall out of (text-colour:#d3d3af)[Fritz&#39;s] sash. 
 }
 (transition: &quot;fade&quot;)+(transition-delay:12s)[(link: &quot;continue&quot;)[
 $n: $f stops fidgeting for a moment. He regains his composure: the motions resume their practiced quality, and $player hear the rustling of his sash as he replaces his trinket.
-[[continue|fritzpuz3-0_2]]]]]</tw-passagedata><tw-passagedata pid="33" name="fritzpuz3-0_2" tags="" position="350,475" size="100,100">{$f: (transition: &quot;fade&quot;)+(transition-delay:0.5s)[I once misplaced my faith in that //“brilliant”// mind. And our engineer… ]
+[[continue|fritzpuz3-0_2]]]]]</tw-passagedata><tw-passagedata pid="60" name="fritzpuz3-0_2" tags="" position="1225,725" size="100,100">{$f: (transition: &quot;fade&quot;)+(transition-delay:0.5s)[I once misplaced my faith in that //“brilliant”// mind. And our engineer… ]
 (transition: &quot;fade&quot;)+(transition-delay:3s)[ was crushed.]
 (transition: &quot;fade&quot;)+(transition-delay:4s)[ The others?]
 (transition: &quot;fade&quot;)+(transition-delay:5.5s)[ Lost.]
 (transition: &quot;fade&quot;)+(transition-delay:6.5s)[ Destroyed by this laboratory.]
 (transition: &quot;fade&quot;)+(transition-delay:8s)[ Destroyed by knowledge.]
 }
-(transition: &quot;fade&quot;)+(transition-delay:9s)[ [[I&#39;m sorr-|fritzpuz3-0_3]]]</tw-passagedata><tw-passagedata pid="34" name="fritzpuz3-0_3" tags="" position="475,475" size="100,100">$n: $f grabs your tail — **HARD.**
+(transition: &quot;fade&quot;)+(transition-delay:9s)[ [[I&#39;m sorr-|fritzpuz3-0_3]]]</tw-passagedata><tw-passagedata pid="61" name="fritzpuz3-0_3" tags="" position="100,850" size="100,100">$n: $f grabs your tail — **HARD.**
 (link: &quot;Ouch!&quot;)[
 $f: I will not make that mistake again. We&#39;re here. Let me show you this: I can&#39;t figure it out.
-[[continue|fritzpuz4]]]</tw-passagedata><tw-passagedata pid="35" name="fritzpuz3-1" tags="" position="600,475" size="100,100">$player: The outside world won&#39;t be so cruel, $f.
+[[continue|fritzpuz4]]]</tw-passagedata><tw-passagedata pid="62" name="fritzpuz3-1" tags="" position="225,850" size="100,100">$player: The outside world won&#39;t be so cruel, $f.
 (link: &quot;Fritz begins to respond&quot;)[
 {$f: (transition: &quot;fade&quot;)+(transition-delay:0.5s)[**I&#39;VE BEEN OUTSIDE**,]
 (transition: &quot;fade&quot;)+(transition-delay:1s)[ $playerName.]
@@ -457,7 +577,7 @@ $f: I will not make that mistake again. We&#39;re here. Let me show you this: I 
 (transition: &quot;fade&quot;)+(transition-delay:8s)[ and nothing.]
 (transition: &quot;fade&quot;)+(transition-delay:9s)[ It&#39;s maddening!]
 }   
-(transition: &quot;fade&quot;)+(transition-delay:10s)[[[continue|fritzpuz3-1_0]]]]</tw-passagedata><tw-passagedata pid="36" name="fritzpuz3-1_0" tags="" position="725,475" size="100,100">{$player: (transition: &quot;fade&quot;)+(transition-delay:0.5s)[I don&#39;t remember much,]
+(transition: &quot;fade&quot;)+(transition-delay:10s)[[[continue|fritzpuz3-1_0]]]]</tw-passagedata><tw-passagedata pid="63" name="fritzpuz3-1_0" tags="" position="350,850" size="100,100">{$player: (transition: &quot;fade&quot;)+(transition-delay:0.5s)[I don&#39;t remember much,]
 (transition: &quot;fade&quot;)+(transition-delay:1.5s)[ now that you mention it.]
 (transition: &quot;fade&quot;)+(transition-delay:3s)[ But isn&#39;t that a neat thought-]
 (transition: &quot;fade&quot;)+(transition-delay:4.5s)[ we can forge a new path,]
@@ -465,7 +585,7 @@ $f: I will not make that mistake again. We&#39;re here. Let me show you this: I 
 }
 (transition: &quot;fade&quot;)+(transition-delay:6s)[(link: &quot;continue&quot;)[
 $n: $f chuckles. Then harrumphs.
-[[The atmosphere lightens|fritzpuz3-1_1]]]]</tw-passagedata><tw-passagedata pid="37" name="fritzpuz3-1_1" tags="" position="850,475" size="100,100">{$f: (transition: &quot;fade&quot;)+(transition-delay:0.5s)[Rat,]
+[[The atmosphere lightens|fritzpuz3-1_1]]]]</tw-passagedata><tw-passagedata pid="64" name="fritzpuz3-1_1" tags="" position="475,850" size="100,100">{$f: (transition: &quot;fade&quot;)+(transition-delay:0.5s)[Rat,]
 (transition: &quot;fade&quot;)+(transition-delay:1s)[ rat,]
 (transition: &quot;fade&quot;)+(transition-delay:1.5s)[ rat...]
 (transition: &quot;fade&quot;)+(transition-delay:2s)[ You remind me of someone from long ago.]
@@ -474,16 +594,16 @@ $n: $f chuckles. Then harrumphs.
 (if: $fritz_faith &lt; 3)[(set: $fritz_faith = $fritz_faith + 1)] (set: $trust to $fritz_faith of $faithdm)//$f associates you with someone he likes//
 //$f $trust//
 
-[[continue|fritzpuz3-1_2]]]]</tw-passagedata><tw-passagedata pid="38" name="fritzpuz3-1_2" tags="" position="975,475" size="100,100">$n: You hear $f dig out some trinket and tumble the metal through his fingers. The motion sounds confused, stressed. $f is shaking.
-[[You ask ...|fritzpuz3-0_1]]</tw-passagedata><tw-passagedata pid="39" name="fritzpuz4" tags="" position="1100,475" size="100,100">$f: The $m, he gave us tags: a single letter for every one of us. Each night, he would come for “inspection.” When we stood by our cages, the tags would beep, and shine. Some of the... slower animals would be punished for standing near the wrong cage. Their tags would buzz and the animals would scream dreadfully.
+[[continue|fritzpuz3-1_2]]]]</tw-passagedata><tw-passagedata pid="65" name="fritzpuz3-1_2" tags="" position="600,850" size="100,100">$n: You hear $f dig out some trinket and tumble the metal through his fingers. The motion sounds confused, stressed. $f is shaking.
+[[You ask ...|fritzpuz3-0_1]]</tw-passagedata><tw-passagedata pid="66" name="fritzpuz4" tags="" position="725,850" size="100,100">$f: The $m, he gave us tags: a single letter for every one of us. Each night, he would come for “inspection.” When we stood by our cages, the tags would beep, and shine. Some of the... slower animals would be punished for standing near the wrong cage. Their tags would buzz and the animals would scream dreadfully.
 (link: &quot;continue&quot;)[
 $f: Every time an animal died, the $s left their tag hanging, for the rest of us to see: their sleep eternal and their tags shining bright. I can only remember standing in one spot, over and over, every single night. This place feels very familiar. But something has changed. I…
-[[You stand silent|fritzpuz5]]]</tw-passagedata><tw-passagedata pid="40" name="fritzpuz5" tags="" position="1225,475" size="100,100">{$n: (transition: &quot;fade&quot;)+(transition-delay:0.5s)[$f is silent.]
+[[You stand silent|fritzpuz5]]]</tw-passagedata><tw-passagedata pid="67" name="fritzpuz5" tags="" position="850,850" size="100,100">{$n: (transition: &quot;fade&quot;)+(transition-delay:0.5s)[$f is silent.]
 (transition: &quot;fade&quot;)+(transition-delay:1s)[ $player hear a gentle drip of teardrops on the concrete floor.]
 (transition: &quot;fade&quot;)+(transition-delay:3s)[ He mentions names ...]
 (transition: &quot;fade&quot;)+(transition-delay:4.5s)[ names of his old friends.]
 }
-(transition: &quot;fade&quot;)+(transition-delay:5s)[[[Fritz continues|fritzpuz6]]]</tw-passagedata><tw-passagedata pid="41" name="fritzpuz6" tags="" position="100,600" size="100,100">{$f: (transition: &quot;fade&quot;)+(transition-delay:0.5s)[There is Sam;]
+(transition: &quot;fade&quot;)+(transition-delay:5s)[[[Fritz continues|fritzpuz6]]]</tw-passagedata><tw-passagedata pid="68" name="fritzpuz6" tags="" position="975,850" size="100,100">{$f: (transition: &quot;fade&quot;)+(transition-delay:0.5s)[There is Sam;]
 (transition: &quot;fade&quot;)+(transition-delay:1s)[ and Elly;]
 (transition: &quot;fade&quot;)+(transition-delay:1.5s)[ Trixie;]
 (transition: &quot;fade&quot;)+(transition-delay:2s)[ Nash...]
@@ -492,7 +612,7 @@ $f: Every time an animal died, the $s left their tag hanging, for the rest of us
 (transition: &quot;fade&quot;)+(transition-delay:4s)[ Vincent;]
 (transition: &quot;fade&quot;)+(transition-delay:4.5s)[ Radish.]
 }
-[[Fritz falls silent|fritzpuz7]]</tw-passagedata><tw-passagedata pid="42" name="fritzpuz7" tags="" position="225,600" size="100,100">$player: Did the $s give you those names? I thought you only had initials on your tags…S-E-T-N ... R-
+[[Fritz falls silent|fritzpuz7]]</tw-passagedata><tw-passagedata pid="69" name="fritzpuz7" tags="" position="1100,850" size="100,100">$player: Did the $s give you those names? I thought you only had initials on your tags…S-E-T-N ... R-
 (link: &quot;Fritz cuts you off&quot;)[
 $f: **WE** named ourselves. At least **WE** had control of that. The madman treats us like things. Like ... samples. Keys. Tests. **NOTHING!** These tags...
 (link: &quot;continue&quot;)[
@@ -501,7 +621,7 @@ $n: $f becomes extremely annoyed, and starts to breathe heavily. He grumbles und
 (set: $counter to 0)
 (set: $fritzExp to 0)
 (set: $fritzRoom to 0)
-(set: $fritzAsk to 0)</tw-passagedata><tw-passagedata pid="43" name="fritzpuz8" tags="" position="350,600" size="100,100">{$f: (transition: &quot;fade&quot;)+(transition-delay:0.5s)[These tags...]
+(set: $fritzAsk to 0)</tw-passagedata><tw-passagedata pid="70" name="fritzpuz8" tags="" position="1225,850" size="100,100">{$f: (transition: &quot;fade&quot;)+(transition-delay:0.5s)[These tags...]
 (transition: &quot;fade&quot;)+(transition-delay:1.5s)[ these belonged to members of my expedition. (Fritz anxiously tugs at his sash, and you hear tags clacking together.)]
 }
 
@@ -527,25 +647,25 @@ $n: $f becomes extremely annoyed, and starts to breathe heavily. He grumbles und
 (set: $guessedE2 to false)
 (set: $guessedN1 to false)
 (set: $guessedL1 to false)
-(set: $guessedI1 to false)</tw-passagedata><tw-passagedata pid="44" name="fritzpuz8-0" tags="" position="475,600" size="100,100">$player: Why do you have your friend&#39;s tags, $f?
+(set: $guessedI1 to false)</tw-passagedata><tw-passagedata pid="71" name="fritzpuz8-0" tags="" position="100,975" size="100,100">$player: Why do you have your friend&#39;s tags, $f?
 (link: &quot;continue&quot;)[
 $f: “Have them”? I steward these tags, so that $s may never taint them again with his cruelty! They&#39;re mine!
 (link: &quot;continue&quot;)[
 (if: $fritz_faith &gt; 0)[(set: $fritz_faith = $fritz_faith - 1)] (set: $trust to $fritz_faith of $faithdm)//$f really doesn&#39;t want to talk about the tags//
 //$f $trust//
 [[Okay|fritzpuz8]]]]
-(set: $counter to 1)</tw-passagedata><tw-passagedata pid="45" name="fritzpuz8-0-1" tags="" position="600,600" size="100,100">$player: $f. The tags. You need to tell me about the tags. It&#39;s the only way I can solve this (text-colour:#7c00e2)[Scientist&#39;s] riddle!
+(set: $counter to 1)</tw-passagedata><tw-passagedata pid="72" name="fritzpuz8-0-1" tags="" position="225,975" size="100,100">$player: $f. The tags. You need to tell me about the tags. It&#39;s the only way I can solve this (text-colour:#7c00e2)[Scientist&#39;s] riddle!
 (link: &quot;continue&quot;)[
 $f: I owe you nothing, Kid! Or, should I say, $playerName? Yes, $playerName, that name you chose for yourself, that means something to you, that **YOU MADE.** We were like you, Kid. We fought back, and we were rewarded with pain! Want to feel how we felt, when we were called nothing but a letter?
-[[Fritz reaches towards you|fritzpuz8-0-1_0]]]</tw-passagedata><tw-passagedata pid="46" name="fritzpuz8-0-1_0" tags="" position="725,600" size="100,100">$n: $f wraps a tag around your body and tosses you toward a nearby stone. Before you hit the ground, thousands of prickling hairs turn out from your skin, and then…
+[[Fritz reaches towards you|fritzpuz8-0-1_0]]]</tw-passagedata><tw-passagedata pid="73" name="fritzpuz8-0-1_0" tags="" position="350,975" size="100,100">$n: $f wraps a tag around your body and tosses you toward a nearby stone. Before you hit the ground, thousands of prickling hairs turn out from your skin, and then…
 
 //**BLAM!**// 
 (link: &quot;continue&quot;)[
 $n: Your muscles burn as if a volcano erupted in your body; as if a freight train smashed through your brainstem. Every tiny finger on your rat hands clasps into itself so tightly you swear the joints break. As you hit the floor, you hear a faint **BZZZT!** sound, once, twice……
-[[continue|fritzpuz8-0-1_1]]]</tw-passagedata><tw-passagedata pid="47" name="fritzpuz8-0-1_1" tags="" position="850,600" size="100,100">$f: You&#39;d better move away, Kid... before the buzzer stops buzzing!
+[[continue|fritzpuz8-0-1_1]]]</tw-passagedata><tw-passagedata pid="74" name="fritzpuz8-0-1_1" tags="" position="475,975" size="100,100">$f: You&#39;d better move away, Kid... before the buzzer stops buzzing!
 (link: &quot;Fritz continues&quot;)[
 $f: Imagine. Every night, your home is the same. Until some random day: your home is not yours anymore. Now everyone must read... but how? How do you undo months of training on a whim? Months, blast. Years! Years of training, to reset in a day? Zap, zap, zap. And when you learn where your new home is? Changed, again!
-[[continue|fritzpuz8-0-1_2]]]</tw-passagedata><tw-passagedata pid="48" name="fritzpuz8-0-1_2" tags="" position="975,600" size="100,100">$f: We **HAD** to escape, Rat... we tried to escape.
+[[continue|fritzpuz8-0-1_2]]]</tw-passagedata><tw-passagedata pid="75" name="fritzpuz8-0-1_2" tags="" position="600,975" size="100,100">$f: We **HAD** to escape, Rat... we tried to escape.
 (link: &quot;He continues&quot;)[
 $f: You ask me to read you the tags of the dead? That, I will not do.
 (link: &quot;continue&quot;)[
@@ -554,30 +674,30 @@ $n: Fritz seems incredibly serious. His breathing is calm, and frighteningly reg
 (if: $fritz_faith &gt; 0)[(set: $fritz_faith = $fritz_faith - 1)] (set: $trust to $fritz_faith of $faithdm)//$f seems at his wits end//
 //$f $trust//
 [[Okay|fritzpuz8]]]]]
-(set: $counter to 2)</tw-passagedata><tw-passagedata pid="49" name="fritzpuz8-0-2" tags="" position="1100,600" size="100,100">$player: $f—I understand how troubling this is for you. I&#39;m not trying to hurt you. But I can&#39;t read the tags, $f: I&#39;m blind. All we need are the letters. That&#39;s all I&#39;m asking for.
+(set: $counter to 2)</tw-passagedata><tw-passagedata pid="76" name="fritzpuz8-0-2" tags="" position="725,975" size="100,100">$player: $f—I understand how troubling this is for you. I&#39;m not trying to hurt you. But I can&#39;t read the tags, $f: I&#39;m blind. All we need are the letters. That&#39;s all I&#39;m asking for.
 (link: &quot;Fritz snaps&quot;)[
 $f: I won&#39;t read you the tags, Rat. In fact, I never want to see the damned tags ever again. For such a secure laboratory, you would be surprised how many trash chutes one can discover. Networks of chutes, even. Ones that friends followed, and ones that trapped friends forever in the lab. Oh! Would you look at this? How convenient.
-[[Fritz walks to a wall|fritzpuz8-0-2_0]]]</tw-passagedata><tw-passagedata pid="50" name="fritzpuz8-0-2_0" tags="" position="1225,600" size="100,100">$n: $f taps on a wall panel, and something creaks open. You hear the clattering of tags as they bounce into nothingness. It seems this puzzle is out of reach now.
+[[Fritz walks to a wall|fritzpuz8-0-2_0]]]</tw-passagedata><tw-passagedata pid="77" name="fritzpuz8-0-2_0" tags="" position="850,975" size="100,100">$n: $f taps on a wall panel, and something creaks open. You hear the clattering of tags as they bounce into nothingness. It seems this puzzle is out of reach now.
 (link: &quot;continue&quot;)[
 $n: An alarm starts to wail: opening the trash chute has triggered a security system! $e and $p rush into the room.
-[[Patty starts...|fritzpuz8-0-2_0]]]</tw-passagedata><tw-passagedata pid="51" name="fritzpuz8-0-2_1" tags="" position="100,725" size="100,100">$p: $f, dag&#39;nabbit! What did&#39;ja do that for, you knucklehead? This place ain&#39;t safe no more!
+[[Patty starts...|fritzpuz8-0-2_0]]]</tw-passagedata><tw-passagedata pid="78" name="fritzpuz8-0-2_1" tags="" position="975,975" size="100,100">$p: $f, dag&#39;nabbit! What did&#39;ja do that for, you knucklehead? This place ain&#39;t safe no more!
 (link: &quot;continue&quot;)[
 $e: Look, look, within his hand: Fie! A tag, it glows, and catches my eye!
 Rat, Rat, what did you do—did you query, and quarrel, and act a fool?
 (link: &quot;I only...&quot;)[
 $p: $f! It&#39;s time to git outta here; why are you jus&#39; standin&#39; around?
-[[continue|fritzpuz8-0-2_2]]]]</tw-passagedata><tw-passagedata pid="52" name="fritzpuz8-0-2_2" tags="" position="225,725" size="100,100">$n: $f heaves the last tag with all his fury into the trash chute, and he loses it. You hear nothing but primal screeches and his nails as they dig into stone and wood.
+[[continue|fritzpuz8-0-2_2]]]]</tw-passagedata><tw-passagedata pid="79" name="fritzpuz8-0-2_2" tags="" position="1100,975" size="100,100">$n: $f heaves the last tag with all his fury into the trash chute, and he loses it. You hear nothing but primal screeches and his nails as they dig into stone and wood.
 (link: &quot;He screams&quot;)[
 $f: (text-style: &quot;shudder&quot;)[//**I HATE THIS PLACE! LET ME OUT!**//]
 (link: &quot;continue&quot;)[
 $n: $f clamps on to the wall and cries out loudly. Everyone is motionless as they watch him. He furiously claws and scratches at a small crack…and suddenly, the wall starts to break apart.
-[[fritzpuz8-0-2_3]]]]</tw-passagedata><tw-passagedata pid="53" name="fritzpuz8-0-2_3" tags="" position="350,725" size="100,100">$p: It&#39;s gonna be okay, $f! Stay with us!
+[[fritzpuz8-0-2_3]]]]</tw-passagedata><tw-passagedata pid="80" name="fritzpuz8-0-2_3" tags="" position="1225,975" size="100,100">$p: It&#39;s gonna be okay, $f! Stay with us!
 (link: &quot;Edgar chimes in&quot;)[
 $e: A hole? Fresh air? (text-colour:#d3d3af)[Fritz&#39;s] rage is swell&#39;d;
 Near the monkey, this crow won&#39;t position.
 Rat, you fiend, you reminded him of Hell—
 Miraculous, though: we continue our expedition!
-[[continue|fritzpuz8-0-2_4]]]</tw-passagedata><tw-passagedata pid="54" name="fritzpuz8-0-2_4" tags="" position="475,725" size="100,100">$f: //**RARRRRAGGGHHH!!**//
+[[continue|fritzpuz8-0-2_4]]]</tw-passagedata><tw-passagedata pid="81" name="fritzpuz8-0-2_4" tags="" position="100,1100" size="100,100">$f: //**RARRRRAGGGHHH!!**//
 (link: &quot;No way...&quot;)[
 $n: $f ripped a hole in a wall. With his bare hands. Which was awesome! Except—it came at the expense of his good memories of all of his old friends. Ooof.
 (link: &quot;Not ideal&quot;)[
@@ -586,71 +706,71 @@ $n: $player follow the cold air and scamper through the hole in the wall.
 (set: $fritz_faith = 0)] (set: $trust to $fritz_faith of $faithdm)//$f had a mental breakdown//
 //$f $trust//
 [[Onwards|$ePuzz]]]]
-(set: $counter to 0)</tw-passagedata><tw-passagedata pid="55" name="fritzpuz8-1" tags="" position="600,725" size="100,100">$player: Can you tell me about your expedition?
+(set: $counter to 0)</tw-passagedata><tw-passagedata pid="82" name="fritzpuz8-1" tags="" position="225,1100" size="100,100">$player: Can you tell me about your expedition?
 (link: &quot;continue&quot;)[
 $f: Every night the $c would come and steal our tags while we slept. The $c would tease us, bringing tags to the wrong cages. Every night someone would be blasted awake. We never slept in peace!
 (link: &quot;Thats terrible!&quot;)[
 $f: So we banded together, sick of being tortured! And $engy… oh, she was brilliant! She reversed the polarity on her tag: instead of issuing a blast, it stored the power within.
-[[Hmm|fritzpuz8-1_0]]]]</tw-passagedata><tw-passagedata pid="56" name="fritzpuz8-1_0" tags="" position="725,725" size="100,100">$player: And…?
+[[Hmm|fritzpuz8-1_0]]]]</tw-passagedata><tw-passagedata pid="83" name="fritzpuz8-1_0" tags="" position="350,1100" size="100,100">$player: And…?
 (link: &quot;continue&quot;)[
 $f: Genius, really. She waited until the $c stole her tag... and unleashed the power! 
 
 **BLAM!**
 (link: &quot;Amazing!&quot;)[
 $f: In its panic, the $c lept through a hidden opening in the wall... its collar unlocked all the doors in the laboratory, you know. The collar was our key! Eventually, we stole it.
-[[Thats our key too!|fritzpuz8-1_2]]]]</tw-passagedata><tw-passagedata pid="57" name="fritzpuz8-1_2" tags="" position="850,725" size="100,100">$player: What did you do with it? Where is it? Let&#39;s go!
+[[Thats our key too!|fritzpuz8-1_2]]]]</tw-passagedata><tw-passagedata pid="84" name="fritzpuz8-1_2" tags="" position="475,1100" size="100,100">$player: What did you do with it? Where is it? Let&#39;s go!
 (link: &quot;No...&quot;)[
 $f: It was damaged during our escape. I hid what remained in an opening in the wall. The wall only opened when all the animals stood by their cages. But—there aren&#39;t any cages here.
 (link: &quot;continue&quot;)[
 (if: $fritz_faith &lt; 3)[(set: $fritz_faith = $fritz_faith + 1)] (set: $trust to $fritz_faith of $faithdm)//$f seems hopeful//
 //$f $trust//
 [[What next?|fritzpuz8]]]]
-(set: $fritzExp to 1)</tw-passagedata><tw-passagedata pid="58" name="fritzpuz8-2" tags="" position="975,725" size="100,100">$player: Tell me about the room, $f.
+(set: $fritzExp to 1)</tw-passagedata><tw-passagedata pid="85" name="fritzpuz8-2" tags="" position="600,1100" size="100,100">$player: Tell me about the room, $f.
 (link: &quot;Fritz explains&quot;)[
 $f: There are gravestones, lined up in rows. But looking at them makes me sick. They are the resting places of my friends. There are empty ones...
 (link: &quot;continue&quot;)[
 $n: You understand why $f was tearing up, earlier. This can&#39;t be easy for him.
 (link: &quot;You search for the right words to say&quot;)[
 $player: $f— the tags. They don&#39;t have to be burdens. They can be emblems, reminders of your friends and their bravery.
-[[Fritz perks up a little|fritzpuz8-2_0]]]]]</tw-passagedata><tw-passagedata pid="59" name="fritzpuz8-2_0" tags="" position="1100,725" size="100,100">$f: Maybe you&#39;re right, kid. It has been years since someone talked to me like you do. But: what happens if we fail again? I&#39;m not sure I can face that. Every day, I have to face my failures.
+[[Fritz perks up a little|fritzpuz8-2_0]]]]]</tw-passagedata><tw-passagedata pid="86" name="fritzpuz8-2_0" tags="" position="725,1100" size="100,100">$f: Maybe you&#39;re right, kid. It has been years since someone talked to me like you do. But: what happens if we fail again? I&#39;m not sure I can face that. Every day, I have to face my failures.
 (link: &quot;Fritz nervously fumbles with the tags.&quot;)[
 $player: Your friends were glad that you tried $f. They refused to be trapped here, just like you. Try to imagine the good times with your friends; try to think of their qualities, or something they enjoyed! I need your help... you know, since I can&#39;t read anymore.
 (link: &quot;continue&quot;)[
 (if: $fritz_faith &lt; 3)[(set: $fritz_faith = $fritz_faith + 1)] (set: $trust to $fritz_faith of $faithdm)//$f seems hopeful//
 //$f $trust//
-[[continue|fritzpuz8-2_1]]]]</tw-passagedata><tw-passagedata pid="60" name="fritzpuz8-2_1" tags="" position="1225,725" size="100,100">$f: I will be your Eyes, Kid. Let us see: $engy! $ellie! $lovely! $neko! And... (text-color:#d3d3af)[me].
+[[continue|fritzpuz8-2_1]]]]</tw-passagedata><tw-passagedata pid="87" name="fritzpuz8-2_1" tags="" position="850,1100" size="100,100">$f: I will be your Eyes, Kid. Let us see: $engy! $ellie! $lovely! $neko! And... (text-color:#d3d3af)[me].
 (link: &quot;continue&quot;)[
 $n: $f drops the tags in order... except for one.
 [[What&#39;s next?|fritzpuz8]]]
-(set: $fritzRoom to 1)</tw-passagedata><tw-passagedata pid="61" name="fritzpuz8-3" tags="" position="100,850" size="100,100">$player: What about you, $f?
+(set: $fritzRoom to 1)</tw-passagedata><tw-passagedata pid="88" name="fritzpuz8-3" tags="" position="975,1100" size="100,100">$player: What about you, $f?
 (link: &quot;Fritz begins to speak&quot;)[
 $f: The $s loves his words, Kid. He uses them throughout the laboratory, because he knows they are out of reach for many of his creations. He taunts us with them.
 (link: &quot;continue&quot;)[
 $player: Is that why he took my sight?
-[[Fritz responds|fritzpuz8-3_0]]]]</tw-passagedata><tw-passagedata pid="62" name="fritzpuz8-3_0" tags="" position="225,850" size="100,100">$f: Exactly. And before $player, many more struggled. I could tell words were special, but I did not understand their power until one night.
+[[Fritz responds|fritzpuz8-3_0]]]]</tw-passagedata><tw-passagedata pid="89" name="fritzpuz8-3_0" tags="" position="1100,1100" size="100,100">$f: Exactly. And before $player, many more struggled. I could tell words were special, but I did not understand their power until one night.
 (link: &quot;continue&quot;)[
 $f: One of my companions gave me my name. I was not always $f.
 (link: &quot;It&#39;s a good name!&quot;)[
 $player: You&#39;ve always been $f to me. I like $f.
-[[Fritz responds|fritzpuz8-3_1]]]]</tw-passagedata><tw-passagedata pid="63" name="fritzpuz8-3_1" tags="" position="350,850" size="100,100">$f: And so do I, more than you will ever know, Rat.
+[[Fritz responds|fritzpuz8-3_1]]]]</tw-passagedata><tw-passagedata pid="90" name="fritzpuz8-3_1" tags="" position="1225,1100" size="100,100">$f: And so do I, more than you will ever know, Rat.
 (link: &quot;continue&quot;)[
 $f: I was //“Subject I”//, before. The $s called me $insolence.
 (link: &quot;continue&quot;)[
 $f: When I was gifted a name— not having one forced upon me— that was the beginning of my freedom.
-[[continue|fritzpuz8-3_2]]]]</tw-passagedata><tw-passagedata pid="64" name="fritzpuz8-3_2" tags="" position="475,850" size="100,100">$f: The old times are burned into me. I feel hurt when I remember my old friends.
+[[continue|fritzpuz8-3_2]]]]</tw-passagedata><tw-passagedata pid="91" name="fritzpuz8-3_2" tags="" position="100,1225" size="100,100">$f: The old times are burned into me. I feel hurt when I remember my old friends.
 (link: &quot;Reassure Fritz&quot;)[
 $p: We can always move forward, $f. The letters on your tags. They can spell a different destiny: we just have to... rearrange them... hey! Wait a minute! 
-[[continue|fritzpuz8-3_3]]]</tw-passagedata><tw-passagedata pid="65" name="fritzpuz8-3_3" tags="" position="600,850" size="100,100">S, E, _, T, _, N, _, _
+[[continue|fritzpuz8-3_3]]]</tw-passagedata><tw-passagedata pid="92" name="fritzpuz8-3_3" tags="" position="225,1225" size="100,100">S, E, _, T, _, N, _, _
 R, _, V, _, R!
 
 $player: Your friend&#39;s names! The initials! The tags fill in the gaps!
-[[continue|fritzpuz8-3_4]]</tw-passagedata><tw-passagedata pid="66" name="fritzpuz8-3_4" tags="" position="725,850" size="100,100">$n: There is a brief moment of silence. You stammer... the gaps: they&#39;re empty graves.
+[[continue|fritzpuz8-3_4]]</tw-passagedata><tw-passagedata pid="93" name="fritzpuz8-3_4" tags="" position="350,1225" size="100,100">$n: There is a brief moment of silence. You stammer... the gaps: they&#39;re empty graves.
 (link: &quot;continue&quot;)[
 $f: Then we shall bury them by the names I give them! E for $engy! E for $ellie! L for $lovely! N for $neko! AND I for $insolence!
 (link: &quot;continue&quot;)[
 $player: That gives us E, E, L, N, and I... let&#39;s place those tags!
 [[Lets do it|fritzpuz8]]]]
-(set: $fritzAsk to 1)</tw-passagedata><tw-passagedata pid="67" name="fritzpuz8-4" tags="" position="850,850" size="100,100">**The Crossword:**
+(set: $fritzAsk to 1)</tw-passagedata><tw-passagedata pid="94" name="fritzpuz8-4" tags="" position="475,1225" size="100,100">**The Crossword:**
 
 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;R
 S E [[$N1|fritzpuz9_4]] T [[$I1|fritzpuz9_3]] N [[$E2|fritzpuz9_2]] [[$L1|fritzpuz9_1]]
@@ -659,7 +779,7 @@ S E [[$N1|fritzpuz9_4]] T [[$I1|fritzpuz9_3]] N [[$E2|fritzpuz9_2]] [[$L1|fritzp
 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;R
 {(if: $guessedE1 is true and $guessedL1 is true and $guessedE2 is true and $guessedI1 is true and $guessedN1 is true)[
     [[I think that&#39;s right!|fritzWin]]
-]}</tw-passagedata><tw-passagedata pid="68" name="fritzpuz9_0" tags="" position="975,850" size="100,100">{
+]}</tw-passagedata><tw-passagedata pid="95" name="fritzpuz9_0" tags="" position="600,1225" size="100,100">{
   (if: $guessedE1 is false)[
   (set: $q = [(text-colour:red)[$E1]])]
   (set: $promptStr = [
@@ -690,7 +810,7 @@ S E [[$N1|fritzpuz9_4]] T [[$I1|fritzpuz9_3]] N [[$E2|fritzpuz9_2]] [[$L1|fritzp
     &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;R
     ])
 (if: $E1 is &quot;&quot; or $E1 is &quot; &quot;)[(set: $E1 to &quot;_&quot;)]
-}(go-to: &quot;postGuessE1&quot;)</tw-passagedata><tw-passagedata pid="69" name="fritzpuz9_1" tags="" position="1100,850" size="100,100">{
+}(go-to: &quot;postGuessE1&quot;)</tw-passagedata><tw-passagedata pid="96" name="fritzpuz9_1" tags="" position="725,1225" size="100,100">{
   (if: $guessedL1 is false)[
   (set: $q = [(text-colour:red)[$L1]])]
   (set: $promptStr = [
@@ -721,7 +841,7 @@ S E [[$N1|fritzpuz9_4]] T [[$I1|fritzpuz9_3]] N [[$E2|fritzpuz9_2]] [[$L1|fritzp
     &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;R
     ])
     (if: $L1 is &quot;&quot; or $L1 is &quot; &quot;)[(set: $L1 to &quot;_&quot;)]
-}(go-to: &quot;postGuessL1&quot;)</tw-passagedata><tw-passagedata pid="70" name="fritzpuz9_2" tags="" position="1225,850" size="100,100">{
+}(go-to: &quot;postGuessL1&quot;)</tw-passagedata><tw-passagedata pid="97" name="fritzpuz9_2" tags="" position="850,1225" size="100,100">{
   (if: $guessedE2 is false)[
   (set: $q = [(text-colour:red)[$E2]])]
   (set: $promptStr = [
@@ -751,7 +871,7 @@ S E [[$N1|fritzpuz9_4]] T [[$I1|fritzpuz9_3]] N [[$E2|fritzpuz9_2]] [[$L1|fritzp
     &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;R
     ])
     (if: $E2 is &quot;&quot; or $E2 is &quot; &quot;)[(set: $E2 to &quot;_&quot;)]
-}(go-to: &quot;postGuessE2&quot;)</tw-passagedata><tw-passagedata pid="71" name="fritzpuz9_3" tags="" position="100,975" size="100,100">{
+}(go-to: &quot;postGuessE2&quot;)</tw-passagedata><tw-passagedata pid="98" name="fritzpuz9_3" tags="" position="975,1225" size="100,100">{
   (if: $guessedI1 is false)[
   (set: $q = [(text-colour:red)[$I1]])]
   (set: $promptStr = [
@@ -781,7 +901,7 @@ S E [[$N1|fritzpuz9_4]] T [[$I1|fritzpuz9_3]] N [[$E2|fritzpuz9_2]] [[$L1|fritzp
     &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;R
     ])
     (if: $I1 is &quot;&quot; or $I1 is &quot; &quot;)[(set: $I1 to &quot;_&quot;)]
-}(go-to: &quot;postGuessI1&quot;)</tw-passagedata><tw-passagedata pid="72" name="fritzpuz9_4" tags="" position="225,975" size="100,100">{
+}(go-to: &quot;postGuessI1&quot;)</tw-passagedata><tw-passagedata pid="99" name="fritzpuz9_4" tags="" position="1100,1225" size="100,100">{
   (if: $guessedN1 is false)[
   (set: $q = [(text-colour:red)[$N1]])]
   (set: $promptStr = [
@@ -811,7 +931,7 @@ S E [[$N1|fritzpuz9_4]] T [[$I1|fritzpuz9_3]] N [[$E2|fritzpuz9_2]] [[$L1|fritzp
     &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;R
     ])
     (if: $N1 is &quot;&quot; or $N1 is &quot; &quot;)[(set: $N1 to &quot;_&quot;)]
-}(go-to: &quot;postGuessN1&quot;)</tw-passagedata><tw-passagedata pid="73" name="postGuessE1" tags="" position="350,975" size="100,100">$promptStr
+}(go-to: &quot;postGuessN1&quot;)</tw-passagedata><tw-passagedata pid="100" name="postGuessE1" tags="" position="1225,1225" size="100,100">$promptStr
     {
     (if: $guessedE1 is false)[
     (set: $numMistakes = $numMistakes + 1)
@@ -853,7 +973,7 @@ S E [[$N1|fritzpuz9_4]] T [[$I1|fritzpuz9_3]] N [[$E2|fritzpuz9_2]] [[$L1|fritzp
             //$f $trust//]]
         (if: $fritz_faith is 0)[(go-to: &quot;fritzFail&quot;)]]
     &lt;br&gt;[[Make a another guess|fritzpuz9_0]]]}
-    [[Back|fritzpuz8-4]]</tw-passagedata><tw-passagedata pid="74" name="postGuessL1" tags="" position="475,975" size="100,100">$promptStr
+    [[Back|fritzpuz8-4]]</tw-passagedata><tw-passagedata pid="101" name="postGuessL1" tags="" position="100,1350" size="100,100">$promptStr
     {
     (if: $guessedL1 is false)[
     (set: $numMistakes = $numMistakes + 1)
@@ -894,7 +1014,7 @@ S E [[$N1|fritzpuz9_4]] T [[$I1|fritzpuz9_3]] N [[$E2|fritzpuz9_2]] [[$L1|fritzp
             //$f $trust//]]
         (if: $fritz_faith is 0)[(go-to: &quot;fritzFail&quot;)]]
     &lt;br&gt;[[Make a another guess|fritzpuz9_1]]]}
-    [[Back|fritzpuz8-4]]</tw-passagedata><tw-passagedata pid="75" name="postGuessE2" tags="" position="600,975" size="100,100">$promptStr
+    [[Back|fritzpuz8-4]]</tw-passagedata><tw-passagedata pid="102" name="postGuessE2" tags="" position="225,1350" size="100,100">$promptStr
     {
     (if: $guessedE2 is false)[
     (set: $numMistakes = $numMistakes + 1)
@@ -935,7 +1055,7 @@ S E [[$N1|fritzpuz9_4]] T [[$I1|fritzpuz9_3]] N [[$E2|fritzpuz9_2]] [[$L1|fritzp
             //$f $trust//]]
         (if: $fritz_faith is 0)[(go-to: &quot;fritzFail&quot;)]]
     &lt;br&gt;[[Make a another guess|fritzpuz9_2]]]}
-    [[Back|fritzpuz8-4]]</tw-passagedata><tw-passagedata pid="76" name="postGuessI1" tags="" position="725,975" size="100,100">$promptStr
+    [[Back|fritzpuz8-4]]</tw-passagedata><tw-passagedata pid="103" name="postGuessI1" tags="" position="350,1350" size="100,100">$promptStr
     {
     (if: $guessedI1 is false)[
     (set: $numMistakes = $numMistakes + 1)
@@ -976,7 +1096,7 @@ S E [[$N1|fritzpuz9_4]] T [[$I1|fritzpuz9_3]] N [[$E2|fritzpuz9_2]] [[$L1|fritzp
             //$f $trust//]]
         (if: $fritz_faith is 0)[(go-to: &quot;fritzFail&quot;)]]
     &lt;br&gt;[[Make a another guess|fritzpuz9_3]]]}
-    [[Back|fritzpuz8-4]]</tw-passagedata><tw-passagedata pid="77" name="postGuessN1" tags="" position="850,975" size="100,100">$promptStr
+    [[Back|fritzpuz8-4]]</tw-passagedata><tw-passagedata pid="104" name="postGuessN1" tags="" position="475,1350" size="100,100">$promptStr
     {
     (if: $guessedN1 is false)[
     (set: $numMistakes = $numMistakes + 1)
@@ -1013,29 +1133,31 @@ S E [[$N1|fritzpuz9_4]] T [[$I1|fritzpuz9_3]] N [[$E2|fritzpuz9_2]] [[$L1|fritzp
         //$f $trust//]]
         (if: $fritz_faith is 0)[(go-to: &quot;fritzFail&quot;)]]
     &lt;br&gt;[[Make a another guess|fritzpuz9_4]]]}
-    [[Back|fritzpuz8-4]]</tw-passagedata><tw-passagedata pid="78" name="fritzFail" tags="" position="975,975" size="100,100">$n: $f **shoves** you to the side.
+    [[Back|fritzpuz8-4]]</tw-passagedata><tw-passagedata pid="105" name="fritzFail" tags="" position="600,1350" size="100,100">$n: $f **shoves** you to the side.
 $f: Perhaps the $s should have named //**$player**// (text-color:#47802e)[Insolence]!
 (link: &quot;I have feelings too...&quot;)[
 $n: $f dashes between graves, burying the tags beside the headstones. He glares daggers at $player when the tags turn (text-color:green)[green].
 (link: &quot;continue&quot;)[
 $n: As he stands at the foot of his grave, a chime plays through the room. A small drawer opens from the wall. $f grabs half of a cat&#39;s collar, with a cute, paw-shaped tag that jingles as he walks past you with it. A door, previously hidden in the wall, opens fully.
-As he passes, $player catch a glimpse of the word (text-color:#4c4c4c)[SPHINX] on the collar.
+As he passes, $player catch a glimpse of the word (text-color:#eee077)[SPHINX] on the collar.
 $player follow behind him; $p and $e watch sullenly.
 (link: &quot;continue&quot;)[
-$n: (text-color:#4c4c4c)[SPHINX]. (text-color:#4c4c4c)[SPHINX]. (text-color:#4c4c4c)[SPHINX]. Such a strange word, when you repeat it over and over. Not many words with X in them, these days. In fact, X is fairly rare. 26 letters in the alphabet, and some don&#39;t get their fair shake. Funny, that.
-[[I wonder if the word&#39;s important...|]]]]]</tw-passagedata><tw-passagedata pid="79" name="fritzWin" tags="" position="1100,975" size="100,100">$n: $f dashes between graves, burying the tags beside the headstones. He shrieks in surprise and delight when the tags turn (text-color:green)[green].
+$n: (text-color:#4c4c4c)[SPHINX]. (text-color:#eee077)[SPHINX]. (text-color:#eee077)[SPHINX]. Such a strange word, when you repeat it over and over. Not many words with X in them, these days. In fact, X is fairly rare. 26 letters in the alphabet, and some don&#39;t get their fair shake. Funny, that.
+[[I wonder if the word&#39;s important...|postPuz]]]]]
+(set: $fritzDone to true)</tw-passagedata><tw-passagedata pid="106" name="fritzWin" tags="" position="725,1350" size="100,100">$n: $f dashes between graves, burying the tags beside the headstones. He shrieks in surprise and delight when the tags turn (text-color:green)[green].
 
 $f: I&#39;ll show you $insolence, $s!
 (link: &quot;continue&quot;)[
 $n: As he stands at the foot of his grave, a chime plays through the room. A small drawer opens from the wall. Fritz grabs half of a cat&#39;s collar, with a cute, paw-shaped tag that jingles as he brings it toward you. A door, previously hidden in the wall, opens fully.
 (link: &quot;What did you find?&quot;)[
-$f: Here it is. And it might fit you, if you want it. The collar says “(text-color:#4c4c4c)[SPHINX]”, by the way.
+$f: Here it is. And it might fit you, if you want it. The collar says “(text-color:#eee077)[SPHINX]”, by the way.
 (link: &quot;Sphinx?&quot;)[
-$n: (text-color:#4c4c4c)[SPHINX]. (text-color:#4c4c4c)[SPHINX]. (text-color:#4c4c4c)[SPHINX]. Such a strange word, when you repeat it over and over. Not many words with X in them, these days. In fact, X is fairly rare. 26 letters in the alphabet, and some don&#39;t get their fair shake. Funny, that.
-[[I bet it&#39;s important.|fritzWin2]]]]]</tw-passagedata><tw-passagedata pid="80" name="fritzWin2" tags="" position="1225,975" size="100,100">$f: We might just make it out of here, $player…let&#39;s go show the others.
+$n: (text-color:#eee077)[SPHINX]. (text-color:#eee077)[SPHINX]. (text-color:#eee077)[SPHINX]. Such a strange word, when you repeat it over and over. Not many words with X in them, these days. In fact, X is fairly rare. 26 letters in the alphabet, and some don&#39;t get their fair shake. Funny, that.
+[[I bet it&#39;s important.|fritzWin2]]]]]</tw-passagedata><tw-passagedata pid="107" name="fritzWin2" tags="" position="850,1350" size="100,100">$f: We might just make it out of here, $player…let&#39;s go show the others.
 
 $n: $f lifts you into a pouch on his sash, and careens toward the open door. $p and $e seem impressed!
-[[Onwards!|]]</tw-passagedata><tw-passagedata pid="81" name="goaway" tags="" position="100,1100" size="100,100">Display the crossword puzzle:
+[[Onwards!|postPuz]]
+(set: $fritzDone to true)</tw-passagedata><tw-passagedata pid="108" name="goaway" tags="" position="975,1350" size="100,100">Display the crossword puzzle:
              R
 S E _ T _ N E _
              V
@@ -1074,10 +1196,10 @@ NARRATOR: SPHINX. SPHINX. SPHINX. Such a strange word, when you repeat it over a
 
 FRITZ: We might just make it out of here, $PLAYER…let’s go show the others.
 
-NARRATOR: Fritz lifts you into a pouch on his sash, and careens toward the open door. Patty and Edgar seem impressed!</tw-passagedata><tw-passagedata pid="82" name="intro0" tags="" position="225,1100" size="100,100">A madman once had the thought: 
+NARRATOR: Fritz lifts you into a pouch on his sash, and careens toward the open door. Patty and Edgar seem impressed!</tw-passagedata><tw-passagedata pid="109" name="intro0" tags="" position="1100,1350" size="100,100">A madman once had the thought: 
 //what if I could talk to my cat? 
 Well, he mused, that would be just wonderful.//
-[[continue|intro1]]</tw-passagedata><tw-passagedata pid="83" name="intro1" tags="" position="350,1100" size="100,100">See, this man had made a name for himself in the world 
+[[continue|intro1]]</tw-passagedata><tw-passagedata pid="110" name="intro1" tags="" position="1225,1350" size="100,100">See, this man had made a name for himself in the world 
 for his insane experiments that somehow kept producing results.
 Wings made out of stitched and glued cow leather 
 with the proper enchantments could, for example, grant flight to its user. 
@@ -1085,28 +1207,28 @@ Many asked him “why” when he decided to research something deemed impossible
 by the rest of the academic magic community, 
 and he told them he wanted to see how it felt to sleep on a cloud. 
 Very wet, he found out, not at all as advertised, really.
-[[continue|intro2]]</tw-passagedata><tw-passagedata pid="84" name="intro2" tags="" position="475,1100" size="100,100">Now, you may ask, “Is it crazy if it works?” 
+[[continue|intro2]]</tw-passagedata><tw-passagedata pid="111" name="intro2" tags="" position="100,1475" size="100,100">Now, you may ask, “Is it crazy if it works?” 
 and you would be right to ask that, 
 but the answer to that question would be yes, it is very crazy. 
 The town of Delton, where he performed his experiments and tests, 
 used to be a thriving cow-farming community until the madman came along.
 Now it is terrorized by angered flying cows that float on the leather wings of their ancestors.
-[[continue|intro3]]</tw-passagedata><tw-passagedata pid="85" name="intro3" tags="" position="600,1100" size="100,100">Previous experiments aside, he decided he couldn&#39;t start the testing on his cat.
+[[continue|intro3]]</tw-passagedata><tw-passagedata pid="112" name="intro3" tags="" position="225,1475" size="100,100">Previous experiments aside, he decided he couldn&#39;t start the testing on his cat.
 He only had one of those. 
 So in his new laboratory tower, far off in a vast forest where none could disturb him 
 (except perhaps the fuzzy little things that say they “speak for the trees”),
 the madman starts a new set of experiments.
-[[continue|intro4]]</tw-passagedata><tw-passagedata pid="86" name="intro4" tags="" position="725,1100" size="100,100">This is where you come in. 
+[[continue|intro4]]</tw-passagedata><tw-passagedata pid="113" name="intro4" tags="" position="350,1475" size="100,100">This is where you come in. 
 You were captured from your tiny forest abode by a ferocious tailed beast
 and brought back to the madman&#39;s tower. 
 Spells, curses, blessings, runes, and enchantments were all used on you,
 and after all the additional poking, prodding, electrifying and sizzling, 
 you had a real cognizant thought.
-[[continue|tut0]]</tw-passagedata><tw-passagedata pid="87" name="Start" tags="" position="850,1100" size="100,100">The Great Ratscape
+[[continue|tut0]]</tw-passagedata><tw-passagedata pid="114" name="Start" tags="" position="475,1475" size="100,100">The Great Ratscape
 
 by The Boys
 
-[[Play|pattypuz0]]
+[[Play|pp14]]
     {
     (set: $player to [(text-colour:#00cad1)[You]])
     (set: $n to [(text-colour:grey)[Narrator]])
@@ -1119,12 +1241,13 @@ by The Boys
     (set: $c to [(text-colour:#c20000)[Cat]])
     (set: $m to [(text-colour:#7c00e2)[Mad Scientist]])
     (set: $s to [(text-colour:#7c00e2)[Scientist]])
+    (set: $mad to [(text-colour:#7c00e2)[Madman]])
 
     (set: $funknown to [(text-colour:#d3d3af)[???]])
     (set: $punknown to [(text-colour:#dfb300)[???]])
     (set: $eunknown to [(text-colour:#8c0088)[???]])
     (set: $bunknown  to [(css: &quot;color: green;&quot;)[???]])
-    (set: $cunknown to [(text-colour:c20000)[???]])
+    (set: $cunknown to [(text-colour:#c20000)[???]])
 
     (set: $lovely to [(text-color:#e84a75)[Lovely]])
     (set: $insolence to [(text-color:#d3d3af)[Insolence]])
@@ -1140,215 +1263,317 @@ by The Boys
     (set: $patty_faith to 1)
     (set: $fritz_faith to 1)
 
+    (set: $talkPatty to false)
+    (set: $talkFritz to false)
+    (set: $talkEdgar to false)
+    (set: $pattyDone to false)
+    (set: $fritzDone to false)
+    (set: $edgarDone to false)
+
     (set: $faithdm to (dm: 
         0, &quot;does not trust you&quot;,
         1, &quot;somewhat trusts you&quot;, 
         2, &quot;trusts you&quot;,
         3, &quot;trusts you completely&quot;
     ))
-}</tw-passagedata><tw-passagedata pid="88" name="pattypuz0" tags="" position="975,1100" size="100,100">$p: Whoa, hold on, now.
+}</tw-passagedata><tw-passagedata pid="115" name="pattypuz0" tags="" position="600,1475" size="100,100">$p: Whoa, hold on, now.
 $n: The party stops in its tracks, and processing the commotion, you skid to a halt as well.
+(link: &quot;continue&quot;)[
 $player: What&#39;s wrong?
+(link: &quot;continue&quot;)[
 $p: There&#39;s a great, big door blockin&#39; this way. Maybe we ought to find a different path.
-$player: Is there anything that looks like it might open it?
+[[Can we open it?|pp1]]]]</tw-passagedata><tw-passagedata pid="116" name="pp1" tags="" position="725,1475" size="100,100">$player: Is there anything that looks like it might open it?
+(link: &quot;continue&quot;)[
 $p: Can&#39;t say there is. Doesn&#39;t look to be any of them buttons and keys that you lot had to fiddle with before. &#39;Cept...
+(link: &quot;continue&quot;)[
 $n: You hear a subdued click from a short distance in front of you.
-[[What was that?|pattypuz1]]</tw-passagedata><tw-passagedata pid="89" name="pattypuz1" tags="" position="1100,1100" size="100,100">$p: Whoa!
+[[What was that?|pattypuz1]]]]</tw-passagedata><tw-passagedata pid="117" name="pattypuz1" tags="" position="850,1475" size="100,100">$p: Whoa!
+(link: &quot;continue&quot;)[
 $n: Suddenly, the whir of machinery fills the hall, and the door slides open.
+(link: &quot;continue&quot;)[
 $player: Is the door opening? What&#39;d you do?
+(link: &quot;continue&quot;)[
 $p: Nothin&#39;, I only stepped onto this raised tile on the ground.
-$n: There is a palpable pause.
+[[A raised tile?|pp2]]]]]</tw-passagedata><tw-passagedata pid="118" name="pp2" tags="" position="975,1475" size="100,100">$n: There is a palpable pause.
+(link: &quot;continue&quot;)[
 $p: Ohh. This gadget here&#39;s a ground button?
+(link: &quot;continue&quot;)[
 $n: Spurred by her description, the words &quot;pressure plate&quot; pop into your mind. Not that you know what that is, of course.
+(link: &quot;continue&quot;)[
 $player: Well, if the door is open, I guess we can keep going. Nice work, $p.
-$n: You hear her huff pridefully, and you resume walking. However...
+[[Let&#39;s go.|pp3]]]]]</tw-passagedata><tw-passagedata pid="119" name="pp3" tags="" position="1100,1475" size="100,100">$n: You hear her huff pridefully, and you resume walking. However...
 (link: &quot;Continue&quot;)[
 $n: The second $p steps off of the pressure plate, the door slams shut in front of you once more.
 A chorus of yelps fills the air. Was that $e swearing? Did he rhyme it? He better have... Stupid annoying crow.
 [[Go back to the pressure plate|pattypuz1_0]]
 [[Talk to companions|pattypuz1_1]]
-[[Examine the door|pattypuz1_2]]]</tw-passagedata><tw-passagedata pid="90" name="pattypuz1_2" tags="" position="1225,1100" size="100,100">$n: You approach the door and press your tiny rat hands against it. As expected, it does not budge. Maybe you should try something else.
+[[Examine the door|pattypuz1_2]]]</tw-passagedata><tw-passagedata pid="120" name="pattypuz1_2" tags="" position="1225,1475" size="100,100">$n: You approach the door and press your tiny rat hands against it. As expected, it does not budge. Maybe you should try something else.
 [[Go back to the pressure plate|pattypuz1_0]]
-[[Talk to companions|pattypuz1_1]]</tw-passagedata><tw-passagedata pid="91" name="pattypuz1_1" tags="" position="100,1225" size="100,100">$player: Hey, Patty, what did you do right before the door closed again?
+[[Talk to companions|pattypuz1_1]]</tw-passagedata><tw-passagedata pid="121" name="pattypuz1_1" tags="" position="100,1600" size="100,100">$player: Hey, Patty, what did you do right before the door closed again?
+(link: &quot;continue&quot;)[
 $p: Me? I stepped off of this ground button here.
+(link: &quot;continue&quot;)[
 $player: Good to know. Thanks, Patty.
+(link: &quot;continue&quot;)[
 $p: No problem!
 (set: $talkedtoPatty to &quot;true&quot;)
 [[Go back to the pressure plate|pattypuz1_0]]
-[[Examine the door|pattypuz1_2]]</tw-passagedata><tw-passagedata pid="92" name="pattypuz1_0" tags="" position="225,1225" size="100,100">$n: As you slowly skitter away from the door, you ponder what sort of path forward you could take.
+[[Examine the door|pattypuz1_2]]]]]</tw-passagedata><tw-passagedata pid="122" name="pattypuz1_0" tags="" position="225,1600" size="100,100">$n: As you slowly skitter away from the door, you ponder what sort of path forward you could take.
+(link: &quot;continue&quot;)[
 $player: $p, could you guide me to the ground button?
+(link: &quot;continue&quot;)[
 $p: Oh, sure! It&#39;s right over here.
+(link: &quot;continue&quot;)[
 $n: You follow the sound of her voice, and sure enough, you quickly run into a raised ridge on the ground. Stepping over it, the texture 
 of the floor changes, and you quickly conclude that you are now standing on top of the pressure plate. However, the door does not open.
-$player: I guess I&#39;m not heavy enough to open it. Makes sense.
+[[I don&#39;t weigh enough|pp4]]]]]</tw-passagedata><tw-passagedata pid="123" name="pp4" tags="" position="350,1600" size="100,100">$player: I guess I&#39;m not heavy enough to open it. Makes sense.
+(link: &quot;continue&quot;)[
 (unless: $talkedtoPatty is &quot;true&quot;)[
     $player: Hey, Patty, what did you do right before the door closed again?
+    (link: &quot;continue&quot;)[
     $p: Me? I stepped off of this ground button here.
+    (link: &quot;continue&quot;)[
     $player: Good to know. Thanks, Patty.
+    (link: &quot;continue&quot;)[
     $p: No problem!
-]
-$n: You sniff the air and sigh.
+]]]]
+[[So what do you do?|pp5]]</tw-passagedata><tw-passagedata pid="124" name="pp5" tags="" position="475,1600" size="100,100">$n: You sniff the air and sigh.
+(link: &quot;continue&quot;)[
 $player: I think we need to put something heavy on this to keep the door open. Obviously, it can&#39;t be one of us, but I&#39;m not sure about our other options.
+(link: &quot;continue&quot;)[
 $p: What should we do?
+(link: &quot;continue&quot;)[
 $f: $e and I could search for something suitable.
-$player: I&#39;d appreciate that.
+[[Thanks.|pp6]]]]]</tw-passagedata><tw-passagedata pid="125" name="pp6" tags="" position="600,1600" size="100,100">$player: I&#39;d appreciate that.
+(link: &quot;continue&quot;)[
 $f: Alright, we&#39;ll be back soon.
+(link: &quot;continue&quot;)[
 $n: $f begins walking down the hall, back the way you came. A moment later, you hear $e take to the air after him, leaving you alone 
 to ponder the pressure plate with $p. You hear her sigh and adjust the sack of food slung over her shoulder.
-[[Wait, her sack!|pattypuz2]]</tw-passagedata><tw-passagedata pid="93" name="pattypuz2" tags="" position="350,1225" size="100,100">$player: Wait, your sack! That could work, I think.
+[[Wait, her sack!|pattypuz2]]]]</tw-passagedata><tw-passagedata pid="126" name="pattypuz2" tags="" position="725,1600" size="100,100">$player: Wait, your sack! That could work, I think.
+(link: &quot;continue&quot;)[
 $p: Pardon? No! We ain&#39;t usin&#39; this. We should just wait to see what the boys find.
+(link: &quot;continue&quot;)[
 $player: Alright, don&#39;t worry, I won&#39;t make you do anything that you don&#39;t want to... You know, you never did say why you&#39;re bringing it around everywhere. Could you tell me?  
+(link: &quot;continue&quot;)[
 $p: ...
+(link: &quot;continue&quot;)[
 $p: It&#39;s for my young&#39;uns back home. Y&#39;know, if there&#39;s one way that I can redeem myself for bein&#39; gone for so long, 
 it&#39;s by bringin&#39; this back to them. That&#39;s the least I can do.
 [[Encourage her to face reality|pattypuz2_0]]
-[[Remind her of your plans to escape|pattypuz2_1]]</tw-passagedata><tw-passagedata pid="94" name="pattypuz2_0" tags="" position="475,1225" size="100,100">$player: How long has it been since you were brought here?
+[[Remind her of your plans to escape|pattypuz2_1]]]]]]</tw-passagedata><tw-passagedata pid="127" name="pattypuz2_0" tags="" position="850,1600" size="100,100">$player: How long has it been since you were brought here?
+(link: &quot;continue&quot;)[
 $p: Don&#39;t. I know where you&#39;re goin&#39; with that thought... Hell, I think about it all the time, too. But even if they&#39;re already gone, 
 I still have to hope. How else am I supposed to keep goin&#39;?
+(link: &quot;continue&quot;)[
 $player: Ah... I&#39;m sorry. Forget I asked, then.
 (set: $pattyNegotiation to &quot;failure&quot;)
-[[Continue|pattypuz3]]</tw-passagedata><tw-passagedata pid="95" name="pattypuz2_1" tags="" position="600,1225" size="100,100">$player: You remember why we&#39;re here, right?
+[[Continue|pattypuz3]]]]</tw-passagedata><tw-passagedata pid="128" name="pattypuz2_1" tags="" position="975,1600" size="100,100">$player: You remember why we&#39;re here, right?
+(link: &quot;continue&quot;)[
 $player: There&#39;s a great, big forest out there. It&#39;s bound to have a lot more food in it than we get here, and I&#39;d bet that that food is much better, too. 
 We just have to escape in order to get to it.
+(link: &quot;continue&quot;)[
 $p: What&#39;re you sayin&#39;? You think it&#39;s worth it to sacrifice what I&#39;ve already got just &#39;cause I could get more later?
-$player: I think it&#39;s worth considering, at least. I know it&#39;s asking a lot, but we&#39;ve all sacrificed or lost things already, haven&#39;t we?
+(link: &quot;continue&quot;)[
+[[Just think about it|pp7]]]]]</tw-passagedata><tw-passagedata pid="129" name="pp7" tags="" position="1100,1600" size="100,100">$player: I think it&#39;s worth considering, at least. I know I&#39;m asking a lot, but we&#39;ve all sacrificed or lost things already, haven&#39;t we?
+(link: &quot;continue&quot;)[
 $player: You were taken from your family. The scientist blinded me. I&#39;m sure $e and $f have lost things of their own as well. But, now we have a chance.
+(link: &quot;continue&quot;)[
 $player: Food is replaceable. Our lives aren&#39;t, and I want all of us to get out alive, obviously. If $e and $f aren&#39;t able to find anything, 
 I hope you&#39;ll consider letting us use your sack. We can&#39;t leave anyone behind, after all.
-$n: Patty is silent for several moments while she ruminates over your words.
+(link: &quot;continue&quot;)[
+[[Patty?|pp8]]]]]</tw-passagedata><tw-passagedata pid="130" name="pp8" tags="" position="1225,1600" size="100,100">$n: Patty is silent for several moments while she ruminates over your words.
+(link: &quot;continue&quot;)[
 $p: Fine. I&#39;ll think about it.
 (set: $pattyNegotiation to &quot;success&quot;)
-[[Continue|pattypuz3]]</tw-passagedata><tw-passagedata pid="96" name="pattypuz3" tags="" position="725,1225" size="100,100">(if: $pattyNegotiation is &quot;success&quot;)[
+[[Continue|pattypuz3]]]</tw-passagedata><tw-passagedata pid="131" name="pattypuz3" tags="" position="100,1725" size="100,100">(if: $pattyNegotiation is &quot;success&quot;)[
     $n: Some time later, you hear the swish of footsteps and wings as $e and $f return.
-    $f: Hey, $player. Sorry, we searched everywhere we could, but we couldn&#39;t find anything.
+    (link: &quot;continue&quot;)[
+
+    $f: Hey, $playername. Sorry, we searched everywhere we could, but we couldn&#39;t find anything.
+    (link: &quot;continue&quot;)[
+
     $player: Damn.
+    (link: &quot;continue&quot;)[
+
     $n: You hear $p sigh.
-    $p: Alright, fine. Here, you can use my sack.
+    [[What?|pp9]]]]]</tw-passagedata><tw-passagedata pid="132" name="pp9" tags="" position="225,1725" size="100,100">$p: Alright, fine. Here, you can use my sack.
+    (link: &quot;continue&quot;)[
     $player: You&#39;re sure?
+    (link: &quot;continue&quot;)[
     $p: Yes. Now hurry up, before I change my mind.
+    (link: &quot;continue&quot;)[
     $player: Okay. Thank you, $p. $f, can you take her sack and put it on the pressure plate?
-    $n: $p hands her sack to $f, who deftly places it on the pressure plate as you scurry off. Not a moment later, you hear the whir of machinery as the door opens.
+    [[continue|pp10]]]]]</tw-passagedata><tw-passagedata pid="133" name="pp10" tags="" position="350,1725" size="100,100">$n: $p hands her sack to $f, who deftly places it on the pressure plate as you scurry off. Not a moment later, you hear the whir of machinery as the door opens.
+    (link: &quot;continue&quot;)[
     $player: Alright, that worked. Let&#39;s keep going, then.
-]
+    [[Proceed|pattypuz4]]]]
 (if: $pattyNegotiation is &quot;failure&quot;)[
     $n: Some time later, you hear the swish of footsteps and wings as $e and $f return.
-    $f: We found something that might work. Step aside, $player. We&#39;ll see if it&#39;s heavy enough or not.
+    (link: &quot;continue&quot;)[
+    $f: We found something that might work. Step aside, $playername. We&#39;ll see if it&#39;s heavy enough or not.
+    (link: &quot;continue&quot;)[
     $n: You scurry off of the pressure plate while $f hefts an object onto the plate. It makes a loud clunk as he drops it, and not a moment later, 
     you hear the whir of machinery as the door opens.
+    (link: &quot;continue&quot;)[
     $p: See? That did the trick. You didn&#39;t even need my sack for that, $player. You should&#39;ve had a bit more faith in them.
     (set: $patty_faith = $patty_faith - 1)
-]
-[[Continue|pattypuz4]]</tw-passagedata><tw-passagedata pid="97" name="pattypuz4" tags="" position="850,1225" size="100,100">$n: You pass through the opened door unimpeded, and emerge in a large, open, cylindrical room. There is a great downdraft in the room, 
+    [[Continue|pattypuz4]]]]]]</tw-passagedata><tw-passagedata pid="134" name="pattypuz4" tags="" position="475,1725" size="100,100">$n: You pass through the opened door unimpeded, and emerge in a large, open, cylindrical room. There is a great downdraft in the room, 
 coming from what you can only assume is high above, and this prompts $e to squawk indignantly.
+(link: &quot;continue&quot;)[
 $e: Here would be too dangerous to fly; I would rather not die!
+(link: &quot;continue&quot;)[
 $n: I mean, how dangerous could it really be? You can&#39;t know until you try right? 
+(link: &quot;continue&quot;)[
 $player: Alright, what are we looking at in here?
-$p: This whole room&#39;s a great, big circle.
+[[What your squirrel eyes see?|pp11]]]]]</tw-passagedata><tw-passagedata pid="135" name="pp11" tags="" position="600,1725" size="100,100">$p: This whole room&#39;s a great, big circle.
+(link: &quot;continue&quot;)[
 $f: There isn&#39;t a ceiling here. I can see the sky, but there&#39;s that strange wind...
+(link: &quot;continue&quot;)[
 $p: Looks like the exit&#39;s over there. It&#39;s another metal door. I&#39;ll go check it out.
+(link: &quot;continue&quot;)[
 $n: $p patters off towards the closed door.
-$f: There&#39;s something in the middle of the room, too. Some kind of raised platform, I think—no, it&#39;s almost like a desk.
+[[Is there anything else?|pp12]]]]]</tw-passagedata><tw-passagedata pid="136" name="pp12" tags="" position="725,1725" size="100,100">$f: There&#39;s something in the middle of the room, too. Some kind of raised platform, I think—no, it&#39;s almost like a desk.
+(link: &quot;continue&quot;)[
 $player: Do you think we can get up there?
+(link: &quot;continue&quot;)[
 $f: I can climb up it and carry you.
-[[Head up|pattypuz6]]</tw-passagedata><tw-passagedata pid="98" name="pattypuz6" tags="" position="975,1225" size="100,100">$player: Alright, let&#39;s go there.
+[[Head up|pattypuz6]]]]</tw-passagedata><tw-passagedata pid="137" name="pattypuz6" tags="" position="850,1725" size="100,100">$player: Alright, let&#39;s go there.
+(link: &quot;continue&quot;)[
 $n: $f carries you up onto the desk in the middle of the room.
-$f: Okay. There are six buttons here. Two red, two green, two blue.
+(link: &quot;continue&quot;)[
+$f: Okay. There are (text-color:#e9c901)[six buttons here]. Two (text-color:red)[red], two (text-color:green)[green], two (text-color:blue)[blue].
+(link: &quot;continue&quot;)[
 $n: Before you can pursue any further line of thought, $p returns, scurrying up to join you and $f on the desk. 
 Her squeaky “Hmm” sound contains a mother&#39;s concentrated, unimpressed energy. I don&#39;t like it. 
-$p: Don&#39;t tell me y&#39;all haven&#39;t noticed that long pipe spirallin&#39; up all of them walls.
+[[What is it Patty?|pp13]]]]]</tw-passagedata><tw-passagedata pid="138" name="pp13" tags="" position="975,1725" size="100,100">$p: Don&#39;t tell me y&#39;all haven&#39;t noticed that long pipe spirallin&#39; up all of them walls.
+(link: &quot;continue&quot;)[
 $player: A pipe?
+(link: &quot;continue&quot;)[
 $p: Yup. There&#39;s a long pipe windin&#39; up the walls. I noticed it ends near the exit, but it looks like it&#39;s broken in some places.
+(link: &quot;continue&quot;)[
 $player: What do you mean?
-$p: Some of them pieces ain&#39;t connected to each other, though they&#39;re still stuck to the wall. Do you reckon they have something to do with how we&#39;re supposed to continue?
+[[A pipe?|pp14]]]]]</tw-passagedata><tw-passagedata pid="139" name="pp14" tags="" position="1100,1725" size="100,100">$p: Some of them pieces ain&#39;t connected to each other, though they&#39;re still stuck to the wall. Do you reckon they have something to do with how we&#39;re supposed to continue?
+(link: &quot;continue&quot;)[
 $player: Now that you mention it, they might... Is there anything else that you two notice about the room?
+(link: &quot;continue&quot;)[
 $f: No, aside from the fact that we can see the sky. The pipes don&#39;t come close to reaching that far, though.
+(link: &quot;continue&quot;)[
 $player: Alright...
 [[Ask about the pipes again|pattypuz6_0]]
-[[Examine the buttons|pattypuz6_1]]
+[[Examine the buttons|pattypuz6_1]]]]]
 (set: $pattypuzButtonsUnlocked to 0)
-(set: $pattyupperrotation to 2)
-(set: $pattymidrotation to 5)
-(set: $pattylowerrotation to 4)
-(set: $pattypuzFirstTime to 1)</tw-passagedata><tw-passagedata pid="99" name="pattypuz6_0" tags="" position="1100,1225" size="100,100">$player: $p, you said that there are some pipes that aren&#39;t connected to any others?
+(set: $pattyupperrotation to 0)
+(set: $pattymidrotation to 2)
+(set: $pattylowerrotation to 1)
+(set: $pattypuzFirstTime to 1)</tw-passagedata><tw-passagedata pid="140" name="pattypuz6_0" tags="" position="1225,1725" size="100,100">$player: $p, you said that there are some pipes that aren&#39;t connected to any others?
+(link: &quot;continue&quot;)[
 $p: That&#39;s right. There&#39;s three of &#39;em.
+(link: &quot;continue&quot;)[
 $player: Three of them? Hm...
 [[Examine the buttons|pattypuz6_1]]
 (if: $pattypuzButtonsUnlocked is 1)[
-[[Press a button|pattypuz6_2]]]</tw-passagedata><tw-passagedata pid="100" name="pattypuz6_1" tags="" position="1225,1225" size="100,100">$n: Even without your sight, you manage to find the buttons fairly quickly. They don&#39;t feel all that different from the ones that you pressed 
+[[Press a button|pattypuz6_2]]]]]</tw-passagedata><tw-passagedata pid="141" name="pattypuz6_1" tags="" position="100,1850" size="100,100">$n: Even without your sight, you manage to find the buttons fairly quickly. They don&#39;t feel all that different from the ones that you pressed 
 during your ill-fated excursion with $b, though that information isn&#39;t all that helpful. As far as you can tell, they are arranged in a rectangle.
-$n: You recall the fact that there are six buttons total, divided equally into three colours.
+(link: &quot;continue&quot;)[
+$n: You recall the fact that there are **six** buttons total, divided equally into **three** colours.
 (set: $pattypuzButtonsUnlocked to 1)
 [[Ask about the pipes again|pattypuz6_0]]
-[[Press a button|pattypuz6_2]]</tw-passagedata><tw-passagedata pid="101" name="pattypuz6_2" tags="" position="100,1350" size="100,100">Which colour button would you like to press?
+[[Press a button|pattypuz6_2]]]</tw-passagedata><tw-passagedata pid="142" name="pattypuz6_2" tags="" position="225,1850" size="100,100">//Which colour button would you like to press?//
 [[Red|pattyRed]]
 [[Green|pattyGreen]]
-[[Blue|pattyBlue]]</tw-passagedata><tw-passagedata pid="102" name="pattyRed" tags="" position="225,1350" size="100,100">Which button do you press?
+[[Blue|pattyBlue]]</tw-passagedata><tw-passagedata pid="143" name="pattyRed" tags="" position="350,1850" size="100,100">//Which button do you press?//
 [[Left|pattyRedccw]]
-[[Right|pattyRedcw]]</tw-passagedata><tw-passagedata pid="103" name="pattyRedccw" tags="" position="350,1350" size="100,100">(if: $pattypuzFirstTime is 1)[
+[[Right|pattyRedcw]]</tw-passagedata><tw-passagedata pid="144" name="pattyRedccw" tags="" position="475,1850" size="100,100">(if: $pattypuzFirstTime is 1)[
     (display: &quot;pattyRedccwShort&quot;)
 ] (else:) [
     (set: $pattypuzRot to &quot;ccw&quot;)
-    How long do you press the button for?
+    //How long do you press the button for?//
     [[Long|pattyRedccwLong]]
     [[Short|pattyRedccwShort]]
-]</tw-passagedata><tw-passagedata pid="104" name="pattyRedccwLong" tags="" position="475,1350" size="100,100">(set: $pattyupperrotation to it - 2)
-(display: &quot;pattyResultsRed&quot;)</tw-passagedata><tw-passagedata pid="105" name="pattyRedccwShort" tags="" position="600,1350" size="100,100">(set: $pattyupperrotation to it - 1)
-(display: &quot;pattyResultsRed&quot;)</tw-passagedata><tw-passagedata pid="106" name="pattyRedcw" tags="" position="725,1350" size="100,100">(if: $pattypuzFirstTime is 1)[
+]</tw-passagedata><tw-passagedata pid="145" name="pattyRedccwLong" tags="" position="600,1850" size="100,100">(set: $pattylowerrotation to it - 2)
+(if: $pattylowerrotaton &lt; 0)[
+    (set: $pattylowerrotation = $pattylowerrotation + 4)
+]
+(display: &quot;pattyResultsRed&quot;)</tw-passagedata><tw-passagedata pid="146" name="pattyRedccwShort" tags="" position="725,1850" size="100,100">(set: $pattylowerrotation to it - 1)
+(if: $pattylowerrotaton &lt; 0)[
+    (set: $pattylowerrotation = $pattylowerrotation + 4)
+]
+(display: &quot;pattyResultsRed&quot;)</tw-passagedata><tw-passagedata pid="147" name="pattyRedcw" tags="" position="850,1850" size="100,100">(if: $pattypuzFirstTime is 1)[
     (display: &quot;pattyRedcwShort&quot;)
 ] (else:) [
     (set: $pattypuzRot to &quot;cw&quot;)
     How long do you press it for?
     [[Long|pattyRedcwLong]]
     [[Short|pattyRedcwShort]]
-]</tw-passagedata><tw-passagedata pid="107" name="pattyRedcwLong" tags="" position="850,1350" size="100,100">(set: $pattyupperrotation to it + 2)
-(display: &quot;pattyResultsRed&quot;)</tw-passagedata><tw-passagedata pid="108" name="pattyRedcwShort" tags="" position="975,1350" size="100,100">(set: $pattyupperrotation to it + 1)
-(display: &quot;pattyResultsRed&quot;)</tw-passagedata><tw-passagedata pid="109" name="pattyGreen" tags="" position="1100,1350" size="100,100">Which button do you press?
+]</tw-passagedata><tw-passagedata pid="148" name="pattyRedcwLong" tags="" position="975,1850" size="100,100">(set: $pattylowerrotation to it + 2)
+(set: $pattylowerrotation = $pattylowerrotation % 4)
+(display: &quot;pattyResultsRed&quot;)</tw-passagedata><tw-passagedata pid="149" name="pattyRedcwShort" tags="" position="1100,1850" size="100,100">(set: $pattylowerrotation to it + 1)
+(set: $pattylowerrotation = $pattylowerrotation % 4)
+(display: &quot;pattyResultsRed&quot;)</tw-passagedata><tw-passagedata pid="150" name="pattyGreen" tags="" position="1225,1850" size="100,100">//Which button do you press?//
 [[Left|pattyGreenccw]]
-[[Right|pattyGreencw]]</tw-passagedata><tw-passagedata pid="110" name="pattyGreenccw" tags="" position="1225,1350" size="100,100">(if: $pattypuzFirstTime is 1)[
+[[Right|pattyGreencw]]</tw-passagedata><tw-passagedata pid="151" name="pattyGreenccw" tags="" position="100,1975" size="100,100">(if: $pattypuzFirstTime is 1)[
     (display: &quot;pattyGreenccwShort&quot;)
 ] (else:) [
     (set: $pattypuzRot to &quot;ccw&quot;)
-    How long do you press the button for?
+    //How long do you press the button for?//
     [[Long|pattyGreenccwLong]]
     [[Short|pattyGreenccwShort]]
-]</tw-passagedata><tw-passagedata pid="111" name="pattyGreenccwLong" tags="" position="100,1475" size="100,100">(set: $pattymidrotation to it - 2)
-(display: &quot;pattyResultsGreen&quot;)</tw-passagedata><tw-passagedata pid="112" name="pattyGreenccwShort" tags="" position="225,1475" size="100,100">(set: $pattymidrotation to it - 1)
-(display: &quot;pattyResultsGreen&quot;)</tw-passagedata><tw-passagedata pid="113" name="pattyGreencw" tags="" position="350,1475" size="100,100">(if: $pattypuzFirstTime is 1)[
+]</tw-passagedata><tw-passagedata pid="152" name="pattyGreenccwLong" tags="" position="225,1975" size="100,100">(set: $pattymidrotation to it - 2)
+(if: $pattymidrotation &lt; 0)[
+    (set: $pattymidrotation = $pattymidrotation + 4)
+]
+(display: &quot;pattyResultsGreen&quot;)</tw-passagedata><tw-passagedata pid="153" name="pattyGreenccwShort" tags="" position="350,1975" size="100,100">(set: $pattymidrotation to it - 1)
+(if: $pattymidrotation &lt; 0)[
+    (set: $pattymidrotation = $pattymidrotation + 4)
+]
+(display: &quot;pattyResultsGreen&quot;)</tw-passagedata><tw-passagedata pid="154" name="pattyGreencw" tags="" position="475,1975" size="100,100">(if: $pattypuzFirstTime is 1)[
     (display: &quot;pattyGreencwShort&quot;)
 ] (else:)[
     (set: $pattypuzRot to &quot;cw&quot;)
-    How long do you press the button for?
+    //How long do you press the button for?//
     [[Long|pattyGreencwLong]]
     [[Short|pattyGreencwShort]]
-]</tw-passagedata><tw-passagedata pid="114" name="pattyGreencwLong" tags="" position="475,1475" size="100,100">(set: $pattymidrotation to it + 2)
-(display: &quot;pattyResultsGreen&quot;)</tw-passagedata><tw-passagedata pid="115" name="pattyGreencwShort" tags="" position="600,1475" size="100,100">(set: $pattymidrotation to it + 1)
-(display: &quot;pattyResultsGreen&quot;)</tw-passagedata><tw-passagedata pid="116" name="pattyBlue" tags="" position="725,1475" size="100,100">Which button do you press?
+]</tw-passagedata><tw-passagedata pid="155" name="pattyGreencwLong" tags="" position="600,1975" size="100,100">(set: $pattymidrotation to it + 2)
+(set: $pattymidrotation = $pattymidrotation % 4)
+(display: &quot;pattyResultsGreen&quot;)</tw-passagedata><tw-passagedata pid="156" name="pattyGreencwShort" tags="" position="725,1975" size="100,100">(set: $pattymidrotation to it + 1)
+(set: $pattymidrotation = $pattymidrotation % 4)
+(display: &quot;pattyResultsGreen&quot;)</tw-passagedata><tw-passagedata pid="157" name="pattyBlue" tags="" position="850,1975" size="100,100">//Which button do you press?//
 [[Left|pattyBlueccw]]
-[[Right|pattyBluecw]]</tw-passagedata><tw-passagedata pid="117" name="pattyBlueccw" tags="" position="850,1475" size="100,100">(if: $pattypuzFirstTime is 1)[
+[[Right|pattyBluecw]]</tw-passagedata><tw-passagedata pid="158" name="pattyBlueccw" tags="" position="975,1975" size="100,100">(if: $pattypuzFirstTime is 1)[
     (display: &quot;pattyBlueccwShort&quot;)
 ] (else:)[
     (set: $pattypuzRot to &quot;ccw&quot;)
-    How long do you press the button for?
+    //How long do you press the button for?//
     [[Long|pattyBlueccwLong]]
     [[Short|pattyBlueccwShort]]
-]</tw-passagedata><tw-passagedata pid="118" name="pattyBlueccwLong" tags="" position="975,1475" size="100,100">(set: $pattylowerrotation to it - 2)
-(display: &quot;pattyResultsBlue&quot;)</tw-passagedata><tw-passagedata pid="119" name="pattyBlueccwShort" tags="" position="1100,1475" size="100,100">(set: $pattylowerrotation to it - 1)
-(display: &quot;pattyResultsBlue&quot;)</tw-passagedata><tw-passagedata pid="120" name="pattyBluecw" tags="" position="1225,1475" size="100,100">(if: $pattypuzFirstTime is 1)[
+]</tw-passagedata><tw-passagedata pid="159" name="pattyBlueccwLong" tags="" position="1100,1975" size="100,100">(set: $pattyupperrotation to it - 2)
+(if: $pattylowerrotaton &lt; 0)[
+    (set: $pattylowerrotation = $pattylowerrotation + 4)
+]
+(display: &quot;pattyResultsBlue&quot;)</tw-passagedata><tw-passagedata pid="160" name="pattyBlueccwShort" tags="" position="1225,1975" size="100,100">(set: $pattyupperrotation to it - 1)
+(if: $pattyupperrotation &lt; 0)[
+    (set: $pattyupperrotation = $pattyupperrotation + 4)
+]
+(display: &quot;pattyResultsBlue&quot;)</tw-passagedata><tw-passagedata pid="161" name="pattyBluecw" tags="" position="100,2100" size="100,100">(if: $pattypuzFirstTime is 1)[
     (display: &quot;pattyBluecwShort&quot;)
 ] (else:)[
     (set: $pattypuzRot to &quot;cw&quot;)
-    How long do you press the button for?
+    //How long do you press the button for?//
     [[Long|pattyBluecwLong]]
     [[Short|pattyBluecwShort]]
-]</tw-passagedata><tw-passagedata pid="121" name="pattyBluecwLong" tags="" position="100,1600" size="100,100">(set: $pattylowerrotation to it + 2)
-(display: &quot;pattyResultsBlue&quot;)</tw-passagedata><tw-passagedata pid="122" name="pattyBluecwShort" tags="" position="225,1600" size="100,100">(set: $pattylowerrotation to it + 1)
-(display: &quot;pattyResultsBlue&quot;)</tw-passagedata><tw-passagedata pid="123" name="pattyResultsRed" tags="" position="350,1600" size="100,100">(if: $pattypuzFirstTime is 1)[
+]</tw-passagedata><tw-passagedata pid="162" name="pattyBluecwLong" tags="" position="225,2100" size="100,100">(set: $pattyupperrotation to it + 2)
+(set: $pattyupperrotation = $pattyupperrotation % 4)
+(display: &quot;pattyResultsBlue&quot;)</tw-passagedata><tw-passagedata pid="163" name="pattyBluecwShort" tags="" position="350,2100" size="100,100">(set: $pattyupperrotation to it + 1)
+(set: $pattyupperrotation = $pattyupperrotation % 4)
+(display: &quot;pattyResultsBlue&quot;)</tw-passagedata><tw-passagedata pid="164" name="pattyResultsRed" tags="" position="475,2100" size="100,100">(if: $pattypuzFirstTime is 1)[
     (set: $pattypuzFirstTime to 0)
     $n: You press the button, and abruptly, a whirring sound echoes through the room. You quickly retract your hand from the button.
     $player: What happened?
-    $p: One of them broken pipes moved.
+    $p: One of them broken pipes moved a quarter rotation.
+    //If you press the button a short time, the pipe will move one quarter rotation. A long press will give you a half rotation.//
     $player: Which one?
-    $p: the highest one.
+    $p: The bottom one.
     $player: Which direction did it move?
     (if: $pattypuzRot is &quot;ccw&quot;)[
         $p: The left side went down.
@@ -1357,32 +1582,33 @@ $n: You recall the fact that there are six buttons total, divided equally into t
     ]
     [[Continue|pattypuz6_2]]
 ] (else:) [
-    (unless: $pattyupperrotation is 4)[
-        (if: $pattyupperrotation &lt; 4)[
+    (unless: $pattylowerrotation is 3)[
+        (if: $pattylowerrotation &lt; 1)[
             (if: $pattypuzRot is &quot;ccw&quot;)[
-                $p: Oh! That highest pipe looked connected for a second, 
+                $p: Oh! That bottom pipe looked connected for a second, 
                 but it rotated past where it should&#39;ve been.
             ] (else:)[
-                $p:That highest pipe rotated some, but it still don&#39;t look connected.
+                $p:That bottom pipe rotated some, but it still don&#39;t look connected.
             ]
         ] (else:)[
             (if: $pattypuzRot is &quot;cw&quot;)[
-                $p: Oh! That highest pipe looked connected for a second, 
+                $p: Oh! That bottom pipe looked connected for a second, 
                 but it rotated past where it should&#39;ve been.
             ] (else:)[
-                $p:That highest pipe rotated some, but it still don&#39;t look connected.
+                $p:That bottom pipe rotated some, but it still don&#39;t look connected.
             ]
         ]
         [[Continue|pattypuz6_2]]
     ] (else:) [
-        $p: The highest pipe looks connected now!
+        $p: The bottom pipe looks connected now!
         (display: &quot;pattyResultsTotal&quot;)
     ]
-]</tw-passagedata><tw-passagedata pid="124" name="pattyResultsGreen" tags="" position="475,1600" size="100,100">(if: $pattypuzFirstTime is 1)[
+]</tw-passagedata><tw-passagedata pid="165" name="pattyResultsGreen" tags="" position="600,2100" size="100,100">(if: $pattypuzFirstTime is 1)[
     (set: $pattypuzFirstTime to 0)
     $n: You press the button, and abruptly, a whirring sound echoes through the room. You quickly retract your hand from the button.
     $player: What happened?
-    $p: One of them broken pipes moved.
+    $p: One of them broken pipes moved a quarter rotation.
+    //If you press the button a short time, the pipe will move one quarter rotation. A long press will give you a half rotation.//
     $player: Which one?
     $p: the middle one.
     $player: Which direction did it move?
@@ -1393,7 +1619,7 @@ $n: You recall the fact that there are six buttons total, divided equally into t
     ]
     [[Continue|pattypuz6_2]]
 ] (else:) [
-    (unless: $pattymidrotation is 2)[
+    (unless: $pattymidrotation is 0)[
         (if: $pattymidrotation &lt; 2)[
             (if: $pattypuzRot is &quot;ccw&quot;)[
                 $p: Oh! That middle pipe looked connected for a second, 
@@ -1414,13 +1640,14 @@ $n: You recall the fact that there are six buttons total, divided equally into t
         $p: The middle pipe looks connected now!
         (display: &quot;pattyResultsTotal&quot;)
     ]
-]</tw-passagedata><tw-passagedata pid="125" name="pattyResultsBlue" tags="" position="600,1600" size="100,100">(if: $pattypuzFirstTime is 1)[
+]</tw-passagedata><tw-passagedata pid="166" name="pattyResultsBlue" tags="" position="725,2100" size="100,100">(if: $pattypuzFirstTime is 1)[
     (set: $pattypuzFirstTime to 0)
     $n: You press the button, and abruptly, a whirring sound echoes through the room. You quickly retract your hand from the button.
     $player: What happened?
-    $p: One of them broken pipes moved.
+    $p: One of them broken pipes moved a quarter rotation.
+    //If you press the button a short time, the pipe will move one quarter rotation. A long press will give you a half rotation.//
     $player: Which one?
-    $p: the bottom one.
+    $p: the highest one.
     $player: Which direction did it move?
     (if: $pattypuzRot is &quot;ccw&quot;)[
         $p: The left side went down.
@@ -1429,28 +1656,28 @@ $n: You recall the fact that there are six buttons total, divided equally into t
     ]
     [[Continue|pattypuz6_2]]
 ] (else:) [
-    (unless: $pattylowerrotation is 1)[
-        (if: $pattylowerrotation &lt; 1)[
+    (unless: $pattyupperrotation is 3)[
+        (if: $pattyupperrotation &lt; 1)[
             (if: $pattypuzRot is &quot;ccw&quot;)[
-                $p: Oh! That bottom pipe looked connected for a second, 
+                $p: Oh! That highest pipe looked connected for a second, 
                 but it rotated past where it should&#39;ve been.
             ] (else:)[
-                $p:That bottom pipe rotated some, but it still don&#39;t look connected.
+                $p:That highest pipe rotated some, but it still don&#39;t look connected.
             ]
         ] (else:)[
             (if: $pattypuzRot is &quot;cw&quot;)[
-                $p: Oh! That bottom pipe looked connected for a second, 
+                $p: Oh! That highest pipe looked connected for a second, 
                 but it rotated past where it should&#39;ve been.
             ] (else:)[
-                $p:That bottom pipe rotated some, but it still don&#39;t look connected.
+                $p:That highest pipe rotated some, but it still don&#39;t look connected.
             ]
         ]
         [[Continue|pattypuz6_2]]
     ] (else:) [
-        $p The bottom pipe looks connected now!
+        $p The highest pipe looks connected now!
         (display: &quot;pattyResultsTotal&quot;)
     ]
-]</tw-passagedata><tw-passagedata pid="126" name="pattyResultsTotal" tags="" position="725,1600" size="100,100">(if: $pattyupperrotation is 4)[
+]</tw-passagedata><tw-passagedata pid="167" name="pattyResultsTotal" tags="" position="850,2100" size="100,100">(if: $pattyupperrotation is 4)[
     (if: $pattymidrotation is 2)[
         (if: $pattylowerrotation is 1)[
             (display: &quot;pattypuzEnd0&quot;)
@@ -1462,7 +1689,7 @@ $n: You recall the fact that there are six buttons total, divided equally into t
     ]
 ] (else:)[
     (display: &quot;pattypuz6_2&quot;)
-]</tw-passagedata><tw-passagedata pid="127" name="pattypuzEnd0" tags="" position="850,1600" size="100,100">$player: Is that it? Are all the pipes connected now?
+]</tw-passagedata><tw-passagedata pid="168" name="pattypuzEnd0" tags="" position="975,2100" size="100,100">$player: Is that it? Are all the pipes connected now?
 $p: That they are! Thanks for figuring that out, $player.
 $player: Hey, since you&#39;re the fastest runner out of all of us, and you helped out so much, do you want to go see what&#39;s at the top?
 $p: Sure thing! I&#39;ll be right back.
@@ -1476,9 +1703,9 @@ $player: What is it?
 $n: $p arrives not a moment later, out of breath.
 $p: There was a button on the top. I pushed it, and suddenly there was this noise... Is this what caused it?
 $p: Oh, it&#39;s... A sack.
-$f: It seems to say [Vow] on it. I wonder what it means. 
+$f: It seems to say (text-color:#ffb4f1)[Vow] on it. I wonder what it means. 
 $player: What&#39;s in it?
-[[Let&#39;s see...|pattypuzEnd1]]</tw-passagedata><tw-passagedata pid="128" name="pattypuzEnd1" tags="" position="975,1600" size="100,100">(if: $pattyNegotiation is &quot;success&quot;)[
+[[Let&#39;s see...|pattypuzEnd1]]</tw-passagedata><tw-passagedata pid="169" name="pattypuzEnd1" tags="" position="1100,2100" size="100,100">(if: $pattyNegotiation is &quot;success&quot;)[
     $n: $p nervously approaches the sack, pulling it open and then gasping in surprise.
     $p: It&#39;s full of nuts! Good ones! Oh, and looks like there&#39;s somethin&#39; else, too...
     $n: $p retrieves something from the sack and wordlessly hands it to $f.
@@ -1495,58 +1722,59 @@ $player: What&#39;s in it?
     $player: That&#39;s our way forward, then. Thank you, $p.
     $p: Right. Let&#39;s get goin&#39;.
 ]
-[[Continue|]]</tw-passagedata><tw-passagedata pid="129" name="posttut0" tags="" position="1100,1600" size="100,100">$n: Weak and mind bleary, you wake, roll around and still feel weary.
+[[Continue|postPuz]]
+(set: $pattyDone to true)</tw-passagedata><tw-passagedata pid="170" name="posttut0" tags="" position="1225,2100" size="100,100">$n: Weak and mind bleary, you wake, roll around and still feel weary.
 
 $player get up, eyes open, but still there is not a light or colour, you can adore.
 (link: &quot;continue&quot;)[
 $n: When out of the forever dark, from beyond your trapping, you hear a rapping 
 Someone is gently tapping, tapping at a metal door.
-[[continue|posttut0-1]]]</tw-passagedata><tw-passagedata pid="130" name="posttut0-1" tags="" position="1225,1600" size="100,100">$n: //$player think Ah that must be $b, $b tapping at my cage&#39;s door//
+[[continue|posttut0-1]]]</tw-passagedata><tw-passagedata pid="171" name="posttut0-1" tags="" position="100,2225" size="100,100">$n: //$player think Ah that must be $b, $b tapping at my cage&#39;s door//
 But you remember that $b is no more. 
 (link: &quot;continue&quot;)[
 $n: Alright, that&#39;s enough of that. I&#39;m not built for this poetry nonsense. I&#39;ll let //him// take over the bad verses and stick to the narration.
-[[continue|posttut1]]]</tw-passagedata><tw-passagedata pid="131" name="posttut1" tags="" position="100,1725" size="100,100">$n: Anyway, uh… Yeah, you hear tapping at the door of your cage. 
+[[continue|posttut1]]]</tw-passagedata><tw-passagedata pid="172" name="posttut1" tags="" position="225,2225" size="100,100">$n: Anyway, uh… Yeah, you hear tapping at the door of your cage. 
 What do you do?
 
 [[Ask who they are|posttut2_0]]
-[[Throw the nearest object in the tapping&#39;s direction|posttut2_1]]</tw-passagedata><tw-passagedata pid="132" name="posttut2_0" tags="" position="225,1725" size="100,100">$player: Hello? Is anyone there? I uh, can&#39;t see anything.
+[[Throw the nearest object in the tapping&#39;s direction|posttut2_1]]</tw-passagedata><tw-passagedata pid="173" name="posttut2_0" tags="" position="350,2225" size="100,100">$player: Hello? Is anyone there? I uh, can&#39;t see anything.
 (link: &quot;continue&quot;)[
 $eunknown: It awakes from the land of dreams! He says he cannot see yet he stares in my direction; he lies, he schemes! 
-[[continue|posttut3]]]</tw-passagedata><tw-passagedata pid="133" name="posttut2_1" tags="" position="350,1725" size="100,100">$n: $player find something sufficiently heavy enough around you and toss it at the incessant tapping.
+[[continue|posttut3]]]</tw-passagedata><tw-passagedata pid="174" name="posttut2_1" tags="" position="475,2225" size="100,100">$n: $player find something sufficiently heavy enough around you and toss it at the incessant tapping.
 (link: &quot;continue&quot;)[
 (if: $edgar_faith &gt; 0)[(set: $edgar_faith = $edgar_faith - 1)] (set: $trust to $edgar_faith of $faithdm)//$eunknown did not like that//
 //$eunknown $trust//
 $eunknown: It attacks unprovoked! Its anger stoked, sympathies revoked, its machinations cloaked!
-[[continue|posttut3]]]</tw-passagedata><tw-passagedata pid="134" name="posttut3" tags="" position="475,1725" size="100,100">$punknown: Oh, give it up, you loud oaf.
+[[continue|posttut3]]]</tw-passagedata><tw-passagedata pid="175" name="posttut3" tags="" position="600,2225" size="100,100">$punknown: Oh, give it up, you loud oaf.
 (link: &quot;continue&quot;)[
 $n: You hear a **smack**, a surprised //CAW// and a fluttering of wings.
 (link: &quot;continue&quot;)[ 
 $punknown: Hey there, name&#39;s $p. The resident lab squirrel.
 (link: &quot;continue&quot;)[
 $n: $p makes an //oomph// sound; you hear a **clattering**, and what sounds like a heavy sack hits the ground beside her.
-[[continue|posttut4]]]]]</tw-passagedata><tw-passagedata pid="135" name="posttut4" tags="" position="600,1725" size="100,100">$p: That rhyming loudmouth you just heard is $e.
+[[continue|posttut4]]]]]</tw-passagedata><tw-passagedata pid="176" name="posttut4" tags="" position="725,2225" size="100,100">$p: That rhyming loudmouth you just heard is $e.
 (link: &quot;continue&quot;)[
 $e: $p! I am no one name schmo! Do not deceive our suspicious friend and tell it the greatness of $eac!
 (link: &quot;continue&quot;)[
 $n: $ear just didn&#39;t have the same punch to it, I guess. Though I doubt our corvid friend even knows the works of Mr. Poe. You feel your cage shake and hear a gruff voice from above.
-[[continue|posttut5]]]]</tw-passagedata><tw-passagedata pid="136" name="posttut5" tags="" position="725,1725" size="100,100">$funknown: Leave the kid alone, you two. He just got his first escape attempt done and has to accept the fact that he&#39;s stuck here. We all are.
+[[continue|posttut5]]]]</tw-passagedata><tw-passagedata pid="177" name="posttut5" tags="" position="850,2225" size="100,100">$funknown: Leave the kid alone, you two. He just got his first escape attempt done and has to accept the fact that he&#39;s stuck here. We all are.
 (link: &quot;continue&quot;)[
 $p: That there is $f. He&#39;s been here the longest and has failed to escape so many times that he&#39;s a cranky old marmoset.
 (link: &quot;continue&quot;)[
 $f: I&#39;m not cranky! I&#39;m realistic. There ain&#39;t no way any of us are getting out of here. This guy got brought back here, and we haven&#39;t seen $b in days. This place either kills you or brings you back here.
-[[continue|posttut6]]]]</tw-passagedata><tw-passagedata pid="137" name="posttut6" tags="" position="850,1725" size="100,100">$player: //They knew $b? These must be the others he was talking about.//
+[[continue|posttut6]]]]</tw-passagedata><tw-passagedata pid="178" name="posttut6" tags="" position="975,2225" size="100,100">$player: //They knew $b? These must be the others he was talking about.//
 (link: &quot;continue&quot;)[
 $p: Ah, don&#39;t let Ol&#39; Monkey get you down. What&#39;s your name stranger? 
-(link: &quot;My name is ...&quot;)[
-$p: Nice to meet you $playerName! Now why don&#39;t you tell us what happened?
+(link: &quot;My name is $playername.&quot;)[
+$p: Nice to meet you $playername! Now why don&#39;t you tell us what happened?
 (link: &quot;Well, it all started when ...&quot;)[
 $n: You tell the three animals of your doomed escape from the lab with $b and that the $m is planning to get rid of all the current test subjects.
-[[continue|posttut7]]]]]</tw-passagedata><tw-passagedata pid="138" name="posttut7" tags="" position="975,1725" size="100,100">$e: Aghast! That villain would kill us all. I, for one, do not want to die in this hall.
+[[continue|posttut7]]]]]</tw-passagedata><tw-passagedata pid="179" name="posttut7" tags="" position="1100,2225" size="100,100">$e: Aghast! That villain would kill us all. I, for one, do not want to die in this hall.
 (link: &quot;continue&quot;)[
 $n: The other two animals nod and agree to help you escape. They open your cage for you and let you out.
 (link: &quot;continue&quot;)[
 $f: Even with all of us, we won&#39;t make it. Do you think I haven&#39;t gathered a team to escape before? We might get farther than being alone, but we won&#39;t get out. At best, we end up back here; at worst, we end up food for the $c, like $b.
-[[continue|posttut8]]]]</tw-passagedata><tw-passagedata pid="139" name="posttut8" tags="" position="1100,1725" size="100,100">$n: (css: &quot;color: green;&quot;)[Blinky&#39;s] death squeaks still ring in your head. You shake them away.
+[[continue|posttut8]]]]</tw-passagedata><tw-passagedata pid="180" name="posttut8" tags="" position="1225,2225" size="100,100">$n: (css: &quot;color: green;&quot;)[Blinky&#39;s] death squeaks still ring in your head. You shake them away.
 (link: &quot;We need to try&quot;)[
 $player: Either we try to escape, or we wait to die. I know which I&#39;m choosing. Now, how do we get out of this room?
 (link: &quot;continue&quot;)[
@@ -1555,35 +1783,40 @@ $n: $f sighs.
 $f: Come over here. The rooms seem to change whenever we fail and get brought back here. All except this room and the last one. Getting out of this area should be easy.
 [[Lets go|posttut9]]]]]
 
-&lt;!-- PUZZLE EXPLANATION STARTS HERE --&gt;</tw-passagedata><tw-passagedata pid="140" name="posttut9" tags="" position="1225,1725" size="100,100">Before you start this escape, you should talk to either $e (please, no), $p, or $f to get a better idea of their abilities. You may only talk to one before escaping each room; we&#39;ve got a job to do here.
-[[Talk to Edgar Allan Crow|posttut9-0]]
+&lt;!-- PUZZLE EXPLANATION STARTS HERE --&gt;</tw-passagedata><tw-passagedata pid="181" name="posttut9" tags="" position="100,2350" size="100,100">//Before you start this escape, you should talk to either $e (please, no), $p, or $f to get a better idea of their abilities. You may only talk to one before escaping each room; we&#39;ve got a job to do here.//
 [[Talk to Patty|posttut9-1]]
-[[Talk to Fritz|posttut9-2]]
-
-&lt;!-- EDGAR OPTION STARTS HERE --&gt;</tw-passagedata><tw-passagedata pid="141" name="posttut9-0" tags="" position="100,1850" size="100,100">$n: Why?! Why the bird? Do you know how many he&#39;s driven to their doom with his incessant rhyming?
+[[Talk to Edgar Allan Crow|posttut9-0]]
+[[Talk to Fritz|posttut9-2]]</tw-passagedata><tw-passagedata pid="182" name="postPuz" tags="" position="225,2350" size="100,100">//Who do you want to talk to before the next room?//
+{
+(if: $talkPatty is false)[[[Talk to Patty|posttut9-1]]](else: )[(text-style: &quot;strike&quot;)[Talk to Patty]]&lt;br&gt;
+(if: $talkEdgar is false)[[[Talk to Edgar Allan Crow|posttut9-0]]](else: )[(text-style: &quot;strike&quot;)[Talk to Edgar Allan Crow]]&lt;br&gt;
+(if: $talkFritz is false)[[[Talk to Fritz|posttut9-2]]](else: )[(text-style: &quot;strike&quot;)[Talk to Fritz]]
+}
+&lt;!-- EDGAR OPTION STARTS HERE --&gt;</tw-passagedata><tw-passagedata pid="183" name="posttut9-0" tags="" position="350,2350" size="100,100">{(set: $talkEdgar to true)
+}$n: Why?! Why the bird? Do you know how many he&#39;s driven to their doom with his incessant rhyming?
 (link: &quot;I&#39;m interested that&#39;s why&quot;)[
 $e: $playerName, our new comrade! I hope that my earlier tapping did not make you (text-style: &quot;sway&quot;)[mad.] Many animals seem to run from my //**regal**// presence after some time as if they felt they were not worthy of seeing me in my prime. 
 (link: &quot;continue&quot;)[
 $n: No, you did it to them! You drove them insane with your crappy verses! I&#39;m not even convinced you have to do them!
-[[Rightttt|posttut9-0_0]]]]</tw-passagedata><tw-passagedata pid="142" name="posttut9-0_0" tags="" position="225,1850" size="100,100">$player: Uh huh… Well, $e, I&#39;ll try to prove myself worthy of your //regal presence// then. By the way, why //do// you rhyme so much?
+[[Rightttt|posttut9-0_0]]]]</tw-passagedata><tw-passagedata pid="184" name="posttut9-0_0" tags="" position="475,2350" size="100,100">$player: Uh huh… Well, $e, I&#39;ll try to prove myself worthy of your //regal presence// then. By the way, why //do// you rhyme so much?
 (link: &quot;continue&quot;)[
 $e: That, my dear $playerName, is because I am cursed! Our captor has stricken me with it in a crazed outburst. I am forever forced to speak in verse.
 (link: &quot;continue&quot;)[
 $n: Doubtful. I&#39;m watching you, you damned corvid.
-[[I see, well actually ...|posttut9-0_1]]]]</tw-passagedata><tw-passagedata pid="143" name="posttut9-0_1" tags="" position="350,1850" size="100,100">$player: That&#39;s better than what I got at least…
+[[I see, well actually ...|posttut9-0_1]]]]</tw-passagedata><tw-passagedata pid="185" name="posttut9-0_1" tags="" position="600,2350" size="100,100">$player: That&#39;s better than what I got at least…
 (link: &quot;continue&quot;)[
 $n: $player wave a hand in front of your probably blotchy white eyes to make your point.
 (link: &quot;Edgar assures you&quot;)[
 $e: Once we flee from this house of horrors, my rat friend, your lost eyesight, we will mend.
 (link: &quot;I hope so ...&quot;)[
 $player: After we do get out, is there anything you personally want to do $e? Maybe get your curse fixed? 
-[[You hear Edgar shuffle around|posttut9-0_2]]]]]</tw-passagedata><tw-passagedata pid="144" name="posttut9-0_2" tags="" position="475,1850" size="100,100">{$e: (transition: &quot;fade&quot;)+(transition-delay:1s)[Fi-]
+[[You hear Edgar shuffle around|posttut9-0_2]]]]]</tw-passagedata><tw-passagedata pid="186" name="posttut9-0_2" tags="" position="725,2350" size="100,100">{$e: (transition: &quot;fade&quot;)+(transition-delay:1s)[Fi-]
 (transition: &quot;fade&quot;)+(transition-delay:2s)[ fixed?!]
 (transition: &quot;fade&quot;)+(transition-delay:3s)[ Uhh no, no, my problem should not come between you and your curse. Uhh it should not be betwixt.]
 }
 (link: &quot;wait a second ...&quot;)[
 $n: Did he just forget to rhyme?!
-[[continue|posttut9-0_3]]]</tw-passagedata><tw-passagedata pid="145" name="posttut9-0_3" tags="" position="600,1850" size="100,100">{$n: (transition: &quot;fade&quot;)+(transition-delay:1s)[//Son//]
+[[continue|posttut9-0_3]]]</tw-passagedata><tw-passagedata pid="187" name="posttut9-0_3" tags="" position="850,2350" size="100,100">{$n: (transition: &quot;fade&quot;)+(transition-delay:1s)[//Son//]
 (transition: &quot;fade&quot;)+(transition-delay:1.5s)[ //of//] 
 (transition: &quot;fade&quot;)+(transition-delay:2s)[ //a//]
 (transition: &quot;fade&quot;)+(transition-delay:2.5s)[ //bitch//]
@@ -1592,70 +1825,79 @@ $n: Did he just forget to rhyme?!
 $player: Alright, I suppose? Oh, while I have you here, is there anything you can tell me about these traps and how you&#39;ve gotten past them?
 (link: &quot;continue&quot;)[
 $e: That I can gladly do! As the only resident **flying** creature within our retinue, I am indeed the only solution for some rooms in our crew. **Trust me**, //trust me//, it is true. 
-[[Good to know|posttut9-0_4]]]]</tw-passagedata><tw-passagedata pid="146" name="posttut9-0_4" tags="" position="725,1850" size="100,100">$player: So, you can **fly?** That&#39;s great! //I was afraid his wings were clipped.// Is there anything else?
+[[Good to know|posttut9-0_4]]]]</tw-passagedata><tw-passagedata pid="188" name="posttut9-0_4" tags="" position="975,2350" size="100,100">$player: So, you can **fly?** That&#39;s great! //I was afraid his wings were clipped.// Is there anything else?
 (link: &quot;continue&quot;)[
 $e: In fact, there is more!  My beak allows me to **grab objects** that would be, for others, a chore.
-[[Hmm|posttut9-0_5]]]</tw-passagedata><tw-passagedata pid="147" name="posttut9-0_5" tags="" position="850,1850" size="100,100">$player: Flying and grabbing hard-to-reach items. Got it. Thanks for talking to me, $e. We&#39;ll all get out of here soon, you&#39;ll see.
+[[Hmm|posttut9-0_5]]]</tw-passagedata><tw-passagedata pid="189" name="posttut9-0_5" tags="" position="1100,2350" size="100,100">$player: Flying and grabbing hard-to-reach items. Got it. Thanks for talking to me, $e. We&#39;ll all get out of here soon, you&#39;ll see.
 (link: &quot;continue&quot;)[
 $e: I look forward to seeing the sky once again. Being stuck in this limited space has been quite the drain.
 (link: &quot;continue&quot;)[
 (if: $edgar_faith &lt; 3)[(set: $edgar_faith = $edgar_faith + 1)] (set: $trust to $edgar_faith of $faithdm)//$e enjoyed talking to you//
 //$e $trust//
-[[Proceed to puzzle|pattypuz0]]]]
-
-&lt;!-- PATTY OPTION STARTS HERE --&gt;</tw-passagedata><tw-passagedata pid="148" name="posttut9-1" tags="" position="975,1850" size="100,100">$n: Great, (text-colour: red+white)[Patty&#39;s] cool. You&#39;ll like $p. Just don&#39;t ask for any of her foo-
+{
+    (if: $pattyDone is false)[[Proceed to puzzle|pattypuz0]]
+    (if: $pattyDone is true and $fritzDone is false)[[Proceed to puzzle|fritzpuz0]]
+    (if: $fritzDone is true and $edgarDone is false)[[Proceed to puzzle|ePuzz]]
+}]]
+&lt;!-- PATTY OPTION STARTS HERE --&gt;</tw-passagedata><tw-passagedata pid="190" name="posttut9-1" tags="" position="1225,2350" size="100,100">{(set: $talkPatty to true)
+}$n: Great, (text-colour:#dfb300)[Patty&#39;s] cool. You&#39;ll like $p. Just don&#39;t ask for any of her foo-
 (link: &quot;Man I&#39;m hungry&quot;)[
 $player: Hey $p, I haven&#39;t eaten at all since I first woke up. May I have some of that food you keep carrying around?
 (link: &quot;continue&quot;)[
 $n: Why do I bother?
-[[Patty responds|posttut9-1_1]]]]</tw-passagedata><tw-passagedata pid="149" name="posttut9-1_1" tags="" position="1100,1850" size="100,100">$p: I have //**nothing**// for $player! This food is for //**my**// babies back in //**my**// home tree. They are waiting patiently for their Momma to come back with meals for the winter!
+[[Patty responds|posttut9-1_1]]]]</tw-passagedata><tw-passagedata pid="191" name="posttut9-1_1" tags="" position="100,2475" size="100,100">$p: I have //**nothing**// for $player! This food is for //**my**// babies back in //**my**// home tree. They are waiting patiently for their Momma to come back with meals for the winter!
 (link: &quot;Hold on&quot;)[
 $player: //Wasn&#39;t it spring when I got captured?//
 
 $player: Alright, alright, I didn&#39;t know it was that important. But, $p, how long have you been here?
 (link: &quot;Patty responds&quot;)[
 $p: Hmm-bit hard to keep track, seein&#39; how there&#39;s no windows around, but $f tells me it&#39;s been about three years, however long that is.
-[[What?!|posttut9-1_2]]]]</tw-passagedata><tw-passagedata pid="150" name="posttut9-1_2" tags="" position="1225,1850" size="100,100">$player: //Three years?! Aren&#39;t squirrel life spans only 5-10 years?//
+[[What?!|posttut9-1_2]]]]</tw-passagedata><tw-passagedata pid="192" name="posttut9-1_2" tags="" position="225,2475" size="100,100">$player: //Three years?! Aren&#39;t squirrel life spans only 5-10 years?//
 (link: &quot;continue&quot;)[
 $n: Yeah, those kids aren&#39;t waiting for their Momma anymore.
-(link: &quot;That&#39;s, actually really sad&quot;)[
+(link: &quot;That&#39;s actually really sad&quot;)[
 $n: Feeling overcome by the poor squirrel&#39;s plight, you stand up and try reaching out your hand to put on her shoulder.
 (link: &quot;Before you find her shoulder&quot;)[
 $n: $p slaps it away.
-[[Patty begins to speak|posttut9-1_3]]]]]</tw-passagedata><tw-passagedata pid="151" name="posttut9-1_3" tags="" position="100,1975" size="100,100">$p: Now, don&#39;t you go feeling pity for me. Don&#39;t say you aren&#39;t &#39;cause I can see it on yer face.
+[[Patty begins to speak|posttut9-1_3]]]]]</tw-passagedata><tw-passagedata pid="193" name="posttut9-1_3" tags="" position="350,2475" size="100,100">$p: Now, don&#39;t you go feeling pity for me. Don&#39;t say you aren&#39;t &#39;cause I can see it on yer face.
 (link: &quot;continue&quot;)[
 $p: Us four are gonna get out of here, and things will be better. I&#39;ll see my babies, you&#39;ll get your seeing back, and maybe $f won&#39;t be so darn cranky.
 (link: &quot;continue&quot;)[
 $player: What about $e?
-[[Patty&#39;s tone gets lighter|posttut9-1_4]]]]</tw-passagedata><tw-passagedata pid="152" name="posttut9-1_4" tags="" position="225,1975" size="100,100">$p: Ha! That old crow will probably go bother some other human. He says he&#39;s been wanting to scare people like he used to. Something about an old word he learned before he came here? //Never-something// or whatever.
+[[Patty&#39;s tone gets lighter|posttut9-1_4]]]]</tw-passagedata><tw-passagedata pid="194" name="posttut9-1_4" tags="" position="475,2475" size="100,100">$p: Ha! That old crow will probably go bother some other human. He says he&#39;s been wanting to scare people like he used to. Something about an old word he learned before he came here? //Never-something// or whatever.
 (link: &quot;Probably&quot;)[
 $n: $e isn&#39;t even a raven! That&#39;s a //**raven**// thing. He can&#39;t just **steal** it!
 (link: &quot;continue&quot;)[
 $player: Well, we&#39;ll make sure he gets the chance to do that. Speaking of getting out of here, $p, do you have any suggestions for getting past some of these traps? How should I direct you?
-[[Patty begins to speak|posttut9-1_5]]]]</tw-passagedata><tw-passagedata pid="153" name="posttut9-1_5" tags="" position="350,1975" size="100,100">$p: As you can hear-
+[[Patty begins to speak|posttut9-1_5]]]]</tw-passagedata><tw-passagedata pid="195" name="posttut9-1_5" tags="" position="600,2475" size="100,100">$p: As you can hear-
 (link: &quot;Patty smacks her food bag&quot;)[
 $p: -this bag here is real **heavy**, meaning I am the **strongest** little rodent you&#39;ll ever meet!
 (link: &quot;Impressive&quot;)[
 $p: I can even climb with it! Usually, something comes up in these traps that I can use either my strength or the extra weight this thing brings. Not sure why, though. It seems a little too easy sometimes, but that&#39;s when we mess up and get brought back here.
-[[Interesting|posttut9-1_6]]]]</tw-passagedata><tw-passagedata pid="154" name="posttut9-1_6" tags="" position="475,1975" size="100,100">$player: That does seem weird. But extra power and foo- I mean weight sounds like it could be useful. Thanks for telling me, $p.
+[[Interesting|posttut9-1_6]]]]</tw-passagedata><tw-passagedata pid="196" name="posttut9-1_6" tags="" position="725,2475" size="100,100">$player: That does seem weird. But extra power and foo- I mean weight sounds like it could be useful. Thanks for telling me, $p.
 (link: &quot;continue&quot;)[
 $p: Ain&#39;t no problem, friend!
 (link: &quot;continue&quot;)[
 (if: $patty_faith &lt; 3)[(set: $patty_faith = $patty_faith + 1)] (set: $trust to $patty_faith of $faithdm)//$p enjoyed talking to you//
 //$p $trust//
-[[Proceed to puzzle|pattypuz0]]]]
+{
+    (if: $pattyDone is false)[[Proceed to puzzle|pattypuz0]]
+    (if: $pattyDone is true and $fritzDone is false)[[Proceed to puzzle|fritzpuz0]]
+    (if: $fritzDone is true and $edgarDone is false)[[Proceed to puzzle|ePuzz]]
+}]]
 
-&lt;!-- FRITZ OPTION STARTS HERE --&gt;</tw-passagedata><tw-passagedata pid="155" name="posttut9-2" tags="" position="600,1975" size="100,100">$n: Good ole $f. He&#39;s been here so long he&#39;s probably forgotten what it&#39;s like outside. His failures weigh him down as if they were all his fault and not because of an overly confident escape partner…I wonder if you&#39;ll add to his burden or help lift it from his shoulders?
+&lt;!-- FRITZ OPTION STARTS HERE --&gt;</tw-passagedata><tw-passagedata pid="197" name="posttut9-2" tags="" position="850,2475" size="100,100">{(set: $talkFritz to true)
+}$n: Good ole $f. He&#39;s been here so long he&#39;s probably forgotten what it&#39;s like outside. His failures weigh him down as if they were all his fault and not because of an overly confident escape partner…I wonder if you&#39;ll add to his burden or help lift it from his shoulders?
 (link: &quot;You approach Fritz&quot;)[
 $f: What do you want, kid? I&#39;m already on this suicide mission like you wanted. What more do you need?
 (link: &quot;I was thinking ...&quot;)[
 $player: Well, I mean, I just thought you might have wanted to talk.
-[[Fritz begins to respond|posttut9-2_0]]]]</tw-passagedata><tw-passagedata pid="156" name="posttut9-2_0" tags="" position="725,1975" size="100,100">$f: Was it my sunny disposition that gave $player that impression? I&#39;m only here cause $player managed to convince the other two, and I want to keep them out of trouble if possible.
+[[Fritz begins to respond|posttut9-2_0]]]]</tw-passagedata><tw-passagedata pid="198" name="posttut9-2_0" tags="" position="975,2475" size="100,100">$f: Was it my sunny disposition that gave $player that impression? I&#39;m only here cause $player managed to convince the other two, and I want to keep them out of trouble if possible.
 (link: &quot;He seems to have some trauma&quot;)[
 $player: What happened to you, $f, for you to be so against escaping?
 (link: &quot;Fritz responds&quot;)[
 $f: What //happened// was that each and every friend I&#39;ve known in these past five years have either died to traps or to that madman&#39;s experiments. And somehow, I&#39;m always left behind.  
-[[continue|posttut9-2_1]]]]</tw-passagedata><tw-passagedata pid="157" name="posttut9-2_1" tags="" position="850,1975" size="100,100">{$f: (transition: &quot;fade&quot;)+(transition-delay:0.5s)[There&#39;s no way out of here,]
+[[continue|posttut9-2_1]]]]</tw-passagedata><tw-passagedata pid="199" name="posttut9-2_1" tags="" position="1100,2475" size="100,100">{$f: (transition: &quot;fade&quot;)+(transition-delay:0.5s)[There&#39;s no way out of here,]
 (transition: &quot;fade&quot;)+(transition-delay:2s)[ so I decided a while ago to protect who I can and enjoy what time we have.]
 (transition: &quot;fade&quot;)+(transition-delay:4.5s)[ Then some foolish creature like you comes along,]
 (transition: &quot;fade&quot;)+(transition-delay:6s)[ with a little more intellect than is safe,]
@@ -1664,30 +1906,34 @@ $f: What //happened// was that each and every friend I&#39;ve known in these pas
 }
 (transition: &quot;fade&quot;)+(transition-delay:10s)[(link: &quot;continue&quot;)[
 $n: You stay silent, not knowing what to say. You know you&#39;re putting all of them in danger, though not more than if they stayed still. This way, they at least have a chance, right? Or it could end with you alone in the dark, only a madman&#39;s laughter to keep you company.
-[[continue|posttut9-2_2]]]]</tw-passagedata><tw-passagedata pid="158" name="posttut9-2_2" tags="" position="975,1975" size="100,100">$n: You shake away the morbid thoughts.
+[[continue|posttut9-2_2]]]]</tw-passagedata><tw-passagedata pid="200" name="posttut9-2_2" tags="" position="1225,2475" size="100,100">$n: You shake away the morbid thoughts.
 (link: &quot;continue&quot;)[
 $player: This won&#39;t end that way, $f. I won&#39;t let it. We will all get out of here, I promise.
 (link: &quot;continue&quot;)[
 $n: $f stays silent for a few seconds, perhaps contemplating your words as you did his. The old monkey sighs.
 (link: &quot;continue&quot;)[
 $f: Well, If you&#39;re gonna be leading this expedition, I suppose you should know what I can do. 
-[[That would be helpful|posttut9-2_3]]]]]</tw-passagedata><tw-passagedata pid="159" name="posttut9-2_3" tags="" position="1100,1975" size="100,100">$f: The biggest thing I can bring to the team is that I can **read**. At least one room always needs someone that can **read** to complete it. At least, they have whenever I have tried to escape. I am also a little more **dexterous** than the others, which means if we come across a **lock** that needs **picking**, I can do that for us. 
+[[That would be helpful|posttut9-2_3]]]]]</tw-passagedata><tw-passagedata pid="201" name="posttut9-2_3" tags="" position="100,2600" size="100,100">$f: The biggest thing I can bring to the team is that I can **read**. At least one room always needs someone that can **read** to complete it. At least, they have whenever I have tried to escape. I am also a little more **dexterous** than the others, which means if we come across a **lock** that needs **picking**, I can do that for us. 
 (link: &quot;continue&quot;)[
 $n: You can hear a bag of tools, he shakes it to demonstrate his readiness.
 (link: &quot;Oh thank the rat gods&quot;)[
 $player: //Someone else who can read! This will definitely help if we see that computer puzzle again.// 
-[[continue|posttut9-2_4]]]]</tw-passagedata><tw-passagedata pid="160" name="posttut9-2_4" tags="" position="1225,1975" size="100,100">$player: Thank you, $f. I won&#39;t let you down.
+[[continue|posttut9-2_4]]]]</tw-passagedata><tw-passagedata pid="202" name="posttut9-2_4" tags="" position="225,2600" size="100,100">$player: Thank you, $f. I won&#39;t let you down.
 (link: &quot;Fritz responds&quot;)[
 $f: See that $player don&#39;t kid, we&#39;re putting a lot of trust in $player here.
 (link: &quot;continue&quot;)[
 (if: $fritz_faith &lt; 3)[(set: $fritz_faith = $fritz_faith + 1)] (set: $trust to $fritz_faith of $faithdm)//$f feels more confident in your abilities//
 //$f $trust//
-[[Proceed to puzzle|pattypuz0]]]]</tw-passagedata><tw-passagedata pid="161" name="test" tags="" position="100,2100" size="100,100">j k e 
+{
+    (if: $pattyDone is false)[[Proceed to puzzle|pattypuz0]]
+    (if: $pattyDone is true and $fritzDone is false)[[Proceed to puzzle|fritzpuz0]]
+    (if: $fritzDone is true and $edgarDone is false)[[Proceed to puzzle|ePuzz]]
+}]]</tw-passagedata><tw-passagedata pid="203" name="test" tags="" position="350,2600" size="100,100">j k e 
 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;f
 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;g l m n o
 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;a [[$b|test1]] c [[$d|test2]]
 &amp;nbsp;&amp;nbsp;p h q r
-&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;i</tw-passagedata><tw-passagedata pid="162" name="test1" tags="" position="225,2100" size="100,100">{
+&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;i</tw-passagedata><tw-passagedata pid="204" name="test1" tags="" position="475,2600" size="100,100">{
   (if: $guessedB is false)[
   (set: $q = [(text-colour:red)[$b]])]
   (set: $promptStr = [
@@ -1718,7 +1964,7 @@ $f: See that $player don&#39;t kid, we&#39;re putting a lot of trust in $player 
     $promptStr
     (if: $guessedB is false)[
     [[Make a another guess|test2]]]
-    [[Back|test]]</tw-passagedata><tw-passagedata pid="163" name="test2" tags="" position="350,2100" size="100,100">{
+    [[Back|test]]</tw-passagedata><tw-passagedata pid="205" name="test2" tags="" position="600,2600" size="100,100">{
   (if: $guessedD is false)[
   (set: $q = [(text-colour:red)[$d]])]
   (set: $promptStr = [
@@ -1749,7 +1995,7 @@ $f: See that $player don&#39;t kid, we&#39;re putting a lot of trust in $player 
     $promptStr
     (if: $guessedD is false)[
     [[Make a another guess|test2]]]
-    [[Back|test]]</tw-passagedata><tw-passagedata pid="164" name="tut0" tags="" position="475,2100" size="100,100">$player: //Ow.//
+    [[Back|test]]</tw-passagedata><tw-passagedata pid="206" name="tut0" tags="" position="725,2600" size="100,100">$player: //Ow.//
 (link: &quot;continue&quot;)[
 $n: You get up, look around the laboratory and somehow know what things are. 
 That giant whirlwind of steel covering the only space small enough 
@@ -1757,12 +2003,12 @@ to build a new home is called a fan,
 and the ferocious beast with dagger teeth that nearly killed you before is called a $c.
 (link: &quot;continue&quot;)[
 $player: //A $c? Really? It was more like a devil-faced leopard. Hmm? What is a leopard? What is a devil?//
-[[continue|tut3]]]]</tw-passagedata><tw-passagedata pid="165" name="tut3" tags="" position="600,2100" size="100,100">$n: Thoughts are weird, aren&#39;t they? Well, don&#39;t worry about that part. 
+[[continue|tut3]]]]</tw-passagedata><tw-passagedata pid="207" name="tut3" tags="" position="850,2600" size="100,100">$n: Thoughts are weird, aren&#39;t they? Well, don&#39;t worry about that part. 
 You walk over to the large water depository in your cell; its tap is slowly dripping, 
 and you take some sips. On the water&#39;s surface, you see a fuzzy, grey-haired, 
 beady-eyed little creature that you know is called a rat. It&#39;s you. 
 You are a rat. A lab rat, to be specific, and you know that&#39;s a bad thing.
-[[continue|tut4]]</tw-passagedata><tw-passagedata pid="166" name="tut4" tags="" position="725,2100" size="100,100">$bunknown: Hey! You&#39;re finally awake!
+[[continue|tut4]]</tw-passagedata><tw-passagedata pid="208" name="tut4" tags="" position="975,2600" size="100,100">$bunknown: Hey! You&#39;re finally awake!
 (link: &quot;continue&quot;)[
 $player: Who are you? And where are we?
 (link: &quot;continue&quot;)[
@@ -1770,14 +2016,14 @@ $bunknown: Me? Well, I don&#39;t know why, but the others call me $b. *blink….
 (link: &quot;continue&quot;)[
 $n: Please just imagine $b here is blinking all the time,
 in the background, from here on. Saves us both some time.
-[[continue|tut8]]]]]</tw-passagedata><tw-passagedata pid="167" name="tut8" tags="" position="850,2100" size="100,100">$player: The others?
+[[continue|tut8]]]]]</tw-passagedata><tw-passagedata pid="209" name="tut8" tags="" position="1100,2600" size="100,100">$player: The others?
 (link: &quot;continue&quot;)[
 $b: Yeah, the others! They aren&#39;t very nice, except Patty, 
 but she won&#39;t let me eat her food, so maybe she isn&#39;t nice after all?
 (link: &quot;continue&quot;)[
 $n:  $b tilts his head with his hand on his chin: *Blink, blink.* 
 (I reserve the right to bring back the blinks when I want to.)
-[[continue|tut11]]]]</tw-passagedata><tw-passagedata pid="168" name="tut11" tags="" position="975,2100" size="100,100">$b: Anyway! What&#39;s your name?
+[[continue|tut11]]]]</tw-passagedata><tw-passagedata pid="210" name="tut11" tags="" position="1225,2600" size="100,100">$b: Anyway! What&#39;s your name?
 (link: &quot;continue&quot;)[
 $player: I... Don&#39;t have one?
 (link: &quot;continue&quot;)[
@@ -1787,12 +2033,12 @@ you swore used to mean things to you but are now indecipherable.
 $b: OOoooOOh… That means you can pick one! That&#39;s what the others did. 
 I tried to name myself too, but for some reason, the others won&#39;t call me by my rightful name: 
 Bandorious Lyncoln Isaac Nezin Korrin Yosuf the Eleventh.
-[[continue|tut15]]]]]</tw-passagedata><tw-passagedata pid="169" name="tut15" tags="" position="1100,2100" size="100,100">$b: So, what&#39;s your name?
-[[Declare your name to the world|tut16]]</tw-passagedata><tw-passagedata pid="170" name="tut16" tags="" position="1225,2100" size="100,100">{(put: (prompt: [What is your name?], &quot;&quot;) into $playerName_data)
+[[continue|tut15]]]]]</tw-passagedata><tw-passagedata pid="211" name="tut15" tags="" position="100,2725" size="100,100">$b: So, what&#39;s your name?
+[[Declare your name to the world|tut16]]</tw-passagedata><tw-passagedata pid="212" name="tut16" tags="" position="225,2725" size="100,100">{(put: (prompt: [What is your name?], &quot;&quot;) into $playerName_data)
 (set: $playerName to [(text-colour:blue)[$playerName_data]])}
 $n: Are… you sure you want that to be your name?
 [[Yeah, what&#39;s wrong with it?|tut18]]
-[[No, wait, go back|tut16]]</tw-passagedata><tw-passagedata pid="171" name="tut18" tags="" position="100,2225" size="100,100">$b: Wow! That&#39;s a weird name! $playerName, nice to meet you!
+[[No, wait, go back|tut16]]</tw-passagedata><tw-passagedata pid="213" name="tut18" tags="" position="350,2725" size="100,100">$b: Wow! That&#39;s a weird name! $playerName, nice to meet you!
 //$b waves aggressively from his cage.//
 {(set: $trust to $blink_faith of $faithdm) }
 //$b $trust//
@@ -1800,31 +2046,31 @@ $n: Are… you sure you want that to be your name?
 $n: Rumblings from the giant door across the room interrupt you.
 (link: &quot;continue&quot;)[
 $b: Shhhh! Don&#39;t let him hear you speak! 
-The other others didn&#39;t come back when he heard them!
+The others didn&#39;t come back when he heard them!
 (link: &quot;continue&quot;)[
 $n: $b runs out of his bed of paper scraps and goes quiet.
-[[continue|tut22]]]]]</tw-passagedata><tw-passagedata pid="172" name="tut22" tags="" position="225,2225" size="100,100">$n: The door opens. 
+[[continue|tut22]]]]]</tw-passagedata><tw-passagedata pid="214" name="tut22" tags="" position="475,2725" size="100,100">$n: The door opens. 
 A man in a bright, colourful flower suit with slicked-back black hair and a pencil moustache walks in 
 and starts inspecting each piece of equipment in the room with exquisite care, 
 as if each were his favourite thing in the world. The $m turns to look at you. 
 At first, just a bored glance; a double take; a triple take; and then he stops and focuses on you, 
 standing in the center of your cage curiously looking at him. 
 Your hair inexplicably stands on end and your stomach turns with his every move.
-[[continue|tut23]]</tw-passagedata><tw-passagedata pid="173" name="tut23" tags="" position="350,2225" size="100,100">$m: oooooOOOOh?
+[[continue|tut23]]</tw-passagedata><tw-passagedata pid="215" name="tut23" tags="" position="600,2725" size="100,100">$m: oooooOOOOh?
 (link: &quot;continue&quot;)[
 $n: …he says with a wide, pearly white grin.
-[[continue|tut26]]]</tw-passagedata><tw-passagedata pid="174" name="tut26" tags="" position="475,2225" size="100,100">{$m: (transition: &quot;fade&quot;)+(transition-delay:1s)[Do you, ]  
+[[continue|tut26]]]</tw-passagedata><tw-passagedata pid="216" name="tut26" tags="" position="725,2725" size="100,100">{$m: (transition: &quot;fade&quot;)+(transition-delay:1s)[Do you, ]  
 (transition: &quot;fade&quot;)+(transition-delay:2s)[by chance, ]
 (transition: &quot;fade&quot;)+(transition-delay:3s)[understand me, ]
 (transition: &quot;fade&quot;)+(transition-delay:4s)[little rat?]
 }
 
-(transition: &quot;fade&quot;)+(transition-delay:5s)[[[continue|tut27]]]</tw-passagedata><tw-passagedata pid="175" name="tut27" tags="" position="600,2225" size="100,100">$n: You continue staring at him, frozen in place.
+(transition: &quot;fade&quot;)+(transition-delay:5s)[[[continue|tut27]]]</tw-passagedata><tw-passagedata pid="217" name="tut27" tags="" position="850,2725" size="100,100">$n: You continue staring at him, frozen in place.
 (link: &quot;continue&quot;)[
 $m: Hmmm, Smart enough to stay quiet? Well, no matter. 
 You, little one, may have given me what I need to move on to the next batch of subjects. 
 I won&#39;t need you after a few more tests.
-[[continue|tut29]]]</tw-passagedata><tw-passagedata pid="176" name="tut29" tags="" position="725,2225" size="100,100">$n: His grin turns to annoyance.
+[[continue|tut29]]]</tw-passagedata><tw-passagedata pid="218" name="tut29" tags="" position="975,2725" size="100,100">$n: His grin turns to annoyance.
 (link: &quot;continue&quot;)[
 $m: As thankful as I am to you, I&#39;m not a fan of that look you&#39;re giving me.
 (link: &quot;continue&quot;)[
@@ -1832,7 +2078,7 @@ $n: He claps his hands twice while looking at you, and the room goes dark.
 Or rather, it does for you. You drop from your hind legs onto all fours and regain your balance. 
 (link: &quot;continue&quot;)[
 $m: **HAHAHAHA!** Enjoy what remains of your life in the dark, little Rat. 
-[[continue|tut33]]]]]</tw-passagedata><tw-passagedata pid="177" name="tut33" tags="" position="850,2225" size="100,100">$n: You can hear quick steps on the ground, 
+[[continue|tut33]]]]]</tw-passagedata><tw-passagedata pid="219" name="tut33" tags="" position="1100,2725" size="100,100">$n: You can hear quick steps on the ground, 
 and smell the scientist&#39;s sterile, blood-tinged scent, get farther away. 
 A door rumbles open and slams closed.
 (link: &quot;continue&quot;)[
@@ -1840,14 +2086,14 @@ $b: Hey! $playerName, are you alright? What did that crazy do to you?
 (link: &quot;continue&quot;)[
 $n: You look toward where you heard the other rat but can see nothing, 
 not even your paws in front of your face.
-[[continue|tut37]]]]</tw-passagedata><tw-passagedata pid="178" name="tut37" tags="" position="975,2225" size="100,100">$player: I think….He blinded me somehow. I can&#39;t see.
+[[continue|tut37]]]]</tw-passagedata><tw-passagedata pid="220" name="tut37" tags="" position="1225,2725" size="100,100">$player: I think….He blinded me somehow. I can&#39;t see.
 (link: &quot;continue&quot;)[
 $b: Oh…Well, as long as you have your nose, I think things will be alright! Probably!
 (link: &quot;continue&quot;)[
 $player: //Probably?!//
 (link: &quot;continue&quot;)[
 $player: Wait, we&#39;ve gotta get out of here! He said he was going to kill us!
-[[continue|tut41]]]]]</tw-passagedata><tw-passagedata pid="179" name="tut41" tags="" position="1100,2225" size="100,100">$b: //Blinkblinkblink//, But you didn&#39;t talk! He doesn&#39;t take people away unless they talk in front of him!
+[[continue|tut41]]]]]</tw-passagedata><tw-passagedata pid="221" name="tut41" tags="" position="100,2850" size="100,100">$b: //Blinkblinkblink//, But you didn&#39;t talk! He doesn&#39;t take people away unless they talk in front of him!
 (link: &quot;continue&quot;)[
 $player: You heard him, $b. He said he wouldn&#39;t “need us” anymore.
 He&#39;s gonna kill us; we have to run before he does.
@@ -1855,7 +2101,7 @@ He&#39;s gonna kill us; we have to run before he does.
 $n: You hear (css: &quot;color: green;&quot;)[Blinky&#39;s] cage rattling and a metal door squeak open.
 (link: &quot;continue&quot;)[
 $b: C&#39;mon, let&#39;s go then! There&#39;s a tunnel over here.
-[[continue|tut45]]]]]</tw-passagedata><tw-passagedata pid="180" name="tut45" tags="" position="1225,2225" size="100,100">$n: $b may have forgotten you could use help getting out of the cage. But do you really need help? 
+[[continue|tut45]]]]]</tw-passagedata><tw-passagedata pid="222" name="tut45" tags="" position="225,2850" size="100,100">$n: $b may have forgotten you could use help getting out of the cage. But do you really need help? 
 You remember that the cage door sat to your left, toward where (css: &quot;color: green;&quot;)[Blinky&#39;s] cage is. 
 You walk over to where it should be, feeling around for the metal cage.
 You find it!
@@ -1868,17 +2114,17 @@ $player: //It couldn&#39;t be that simple, could it?//
 $n: You give it a try, and sure enough, the door swings open. You follow $b by smell and sound,
 carefully feeling your way around so you don&#39;t bump into the many other things you can smell on the table, 
 and eventually reach where the other rat sits waiting.
-[[continue|tut49]]]]]</tw-passagedata><tw-passagedata pid="181" name="tut49" tags="" position="100,2350" size="100,100">$b: Oh! There you are. Look! Just down there is a hole in the wall we can crawl through
+[[continue|tut49]]]]]</tw-passagedata><tw-passagedata pid="223" name="tut49" tags="" position="350,2850" size="100,100">$b: Oh! There you are. Look! Just down there is a hole in the wall we can crawl through
 (link: &quot;continue&quot;)[
 $n: $b leans in close to you conspiratorially.
-[[continue|tut51]]]</tw-passagedata><tw-passagedata pid="182" name="tut51" tags="" position="225,2350" size="100,100">{$b: (transition: &quot;fade&quot;)+(transition-delay:1s)+(size:0.5)[I don&#39;t think the crazy man knows about it.]}
-(transition: &quot;fade&quot;)+(transition-delay:2s)[[[continue|tut52]]]</tw-passagedata><tw-passagedata pid="183" name="tut52" tags="" position="350,2350" size="100,100">$player: $b, I //can&#39;t// look over there. I can&#39;t see anything.
+[[continue|tut51]]]</tw-passagedata><tw-passagedata pid="224" name="tut51" tags="" position="475,2850" size="100,100">{$b: (transition: &quot;fade&quot;)+(transition-delay:1s)+(size:0.5)[I don&#39;t think the crazy man knows about it.]}
+(transition: &quot;fade&quot;)+(transition-delay:2s)[[[continue|tut52]]]</tw-passagedata><tw-passagedata pid="225" name="tut52" tags="" position="600,2850" size="100,100">$player: $b, I //can&#39;t// look over there. I can&#39;t see anything.
 (link: &quot;continue&quot;)[
 $b: Oh….That&#39;s right. Sorry about that! Bit forgetful, you see, I mean, uhhh… Well- anyway, let&#39;s go down there.
 (link: &quot;continue&quot;)[
 $n: You roll your non-seeing eyes in opposite directions for maximum sass 
-(&#39;cause rats can do that) and follow him. This time, he helps you from ledge to ledge as you both descend to the ground.
-[[continue|tut56]]]]</tw-passagedata><tw-passagedata pid="184" name="tut56" tags="" position="475,2350" size="100,100">$b: Here we are! Oh… there&#39;s a cage over our escape hole?
+(cause rats can do that) and follow him. This time, he helps you from ledge to ledge as you both descend to the ground.
+[[continue|tut56]]]]</tw-passagedata><tw-passagedata pid="226" name="tut56" tags="" position="725,2850" size="100,100">$b: Here we are! Oh… there&#39;s a cage over our escape hole?
 (link: &quot;continue&quot;)[
 $player: What? Like a gate?
 (link: &quot;continue&quot;)[
@@ -1888,14 +2134,14 @@ It kind of looks like those things we pressed to get food with the crazy man but
 $player: //A circle? But what does it do?//
 [[continue|tutpuz1_0]]]]]
 
-&lt;!-- THIS NOW JUMPS TO TUTORIALPUZZLE1 FILE --&gt;</tw-passagedata><tw-passagedata pid="185" name="tut59" tags="" position="600,2350" size="100,100">$n: You walk down the tunnel, which seems to twist and turn without reason.
+&lt;!-- THIS NOW JUMPS TO TUTORIALPUZZLE1 FILE --&gt;</tw-passagedata><tw-passagedata pid="227" name="tut59" tags="" position="850,2850" size="100,100">$n: You walk down the tunnel, which seems to twist and turn without reason.
 Do you want to talk to $b while you walk?
 
 [[YES|tut60]]
 
-[[NO|tut60-1]]</tw-passagedata><tw-passagedata pid="186" name="tut60-1" tags="" position="725,2350" size="100,100">$n: I mean, there&#39;s nobody else here to talk to. Talk to your fellow rat: you might learn something. 
+[[NO|tut60-1]]</tw-passagedata><tw-passagedata pid="228" name="tut60-1" tags="" position="975,2850" size="100,100">$n: I mean, there&#39;s nobody else here to talk to. Talk to your fellow rat: you might learn something. 
 I promise you will get more choices next time.
-[[Talk to Blinky|tut60]]</tw-passagedata><tw-passagedata pid="187" name="tut60" tags="" position="850,2350" size="100,100">$player: Hey $b, are there any signs telling us where we are going?
+[[Talk to Blinky|tut60]]</tw-passagedata><tw-passagedata pid="229" name="tut60" tags="" position="1100,2850" size="100,100">$player: Hey $b, are there any signs telling us where we are going?
 (link: &quot;continue&quot;)[
 $b: Signs? Oh, you mean the rectangles with lines pointing this way?
 (link: &quot;continue&quot;)[
@@ -1903,7 +2149,7 @@ $player:Uhh… yeah, the rectangles. Is there anything written on them?
 (link: &quot;continue&quot;)[
 $b: There are some squiggly lines on them, but I don&#39;t think whoever put them on there knew how to make a proper rectangle or triangle. 
 Like this triangle has two sides that are too long! It&#39;s like legs holding up a triangle.
-[[continue|tut64]]]]]</tw-passagedata><tw-passagedata pid="188" name="tut64" tags="" position="975,2350" size="100,100">$p: //Legs holding up a triangle? An “A”? It sounds like $b can&#39;t read letters. Then why do I know what letters are?//
+[[continue|tut64]]]]]</tw-passagedata><tw-passagedata pid="230" name="tut64" tags="" position="1225,2850" size="100,100">$player: //Legs holding up a triangle? An “A”? It sounds like $b can&#39;t read letters. Then why do I know what letters are?//
 (link: &quot;continue&quot;)[
 $n: You continue down until you start hearing loud beeps and boops, as if an old robot toy was left on maximum volume, 
 though you&#39;re not sure what a robot is. $b tells you you&#39;ve entered a new room.
@@ -1915,20 +2161,20 @@ $player: //Huh? Are there mirrors everywhere, or is everything just reflective?/
 $n: The two of you reach the source of the beeps and boops, and you ask $b what it is.
 [[continue|tutpuz2_0]]]]]]
 
-&lt;!-- THIS NOW JUMPS TO TUTORIALPUZZLE2 FILE --&gt;</tw-passagedata><tw-passagedata pid="189" name="tut69" tags="" position="1100,2350" size="100,100">$b: Let me try! This can&#39;t be too crazy, right? I mean, maybe I just push them all at once?
+&lt;!-- THIS NOW JUMPS TO TUTORIALPUZZLE2 FILE --&gt;</tw-passagedata><tw-passagedata pid="231" name="tut69" tags="" position="100,2975" size="100,100">$b: Let me try! This can&#39;t be too crazy, right? I mean, maybe I just push them all at once?
 (link: &quot;continue&quot;)[
 $b smashes his hand onto the keyboard, and a //Brmmmmm..// is heard, immediately followed by the //BEEEH BEEEH BEEEH// of an alarm.
 (link: &quot;continue&quot;)[
 $player: $b, what did you do?! What&#39;s happening!?
 (link: &quot;continue&quot;)[
 $b: I, I don&#39;t know… I just touched rect-
-[[continue|tut69-1]]]]]</tw-passagedata><tw-passagedata pid="190" name="tut69-1" tags="" position="1225,2350" size="100,100">$n: You hear a familiar sound over the ringing of the alarm.
+[[continue|tut69-1]]]]]</tw-passagedata><tw-passagedata pid="232" name="tut69-1" tags="" position="225,2975" size="100,100">$n: You hear a familiar sound over the ringing of the alarm.
 A vicious roar.
 A merciless growl.
 A monster approaches.
 (link: &quot;continue&quot;)[
 $cunknown: //MEREOOWWW!//
-[[continue|tut70]]]</tw-passagedata><tw-passagedata pid="191" name="tut70" tags="" position="100,2475" size="100,100">$player: $b, we have to get out of here! Get back into the tunnel!
+[[continue|tut70]]]</tw-passagedata><tw-passagedata pid="233" name="tut70" tags="" position="350,2975" size="100,100">$player: $b, we have to get out of here! Get back into the tunnel!
 (link: &quot;continue&quot;)[
 $n: Before $b can get so much as two blinks into responding to you, the (text-colour:#8c03fc)[Mad Scientist&#39;s] $c pounces on him from across the room. 
 You hear fangs sink into $b, who struggles for dear life, 
@@ -1938,7 +2184,7 @@ $player: I can&#39;t let $b die!
 (link: &quot;continue&quot;)[
 $n: You run at the monster, squeaking a final war cry and feel something furry hit you hard. You fall unconscious.
 
-[[continue|posttut0]]]]]</tw-passagedata><tw-passagedata pid="192" name="end1" tags="" position="225,2475" size="100,100">$b: It&#39;s open! I knew you could do it, buddy. Let&#39;s get out of here!
+[[continue|posttut0]]]]]</tw-passagedata><tw-passagedata pid="234" name="end1" tags="" position="475,2975" size="100,100">$b: It&#39;s open! I knew you could do it, buddy. Let&#39;s get out of here!
 (link: &quot;continue&quot;)[
 $n: This isn&#39;t supposed to happen! You can&#39;t just leave! There are supposed to be more puzzles, learning about friendship, teamwork and accepting each other&#39;s faults and all that fun and cool stuff. There&#39;s a whole game planned! C&#39;mon, there were mysteries I wanted to reveal, jokes I wanted to make, and fourth walls I wanted to break! How did you even get that puzzle?! What are you?! 
 (link: &quot;continue&quot;)[
@@ -1948,8 +2194,8 @@ $n: You can&#39;t make me narrate this end. This is ridiculous. Wait, what are y
 ….
 $n: $player and $b leave through the exit and enter a grand magic forest. Over the next few weeks, you somehow convince hundreds of animals from across multiple species to join a forest militia force with you at its head. Dozens of rune bears break down the gate of the magic tower, harpy-hawks fly through the windows and cause havoc inside, and strike teams of razor-tusk Otters to save the other animals. In the chaos, The Madman escaped on a pair of leathery cow wings, carrying his favourite $c with him, never to return.  
 
-(text-colour:green)[THE END]]]]</tw-passagedata><tw-passagedata pid="193" name="tutpuz1_0" tags="" position="350,2475" size="100,100">$n: Tutorial time! Man, it took a while to get here, huh? 
-Companions have things they are good at and bad at.
+(text-colour:green)[THE END]]]]</tw-passagedata><tw-passagedata pid="235" name="tutpuz1_0" tags="" position="600,2975" size="100,100">$n: Tutorial time! Man, it took a while to get here, huh? 
+Companions have things they are good and bad at.
 
 $b (and most companions) do not recognize objects as you do, but $b excels at most physical activities and crawling through tight spaces. 
 
@@ -1957,10 +2203,10 @@ Each companion will describe the situation to you in their own unique way, and i
 
 Later, You will have the chance to interact with one companion before each puzzle (no time to chat with everyone!)  to find out their special traits that may or may not help in each challenge. 
 
-For now, [[Investigate the “Circle”|tutpuz1_1]].</tw-passagedata><tw-passagedata pid="194" name="tutpuz1_1" tags="" position="475,2475" size="100,100">$n: You walk over and feel around for the circle. You find it and nearly slip when the circle moves inwards when you push on it.
+For now, [[Investigate the “Circle”|tutpuz1_1]].</tw-passagedata><tw-passagedata pid="236" name="tutpuz1_1" tags="" position="725,2975" size="100,100">$n: You walk over and feel around for the circle. You find it and nearly slip when the circle moves inwards when you push on it.
 (link: &quot;continue&quot;)[
 $player: It&#39;s a button! It could open this gate.
-[[Push the button|tutpuz1_4]]]</tw-passagedata><tw-passagedata pid="195" name="tutpuz1_4" tags="" position="600,2475" size="100,100">$n: You push the button in. It stops, clicks and remains pressed in. You hear something to your left, like gears moving.
+[[Push the button|tutpuz1_4]]]</tw-passagedata><tw-passagedata pid="237" name="tutpuz1_4" tags="" position="850,2975" size="100,100">$n: You push the button in. It stops, clicks and remains pressed in. You hear something to your left, like gears moving.
 (link: &quot;continue&quot;)[
 $b: What was that?!
 (link: &quot;continue&quot;)[
@@ -1970,7 +2216,7 @@ $b: No, sir, did not move a single hair.
 (link: &quot;continue&quot;)[
 $player: What moved down there, then?
 [[continue|tutpuz1_9]]]]]]
-(set: $counter = 0)</tw-passagedata><tw-passagedata pid="196" name="tutpuz1_9" tags="" position="725,2475" size="100,100">{
+(set: $counter = 0)</tw-passagedata><tw-passagedata pid="238" name="tutpuz1_9" tags="" position="975,2975" size="100,100">{
 (if: $counter is &lt; 3)[$n: Something moved over there when you pushed the button. 
 You could go explore to find out what it was,
 or I suppose you could stay here and try to lift the gate, though I doubt that would work. What do you do?]
@@ -1986,18 +2232,18 @@ or I suppose you could stay here and try to lift the gate, though I doubt that w
 
 [[Explore|tutpuz1_11]]
 
-(if: $counter is &lt; 3)[[Try to lift the gate|tutpuz1_10]]</tw-passagedata><tw-passagedata pid="197" name="tutpuz1_10" tags="" position="850,2475" size="100,100">$n: You and $b try your best to lift the heavy metal gate, but to no avail.
+(if: $counter is &lt; 3)[[Try to lift the gate|tutpuz1_10]]</tw-passagedata><tw-passagedata pid="239" name="tutpuz1_10" tags="" position="1100,2975" size="100,100">$n: You and $b try your best to lift the heavy metal gate, but to no avail.
 (set: $counter to ($counter + 1))
-[[Reconsider|tutpuz1_9]]</tw-passagedata><tw-passagedata pid="198" name="tutpuz1_11" tags="" position="975,2475" size="100,100">$n: You and $b decide to find what moved, and soon $b stops you.
+[[Reconsider|tutpuz1_9]]</tw-passagedata><tw-passagedata pid="240" name="tutpuz1_11" tags="" position="1225,2975" size="100,100">$n: You and $b decide to find what moved, and soon $b stops you.
 (link: &quot;continue&quot;)[
 $b: There&#39;s a tunnel here! This one looks tiny, though. I think I can see another circle at the end.
 [[continue|tutpuz1_13]]]
-(set: $counter = 0)</tw-passagedata><tw-passagedata pid="199" name="tutpuz1_13" tags="" position="1100,2475" size="100,100">$n: You can either try crawling in yourself or send $b to press the new button for you.
+(set: $counter = 0)</tw-passagedata><tw-passagedata pid="241" name="tutpuz1_13" tags="" position="100,3100" size="100,100">$n: You can either try crawling in yourself or send $b to press the new button for you.
 What do you do?
 
 [[Send Blinky|tutpuz1_15]]
 
-[[Send Yourself|tutpuz1_14]]</tw-passagedata><tw-passagedata pid="200" name="tutpuz1_14" tags="" position="1225,2475" size="100,100">{
+[[Send Yourself|tutpuz1_14]]</tw-passagedata><tw-passagedata pid="242" name="tutpuz1_14" tags="" position="225,3100" size="100,100">{
 (if: $counter &lt; 1)[$n: You try to crawl through the space that $b found but find it much too small for a rat of your size. 
 You barely manage to prevent yourself from getting stuck while trying to get out.]
 
@@ -2013,7 +2259,7 @@ However, this time you get stuck for real. $b has to come in and pull you free.
 
 (if: $counter &lt; 2)[[[Reconsider|tutpuz1_13]]]
 \(else: )[[[Send Blinky|tutpuz1_15]]]
-(set: $counter = $counter + 1)</tw-passagedata><tw-passagedata pid="201" name="tutpuz1_15" tags="" position="100,2600" size="100,100">$b: Oh, that&#39;s easy, boss. I got this!
+(set: $counter = $counter + 1)</tw-passagedata><tw-passagedata pid="243" name="tutpuz1_15" tags="" position="350,3100" size="100,100">$b: Oh, that&#39;s easy, boss. I got this!
 (link: &quot;continue&quot;)[
 $n: $b slithers through the tunnel without any trouble and presses the button. 
 A click and more gears move, this time back toward the gated tunnel.
@@ -2021,14 +2267,14 @@ A click and more gears move, this time back toward the gated tunnel.
 $player: Good job, $b! I think that worked!
 (link: &quot;continue&quot;)[
 $n: Once $b comes out, you both make your way back to the gate and find it lifted, clearing the way.
-[[continue|tut59]]]]]</tw-passagedata><tw-passagedata pid="202" name="tutpuz2_0" tags="" position="225,2600" size="100,100">$b: Uhh…there is a table with a long square with little squares on top. Behind it, there is a window, but it&#39;s all green on the other side. Something on it is flashing? Oh, the window and little rectangles have some squiggly lines on them, and there are three circle lights at the top!
+[[continue|tut59]]]]]</tw-passagedata><tw-passagedata pid="244" name="tutpuz2_0" tags="" position="475,3100" size="100,100">$b: Uhh…there is a table with a long square with little squares on top. Behind it, there is a window, but it&#39;s all green on the other side. Something on it is flashing? Oh, the window and little rectangles have some squiggly lines on them, and there are three circle lights at the top!
 (link: &quot;continue&quot;)[
 $b: It looks like the window has a string to another tunnel with a “gate” thing you said before. This one leads outside!
-[[continue|tutpuz2_1-1]]]</tw-passagedata><tw-passagedata pid="203" name="tutpuz2_1-1" tags="" position="350,2600" size="100,100">$player: He means there are letters on the window and squares? Is this a computer setup? Why is there one small enough for us connected to an exit?
+[[continue|tutpuz2_1-1]]]</tw-passagedata><tw-passagedata pid="245" name="tutpuz2_1-1" tags="" position="600,3100" size="100,100">$player: He means there are letters on the window and squares? Is this a computer setup? Why is there one small enough for us connected to an exit?
 (link: &quot;continue&quot;)[
 $player: Hey, $b, is there a triangle with legs on one of the small rectangles? Can you show me where it is?
 [[continue|tutpuz2_1]]]
-(set: $counter = 3)</tw-passagedata><tw-passagedata pid="204" name="tutpuz2_1" tags="" position="475,2600" size="100,100">$n: $b shows you where it is on the keyboard and it is the same QWERTY setup that you somehow know a keyboard is supposed to be. 
+(set: $counter = 3)</tw-passagedata><tw-passagedata pid="246" name="tutpuz2_1" tags="" position="725,3100" size="100,100">$n: $b shows you where it is on the keyboard and it is the same QWERTY setup that you somehow know a keyboard is supposed to be. 
 You know that you have to type something in, 
 but you don&#39;t know what, 
 and $b can&#39;t read what is written on the screen that might have given you a hint. 
@@ -2042,11 +2288,12 @@ He does tell you that there are 29 lines to fill in, and some are grouped togeth
 }
 
 (if: $blink_faith &gt; 0)[[[Make a guess|guess]]]
-(else: )[[[Blinky pushes you out of the way|tut69]]]</tw-passagedata><tw-passagedata pid="205" name="guess" tags="" position="600,2600" size="100,100">{
+(else: )[[[Blinky pushes you out of the way|tut69]]]</tw-passagedata><tw-passagedata pid="247" name="guess" tags="" position="850,3100" size="100,100">{
 (if: $counter is 3)[(put: (prompt: [What do you type?], &quot;&quot;) into $player_input)]
 (if: $counter &lt; 3)[(put: (prompt: [Judging off the lights, you have $counter tries remaining, What do you type?], &quot;&quot;) into $player_input)]
+(set: $player_input to (lowercase: $player_input))
 (if:$player_input is &quot;sphinx of black quartz judge my vow&quot;)[ 
-    (text-colour:green)[$player_input]
+    (text-colour:green)[$player_input]&lt;br&gt;
     $n: You hear a //dodododo DING// and metal screeching against stone. The gate [[opens...|end1]] 
 ]
 }
