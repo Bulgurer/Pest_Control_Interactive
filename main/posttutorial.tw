@@ -65,7 +65,7 @@ $f: I'm not cranky! I'm realistic. There ain't no way any of us are getting out 
 $player: //They knew $b? These must be the others he was talking about.//
 (link: "continue")[
 $p: Ah, don't let Ol' Monkey get you down. What's your name stranger? 
-(link: "My name is ...")[
+(link: "My name is $playername.")[
 $p: Nice to meet you $playerName! Now why don't you tell us what happened?
 (link: "Well, it all started when ...")[
 $n: You tell the three animals of your doomed escape from the lab with $b and that the $m is planning to get rid of all the current test subjects.
