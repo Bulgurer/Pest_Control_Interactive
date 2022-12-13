@@ -284,7 +284,7 @@ $player: Three of them? Hm...
 $n: Even without your sight, you manage to find the buttons fairly quickly. They don't feel all that different from the ones that you pressed 
 during your ill-fated excursion with $b, though that information isn't all that helpful. As far as you can tell, they are arranged in a rectangle.
 (link: "continue")[
-$n: You recall the fact that there are six buttons total, divided equally into three colours.
+$n: You recall the fact that there are **six** buttons total, divided equally into **three** colours.
 (set: $pattypuzButtonsUnlocked to 1)
 [[Ask about the pipes again|pattypuz6_0]]
 [[Press a button|pattypuz6_2]]]
@@ -312,11 +312,11 @@ $n: You recall the fact that there are six buttons total, divided equally into t
 ]
 
 :: pattyRedccwLong
-(set: $pattyupperrotation to it - 2)
+(set: $pattylowerrotation to it - 2)
 (display: "pattyResultsRed")
 
 :: pattyRedccwShort
-(set: $pattyupperrotation to it - 1)
+(set: $pattylowerrotation to it - 1)
 (display: "pattyResultsRed")
 
 :: pattyRedcw
@@ -330,11 +330,11 @@ $n: You recall the fact that there are six buttons total, divided equally into t
 ]
 
 :: pattyRedcwLong
-(set: $pattyupperrotation to it + 2)
+(set: $pattylowerrotation to it + 2)
 (display: "pattyResultsRed")
 
 :: pattyRedcwShort
-(set: $pattyupperrotation to it + 1)
+(set: $pattylowerrotation to it + 1)
 (display: "pattyResultsRed")
 
 
@@ -366,7 +366,7 @@ $n: You recall the fact that there are six buttons total, divided equally into t
     (display: "pattyGreencwShort")
 ] (else:)[
     (set: $pattypuzRot to "cw")
-    How long do you press the button for?
+    //How long do you press the button for?//
     [[Long|pattyGreencwLong]]
     [[Short|pattyGreencwShort]]
 ]
@@ -381,7 +381,7 @@ $n: You recall the fact that there are six buttons total, divided equally into t
 
 
 :: pattyBlue
-Which button do you press?
+//Which button do you press?//
 [[Left|pattyBlueccw]]
 [[Right|pattyBluecw]]
 
@@ -390,17 +390,17 @@ Which button do you press?
     (display: "pattyBlueccwShort")
 ] (else:)[
     (set: $pattypuzRot to "ccw")
-    How long do you press the button for?
+    //How long do you press the button for?//
     [[Long|pattyBlueccwLong]]
     [[Short|pattyBlueccwShort]]
 ]
 
 :: pattyBlueccwLong
-(set: $pattylowerrotation to it - 2)
+(set: $pattyupperrotation to it - 2)
 (display: "pattyResultsBlue")
 
 :: pattyBlueccwShort
-(set: $pattylowerrotation to it - 1)
+(set: $pattyupperrotation to it - 1)
 (display: "pattyResultsBlue")
 
 :: pattyBluecw
@@ -408,17 +408,18 @@ Which button do you press?
     (display: "pattyBluecwShort")
 ] (else:)[
     (set: $pattypuzRot to "cw")
-    How long do you press the button for?
+    //How long do you press the button for?//
     [[Long|pattyBluecwLong]]
     [[Short|pattyBluecwShort]]
 ]
 
 :: pattyBluecwLong
-(set: $pattylowerrotation to it + 2)
+(if: $pattyupperrotation < 3)
+(set: $pattyupperrotation to it + 2)
 (display: "pattyResultsBlue")
 
 :: pattyBluecwShort
-(set: $pattylowerrotation to it + 1)
+(set: $pattyupperrotation to it + 1)
 (display: "pattyResultsBlue")
 
 
@@ -429,7 +430,7 @@ Which button do you press?
     $player: What happened?
     $p: One of them broken pipes moved.
     $player: Which one?
-    $p: the highest one.
+    $p: the bottom one.
     $player: Which direction did it move?
     (if: $pattypuzRot is "ccw")[
         $p: The left side went down.
@@ -438,25 +439,25 @@ Which button do you press?
     ]
     [[Continue|pattypuz6_2]]
 ] (else:) [
-    (unless: $pattyupperrotation is 4)[
-        (if: $pattyupperrotation < 4)[
+    (unless: $pattylowerrotation is 4)[
+        (if: $pattylowerrotation < 4)[
             (if: $pattypuzRot is "ccw")[
-                $p: Oh! That highest pipe looked connected for a second, 
+                $p: Oh! That bottom pipe looked connected for a second, 
                 but it rotated past where it should've been.
             ] (else:)[
-                $p:That highest pipe rotated some, but it still don't look connected.
+                $p:That bottom pipe rotated some, but it still don't look connected.
             ]
         ] (else:)[
             (if: $pattypuzRot is "cw")[
-                $p: Oh! That highest pipe looked connected for a second, 
+                $p: Oh! That bottom pipe looked connected for a second, 
                 but it rotated past where it should've been.
             ] (else:)[
-                $p:That highest pipe rotated some, but it still don't look connected.
+                $p:That bottom pipe rotated some, but it still don't look connected.
             ]
         ]
         [[Continue|pattypuz6_2]]
     ] (else:) [
-        $p: The highest pipe looks connected now!
+        $p: The bottom pipe looks connected now!
         (display: "pattyResultsTotal")
     ]
 ]
@@ -507,7 +508,7 @@ Which button do you press?
     $player: What happened?
     $p: One of them broken pipes moved.
     $player: Which one?
-    $p: the bottom one.
+    $p: the highest one.
     $player: Which direction did it move?
     (if: $pattypuzRot is "ccw")[
         $p: The left side went down.
@@ -516,25 +517,25 @@ Which button do you press?
     ]
     [[Continue|pattypuz6_2]]
 ] (else:) [
-    (unless: $pattylowerrotation is 1)[
-        (if: $pattylowerrotation < 1)[
+    (unless: $pattyupperrotation is 1)[
+        (if: $pattyupperrotation < 1)[
             (if: $pattypuzRot is "ccw")[
-                $p: Oh! That bottom pipe looked connected for a second, 
+                $p: Oh! That highest pipe looked connected for a second, 
                 but it rotated past where it should've been.
             ] (else:)[
-                $p:That bottom pipe rotated some, but it still don't look connected.
+                $p:That highest pipe rotated some, but it still don't look connected.
             ]
         ] (else:)[
             (if: $pattypuzRot is "cw")[
-                $p: Oh! That bottom pipe looked connected for a second, 
+                $p: Oh! That highest pipe looked connected for a second, 
                 but it rotated past where it should've been.
             ] (else:)[
-                $p:That bottom pipe rotated some, but it still don't look connected.
+                $p:That highest pipe rotated some, but it still don't look connected.
             ]
         ]
         [[Continue|pattypuz6_2]]
     ] (else:) [
-        $p The bottom pipe looks connected now!
+        $p The highest pipe looks connected now!
         (display: "pattyResultsTotal")
     ]
 ]

@@ -93,15 +93,15 @@ $f: Come over here. The rooms seem to change whenever we fail and get brought ba
 
 :: posttut9
 //Before you start this escape, you should talk to either $e (please, no), $p, or $f to get a better idea of their abilities. You may only talk to one before escaping each room; we've got a job to do here.//
-[[Talk to Edgar Allan Crow|posttut9-0]]
 [[Talk to Patty|posttut9-1]]
+[[Talk to Edgar Allan Crow|posttut9-0]]
 [[Talk to Fritz|posttut9-2]]
 
 :: postPuz
 //Who do you want to talk to before the next room?//
 {
-(if: $talkEdgar is false)[[[Talk to Edgar Allan Crow|posttut9-0]]](else: )[(text-style: "strike")[Talk to Edgar Allan Crow]]<br>
 (if: $talkPatty is false)[[[Talk to Patty|posttut9-1]]](else: )[(text-style: "strike")[Talk to Patty]]<br>
+(if: $talkEdgar is false)[[[Talk to Edgar Allan Crow|posttut9-0]]](else: )[(text-style: "strike")[Talk to Edgar Allan Crow]]<br>
 (if: $talkFritz is false)[[[Talk to Fritz|posttut9-2]]](else: )[(text-style: "strike")[Talk to Fritz]]
 }
 <!-- EDGAR OPTION STARTS HERE -->
