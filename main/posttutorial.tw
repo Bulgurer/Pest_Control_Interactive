@@ -66,7 +66,7 @@ $player: //They knew $b? These must be the others he was talking about.//
 (link: "continue")[
 $p: Ah, don't let Ol' Monkey get you down. What's your name stranger? 
 (link: "My name is $playername.")[
-$p: Nice to meet you $playerName! Now why don't you tell us what happened?
+$p: Nice to meet you $playername! Now why don't you tell us what happened?
 (link: "Well, it all started when ...")[
 $n: You tell the three animals of your doomed escape from the lab with $b and that the $m is planning to get rid of all the current test subjects.
 [[continue|posttut7]]]]]
@@ -197,7 +197,7 @@ $p: Hmm-bit hard to keep track, seein' how there's no windows around, but $f tel
 $player: //Three years?! Aren't squirrel life spans only 5-10 years?//
 (link: "continue")[
 $n: Yeah, those kids aren't waiting for their Momma anymore.
-(link: "That's, actually really sad")[
+(link: "That's actually really sad")[
 $n: Feeling overcome by the poor squirrel's plight, you stand up and try reaching out your hand to put on her shoulder.
 (link: "Before you find her shoulder")[
 $n: $p slaps it away.

@@ -1,23 +1,43 @@
+(text-color:#e9c901)
 :: pattypuz0
 $p: Whoa, hold on, now.
 $n: The party stops in its tracks, and processing the commotion, you skid to a halt as well.
+(link: "continue")[
 $player: What's wrong?
+(link: "continue")[
 $p: There's a great, big door blockin' this way. Maybe we ought to find a different path.
+[[Can we open it?|pp1]]]]
+
+:: pp1
 $player: Is there anything that looks like it might open it?
+(link: "continue")[
 $p: Can't say there is. Doesn't look to be any of them buttons and keys that you lot had to fiddle with before. 'Cept...
+(link: "continue")[
 $n: You hear a subdued click from a short distance in front of you.
-[[What was that?|pattypuz1]]
+[[What was that?|pattypuz1]]]]
 
 
 :: pattypuz1
 $p: Whoa!
+(link: "continue")[
 $n: Suddenly, the whir of machinery fills the hall, and the door slides open.
+(link: "continue")[
 $player: Is the door opening? What'd you do?
+(link: "continue")[
 $p: Nothin', I only stepped onto this raised tile on the ground.
+[[A raised tile?|pp2]]]]]
+
+:: pp2
 $n: There is a palpable pause.
+(link: "continue")[
 $p: Ohh. This gadget here's a ground button?
+(link: "continue")[
 $n: Spurred by her description, the words "pressure plate" pop into your mind. Not that you know what that is, of course.
+(link: "continue")[
 $player: Well, if the door is open, I guess we can keep going. Nice work, $p.
+[[Let's go.|pp3]]]]]
+
+:: pp3
 $n: You hear her huff pridefully, and you resume walking. However...
 (link: "Continue")[
 $n: The second $p steps off of the pressure plate, the door slams shut in front of you once more.
@@ -33,125 +53,215 @@ $n: You approach the door and press your tiny rat hands against it. As expected,
 
 :: pattypuz1_1
 $player: Hey, Patty, what did you do right before the door closed again?
+(link: "continue")[
 $p: Me? I stepped off of this ground button here.
+(link: "continue")[
 $player: Good to know. Thanks, Patty.
+(link: "continue")[
 $p: No problem!
 (set: $talkedtoPatty to "true")
 [[Go back to the pressure plate|pattypuz1_0]]
-[[Examine the door|pattypuz1_2]]
+[[Examine the door|pattypuz1_2]]]]]
 
 :: pattypuz1_0
 $n: As you slowly skitter away from the door, you ponder what sort of path forward you could take.
+(link: "continue")[
 $player: $p, could you guide me to the ground button?
+(link: "continue")[
 $p: Oh, sure! It's right over here.
+(link: "continue")[
 $n: You follow the sound of her voice, and sure enough, you quickly run into a raised ridge on the ground. Stepping over it, the texture 
 of the floor changes, and you quickly conclude that you are now standing on top of the pressure plate. However, the door does not open.
+[[I don't weigh enough|pp4]]]]]
+
+:: pp4
 $player: I guess I'm not heavy enough to open it. Makes sense.
+(link: "continue")[
 (unless: $talkedtoPatty is "true")[
     $player: Hey, Patty, what did you do right before the door closed again?
+    (link: "continue")[
     $p: Me? I stepped off of this ground button here.
+    (link: "continue")[
     $player: Good to know. Thanks, Patty.
+    (link: "continue")[
     $p: No problem!
-]
+]]]]
+[[So what do you do?|pp5]]
+
+:: pp5
 $n: You sniff the air and sigh.
+(link: "continue")[
 $player: I think we need to put something heavy on this to keep the door open. Obviously, it can't be one of us, but I'm not sure about our other options.
+(link: "continue")[
 $p: What should we do?
+(link: "continue")[
 $f: $e and I could search for something suitable.
+[[Thanks.|pp6]]]]]
+
+:: pp6
 $player: I'd appreciate that.
+(link: "continue")[
 $f: Alright, we'll be back soon.
+(link: "continue")[
 $n: $f begins walking down the hall, back the way you came. A moment later, you hear $e take to the air after him, leaving you alone 
 to ponder the pressure plate with $p. You hear her sigh and adjust the sack of food slung over her shoulder.
-[[Wait, her sack!|pattypuz2]]
+[[Wait, her sack!|pattypuz2]]]]
 
 :: pattypuz2
 $player: Wait, your sack! That could work, I think.
+(link: "continue")[
 $p: Pardon? No! We ain't usin' this. We should just wait to see what the boys find.
+(link: "continue")[
 $player: Alright, don't worry, I won't make you do anything that you don't want to... You know, you never did say why you're bringing it around everywhere. Could you tell me?  
+(link: "continue")[
 $p: ...
+(link: "continue")[
 $p: It's for my young'uns back home. Y'know, if there's one way that I can redeem myself for bein' gone for so long, 
 it's by bringin' this back to them. That's the least I can do.
 [[Encourage her to face reality|pattypuz2_0]]
-[[Remind her of your plans to escape|pattypuz2_1]]
+[[Remind her of your plans to escape|pattypuz2_1]]]]]]
 
 :: pattypuz2_0
 $player: How long has it been since you were brought here?
+(link: "continue")[
 $p: Don't. I know where you're goin' with that thought... Hell, I think about it all the time, too. But even if they're already gone, 
 I still have to hope. How else am I supposed to keep goin'?
+(link: "continue")[
 $player: Ah... I'm sorry. Forget I asked, then.
 (set: $pattyNegotiation to "failure")
-[[Continue|pattypuz3]]
+[[Continue|pattypuz3]]]]
 
 
 :: pattypuz2_1
 $player: You remember why we're here, right?
+(link: "continue")[
 $player: There's a great, big forest out there. It's bound to have a lot more food in it than we get here, and I'd bet that that food is much better, too. 
 We just have to escape in order to get to it.
+(link: "continue")[
 $p: What're you sayin'? You think it's worth it to sacrifice what I've already got just 'cause I could get more later?
-$player: I think it's worth considering, at least. I know it's asking a lot, but we've all sacrificed or lost things already, haven't we?
+(link: "continue")[
+[[Just think about it|pp7]]]]]
+
+:: pp7
+$player: I think it's worth considering, at least. I know I'm asking a lot, but we've all sacrificed or lost things already, haven't we?
+(link: "continue")[
 $player: You were taken from your family. The scientist blinded me. I'm sure $e and $f have lost things of their own as well. But, now we have a chance.
+(link: "continue")[
 $player: Food is replaceable. Our lives aren't, and I want all of us to get out alive, obviously. If $e and $f aren't able to find anything, 
 I hope you'll consider letting us use your sack. We can't leave anyone behind, after all.
+(link: "continue")[
+[[Patty?|pp8]]]]]
+
+:: pp8
 $n: Patty is silent for several moments while she ruminates over your words.
+(link: "continue")[
 $p: Fine. I'll think about it.
 (set: $pattyNegotiation to "success")
-[[Continue|pattypuz3]]
+[[Continue|pattypuz3]]]
 
 :: pattypuz3
 (if: $pattyNegotiation is "success")[
     $n: Some time later, you hear the swish of footsteps and wings as $e and $f return.
-    $f: Hey, $player. Sorry, we searched everywhere we could, but we couldn't find anything.
+    (link: "continue")[
+
+    $f: Hey, $playername. Sorry, we searched everywhere we could, but we couldn't find anything.
+    (link: "continue")[
+
     $player: Damn.
+    (link: "continue")[
+
     $n: You hear $p sigh.
+    [[What?|pp9]]]]]
+
+:: pp9
     $p: Alright, fine. Here, you can use my sack.
+    (link: "continue")[
     $player: You're sure?
+    (link: "continue")[
     $p: Yes. Now hurry up, before I change my mind.
+    (link: "continue")[
     $player: Okay. Thank you, $p. $f, can you take her sack and put it on the pressure plate?
+    [[continue|pp10]]]]]
+
+:: pp10
     $n: $p hands her sack to $f, who deftly places it on the pressure plate as you scurry off. Not a moment later, you hear the whir of machinery as the door opens.
+    (link: "continue")[
     $player: Alright, that worked. Let's keep going, then.
-]
+    [[Proceed|pattypuz4]]]]
 (if: $pattyNegotiation is "failure")[
     $n: Some time later, you hear the swish of footsteps and wings as $e and $f return.
-    $f: We found something that might work. Step aside, $player. We'll see if it's heavy enough or not.
+    (link: "continue")[
+    $f: We found something that might work. Step aside, $playername. We'll see if it's heavy enough or not.
+    (link: "continue")[
     $n: You scurry off of the pressure plate while $f hefts an object onto the plate. It makes a loud clunk as he drops it, and not a moment later, 
     you hear the whir of machinery as the door opens.
+    (link: "continue")[
     $p: See? That did the trick. You didn't even need my sack for that, $player. You should've had a bit more faith in them.
     (set: $patty_faith = $patty_faith - 1)
-]
-[[Continue|pattypuz4]]
+    [[Continue|pattypuz4]]]]]]
 
 
 :: pattypuz4
 $n: You pass through the opened door unimpeded, and emerge in a large, open, cylindrical room. There is a great downdraft in the room, 
 coming from what you can only assume is high above, and this prompts $e to squawk indignantly.
+(link: "continue")[
 $e: Here would be too dangerous to fly; I would rather not die!
+(link: "continue")[
 $n: I mean, how dangerous could it really be? You can't know until you try right? 
+(link: "continue")[
 $player: Alright, what are we looking at in here?
+[[What your squirrel eyes see?|pp11]]]]]
+
+:: pp11
 $p: This whole room's a great, big circle.
+(link: "continue")[
 $f: There isn't a ceiling here. I can see the sky, but there's that strange wind...
+(link: "continue")[
 $p: Looks like the exit's over there. It's another metal door. I'll go check it out.
+(link: "continue")[
 $n: $p patters off towards the closed door.
+[[Is there anything else?|pp12]]]]]
+
+:: pp12
 $f: There's something in the middle of the room, too. Some kind of raised platform, I think—no, it's almost like a desk.
+(link: "continue")[
 $player: Do you think we can get up there?
+(link: "continue")[
 $f: I can climb up it and carry you.
-[[Head up|pattypuz6]]
+[[Head up|pattypuz6]]]]
 
 
 :: pattypuz6
 $player: Alright, let's go there.
+(link: "continue")[
 $n: $f carries you up onto the desk in the middle of the room.
-$f: Okay. There are six buttons here. Two red, two green, two blue.
+(link: "continue")[
+$f: Okay. There are (text-color:#e9c901)[six buttons here]. Two (text-color:red)[red], two (text-color:green)[green], two (text-color:blue)[blue].
+(link: "continue")[
 $n: Before you can pursue any further line of thought, $p returns, scurrying up to join you and $f on the desk. 
 Her squeaky “Hmm” sound contains a mother's concentrated, unimpressed energy. I don't like it. 
+[[What is it Patty?|pp13]]]]]
+
+:: pp13
 $p: Don't tell me y'all haven't noticed that long pipe spirallin' up all of them walls.
+(link: "continue")[
 $player: A pipe?
+(link: "continue")[
 $p: Yup. There's a long pipe windin' up the walls. I noticed it ends near the exit, but it looks like it's broken in some places.
+(link: "continue")[
 $player: What do you mean?
+[[A pipe?|pp14]]]]]
+
+:: pp14
 $p: Some of them pieces ain't connected to each other, though they're still stuck to the wall. Do you reckon they have something to do with how we're supposed to continue?
+(link: "continue")[
 $player: Now that you mention it, they might... Is there anything else that you two notice about the room?
+(link: "continue")[
 $f: No, aside from the fact that we can see the sky. The pipes don't come close to reaching that far, though.
+(link: "continue")[
 $player: Alright...
 [[Ask about the pipes again|pattypuz6_0]]
-[[Examine the buttons|pattypuz6_1]]
+[[Examine the buttons|pattypuz6_1]]]]]
 (set: $pattypuzButtonsUnlocked to 0)
 (set: $pattyupperrotation to 2)
 (set: $pattymidrotation to 5)
@@ -161,30 +271,33 @@ $player: Alright...
 
 :: pattypuz6_0
 $player: $p, you said that there are some pipes that aren't connected to any others?
+(link: "continue")[
 $p: That's right. There's three of 'em.
+(link: "continue")[
 $player: Three of them? Hm...
 [[Examine the buttons|pattypuz6_1]]
 (if: $pattypuzButtonsUnlocked is 1)[
-[[Press a button|pattypuz6_2]]]
+[[Press a button|pattypuz6_2]]]]]
 
 
 :: pattypuz6_1
 $n: Even without your sight, you manage to find the buttons fairly quickly. They don't feel all that different from the ones that you pressed 
 during your ill-fated excursion with $b, though that information isn't all that helpful. As far as you can tell, they are arranged in a rectangle.
+(link: "continue")[
 $n: You recall the fact that there are six buttons total, divided equally into three colours.
 (set: $pattypuzButtonsUnlocked to 1)
 [[Ask about the pipes again|pattypuz6_0]]
-[[Press a button|pattypuz6_2]]
+[[Press a button|pattypuz6_2]]]
 
 
 :: pattypuz6_2
-Which colour button would you like to press?
+//Which colour button would you like to press?//
 [[Red|pattyRed]]
 [[Green|pattyGreen]]
 [[Blue|pattyBlue]]
 
 :: pattyRed
-Which button do you press?
+//Which button do you press?//
 [[Left|pattyRedccw]]
 [[Right|pattyRedcw]]
 
@@ -193,7 +306,7 @@ Which button do you press?
     (display: "pattyRedccwShort")
 ] (else:) [
     (set: $pattypuzRot to "ccw")
-    How long do you press the button for?
+    //How long do you press the button for?//
     [[Long|pattyRedccwLong]]
     [[Short|pattyRedccwShort]]
 ]
@@ -226,7 +339,7 @@ Which button do you press?
 
 
 :: pattyGreen
-Which button do you press?
+//Which button do you press?//
 [[Left|pattyGreenccw]]
 [[Right|pattyGreencw]]
 
@@ -235,7 +348,7 @@ Which button do you press?
     (display: "pattyGreenccwShort")
 ] (else:) [
     (set: $pattypuzRot to "ccw")
-    How long do you press the button for?
+    //How long do you press the button for?//
     [[Long|pattyGreenccwLong]]
     [[Short|pattyGreenccwShort]]
 ]

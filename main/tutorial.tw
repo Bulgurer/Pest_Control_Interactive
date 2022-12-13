@@ -71,7 +71,7 @@ $b: Wow! That's a weird name! $playerName, nice to meet you!
 $n: Rumblings from the giant door across the room interrupt you.
 (link: "continue")[
 $b: Shhhh! Don't let him hear you speak! 
-The other others didn't come back when he heard them!
+The others didn't come back when he heard them!
 (link: "continue")[
 $n: $b runs out of his bed of paper scraps and goes quiet.
 [[continue|tut22]]]]]
