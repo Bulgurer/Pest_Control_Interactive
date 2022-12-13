@@ -129,9 +129,9 @@ $f: Kid, another word has filled in. It now says:
 (text-color:#991414)[//BEEEHHH BEEEHHH BEEEHHH//] rings throughout the room and beyond. 
 $f: Damn it. I knew there was no getting out of here. Let's go, you two. 
 
-$p: Run, [$player]! 
+$p: Run, $playerName! 
 
-$e: Sir [$player], goodbye! It was a valiant try!
+$e: Sir $playerName, goodbye! It was a valiant try!
 
 //$player hear the three of them scurry off before you can respond. $player turn around, trying to follow their scents when you hear. //
 //MEEEOOORRRROOWW//
@@ -224,7 +224,7 @@ $e: Keep running, you daft squirrel! We can't help him now! Why is the doorway s
 :: end2_1
 $e sighs. Wait, I don't like where this is going. Don't you dare, you sonofabitch 
 (link: "continue")[
-$e: $p, take sir [$player]. Get you both outside.
+$e: $p, take sir $playerName. Get you both outside.
 (link: "No!")[
 [$player]: $e, what are you doing?! Leave me behind! 
 (link: "continue")[
@@ -247,7 +247,7 @@ $player and $p continue running for dear life. $player can feel heat rising, clo
 :: end2_3
 $m: I ….Have ..You ..Now. 
 (link: "continue")[
-$p: I'm sorry we didn't have faith in you [$player]. None of us thought you could open that last door. Keep runnin straight. I'll take care of him and meet you out there. 
+$p: I'm sorry we didn't have faith in you, $playerName. None of us thought you could open that last door. Keep runnin straight. I'll take care of him and meet you out there. 
 
 $n: Oh god, damn it, not her too.   
 (link: "We can get out together!")[
