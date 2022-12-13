@@ -469,7 +469,7 @@ $n: You recall the fact that there are **six** buttons total, divided equally in
     [[Continue|pattypuz6_2]]]]]]]
 ] (else:) [
     (unless: $pattylowerrotation is 3)[
-        (if: $pattylowerrotation < 1)[
+        <!--(if: $pattylowerrotation < 1)[
             (if: $pattypuzRot is "ccw")[
                 $p: Oh! That bottom pipe looked connected for a second, 
                 but it rotated past where it should've been.
@@ -483,7 +483,9 @@ $n: You recall the fact that there are **six** buttons total, divided equally in
             ] (else:)[
                 $p:That bottom pipe rotated some, but it still don't look connected.
             ]
-        ]
+        ]-->
+        (set: $pattylowDif = 3 - $pattylowerrotation)
+        $p: Looks like we're off by $pattylowDif quarter turns!
         [[Continue|pattypuz6_2]]
     ] (else:) [
         $p: The bottom pipe looks connected now!
@@ -515,7 +517,7 @@ $n: You recall the fact that there are **six** buttons total, divided equally in
     [[Continue|pattypuz6_2]]]]]]]]
 ] (else:) [
     (unless: $pattymidrotation is 0)[
-        (if: $pattymidrotation < 2)[
+        <!--(if: $pattymidrotation < 2)[
             (if: $pattypuzRot is "ccw")[
                 $p: Oh! That middle pipe looked connected for a second, 
                 but it rotated past where it should've been.
@@ -529,7 +531,9 @@ $n: You recall the fact that there are **six** buttons total, divided equally in
             ] (else:)[
                 $p:That middle pipe rotated some, but it still don't look connected.
             ]
-        ]
+        ]-->
+        (set: $pattymidDif = 0 + $pattymidrotation)
+        $p: Looks like we're off by $pattymidDif quarter turns!
         [[Continue|pattypuz6_2]]
     ] (else:) [
         $p: The middle pipe looks connected now!
@@ -561,7 +565,7 @@ $n: You recall the fact that there are **six** buttons total, divided equally in
     [[Continue|pattypuz6_2]]]]]]]]
 ] (else:) [
     (unless: $pattyupperrotation is 3)[
-        (if: $pattyupperrotation < 1)[
+        <!--(if: $pattyupperrotation < 1)[
             (if: $pattypuzRot is "ccw")[
                 $p: Oh! That highest pipe looked connected for a second, 
                 but it rotated past where it should've been.
@@ -575,7 +579,9 @@ $n: You recall the fact that there are **six** buttons total, divided equally in
             ] (else:)[
                 $p:That highest pipe rotated some, but it still don't look connected.
             ]
-        ]
+        ]-->
+        (set: $pattyupperDif = 3 - $pattyupperrotation)
+        $p: Looks like we're off by $pattyupperDif quarter turns!
         [[Continue|pattypuz6_2]]
     ] (else:) [
         $p The highest pipe looks connected now!
