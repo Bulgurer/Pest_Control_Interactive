@@ -413,8 +413,8 @@ $n: You recall the fact that there are **six** buttons total, divided equally in
 
 :: pattyBlueccwLong
 (set: $pattyupperrotation to it - 2)
-(if: $pattylowerrotaton < 0)[
-    (set: $pattylowerrotation = $pattylowerrotation + 4)
+(if: $pattyupperrotaton < 0)[
+    (set: $pattyupperrotation = $pattyupperrotation + 4)
 ]
 (display: "pattyResultsBlue")
 
