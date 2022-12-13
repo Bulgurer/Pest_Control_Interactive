@@ -125,7 +125,7 @@ I still have to hope. How else am I supposed to keep goin'?
 (link: "continue")[
 $player: Ah... I'm sorry. Forget I asked, then.
 (set: $pattyNegotiation to "failure")
-[[Continue|pattypuz3]]]]
+[[Continue|pp10]]]]
 
 
 :: pattypuz2_1
@@ -180,10 +180,11 @@ $p: Fine. I'll think about it.
     [[continue|pp10]]]]]
 
 :: pp10
+(if: $pattyNegotiation is "success")[
     $n: $p hands her sack to $f, who deftly places it on the pressure plate as you scurry off. Not a moment later, you hear the whir of machinery as the door opens.
     (link: "continue")[
     $player: Alright, that worked. Let's keep going, then.
-    [[Proceed|pattypuz4]]]
+    [[Proceed|pattypuz4]]]]
 (if: $pattyNegotiation is "failure")[
     $n: Some time later, you hear the swish of footsteps and wings as $e and $f return.
     (link: "continue")[
