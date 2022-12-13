@@ -118,7 +118,7 @@ is $cTubeL//
  (if: $weightChoice is &quot;large weight&quot; and ($tubeChoice is &quot;red side of U-shaped tube&quot; or $tubeChoice is &quot;blue side of U-shaped tube&quot;))[(go-to: &quot;lwct&quot;)]
  (if: $weightChoice is &quot;small weight&quot; and $tubeChoice is &quot;wide tube&quot;)[(go-to: &quot;swwt&quot;)]
  (if: $weightChoice is &quot;small weight&quot; and ($tubeChoice is &quot;red side of U-shaped tube&quot; or $tubeChoice is &quot;blue side of U-shaped tube&quot;))[(go-to: &quot;swct&quot;)]
- (if: $weightChoice is &quot;use the plunger&quot; and ($tubeChoice is &quot;blue side of U-shaped tube&quot; or $tubeChoice is &quot;wide tube&quot; or $tubeChoice is &quot;narrow tube&quot;))[(go-to: plwc)]
+ (if: $weightChoice is &quot;use the plunger&quot; and ($tubeChoice is &quot;blue side of U-shaped tube&quot; or $tubeChoice is &quot;wide tube&quot; or $tubeChoice is &quot;narrow tube&quot;))[(go-to: &quot;plwc&quot;)]
  }</tw-passagedata><tw-passagedata pid="13" name="swwt" tags="" position="350,225" size="100,100">$n: You hear a //clink// as $e drops the small weight into the wide tube.
 $e: With this weight the water barely rises, perhaps we should try weights of other sizes!
 [[Maybe you should put another one in?|mistake]]</tw-passagedata><tw-passagedata pid="14" name="mistake" tags="" position="475,225" size="100,100">(if: $numMistakes &lt; 1)[
@@ -195,7 +195,7 @@ $e picks up the three of you one by one, scoffing as he picks you up, not even b
 (set: $edgarDone to true)
 
 &lt;!--When the puzzle is solved:--&gt;</tw-passagedata><tw-passagedata pid="23" name="ePuzzWin" tags="" position="350,350" size="100,100">$e: That is the last one! Thanks to your directions we have won!
-{set: $edgar_faith = $edgar_faith + 1 
+{(set: $edgar_faith = $edgar_faith + 1)
 //$player have gained some of $e(text-color:#8c0088)[&#39;s] trust//
 }
 $n: One and won, huh…. Is rhyming homophones lazy? I&#39;m gonna say yes. Stupid crow. 
@@ -1245,7 +1245,7 @@ by The Boys
     (set: $punknown to [(text-colour:#dfb300)[???]])
     (set: $eunknown to [(text-colour:#8c0088)[???]])
     (set: $bunknown  to [(css: &quot;color: green;&quot;)[???]])
-    (set: $cunknown to [(text-colour:c20000)[???]])
+    (set: $cunknown to [(text-colour:#c20000)[???]])
 
     (set: $lovely to [(text-color:#e84a75)[Lovely]])
     (set: $insolence to [(text-color:#d3d3af)[Insolence]])
@@ -1266,6 +1266,7 @@ by The Boys
     (set: $talkEdgar to false)
     (set: $pattyDone to false)
     (set: $fritzDone to false)
+    (set: $edgarDone to false)
 
     (set: $faithdm to (dm: 
         0, &quot;does not trust you&quot;,
@@ -1688,8 +1689,8 @@ $f: Come over here. The rooms seem to change whenever we fail and get brought ba
 [[Talk to Patty|posttut9-1]]
 [[Talk to Fritz|posttut9-2]]</tw-passagedata><tw-passagedata pid="168" name="postPuz" tags="" position="975,2100" size="100,100">//Who do you want to talk to before the next room?//
 {
-(if: $talkEdgar is false)[[[Talk to Edgar Allan Crow|posttut9-0]]](else: )[(text-style: &quot;strike&quot;)[Talk to Edgar Allan Crow]]
-(if: $talkPatty is false)[[[Talk to Patty|posttut9-1]]](else: )[(text-style: &quot;strike&quot;)[Talk to Patty]]
+(if: $talkEdgar is false)[[[Talk to Edgar Allan Crow|posttut9-0]]](else: )[(text-style: &quot;strike&quot;)[Talk to Edgar Allan Crow]]&lt;br&gt;
+(if: $talkPatty is false)[[[Talk to Patty|posttut9-1]]](else: )[(text-style: &quot;strike&quot;)[Talk to Patty]]&lt;br&gt;
 (if: $talkFritz is false)[[[Talk to Fritz|posttut9-2]]](else: )[(text-style: &quot;strike&quot;)[Talk to Fritz]]
 }
 &lt;!-- EDGAR OPTION STARTS HERE --&gt;</tw-passagedata><tw-passagedata pid="169" name="posttut9-0" tags="" position="1100,2100" size="100,100">{(set: $talkEdgar to true)
@@ -1738,10 +1739,9 @@ $e: I look forward to seeing the sky once again. Being stuck in this limited spa
     (if: $pattyDone is false)[[Proceed to puzzle|pattypuz0]]
     (if: $pattyDone is true and $fritzDone is false)[[Proceed to puzzle|fritzpuz0]]
     (if: $fritzDone is true and $edgarDone is false)[[Proceed to puzzle|ePuzz]]
-    (if: $edgarDone is true)[[[Proceed to puzzle|finalPuz0]]]
 }]]
 &lt;!-- PATTY OPTION STARTS HERE --&gt;</tw-passagedata><tw-passagedata pid="176" name="posttut9-1" tags="" position="725,2225" size="100,100">{(set: $talkPatty to true)
-}$n: Great, (text-colour: red+white)[Patty&#39;s] cool. You&#39;ll like $p. Just don&#39;t ask for any of her foo-
+}$n: Great, (text-colour:#dfb300)[Patty&#39;s] cool. You&#39;ll like $p. Just don&#39;t ask for any of her foo-
 (link: &quot;Man I&#39;m hungry&quot;)[
 $player: Hey $p, I haven&#39;t eaten at all since I first woke up. May I have some of that food you keep carrying around?
 (link: &quot;continue&quot;)[
@@ -1785,7 +1785,6 @@ $p: Ain&#39;t no problem, friend!
     (if: $pattyDone is false)[[Proceed to puzzle|pattypuz0]]
     (if: $pattyDone is true and $fritzDone is false)[[Proceed to puzzle|fritzpuz0]]
     (if: $fritzDone is true and $edgarDone is false)[[Proceed to puzzle|ePuzz]]
-    (if: $edgarDone is true)[[[Proceed to puzzle|finalPuz0]]]
 }]]
 
 &lt;!-- FRITZ OPTION STARTS HERE --&gt;</tw-passagedata><tw-passagedata pid="183" name="posttut9-2" tags="" position="350,2350" size="100,100">{(set: $talkFritz to true)
@@ -1830,7 +1829,6 @@ $f: See that $player don&#39;t kid, we&#39;re putting a lot of trust in $player 
     (if: $pattyDone is false)[[Proceed to puzzle|pattypuz0]]
     (if: $pattyDone is true and $fritzDone is false)[[Proceed to puzzle|fritzpuz0]]
     (if: $fritzDone is true and $edgarDone is false)[[Proceed to puzzle|ePuzz]]
-    (if: $edgarDone is true)[[[Proceed to puzzle|finalPuz0]]]
 }]]</tw-passagedata><tw-passagedata pid="189" name="test" tags="" position="1100,2350" size="100,100">j k e 
 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;f
 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;g l m n o

@@ -100,8 +100,8 @@ $f: Come over here. The rooms seem to change whenever we fail and get brought ba
 :: postPuz
 //Who do you want to talk to before the next room?//
 {
-(if: $talkEdgar is false)[[[Talk to Edgar Allan Crow|posttut9-0]]](else: )[(text-style: "strike")[Talk to Edgar Allan Crow]]
-(if: $talkPatty is false)[[[Talk to Patty|posttut9-1]]](else: )[(text-style: "strike")[Talk to Patty]]
+(if: $talkEdgar is false)[[[Talk to Edgar Allan Crow|posttut9-0]]](else: )[(text-style: "strike")[Talk to Edgar Allan Crow]]<br>
+(if: $talkPatty is false)[[[Talk to Patty|posttut9-1]]](else: )[(text-style: "strike")[Talk to Patty]]<br>
 (if: $talkFritz is false)[[[Talk to Fritz|posttut9-2]]](else: )[(text-style: "strike")[Talk to Fritz]]
 }
 <!-- EDGAR OPTION STARTS HERE -->
@@ -171,13 +171,12 @@ $e: I look forward to seeing the sky once again. Being stuck in this limited spa
     (if: $pattyDone is false)[[Proceed to puzzle|pattypuz0]]
     (if: $pattyDone is true and $fritzDone is false)[[Proceed to puzzle|fritzpuz0]]
     (if: $fritzDone is true and $edgarDone is false)[[Proceed to puzzle|ePuzz]]
-    (if: $edgarDone is true)[[[Proceed to puzzle|finalPuz0]]]
 }]]
 <!-- PATTY OPTION STARTS HERE -->
 
 :: posttut9-1
 {(set: $talkPatty to true)
-}$n: Great, (text-colour: red+white)[Patty's] cool. You'll like $p. Just don't ask for any of her foo-
+}$n: Great, (text-colour:#dfb300)[Patty's] cool. You'll like $p. Just don't ask for any of her foo-
 (link: "Man I'm hungry")[
 $player: Hey $p, I haven't eaten at all since I first woke up. May I have some of that food you keep carrying around?
 (link: "continue")[
@@ -239,7 +238,6 @@ $p: Ain't no problem, friend!
     (if: $pattyDone is false)[[Proceed to puzzle|pattypuz0]]
     (if: $pattyDone is true and $fritzDone is false)[[Proceed to puzzle|fritzpuz0]]
     (if: $fritzDone is true and $edgarDone is false)[[Proceed to puzzle|ePuzz]]
-    (if: $edgarDone is true)[[[Proceed to puzzle|finalPuz0]]]
 }]]
 
 <!-- FRITZ OPTION STARTS HERE -->
@@ -302,7 +300,6 @@ $f: See that $player don't kid, we're putting a lot of trust in $player here.
     (if: $pattyDone is false)[[Proceed to puzzle|pattypuz0]]
     (if: $pattyDone is true and $fritzDone is false)[[Proceed to puzzle|fritzpuz0]]
     (if: $fritzDone is true and $edgarDone is false)[[Proceed to puzzle|ePuzz]]
-    (if: $edgarDone is true)[[[Proceed to puzzle|finalPuz0]]]
 }]]
 
 

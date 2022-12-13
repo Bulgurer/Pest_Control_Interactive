@@ -34,7 +34,7 @@ by The Boys
     (set: $punknown to [(text-colour:#dfb300)[???]])
     (set: $eunknown to [(text-colour:#8c0088)[???]])
     (set: $bunknown  to [(css: "color: green;")[???]])
-    (set: $cunknown to [(text-colour:c20000)[???]])
+    (set: $cunknown to [(text-colour:#c20000)[???]])
 
     (set: $lovely to [(text-color:#e84a75)[Lovely]])
     (set: $insolence to [(text-color:#d3d3af)[Insolence]])
@@ -55,6 +55,7 @@ by The Boys
     (set: $talkEdgar to false)
     (set: $pattyDone to false)
     (set: $fritzDone to false)
+    (set: $edgarDone to false)
 
     (set: $faithdm to (dm: 
         0, "does not trust you",

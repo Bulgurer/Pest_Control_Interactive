@@ -141,7 +141,7 @@ is $cTubeL//
  (if: $weightChoice is "large weight" and ($tubeChoice is "red side of U-shaped tube" or $tubeChoice is "blue side of U-shaped tube"))[(go-to: "lwct")]
  (if: $weightChoice is "small weight" and $tubeChoice is "wide tube")[(go-to: "swwt")]
  (if: $weightChoice is "small weight" and ($tubeChoice is "red side of U-shaped tube" or $tubeChoice is "blue side of U-shaped tube"))[(go-to: "swct")]
- (if: $weightChoice is "use the plunger" and ($tubeChoice is "blue side of U-shaped tube" or $tubeChoice is "wide tube" or $tubeChoice is "narrow tube"))[(go-to: plwc)]
+ (if: $weightChoice is "use the plunger" and ($tubeChoice is "blue side of U-shaped tube" or $tubeChoice is "wide tube" or $tubeChoice is "narrow tube"))[(go-to: "plwc")]
  }
  
 :: swwt
@@ -248,7 +248,7 @@ $e picks up the three of you one by one, scoffing as he picks you up, not even b
 <!--When the puzzle is solved:-->
 :: ePuzzWin
 $e: That is the last one! Thanks to your directions we have won!
-{set: $edgar_faith = $edgar_faith + 1 
+{(set: $edgar_faith = $edgar_faith + 1)
 //$player have gained some of $e(text-color:#8c0088)['s] trust//
 }
 $n: One and won, huh…. Is rhyming homophones lazy? I'm gonna say yes. Stupid crow. 
