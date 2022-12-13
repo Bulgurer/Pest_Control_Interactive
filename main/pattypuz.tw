@@ -52,7 +52,7 @@ $n: You approach the door and press your tiny rat hands against it. As expected,
 [[Talk to companions|pattypuz1_1]]
 
 :: pattypuz1_1
-$player: Hey, Patty, what did you do right before the door closed again?
+$player: Hey, $p, what did you do right before the door closed again?
 (link: "continue")[
 $p: Me? I stepped off of this ground button here.
 (link: "continue")[
@@ -85,7 +85,7 @@ $player: I guess I'm not heavy enough to open it. Makes sense.
     $player: Good to know. Thanks, Patty.
     (link: "continue")[
     $p: No problem!
-]]]]
+]]]]]
 [[So what do you do?|pp5]]
 
 :: pp5
@@ -171,7 +171,7 @@ $p: Fine. I'll think about it.
     (link: "continue")[
 
     $n: You hear $p sigh.
-    [[What?|pp9]]]]]
+    [[What?|pp9]]]]]]
 
 :: pp9
     $p: Alright, fine. Here, you can use my sack.
@@ -187,7 +187,7 @@ $p: Fine. I'll think about it.
     $n: $p hands her sack to $f, who deftly places it on the pressure plate as you scurry off. Not a moment later, you hear the whir of machinery as the door opens.
     (link: "continue")[
     $player: Alright, that worked. Let's keep going, then.
-    [[Proceed|pattypuz4]]]]
+    [[Proceed|pattypuz4]]]
 (if: $pattyNegotiation is "failure")[
     $n: Some time later, you hear the swish of footsteps and wings as $e and $f return.
     (link: "continue")[
@@ -196,7 +196,7 @@ $p: Fine. I'll think about it.
     $n: You scurry off of the pressure plate while $f hefts an object onto the plate. It makes a loud clunk as he drops it, and not a moment later, 
     you hear the whir of machinery as the door opens.
     (link: "continue")[
-    $p: See? That did the trick. You didn't even need my sack for that, $player. You should've had a bit more faith in them.
+    $p: See? That did the trick. You didn't even need my sack for that, $playername. You should've had a bit more faith in them.
     (set: $patty_faith = $patty_faith - 1)
     [[Continue|pattypuz4]]]]]]
 
@@ -312,18 +312,20 @@ $n: You recall the fact that there are **six** buttons total, divided equally in
 ]
 
 :: pattyRedccwLong
-(set: $pattylowerrotation to it - 2)
-(if: $pattylowerrotaton < 0)[
+{
+(set: $pattylowerrotation = $pattylowerrotation - 2)
+(if: ($pattylowerrotation < 0))[
     (set: $pattylowerrotation = $pattylowerrotation + 4)
 ]
-(display: "pattyResultsRed")
+}(display: "pattyResultsRed")
 
 :: pattyRedccwShort
+{
 (set: $pattylowerrotation to it - 1)
-(if: $pattylowerrotaton < 0)[
+(if: $pattylowerrotation < 0)[
     (set: $pattylowerrotation = $pattylowerrotation + 4)
 ]
-(display: "pattyResultsRed")
+}(display: "pattyResultsRed")
 
 :: pattyRedcw
 (if: $pattypuzFirstTime is 1)[
@@ -362,18 +364,20 @@ $n: You recall the fact that there are **six** buttons total, divided equally in
 ]
 
 :: pattyGreenccwLong
+{
 (set: $pattymidrotation to it - 2)
 (if: $pattymidrotation < 0)[
     (set: $pattymidrotation = $pattymidrotation + 4)
 ]
-(display: "pattyResultsGreen")
+}(display: "pattyResultsGreen")
 
 :: pattyGreenccwShort
+{
 (set: $pattymidrotation to it - 1)
 (if: $pattymidrotation < 0)[
     (set: $pattymidrotation = $pattymidrotation + 4)
 ]
-(display: "pattyResultsGreen")
+}(display: "pattyResultsGreen")
 
 :: pattyGreencw
 (if: $pattypuzFirstTime is 1)[
@@ -413,17 +417,19 @@ $n: You recall the fact that there are **six** buttons total, divided equally in
 
 :: pattyBlueccwLong
 (set: $pattyupperrotation to it - 2)
-(if: $pattyupperrotaton < 0)[
+{
+(if: $pattyupperrotation < 0)[
     (set: $pattyupperrotation = $pattyupperrotation + 4)
 ]
-(display: "pattyResultsBlue")
+}(display: "pattyResultsBlue")
 
 :: pattyBlueccwShort
+{
 (set: $pattyupperrotation to it - 1)
 (if: $pattyupperrotation < 0)[
     (set: $pattyupperrotation = $pattyupperrotation + 4)
 ]
-(display: "pattyResultsBlue")
+}(display: "pattyResultsBlue")
 
 :: pattyBluecw
 (if: $pattypuzFirstTime is 1)[
@@ -607,7 +613,7 @@ $n: You recall the fact that there are **six** buttons total, divided equally in
 :: pattypuzEnd0
 $player: Is that it? Are all the pipes connected now?
 (link: "continue")[
-$p: That they are! Thanks for figuring that out, $player.
+$p: That they are! Thanks for figuring that out, $playername.
 (link: "continue")[
 $player: Hey, since you're the fastest runner out of all of us, and you helped out so much, do you want to go see what's at the top?
 (link: "continue")[

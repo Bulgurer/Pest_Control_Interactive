@@ -1309,7 +1309,7 @@ A chorus of yelps fills the air. Was that $e swearing? Did he rhyme it? He bette
 [[Talk to companions|pattypuz1_1]]
 [[Examine the door|pattypuz1_2]]]</tw-passagedata><tw-passagedata pid="120" name="pattypuz1_2" tags="" position="1225,1475" size="100,100">$n: You approach the door and press your tiny rat hands against it. As expected, it does not budge. Maybe you should try something else.
 [[Go back to the pressure plate|pattypuz1_0]]
-[[Talk to companions|pattypuz1_1]]</tw-passagedata><tw-passagedata pid="121" name="pattypuz1_1" tags="" position="100,1600" size="100,100">$player: Hey, Patty, what did you do right before the door closed again?
+[[Talk to companions|pattypuz1_1]]</tw-passagedata><tw-passagedata pid="121" name="pattypuz1_1" tags="" position="100,1600" size="100,100">$player: Hey, $p, what did you do right before the door closed again?
 (link: &quot;continue&quot;)[
 $p: Me? I stepped off of this ground button here.
 (link: &quot;continue&quot;)[
@@ -1336,7 +1336,7 @@ of the floor changes, and you quickly conclude that you are now standing on top 
     $player: Good to know. Thanks, Patty.
     (link: &quot;continue&quot;)[
     $p: No problem!
-]]]]
+]]]]]
 [[So what do you do?|pp5]]</tw-passagedata><tw-passagedata pid="124" name="pp5" tags="" position="475,1600" size="100,100">$n: You sniff the air and sigh.
 (link: &quot;continue&quot;)[
 $player: I think we need to put something heavy on this to keep the door open. Obviously, it can&#39;t be one of us, but I&#39;m not sure about our other options.
@@ -1397,7 +1397,7 @@ $p: Fine. I&#39;ll think about it.
     (link: &quot;continue&quot;)[
 
     $n: You hear $p sigh.
-    [[What?|pp9]]]]]</tw-passagedata><tw-passagedata pid="132" name="pp9" tags="" position="225,1725" size="100,100">$p: Alright, fine. Here, you can use my sack.
+    [[What?|pp9]]]]]]</tw-passagedata><tw-passagedata pid="132" name="pp9" tags="" position="225,1725" size="100,100">$p: Alright, fine. Here, you can use my sack.
     (link: &quot;continue&quot;)[
     $player: You&#39;re sure?
     (link: &quot;continue&quot;)[
@@ -1407,7 +1407,7 @@ $p: Fine. I&#39;ll think about it.
     [[continue|pp10]]]]]</tw-passagedata><tw-passagedata pid="133" name="pp10" tags="" position="350,1725" size="100,100">$n: $p hands her sack to $f, who deftly places it on the pressure plate as you scurry off. Not a moment later, you hear the whir of machinery as the door opens.
     (link: &quot;continue&quot;)[
     $player: Alright, that worked. Let&#39;s keep going, then.
-    [[Proceed|pattypuz4]]]]
+    [[Proceed|pattypuz4]]]
 (if: $pattyNegotiation is &quot;failure&quot;)[
     $n: Some time later, you hear the swish of footsteps and wings as $e and $f return.
     (link: &quot;continue&quot;)[
@@ -1416,7 +1416,7 @@ $p: Fine. I&#39;ll think about it.
     $n: You scurry off of the pressure plate while $f hefts an object onto the plate. It makes a loud clunk as he drops it, and not a moment later, 
     you hear the whir of machinery as the door opens.
     (link: &quot;continue&quot;)[
-    $p: See? That did the trick. You didn&#39;t even need my sack for that, $player. You should&#39;ve had a bit more faith in them.
+    $p: See? That did the trick. You didn&#39;t even need my sack for that, $playername. You should&#39;ve had a bit more faith in them.
     (set: $patty_faith = $patty_faith - 1)
     [[Continue|pattypuz4]]]]]]</tw-passagedata><tw-passagedata pid="134" name="pattypuz4" tags="" position="475,1725" size="100,100">$n: You pass through the opened door unimpeded, and emerge in a large, open, cylindrical room. There is a great downdraft in the room, 
 coming from what you can only assume is high above, and this prompts $e to squawk indignantly.
@@ -1491,15 +1491,17 @@ $n: You recall the fact that there are **six** buttons total, divided equally in
     //How long do you press the button for?//
     [[Long|pattyRedccwLong]]
     [[Short|pattyRedccwShort]]
-]</tw-passagedata><tw-passagedata pid="145" name="pattyRedccwLong" tags="" position="600,1850" size="100,100">(set: $pattylowerrotation to it - 2)
-(if: $pattylowerrotaton &lt; 0)[
+]</tw-passagedata><tw-passagedata pid="145" name="pattyRedccwLong" tags="" position="600,1850" size="100,100">{
+(set: $pattylowerrotation = $pattylowerrotation - 2)
+(if: ($pattylowerrotation &lt; 0))[
     (set: $pattylowerrotation = $pattylowerrotation + 4)
 ]
-(display: &quot;pattyResultsRed&quot;)</tw-passagedata><tw-passagedata pid="146" name="pattyRedccwShort" tags="" position="725,1850" size="100,100">(set: $pattylowerrotation to it - 1)
-(if: $pattylowerrotaton &lt; 0)[
+}(display: &quot;pattyResultsRed&quot;)</tw-passagedata><tw-passagedata pid="146" name="pattyRedccwShort" tags="" position="725,1850" size="100,100">{
+(set: $pattylowerrotation to it - 1)
+(if: $pattylowerrotation &lt; 0)[
     (set: $pattylowerrotation = $pattylowerrotation + 4)
 ]
-(display: &quot;pattyResultsRed&quot;)</tw-passagedata><tw-passagedata pid="147" name="pattyRedcw" tags="" position="850,1850" size="100,100">(if: $pattypuzFirstTime is 1)[
+}(display: &quot;pattyResultsRed&quot;)</tw-passagedata><tw-passagedata pid="147" name="pattyRedcw" tags="" position="850,1850" size="100,100">(if: $pattypuzFirstTime is 1)[
     (display: &quot;pattyRedcwShort&quot;)
 ] (else:) [
     (set: $pattypuzRot to &quot;cw&quot;)
@@ -1519,15 +1521,17 @@ $n: You recall the fact that there are **six** buttons total, divided equally in
     //How long do you press the button for?//
     [[Long|pattyGreenccwLong]]
     [[Short|pattyGreenccwShort]]
-]</tw-passagedata><tw-passagedata pid="152" name="pattyGreenccwLong" tags="" position="225,1975" size="100,100">(set: $pattymidrotation to it - 2)
+]</tw-passagedata><tw-passagedata pid="152" name="pattyGreenccwLong" tags="" position="225,1975" size="100,100">{
+(set: $pattymidrotation to it - 2)
 (if: $pattymidrotation &lt; 0)[
     (set: $pattymidrotation = $pattymidrotation + 4)
 ]
-(display: &quot;pattyResultsGreen&quot;)</tw-passagedata><tw-passagedata pid="153" name="pattyGreenccwShort" tags="" position="350,1975" size="100,100">(set: $pattymidrotation to it - 1)
+}(display: &quot;pattyResultsGreen&quot;)</tw-passagedata><tw-passagedata pid="153" name="pattyGreenccwShort" tags="" position="350,1975" size="100,100">{
+(set: $pattymidrotation to it - 1)
 (if: $pattymidrotation &lt; 0)[
     (set: $pattymidrotation = $pattymidrotation + 4)
 ]
-(display: &quot;pattyResultsGreen&quot;)</tw-passagedata><tw-passagedata pid="154" name="pattyGreencw" tags="" position="475,1975" size="100,100">(if: $pattypuzFirstTime is 1)[
+}(display: &quot;pattyResultsGreen&quot;)</tw-passagedata><tw-passagedata pid="154" name="pattyGreencw" tags="" position="475,1975" size="100,100">(if: $pattypuzFirstTime is 1)[
     (display: &quot;pattyGreencwShort&quot;)
 ] (else:)[
     (set: $pattypuzRot to &quot;cw&quot;)
@@ -1548,14 +1552,16 @@ $n: You recall the fact that there are **six** buttons total, divided equally in
     [[Long|pattyBlueccwLong]]
     [[Short|pattyBlueccwShort]]
 ]</tw-passagedata><tw-passagedata pid="159" name="pattyBlueccwLong" tags="" position="1100,1975" size="100,100">(set: $pattyupperrotation to it - 2)
-(if: $pattylowerrotaton &lt; 0)[
-    (set: $pattylowerrotation = $pattylowerrotation + 4)
-]
-(display: &quot;pattyResultsBlue&quot;)</tw-passagedata><tw-passagedata pid="160" name="pattyBlueccwShort" tags="" position="1225,1975" size="100,100">(set: $pattyupperrotation to it - 1)
+{
 (if: $pattyupperrotation &lt; 0)[
     (set: $pattyupperrotation = $pattyupperrotation + 4)
 ]
-(display: &quot;pattyResultsBlue&quot;)</tw-passagedata><tw-passagedata pid="161" name="pattyBluecw" tags="" position="100,2100" size="100,100">(if: $pattypuzFirstTime is 1)[
+}(display: &quot;pattyResultsBlue&quot;)</tw-passagedata><tw-passagedata pid="160" name="pattyBlueccwShort" tags="" position="1225,1975" size="100,100">{
+(set: $pattyupperrotation to it - 1)
+(if: $pattyupperrotation &lt; 0)[
+    (set: $pattyupperrotation = $pattyupperrotation + 4)
+]
+}(display: &quot;pattyResultsBlue&quot;)</tw-passagedata><tw-passagedata pid="161" name="pattyBluecw" tags="" position="100,2100" size="100,100">(if: $pattypuzFirstTime is 1)[
     (display: &quot;pattyBluecwShort&quot;)
 ] (else:)[
     (set: $pattypuzRot to &quot;cw&quot;)
@@ -1714,7 +1720,7 @@ $n: You recall the fact that there are **six** buttons total, divided equally in
     (display: &quot;pattypuz6_2&quot;)
 ]</tw-passagedata><tw-passagedata pid="168" name="pattypuzEnd0" tags="" position="975,2100" size="100,100">$player: Is that it? Are all the pipes connected now?
 (link: &quot;continue&quot;)[
-$p: That they are! Thanks for figuring that out, $player.
+$p: That they are! Thanks for figuring that out, $playername.
 (link: &quot;continue&quot;)[
 $player: Hey, since you&#39;re the fastest runner out of all of us, and you helped out so much, do you want to go see what&#39;s at the top?
 (link: &quot;continue&quot;)[
