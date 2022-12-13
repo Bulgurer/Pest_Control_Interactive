@@ -450,18 +450,23 @@ $n: You recall the fact that there are **six** buttons total, divided equally in
 (if: $pattypuzFirstTime is 1)[
     (set: $pattypuzFirstTime to 0)
     $n: You press the button, and abruptly, a whirring sound echoes through the room. You quickly retract your hand from the button.
+    (link: "continue")[
     $player: What happened?
+    (link: "continue")[
     $p: One of them broken pipes moved a quarter rotation.
     //If you press the button a short time, the pipe will move one quarter rotation. A long press will give you a half rotation.//
+    (link: "continue")[
     $player: Which one?
+    (link: "continue")[
     $p: The bottom one.
+    (link: "continue")[
     $player: Which direction did it move?
     (if: $pattypuzRot is "ccw")[
         $p: The left side went down.
     ] (else:) [
         $p: The right side went down.
     ]
-    [[Continue|pattypuz6_2]]
+    [[Continue|pattypuz6_2]]]]]]]
 ] (else:) [
     (unless: $pattylowerrotation is 3)[
         (if: $pattylowerrotation < 1)[
@@ -490,18 +495,24 @@ $n: You recall the fact that there are **six** buttons total, divided equally in
 (if: $pattypuzFirstTime is 1)[
     (set: $pattypuzFirstTime to 0)
     $n: You press the button, and abruptly, a whirring sound echoes through the room. You quickly retract your hand from the button.
+    (link: "continue")[
     $player: What happened?
+    (link: "continue")[
     $p: One of them broken pipes moved a quarter rotation.
     //If you press the button a short time, the pipe will move one quarter rotation. A long press will give you a half rotation.//
+    (link: "continue")[
     $player: Which one?
+    (link: "continue")[
     $p: the middle one.
+    (link: "continue")[
     $player: Which direction did it move?
+    (link: "continue")[
     (if: $pattypuzRot is "ccw")[
         $p: The left side went down.
     ] (else:) [
         $p: The right side went down.
     ]
-    [[Continue|pattypuz6_2]]
+    [[Continue|pattypuz6_2]]]]]]]]
 ] (else:) [
     (unless: $pattymidrotation is 0)[
         (if: $pattymidrotation < 2)[
@@ -530,18 +541,24 @@ $n: You recall the fact that there are **six** buttons total, divided equally in
 (if: $pattypuzFirstTime is 1)[
     (set: $pattypuzFirstTime to 0)
     $n: You press the button, and abruptly, a whirring sound echoes through the room. You quickly retract your hand from the button.
+    (link: "continue")[
     $player: What happened?
+    (link: "continue")[
     $p: One of them broken pipes moved a quarter rotation.
     //If you press the button a short time, the pipe will move one quarter rotation. A long press will give you a half rotation.//
+    (link: "continue")[
     $player: Which one?
+    (link: "continue")[
     $p: the highest one.
+    (link: "continue")[
     $player: Which direction did it move?
+    (link: "continue")[
     (if: $pattypuzRot is "ccw")[
         $p: The left side went down.
     ] (else:) [
         $p: The right side went down.
     ]
-    [[Continue|pattypuz6_2]]
+    [[Continue|pattypuz6_2]]]]]]]]
 ] (else:) [
     (unless: $pattyupperrotation is 3)[
         (if: $pattyupperrotation < 1)[
@@ -567,9 +584,9 @@ $n: You recall the fact that there are **six** buttons total, divided equally in
 ]
 
 :: pattyResultsTotal
-(if: $pattyupperrotation is 4)[
-    (if: $pattymidrotation is 2)[
-        (if: $pattylowerrotation is 1)[
+(if: $pattyupperrotation is 3)[
+    (if: $pattymidrotation is 0)[
+        (if: $pattylowerrotation is 3)[
             (display: "pattypuzEnd0")
         ] (else:)[
             (display: "pattypuz6_2")
@@ -583,41 +600,70 @@ $n: You recall the fact that there are **six** buttons total, divided equally in
 
 :: pattypuzEnd0
 $player: Is that it? Are all the pipes connected now?
+(link: "continue")[
 $p: That they are! Thanks for figuring that out, $player.
+(link: "continue")[
 $player: Hey, since you're the fastest runner out of all of us, and you helped out so much, do you want to go see what's at the top?
+(link: "continue")[
 $p: Sure thing! I'll be right back.
+[[Okay.|pp15]]]]]
+
+:: pp15
 $n: $p patters off once more towards the exit. You idle around for some time before you hear a very distant, very faint click echo through the room, 
 followed by rumbling and banging.
+(link: "continue")[
 $player: What's going on?
+(link: "continue")[
 $f: $p is running down the pipe. I guess she found something up on the top.
+(link: "continue")[
 $n: You and $f climb down from the desk, and together with $e, you walk over to the exit to wait for $p. A few more moments pass... 
 The rumbling gets louder. A few more... Something comes rolling out of the pipe with a solid thunk, gently coming to a stop before $f.
+[[What is it?|pp16]]]]]
+
+:: pp16
 $player: What is it?
 $n: $p arrives not a moment later, out of breath.
+(link: "continue")[
 $p: There was a button on the top. I pushed it, and suddenly there was this noise... Is this what caused it?
+(link: "continue")[
 $p: Oh, it's... A sack.
+(link: "continue")[
 $f: It seems to say (text-color:#ffb4f1)[Vow] on it. I wonder what it means. 
+(link: "continue")[
 $player: What's in it?
-[[Let's see...|pattypuzEnd1]]
+[[Let's see...|pattypuzEnd1]]]]]]
 
 
 :: pattypuzEnd1
 (if: $pattyNegotiation is "success")[
     $n: $p nervously approaches the sack, pulling it open and then gasping in surprise.
+    (link: "continue")[
     $p: It's full of nuts! Good ones! Oh, and looks like there's somethin' else, too...
+    (link: "continue")[
     $n: $p retrieves something from the sack and wordlessly hands it to $f.
+    (link: "continue")[
     $f: I've seen these before. It's a keycard. We can use it to unlock the door.
+    (link: "continue")[
     $player: That's our way forward, then. Thank you, $p.
+    (link: "continue")[
     $p: No, thank you. I wouldn't've given you so much trouble if I'd known there was another sack waiting for me.
+    (link: "continue")[
     $n: You nod solemnly at her, before you all turn your attention towards the door.
+    [[Continue|postPuz]]]]]]]]
+    (set: $pattyDone to true)
 ]
 (if: $pattyNegotiation is "failure")[
     $n: $p approaches the sack, pulling it open.
+    (link: "continue")[
     $p: Huh. Are these... Rocks? Oh, but looks like there's somethin' else, too...
+    (link: "continue")[
     $n: $p retrieves something from the sack and wordlessly hands it to $f.
+    (link: "continue")[
     $f: I've seen these before. It's a keycard. We can use it to unlock the door.
+    (link: "continue")[
     $player: That's our way forward, then. Thank you, $p.
+    (link: "continue")[
     $p: Right. Let's get goin'.
+    [[Yes. Let's.|postPuz]]]]]]]
+    (set: $pattyDone to true)
 ]
-[[Continue|postPuz]]
-(set: $pattyDone to true)
