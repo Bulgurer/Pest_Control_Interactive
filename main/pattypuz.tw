@@ -428,9 +428,10 @@ $n: You recall the fact that there are **six** buttons total, divided equally in
     (set: $pattypuzFirstTime to 0)
     $n: You press the button, and abruptly, a whirring sound echoes through the room. You quickly retract your hand from the button.
     $player: What happened?
-    $p: One of them broken pipes moved.
+    $p: One of them broken pipes moved a quarter rotation.
+    //If you press the button a short time, the pipe will move one quarter rotation. A long press will give you a half rotation.//
     $player: Which one?
-    $p: the bottom one.
+    $p: The bottom one.
     $player: Which direction did it move?
     (if: $pattypuzRot is "ccw")[
         $p: The left side went down.
@@ -467,7 +468,8 @@ $n: You recall the fact that there are **six** buttons total, divided equally in
     (set: $pattypuzFirstTime to 0)
     $n: You press the button, and abruptly, a whirring sound echoes through the room. You quickly retract your hand from the button.
     $player: What happened?
-    $p: One of them broken pipes moved.
+    $p: One of them broken pipes moved a quarter rotation.
+    //If you press the button a short time, the pipe will move one quarter rotation. A long press will give you a half rotation.//
     $player: Which one?
     $p: the middle one.
     $player: Which direction did it move?
@@ -506,7 +508,8 @@ $n: You recall the fact that there are **six** buttons total, divided equally in
     (set: $pattypuzFirstTime to 0)
     $n: You press the button, and abruptly, a whirring sound echoes through the room. You quickly retract your hand from the button.
     $player: What happened?
-    $p: One of them broken pipes moved.
+    $p: One of them broken pipes moved a quarter rotation.
+    //If you press the button a short time, the pipe will move one quarter rotation. A long press will give you a half rotation.//
     $player: Which one?
     $p: the highest one.
     $player: Which direction did it move?
