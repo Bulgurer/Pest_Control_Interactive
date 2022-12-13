@@ -284,8 +284,9 @@ $f: Words that seem contrived, huh? What were those words we came across before?
 ------ -- ----- ------ ----- -- ---
 Words known: (text-color:#ffb4f1)[vow], (text-color:#ebe9da)[quartz], (text-color:#eee077)[sphinx], (text-color:#6d6d6d)[black]
 [[Make a guess|endGuess]]</tw-passagedata><tw-passagedata pid="33" name="endGuess" tags="" position="350,475" size="100,100">{
-(if: $endcounter is 3)[(put: (prompt: [What do you type?], &quot;&quot;) into $player_input)]
-(if: $endcounter &lt; 3)[(put: (prompt: [Judging off the lights, you have (text-color:red)[$endcounter] tries remaining, What do you type?], &quot;&quot;) into $player_input)]
+(if: $endcounter is 3)[(put: (prompt: [What do you type?&lt;br&gt; Words known: (text-color:#ffb4f1)[vow], (text-color:#ebe9da)[quartz], (text-color:#eee077)[sphinx], (text-color:#6d6d6d)[black]&lt;br&gt;------ -- ----- ------ ----- -- ---], &quot;&quot;) into $player_input)]
+(if: $endcounter is 2)[(put: (prompt: [What do you type?&lt;br&gt; Words known: (text-color:#ffb4f1)[vow], (text-color:#ebe9da)[quartz], (text-color:#eee077)[sphinx], (text-color:#6d6d6d)[black]&lt;br&gt;------ of ----- ------ ----- -- ---], &quot;&quot;) into $player_input)]
+(if: $endcounter is 1)[(put: (prompt: [What do you type?&lt;br&gt; Words known: (text-color:#ffb4f1)[vow], (text-color:#ebe9da)[quartz], (text-color:#eee077)[sphinx], (text-color:#6d6d6d)[black]&lt;br&gt;------ of ----- ------ judge -- ---], &quot;&quot;) into $player_input)]
 (set: $player_input to (lowercase: $player_input))
 (if:$player_input is &quot;sphinx of black quartz judge my vow&quot;)[ 
     (text-colour:green)[$player_input]&lt;br&gt;

@@ -92,8 +92,9 @@ Words known: (text-color:#ffb4f1)[vow], (text-color:#ebe9da)[quartz], (text-colo
 
 :: endGuess
 {
-(if: $endcounter is 3)[(put: (prompt: [What do you type?], "") into $player_input)]
-(if: $endcounter < 3)[(put: (prompt: [Judging off the lights, you have (text-color:red)[$endcounter] tries remaining, What do you type?], "") into $player_input)]
+(if: $endcounter is 3)[(put: (prompt: [What do you type?<br> Words known: (text-color:#ffb4f1)[vow], (text-color:#ebe9da)[quartz], (text-color:#eee077)[sphinx], (text-color:#6d6d6d)[black]<br>------ -- ----- ------ ----- -- ---], "") into $player_input)]
+(if: $endcounter is 2)[(put: (prompt: [What do you type?<br> Words known: (text-color:#ffb4f1)[vow], (text-color:#ebe9da)[quartz], (text-color:#eee077)[sphinx], (text-color:#6d6d6d)[black]<br>------ of ----- ------ ----- -- ---], "") into $player_input)]
+(if: $endcounter is 1)[(put: (prompt: [What do you type?<br> Words known: (text-color:#ffb4f1)[vow], (text-color:#ebe9da)[quartz], (text-color:#eee077)[sphinx], (text-color:#6d6d6d)[black]<br>------ of ----- ------ judge -- ---], "") into $player_input)]
 (set: $player_input to (lowercase: $player_input))
 (if:$player_input is "sphinx of black quartz judge my vow")[ 
     (text-colour:green)[$player_input]<br>
