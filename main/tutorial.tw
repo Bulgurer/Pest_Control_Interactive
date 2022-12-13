@@ -225,7 +225,7 @@ Like this triangle has two sides that are too long! It's like legs holding up a 
 [[continue|tut64]]]]]
 
 :: tut64
-$p: //Legs holding up a triangle? An “A”? It sounds like $b can't read letters. Then why do I know what letters are?//
+$player: //Legs holding up a triangle? An “A”? It sounds like $b can't read letters. Then why do I know what letters are?//
 (link: "continue")[
 $n: You continue down until you start hearing loud beeps and boops, as if an old robot toy was left on maximum volume, 
 though you're not sure what a robot is. $b tells you you've entered a new room.

@@ -241,7 +241,9 @@ $e: Insufferable! My patience is completely irrecoverable!
 
 $n: $e flies off and grabs both $p and $f. Together the three of them put two of the large weights into the wide tube, two small weights into the narrow tube and use the plunger to push the water down on the red tube to raise the water in the blue tube. $e reaches each Key and flies off with them. In the distance, you hear three $keys turning and a large door opens. 
 $e picks up the three of you one by one, scoffing as he picks you up, not even bothering to rhyme. 
-All four of you move on to the next area. 
+//All four of you move on to the next area. //
+[[continue|postPuz]]
+(set: $edgarDone to true)
 
 <!--When the puzzle is solved:-->
 :: ePuzzWin
@@ -267,4 +269,6 @@ $e: Sir $f, you must have faith in our intrepid friend. I have learned his skill
 (link: "continue")[
 $f: Uh huh… By the way, while you were unlocking this door, I noticed a word on it that stood out. It said “(text-color:#ebe9da)[Quartz]” though I don't know if it refers to where we're going. I guess we're going to find out anyway. Let's get out of here so I can actually stand on solid, non-slippery ground.   
 $n: The four of you move on to the next area.
-[[continue|]]]
+[[continue|postPuz]]]
+(set: $edgarDone to true)
+

@@ -796,7 +796,8 @@ As he passes, $player catch a glimpse of the word (text-color:#eee077)[SPHINX] o
 $player follow behind him; $p and $e watch sullenly.
 (link: "continue")[
 $n: (text-color:#4c4c4c)[SPHINX]. (text-color:#eee077)[SPHINX]. (text-color:#eee077)[SPHINX]. Such a strange word, when you repeat it over and over. Not many words with X in them, these days. In fact, X is fairly rare. 26 letters in the alphabet, and some don't get their fair shake. Funny, that.
-[[I wonder if the word's important...|]]]]]
+[[I wonder if the word's important...|postPuz]]]]]
+(set: $fritzDone to true)
 
 :: fritzWin
 $n: $f dashes between graves, burying the tags beside the headstones. He shrieks in surprise and delight when the tags turn (text-color:green)[green].
@@ -814,7 +815,8 @@ $n: (text-color:#eee077)[SPHINX]. (text-color:#eee077)[SPHINX]. (text-color:#eee
 $f: We might just make it out of here, $player…let's go show the others.
 
 $n: $f lifts you into a pouch on his sash, and careens toward the open door. $p and $e seem impressed!
-[[Onwards!|]]
+[[Onwards!|postPuz]]
+(set: $fritzDone to true)
 :: goaway
 Display the crossword puzzle:
              R

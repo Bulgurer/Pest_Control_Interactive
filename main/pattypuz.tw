@@ -479,4 +479,5 @@ $player: What's in it?
     $player: That's our way forward, then. Thank you, $p.
     $p: Right. Let's get goin'.
 ]
-[[Continue|]]
+[[Continue|postPuz]]
+(set: $pattyDone to true)

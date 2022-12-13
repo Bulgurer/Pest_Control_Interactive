@@ -15,7 +15,7 @@ The Great Ratscape
 
 by The Boys
 
-[[Play|finalPuz0]]
+[[Play|intro0]]
     {
     (set: $player to [(text-colour:#00cad1)[You]])
     (set: $n to [(text-colour:grey)[Narrator]])
@@ -49,6 +49,12 @@ by The Boys
     (set: $edgar_faith to 1)
     (set: $patty_faith to 1)
     (set: $fritz_faith to 1)
+
+    (set: $talkPatty to false)
+    (set: $talkFritz to false)
+    (set: $talkEdgar to false)
+    (set: $pattyDone to false)
+    (set: $fritzDone to false)
 
     (set: $faithdm to (dm: 
         0, "does not trust you",
