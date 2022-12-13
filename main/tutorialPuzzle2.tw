@@ -35,7 +35,7 @@ He does tell you that there are 29 lines to fill in, and some are grouped togeth
 (if: $counter < 3)[(put: (prompt: [Judging off the lights, you have $counter tries remaining, What do you type?], "") into $player_input)]
 (set: $player_input to (lowercase: $player_input))
 (if:$player_input is "sphinx of black quartz judge my vow")[ 
-    (text-colour:green)[$player_input]
+    (text-colour:green)[$player_input]<br>
     $n: You hear a //dodododo DING// and metal screeching against stone. The gate [[opens...|end1]] 
 ]
 }

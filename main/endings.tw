@@ -4,70 +4,87 @@ $n: Haaa, another tunnel, another puzzle. How many are there supposed to be agai
 It's pretty quiet… 
 
 $f: Hey $playername!
-
+(link: "Yeah?")[
 $n: Oh thank god. Somebody is talking.
 
 $player turn your head towards Fritz, questioningly. 
-
+(link: "continue")[
 $f: It looks like we're getting close. This sign says “exit this way” and usually always leads to the last room. Though we have been fooled before…
-
+(link: "continue")[
 $e: Ah yes, the damned room of many doors. We wandered there for days and passed out on the floors. 
-You hear a smack and a surprised caw from $e
+[[Wait, what?|finalPuz1]]]]]
+
+:: finalPuz1
+$n: $player hear a smack and a surprised caw from $e
 
 $p: $e, we all promised not to talk about that day. We don't need to go borin [$player] with that tale, do we?
-
+(link: "continue")[
 $n: Wooo, go $p! This is why I always liked her. The only one that can get the bird to shut up.   
 While the others hope the next area doesn't have an abundance of “exits” you remember your own first trip in this tunnel. 
-
+(link: "An exit sign, huh?")[
 [$player]: //That must be the rectangle sign $b told me about before. //
-
+(link: "continue")[
 [$player]: //Don't worry, $b, we'll get out of here, and someday I'll avenge you. //
+[[continue|finalPuz2]]]]]
 
-$bunknown: (size:0.5)[Look! He's worried about me!]
+:: finalPuz2
+$bunknown: (size:0.5)[Look! They're worried about me!]
 
-$n: (size:0.5)[Shut up, this is my show to narrate. Get out of here, you dope. 
-Ahem. The four of you reach the door to the next area, and it opens. ]
-
+$n: (size:0.5)[Shut up, this is my show to narrate. Get out of here, you dope. ]
+(link: "continue")[
+Ahem. The four of you reach the door to the next area, and it opens. 
+(link: "Through the door")[
 $f: Argh, every damn time with this room. Nearly blinds you with our bright it is. 
-
+(link: "continue")[
 $p: Well, I think it's quite nice. Better than that bunkhouse or room I couldn't stand in.
+[[Edgar's awful quiet..|finalPuz3]]]]]
 
-$e stays silent as if shocked into it until he says 
+:: finalPuz3
+$n: $e stays silent as if shocked into it until he says 
 
-$e: (text-color:#f6c51d)[Shiny], (text-color:#e0e0e0)[shiny] everywhere, (text-color:#f6c51d)[spa](text-color:#e0e0e0)[rkl](text-color:#f6c51d)[ing] (text-color:#e0e0e0)[spa](text-color:#f6c51d)[rkl](text-color:#e0e0e0)[ing] without care~. 
-
+$e: (text-color:#fff8c9)[Shiny], (text-color:#ddfff7)[shiny] everywhere, (text-color:#fff8c9)[spa](text-color:#ddfff7)[rkl](text-color:#fff8c9)[ing] (text-color:#ddfff7)[spa](text-color:#fff8c9)[rkl](text-color:#ddfff7)[ing] without care. 
+(link: "He really loves his rhyming")[
 $n:Uh uh, nope. This ain't a musical, and I won't have this. 
-
+(link: "continue")[
 $f: $e quit that. We don't got time for music. 
-
+(link: "continue")[
 $n: Thank you, $f. 
+[[Back here again...|finalPuz4]]]]]
 
+:: finalPuz4
 [$player]: So it is the same room I was in before. Is there a computer too? 
-
+(link: "continue")[
 $p: Yessiree, that electric thingamajig is right over there. 
 
 //The four of you reach the computer.//
-
+(link: "continue")[
 $e: This damnable riddle always confounds us. How this time to answer it, let's discuss.  
-
+(link: "Wait, what riddle?")[
 [$player]: So there was something on the screen $b couldn't read! 
+[[I can't believe it..|finalPuz5]]]]]
 
+:: finalPuz5
 $bunknown: (size:0.5)[Reading is for nerds!]
 
 $n: (size:0.5)[//Shhhh//]
-
+(link: "What's the riddle?")[
 [$player]: What does it say, $f? 
-
+(link: "continue")[
 $f: It says “seven words and twenty-nine letters. The alphabet and more trapped in this phrase, like you, in fetters. What trials you have survived. Think back on your journey, what words seemed contrived.” and that's it. 
-
+(link: "continue")[
 $n: Even the damn puzzles are rhyming now. That $s knows what he's doing to me, I swear…
+[[Twenty-nine letters?|finalPuz6]]]]]
 
+:: finalPuz6
 [$player]:  (text-color:#e9c901)[29 letters]… the alphabet and more? Is it a pangram? (text-color:#e9c901)[A phrase with all the letters of the alphabet]?
-
+(link: "continue")[
 $f: Words that seem contrived, huh? What were those words we came across before? Near the end of every room. (text-color:#ffb4f1)[Vow], (text-color:#ebe9da)[quartz], and (text-color:#eee077)[sphinx], from before. And the word “(text-color:#6d6d6d)[black]” is printed on the computer itself. Kid, do you know what it means? 
-
+(link: "So we need all the letters.")[
 [$player]: The phrase needs to have (text-color:#e9c901)[all of the letters of the alphabet] inside it, but there are three extra….Where do the words we have go, and what are we missing? 
+[[Let's get started|finalPuz7]]]]
 (set: $counter = 3)
+
+:: finalPuz7
 //Just like your first time here, you have to fill in the passcode, and then the door will open. $player remember what happened the last time you (text-color:#991414)[failed].//
 ------ -- ----- ------ ----- -- ---
 Words known: (text-color:#ffb4f1)[vow], (text-color:#ebe9da)[quartz], (text-color:#eee077)[sphinx], (text-color:#6d6d6d)[black]
@@ -79,8 +96,8 @@ Words known: (text-color:#ffb4f1)[vow], (text-color:#ebe9da)[quartz], (text-colo
 (if: $counter < 3)[(put: (prompt: [Judging off the lights, you have $counter tries remaining, What do you type?], "") into $player_input)]
 (set: $player_input to (lowercase: $player_input))
 (if:$player_input is "sphinx of black quartz judge my vow")[ 
-    (text-colour:green)[$player_input]
-    $n: You hear a //dodododo DING// and metal screeching against stone. The gate [[opens...|end1]] 
+    (text-colour:green)[$player_input]<br>
+    $n: You hear a //dodododo DING// and metal screeching against stone. The gate [[opens...|postFinalPuz]] 
 ]
 }
 (else: ) [(set: $counter = $counter - 1)(text-colour:red)[$player_input]
@@ -128,109 +145,125 @@ $n: (size:0.5)[Quiet! Yes, maybe.]
 [[Restart?|intro0]]
 
 <!--Passing the puzzle: -->
-You press enter and wait for the response… 
-Suddenly you hear Vrrrrrt DING (excuse me, what?) and the sliding of doors in front of you. 
-$bunknown: (size:0.5)[They did it! No nerdy squiggly lines can beat [$player]]
-
+:: postFinalPuz
+$n: $player press enter and wait for the response… 
+Suddenly you hear //Vrrrrrt DING// (excuse me, what?) and the sliding of doors in front of you. 
+(link: "We did it!")[
+$bunknown: (size:0.5)[They did it! No nerdy squiggly lines can beat [$playername]]
+(link: "I can't believe it...")[
 $n: $player did it…. $player freaking did it.
-
+(link: "continue")[
 $f: No way…. 
 
 $p: Youdidityoudidityoudidit! 
 
 $e: Caw… 
+[[Is the floor... rumbling?|postFinalPuz1]]]]]
 
-$n: Wait… You feel the floor rumbling. Go! GO NOW, YOU IDIOTS  
-
+:: postFinalPuz1
+$n: Wait… You feel the floor rumbling. Go! **GO NOW, YOU IDIOTS**  
+(link: "continue")[
 $m: HAHAHAHA, I KNEW IT 
 
-$m; I KNEW THAT LITTLE RAT HAD ENOUGH OF MY KNOWLEDGE TO FIGURE HIS WAY OUT. Now I can move to bigger experiments once I get a hold of him. Soon you will be able to talk, Mr. Fluffypaws! 
-
+$m: I KNEW THAT LITTLE RAT HAD ENOUGH OF MY KNOWLEDGE TO FIGURE HIS WAY OUT. Now I can move to bigger experiments once I get a hold of him. Soon you will be able to talk, Mr. Fluffypaws! 
+(link: "We need to get out of here!")[
 $n: **RUN! RUN!** Wait has that been the cat's name this whole time? Uh, I mean, **RUN, GO NOW!**
 
 //$player feel someone grab you and pick you up, running towards the door you heard open.//
-
+(link: "continue")[
 $f: Hold on, Kid! We gotta get to the forest where he can't get us! $p, go that way, $e, get in the air! 
 
 //$player hear the three split, taking different paths to the door, with $f carrying you. //
+[[Thanks Fritz!|postFinalPuz2]]]]]
 
+:: postFinalPuz2
 $m: HEHEHAHA, NOT SO FAST. 
 
 //$player feel and hear something land in front of you and $f //
-
+(link: "continue")[
 $f: $e! Take the kid! 
 
 //$player are thrown and it feels like you freefall for a second before you land gently on a feathery back. //
-
+(link: "continue")[
 $e: I've got you. Hang on! 
-
+(link: "I told you I hate flying!")[
 $bunknown: (size:0.5)[wait a minute…]
+[[What about Fritz?|postFinalPuz3]]]]]
 
+:: postFinalPuz3
 [$player]: What is $f doing!? 
-
+(link: "continue")[
 $e: He's distracting him so we can get past! There! An opening! 
 
 $n: $e swoops and you can feel you stomach drop from under you 
-
+(link: "continue")[
 $m: You damned insolent monkey! You can't stop me! 
-
+(link: "FRITZ!")[
 <!--If overall team faith is 5 or less:-->
 (set: $total_faith = $fritz_faith + $patty_faith + $edgar_faith)
 (if: $total_faith < 6)[(go-to:"end2")]
 (if: $total_faith >= 6)[(go-to:"end3")]
+]]]
 
 :: end2
 $m: AHA! GOTCHA. 
-You hear Frtiz screeching as only a pygmy monkey can. 
-No…
-The screeching stops.
+//$player hear Frtiz screeching as only a pygmy monkey can. //
+$n: No…
+//The screeching stops.//
+(link: "continue")[
 
 $p: $f! No! 
-
+(link: "Fritz is gone")[
 $e: Keep running, you daft squirrel! We can't help him now! Why is the doorway so far away?! 
+(link: "continue")[
+//$player hear the $m's footsteps behind you again, quickly catching up!//
+[[He's still after us!|end2_1]]]]]
 
-You hear the $m's footsteps behind you again, quickly catching up! 
-
+:: end2_1
 $e sighs. Wait, I don't like where this is going. Don't you dare, you sonofabitch 
-
+(link: "continue")[
 $e: $p, take sir [$player]. Get you both outside.
-
+(link: "No!")[
 [$player]: $e, what are you doing?! Leave me behind! 
-
+(link: "continue")[
 $p: What? But what about you, $e?! 
+[[Edgar?!|end2_2]]]]]
 
-$e: Do not worry about Sir $e Allan Crow! I would not be defeated by any mere foe! 
+:: end2_2
+$e: Do not worry about Sir $eac! I would not be defeated by any mere foe! 
+(link: "continue")[
+//$e leans towards $p, and you slide off, catching yourself on the ground in a sprint beside $p. //
 
-$e leans towards $p, and you slide off, catching yourself on the ground in a sprint beside $p. 
-
-You hear the loudest caw $e has ever let out since you've known him and hear the $m scream. 
-
+//$player hear the loudest caw $e has ever let out since you've known him and hear the $m scream. //
+(link: "continue")[
 $m: You damned bird! You will bother….me …NEVERMORE. 
+(link: "EDGAR!?")[
+$n: $player hear a choked squawk behind you. I won't say more. 
+$player and $p continue running for dear life. $player can feel heat rising, closer to the natural heat of outside but not quite there. Something enormous runs past you and stomps, causing you and $p to stop. 
+[[We're trapped!|end2_3]]]]]
 
-You hear a choked squawk behind you. I won't say more. 
-
-You and $p continue running for dear life. You can feel heat rising, closer to the natural heat of outside but not quite there. Something enormous runs past you and stomps, causing you and $p to stop. 
-
+:: end2_3
 $m: I ….Have ..You ..Now. 
-
+(link: "continue")[
 $p: I'm sorry we didn't have faith in you [$player]. None of us thought you could open that last door. Keep runnin straight. I'll take care of him and meet you out there. 
 
-Oh god, damn it, not her too.   
-
+$n: Oh god, damn it, not her too.   
+(link: "We can get out together!")[
 [$player]: $p we can both make it! You don't have to- 
-
+(link: "continue")[
 $p: Run, god, durn it! Get out of here so $f and $e's deaths will mean something. Oh, and say hello to my babies for me. 
+[[You run.|end2_4]]]]]
 
-$p runs away from you and you start running straight toward the smell of the forest. 
-
+:: end2_4
+$n: $p runs away from you and you start running straight toward the smell of the forest. 
 behind you, the $m struggles, but you put it out of your mind. 
 
-You hit what feels like a liquid barrier that you dive straight through and come out the other side. 
+//$player hit what feels like a liquid barrier that you dive straight through and come out the other side. 
 
-You feel the heat of the multiple suns, hear the sounds of the forest, and continue running. 
+$player feel the heat of the multiple suns, hear the sounds of the forest, and continue running. 
 
 Run until you can't feel your four legs anymore. Until, somehow, your sight starts coming back in. The vibrant blues and greens of the forest spring to life before you and you know you've escaped. 
-Alone. 
+Alone. //
 (text-color:#1a209c)[BAD END] 
 [[Try again?|intro0]]
 
@@ -238,69 +271,85 @@ Alone.
 <!--If overall team faith is 6 or more:-->
 :: end3
 $m: Argh, my eye! 
-
+(link: "continue")[
 $f: I'm not “Insolent!” My name is $f! 
 
-Yes! Get 'em, $f! 
-
+$n: Yes! Get 'em, $f! 
+(link: "continue")[
 $m: Your name doesn't matter. Ow! You'll all be in preservative jars for me to study soon, anyway! 
-
+(link: "continue")[
 $f: He's hurt! Keep running! 
+[[Good.|end3_1]]]]]
 
-$e pulls close to the ground, and you can hear $p land beside you and $f soon catching up. 
+:: end3_1
+$n: $e pulls close to the ground, and you can hear $p land beside you and $f soon catching up. 
 
-Steps that shake the ground get closer to the four of you 
+//Steps that shake the ground get closer to the four of you// 
 $e scoffs
-
+(link: "continue")[
 $e: $p, $f! Grab our friend, My talons have a face they need to rend. 
+(link: "continue")[
+$N: The other two land-based animals grab you from $e and let you run beside them.
+[[Why aren't we running?|end3_2]]]]
 
-The other two land-based animals grab you from $e and let you run beside them.
-
- [$player]: Why are you all attacking him?! Shouldn't we just run?! 
-
+:: end3_2
+[$player]: Why are you all attacking him?! Shouldn't we just run?! 
+(link: "continue")[
 $p: We ain't gettin far if we don't slow him down. Don't worry, youngin, we had faith you could get us here. Now trust us to get you past this!
-
-From behind you hear: 
+(link: "continue")[
+//From behind you hear: //
 $e: No enemy will hurt the friends of $e Allan Crow! No monster, no $s, no foe! 
-You hear the loudest CAW! You've ever heard from $e and- 
-
+//$player hear the loudest CAW! You've ever heard from $e and-// 
+(link: "Way to go Edgar!")[
 $m: OW! My damned cheek! Argh! get away from my leg! 
+[[Yes!|end3_3]]]]]
 
-Oh damn, I never thought I would be cheering for the crow, but here we are. Eff him up, $e! 
+:: end3_3
+$n: Oh damn, I never thought I would be cheering for the crow, but here we are. Eff him up, $e! 
 As you run, you feel the heat rising, close to the forest outside but not quite there. 
 Soon you hear the flapping of wings beside your group again as $e returns. 
-
+(link: "continue")[
 $e: I've hurt his leg! It was as fragile as an egg!  
-
-The four of you continue getting closer to freedom when you feel the floor shake in front of you, and all of you stop.
-
+(link: "continue")[
+$n: //The four of you continue getting closer to freedom when you feel the floor shake in front of you, and all of you stop.//
+(link: "We're trapped!")[
 $m: You.. Will…Not…Escape. 
+[[What now?|end3_4]]]]]
 
+:: end3_4
 $p: Keep on going! I have a plan!
-You and $f split right from $p, and $e takes to the air again. You can smell the forest now, it's just beyond the $m.  
-You hear dozens of things empty out of a bag, and then the $s yelp. JUMP RIGHT
-
+(link: "continue")[
+$n: $player and $f split right from $p, and $e takes to the air again. $player can smell the forest now, it's just beyond the $m.  
+$player hear dozens of things empty out of a bag, and then the $s yelp. **JUMP RIGHT**
+(link: "Guess we'd better jump")[
 $f: Jump! 
-The ground shakes more violently than before, and you hear the $s moan in pain. 
-
+//The ground shakes more violently than before, and you hear the $s moan in pain.// 
+(link: "continue")[
 $p: Ha! Take that! That's for all the years you stole from me and my youngins! 
+[[Way to go $p!|end3_5]]
 
-The four of you, all back together, run for the door, and as your get to it, you feel a liquid barrier that you pierce through and come out the other side. 
-You feel the multiple suns on your face and smell the forest in full. You all continue running until your legs hurt (though not $e cause he cheats) and even then, run further. 
+:: end3_5
 
+$n: The four of you, all back together, run for the door, and as your get to it, you feel a liquid barrier that you pierce through and come out the other side. 
+$player feel the multiple suns on your face and smell the forest in full. $player all continue running until your legs hurt (though not $e cause he cheats) and even then, run further. 
+
+(link: "Too much running...")[
 [$player]: I …can't ….run….anymore. 
 
+(link: "continue")[
 $f: Yea….this should be a good place to rest. Take a breather, folks. 
+[[Rest sound good|end3_6]]
 
-As you settle down, you realize that more than pitch black is starting to fade back into your vision, the $m's spell wearing off. The greens and blues of the forest shine with the suns peaking through the trees. It may be the most beautiful scene your little rat brain has ever seen. 
-You turn to $f, who has a small red face with many time-worn wrinkles, and grey fur covering the pygmy monkey.
+:: end3_6
+$n: As you settle down, you realize that more than pitch black is starting to fade back into your vision, the $m's spell wearing off. The greens and blues of the forest shine with the suns peaking through the trees. It may be the most beautiful scene your little rat brain has ever seen. 
+$player turn to $f, who has a small red face with many time-worn wrinkles, and grey fur covering the pygmy monkey.
 $p is a tiny squirrel, even for her species, but holds herself with a strange regal dignity of a mother. 
 $e…well, he's a crow. 
+(link: "What's next?")[
 
 [$player]: So! 
-The others look at you, surprise appearing on their faces, aware you can now see. 
-
-[$player]: What do we do now? 
+//The others look at you, surprise appearing on their faces, aware you can now see. //
+What do we do now? 
 (text-color:green)[GOOD END] 
 [[Play again?|intro0]]
 
