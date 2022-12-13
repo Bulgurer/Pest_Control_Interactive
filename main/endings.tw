@@ -290,7 +290,7 @@ $e scoffs
 (link: "continue")[
 $e: $p, $f! Grab our friend, My talons have a face they need to rend. 
 (link: "continue")[
-$N: The other two land-based animals grab you from $e and let you run beside them.
+$n: The other two land-based animals grab you from $e and let you run beside them.
 [[Why aren't we running?|end3_2]]]]
 
 :: end3_2
@@ -327,7 +327,7 @@ $f: Jump!
 //The ground shakes more violently than before, and you hear the $s moan in pain.// 
 (link: "continue")[
 $p: Ha! Take that! That's for all the years you stole from me and my youngins! 
-[[Way to go $p!|end3_5]]
+[[Way to go $p!|end3_5]]]]]
 
 :: end3_5
 
@@ -339,7 +339,7 @@ $player feel the multiple suns on your face and smell the forest in full. $playe
 
 (link: "continue")[
 $f: Yea….this should be a good place to rest. Take a breather, folks. 
-[[Rest sound good|end3_6]]
+[[Rest sound good|end3_6]]]]
 
 :: end3_6
 $n: As you settle down, you realize that more than pitch black is starting to fade back into your vision, the $m's spell wearing off. The greens and blues of the forest shine with the suns peaking through the trees. It may be the most beautiful scene your little rat brain has ever seen. 
@@ -352,7 +352,7 @@ $e…well, he's a crow.
 //The others look at you, surprise appearing on their faces, aware you can now see. //
 What do we do now? 
 (text-color:green)[GOOD END] 
-[[Play again?|intro0]]
+[[Play again?|intro0]]]
 
 
 <!--
