@@ -160,7 +160,7 @@ $p: Fine. I'll think about it.
     $n: Some time later, you hear the swish of footsteps and wings as $e and $f return.
     (link: "continue")[
 
-    $f: Hey, $$playerName. Sorry, we searched everywhere we could, but we couldn't find anything.
+    $f: Hey, $playerName. Sorry, we searched everywhere we could, but we couldn't find anything.
     (link: "continue")[
 
     $player: Damn.
@@ -188,12 +188,12 @@ $p: Fine. I'll think about it.
 (if: $pattyNegotiation is "failure")[
     $n: Some time later, you hear the swish of footsteps and wings as $e and $f return.
     (link: "continue")[
-    $f: We found something that might work. Step aside, $$playerName. We'll see if it's heavy enough or not.
+    $f: We found something that might work. Step aside, $playerName. We'll see if it's heavy enough or not.
     (link: "continue")[
     $n: You scurry off of the pressure plate while $f hefts an object onto the plate. It makes a loud clunk as he drops it, and not a moment later, 
     you hear the whir of machinery as the door opens.
     (link: "continue")[
-    $p: See? That did the trick. You didn't even need my sack for that, $$playerName. You should've had a bit more faith in them.
+    $p: See? That did the trick. You didn't even need my sack for that, $playerName. You should've had a bit more faith in them.
     (set: $patty_faith = $patty_faith - 1)
     [[Continue|pattypuz4]]]]]]
 
@@ -610,7 +610,7 @@ $n: You recall the fact that there are **six** buttons total, divided equally in
 :: pattypuzEnd0
 $player: Is that it? Are all the pipes connected now?
 (link: "continue")[
-$p: That they are! Thanks for figuring that out, $$playerName.
+$p: That they are! Thanks for figuring that out, $playerName.
 (link: "continue")[
 $player: Hey, since you're the fastest runner out of all of us, and you helped out so much, do you want to go see what's at the top?
 (link: "continue")[

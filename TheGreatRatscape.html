@@ -1387,7 +1387,7 @@ $p: Fine. I&#39;ll think about it.
     $n: Some time later, you hear the swish of footsteps and wings as $e and $f return.
     (link: &quot;continue&quot;)[
 
-    $f: Hey, $$playerName. Sorry, we searched everywhere we could, but we couldn&#39;t find anything.
+    $f: Hey, $playerName. Sorry, we searched everywhere we could, but we couldn&#39;t find anything.
     (link: &quot;continue&quot;)[
 
     $player: Damn.
@@ -1409,12 +1409,12 @@ $p: Fine. I&#39;ll think about it.
 (if: $pattyNegotiation is &quot;failure&quot;)[
     $n: Some time later, you hear the swish of footsteps and wings as $e and $f return.
     (link: &quot;continue&quot;)[
-    $f: We found something that might work. Step aside, $$playerName. We&#39;ll see if it&#39;s heavy enough or not.
+    $f: We found something that might work. Step aside, $playerName. We&#39;ll see if it&#39;s heavy enough or not.
     (link: &quot;continue&quot;)[
     $n: You scurry off of the pressure plate while $f hefts an object onto the plate. It makes a loud clunk as he drops it, and not a moment later, 
     you hear the whir of machinery as the door opens.
     (link: &quot;continue&quot;)[
-    $p: See? That did the trick. You didn&#39;t even need my sack for that, $$playerName. You should&#39;ve had a bit more faith in them.
+    $p: See? That did the trick. You didn&#39;t even need my sack for that, $playerName. You should&#39;ve had a bit more faith in them.
     (set: $patty_faith = $patty_faith - 1)
     [[Continue|pattypuz4]]]]]]</tw-passagedata><tw-passagedata pid="134" name="pattypuz4" tags="" position="475,1725" size="100,100">$n: You pass through the opened door unimpeded, and emerge in a large, open, cylindrical room. There is a great downdraft in the room, 
 coming from what you can only assume is high above, and this prompts $e to squawk indignantly.
@@ -1718,7 +1718,7 @@ $n: You recall the fact that there are **six** buttons total, divided equally in
     (display: &quot;pattypuz6_2&quot;)
 ]</tw-passagedata><tw-passagedata pid="168" name="pattypuzEnd0" tags="" position="975,2100" size="100,100">$player: Is that it? Are all the pipes connected now?
 (link: &quot;continue&quot;)[
-$p: That they are! Thanks for figuring that out, $$playerName.
+$p: That they are! Thanks for figuring that out, $playerName.
 (link: &quot;continue&quot;)[
 $player: Hey, since you&#39;re the fastest runner out of all of us, and you helped out so much, do you want to go see what&#39;s at the top?
 (link: &quot;continue&quot;)[
