@@ -3,7 +3,7 @@
 $n: Haaa, another tunnel, another puzzle. How many are there supposed to be again? Does this just go in a circle? 
 It's pretty quiet… 
 
-$f: Hey $playername!
+$f: Hey $playerName!
 (link: "Yeah?")[
 $n: Oh thank god. Somebody is talking.
 
@@ -150,7 +150,7 @@ $n: (size:0.5)[Quiet! Yes, maybe.]
 $n: $player press enter and wait for the response… 
 Suddenly you hear //Vrrrrrt DING// (excuse me, what?) and the sliding of doors in front of you. 
 (link: "We did it!")[
-$bunknown: (size:0.5)[They did it! No nerdy squiggly lines can beat [$playername]]
+$bunknown: (size:0.5)[They did it! No nerdy squiggly lines can beat [$playerName]]
 (link: "I can't believe it...")[
 $n: $player did it…. $player freaking did it.
 (link: "continue")[
