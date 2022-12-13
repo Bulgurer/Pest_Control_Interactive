@@ -65,7 +65,7 @@ $f: I'm not cranky! I'm realistic. There ain't no way any of us are getting out 
 $player: //They knew $b? These must be the others he was talking about.//
 (link: "continue")[
 $p: Ah, don't let Ol' Monkey get you down. What's your name stranger? 
-(link: "My name is $playername.")[
+(link: "My name is $playerName.")[
 $p: Nice to meet you $playername! Now why don't you tell us what happened?
 (link: "Well, it all started when ...")[
 $n: You tell the three animals of your doomed escape from the lab with $b and that the $m is planning to get rid of all the current test subjects.
@@ -170,7 +170,7 @@ $e: I look forward to seeing the sky once again. Being stuck in this limited spa
 {
     (if: $pattyDone is false)[[Proceed to puzzle|pattypuz0]]
     (if: $pattyDone is true and $fritzDone is false)[[Proceed to puzzle|fritzpuz0]]
-    (if: $fritzDone is true and $edgarDone is false)[[Proceed to puzzle|ePuzz]]
+    (if: $fritzDone is true and $fritzDone is true and $edgarDone is false)[[Proceed to puzzle|ePuzz]]
 }]]
 <!-- PATTY OPTION STARTS HERE -->
 
@@ -237,7 +237,7 @@ $p: Ain't no problem, friend!
 {
     (if: $pattyDone is false)[[Proceed to puzzle|pattypuz0]]
     (if: $pattyDone is true and $fritzDone is false)[[Proceed to puzzle|fritzpuz0]]
-    (if: $fritzDone is true and $edgarDone is false)[[Proceed to puzzle|ePuzz]]
+    (if: $fritzDone is true and $fritzDone is true and $edgarDone is false)[[Proceed to puzzle|ePuzz]]
 }]]
 
 <!-- FRITZ OPTION STARTS HERE -->
@@ -299,7 +299,7 @@ $f: See that $player don't kid, we're putting a lot of trust in $player here.
 {
     (if: $pattyDone is false)[[Proceed to puzzle|pattypuz0]]
     (if: $pattyDone is true and $fritzDone is false)[[Proceed to puzzle|fritzpuz0]]
-    (if: $fritzDone is true and $edgarDone is false)[[Proceed to puzzle|ePuzz]]
+    (if: $fritzDone is true and $fritzDone is true and $edgarDone is false)[[Proceed to puzzle|ePuzz]]
 }]]
 
 

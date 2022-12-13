@@ -132,7 +132,7 @@ $e: With this weight the water barely rises, perhaps we should try weights of ot
 
 $e: The water level didn&#39;t move as far as I can see, we&#39;d need more of these weights than are here to get the $key.
 [[Are you sure you can&#39;t reach it?|mistake]]</tw-passagedata><tw-passagedata pid="18" name="plwc" tags="" position="975,225" size="100,100">$n: C&#39;mon, now. That&#39;s just gonna push the water and $key farther away. What does the bird say? 
-[[So, did it work?| mistake]]</tw-passagedata><tw-passagedata pid="19" name="success" tags="" position="1100,225" size="100,100">{
+[[So, did it work?|mistake]]</tw-passagedata><tw-passagedata pid="19" name="success" tags="" position="1100,225" size="100,100">{
 (if: $tubeChoice is &quot;narrow tube&quot;)[
     (set: $tubeLevel to $nTubeL)
     (set: $tubeKey to $nKey)]
@@ -691,7 +691,7 @@ $p: $f! It&#39;s time to git outta here; why are you jus&#39; standin&#39; aroun
 $f: (text-style: &quot;shudder&quot;)[//**I HATE THIS PLACE! LET ME OUT!**//]
 (link: &quot;continue&quot;)[
 $n: $f clamps on to the wall and cries out loudly. Everyone is motionless as they watch him. He furiously claws and scratches at a small crackâ€¦and suddenly, the wall starts to break apart.
-[[fritzpuz8-0-2_3]]]]</tw-passagedata><tw-passagedata pid="80" name="fritzpuz8-0-2_3" tags="" position="1225,975" size="100,100">$p: It&#39;s gonna be okay, $f! Stay with us!
+[[continue|fritzpuz8-0-2_3]]]]</tw-passagedata><tw-passagedata pid="80" name="fritzpuz8-0-2_3" tags="" position="1225,975" size="100,100">$p: It&#39;s gonna be okay, $f! Stay with us!
 (link: &quot;Edgar chimes in&quot;)[
 $e: A hole? Fresh air? (text-colour:#d3d3af)[Fritz&#39;s] rage is swell&#39;d;
 Near the monkey, this crow won&#39;t position.
@@ -703,9 +703,10 @@ $n: $f ripped a hole in a wall. With his bare hands. Which was awesome! Exceptâ€
 (link: &quot;Not ideal&quot;)[
 $n: $player follow the cold air and scamper through the hole in the wall.
 (link: &quot;continue&quot;)[
-(set: $fritz_faith = 0)] (set: $trust to $fritz_faith of $faithdm)//$f had a mental breakdown//
+{(set: $fritz_faith = 0) (set: $trust to $fritz_faith of $faithdm)}//$f had a mental breakdown//
 //$f $trust//
-[[Onwards|$ePuzz]]]]
+[[Onwards|postPuz]]]]]
+(set: $fritzDone to true)
 (set: $counter to 0)</tw-passagedata><tw-passagedata pid="82" name="fritzpuz8-1" tags="" position="225,1100" size="100,100">$player: Can you tell me about your expedition?
 (link: &quot;continue&quot;)[
 $f: Every night the $c would come and steal our tags while we slept. The $c would tease us, bringing tags to the wrong cages. Every night someone would be blasted awake. We never slept in peace!
@@ -1327,16 +1328,12 @@ $p: Oh, sure! It&#39;s right over here.
 $n: You follow the sound of her voice, and sure enough, you quickly run into a raised ridge on the ground. Stepping over it, the texture 
 of the floor changes, and you quickly conclude that you are now standing on top of the pressure plate. However, the door does not open.
 [[I don&#39;t weigh enough|pp4]]]]]</tw-passagedata><tw-passagedata pid="123" name="pp4" tags="" position="350,1600" size="100,100">$player: I guess I&#39;m not heavy enough to open it. Makes sense.
-(link: &quot;continue&quot;)[
-(unless: $talkedtoPatty is &quot;true&quot;)[
+(unless: $talkedtoPatty is true)[
     $player: Hey, Patty, what did you do right before the door closed again?
-    (link: &quot;continue&quot;)[
     $p: Me? I stepped off of this ground button here.
-    (link: &quot;continue&quot;)[
-    $player: Good to know. Thanks, Patty.
-    (link: &quot;continue&quot;)[
+    $player: Good to know. Thanks, $p.
     $p: No problem!
-]]]]]
+]
 [[So what do you do?|pp5]]</tw-passagedata><tw-passagedata pid="124" name="pp5" tags="" position="475,1600" size="100,100">$n: You sniff the air and sigh.
 (link: &quot;continue&quot;)[
 $player: I think we need to put something heavy on this to keep the door open. Obviously, it can&#39;t be one of us, but I&#39;m not sure about our other options.
@@ -1390,7 +1387,7 @@ $p: Fine. I&#39;ll think about it.
     $n: Some time later, you hear the swish of footsteps and wings as $e and $f return.
     (link: &quot;continue&quot;)[
 
-    $f: Hey, $playername. Sorry, we searched everywhere we could, but we couldn&#39;t find anything.
+    $f: Hey, $$playerName. Sorry, we searched everywhere we could, but we couldn&#39;t find anything.
     (link: &quot;continue&quot;)[
 
     $player: Damn.
@@ -1411,12 +1408,12 @@ $p: Fine. I&#39;ll think about it.
 (if: $pattyNegotiation is &quot;failure&quot;)[
     $n: Some time later, you hear the swish of footsteps and wings as $e and $f return.
     (link: &quot;continue&quot;)[
-    $f: We found something that might work. Step aside, $playername. We&#39;ll see if it&#39;s heavy enough or not.
+    $f: We found something that might work. Step aside, $$playerName. We&#39;ll see if it&#39;s heavy enough or not.
     (link: &quot;continue&quot;)[
     $n: You scurry off of the pressure plate while $f hefts an object onto the plate. It makes a loud clunk as he drops it, and not a moment later, 
     you hear the whir of machinery as the door opens.
     (link: &quot;continue&quot;)[
-    $p: See? That did the trick. You didn&#39;t even need my sack for that, $playername. You should&#39;ve had a bit more faith in them.
+    $p: See? That did the trick. You didn&#39;t even need my sack for that, $$playerName. You should&#39;ve had a bit more faith in them.
     (set: $patty_faith = $patty_faith - 1)
     [[Continue|pattypuz4]]]]]]</tw-passagedata><tw-passagedata pid="134" name="pattypuz4" tags="" position="475,1725" size="100,100">$n: You pass through the opened door unimpeded, and emerge in a large, open, cylindrical room. There is a great downdraft in the room, 
 coming from what you can only assume is high above, and this prompts $e to squawk indignantly.
@@ -1720,7 +1717,7 @@ $n: You recall the fact that there are **six** buttons total, divided equally in
     (display: &quot;pattypuz6_2&quot;)
 ]</tw-passagedata><tw-passagedata pid="168" name="pattypuzEnd0" tags="" position="975,2100" size="100,100">$player: Is that it? Are all the pipes connected now?
 (link: &quot;continue&quot;)[
-$p: That they are! Thanks for figuring that out, $playername.
+$p: That they are! Thanks for figuring that out, $$playerName.
 (link: &quot;continue&quot;)[
 $player: Hey, since you&#39;re the fastest runner out of all of us, and you helped out so much, do you want to go see what&#39;s at the top?
 (link: &quot;continue&quot;)[
@@ -1817,7 +1814,7 @@ $f: I&#39;m not cranky! I&#39;m realistic. There ain&#39;t no way any of us are 
 [[continue|posttut6]]]]</tw-passagedata><tw-passagedata pid="180" name="posttut6" tags="" position="1225,2225" size="100,100">$player: //They knew $b? These must be the others he was talking about.//
 (link: &quot;continue&quot;)[
 $p: Ah, don&#39;t let Ol&#39; Monkey get you down. What&#39;s your name stranger? 
-(link: &quot;My name is $playername.&quot;)[
+(link: &quot;My name is $playerName.&quot;)[
 $p: Nice to meet you $playername! Now why don&#39;t you tell us what happened?
 (link: &quot;Well, it all started when ...&quot;)[
 $n: You tell the three animals of your doomed escape from the lab with $b and that the $m is planning to get rid of all the current test subjects.
@@ -1889,7 +1886,7 @@ $e: I look forward to seeing the sky once again. Being stuck in this limited spa
 {
     (if: $pattyDone is false)[[Proceed to puzzle|pattypuz0]]
     (if: $pattyDone is true and $fritzDone is false)[[Proceed to puzzle|fritzpuz0]]
-    (if: $fritzDone is true and $edgarDone is false)[[Proceed to puzzle|ePuzz]]
+    (if: $fritzDone is true and $fritzDone is true and $edgarDone is false)[[Proceed to puzzle|ePuzz]]
 }]]
 &lt;!-- PATTY OPTION STARTS HERE --&gt;</tw-passagedata><tw-passagedata pid="192" name="posttut9-1" tags="" position="225,2475" size="100,100">{(set: $talkPatty to true)
 }$n: Great, (text-colour:#dfb300)[Patty&#39;s] cool. You&#39;ll like $p. Just don&#39;t ask for any of her foo-
@@ -1935,7 +1932,7 @@ $p: Ain&#39;t no problem, friend!
 {
     (if: $pattyDone is false)[[Proceed to puzzle|pattypuz0]]
     (if: $pattyDone is true and $fritzDone is false)[[Proceed to puzzle|fritzpuz0]]
-    (if: $fritzDone is true and $edgarDone is false)[[Proceed to puzzle|ePuzz]]
+    (if: $fritzDone is true and $fritzDone is true and $edgarDone is false)[[Proceed to puzzle|ePuzz]]
 }]]
 
 &lt;!-- FRITZ OPTION STARTS HERE --&gt;</tw-passagedata><tw-passagedata pid="199" name="posttut9-2" tags="" position="1100,2475" size="100,100">{(set: $talkFritz to true)
@@ -1979,7 +1976,7 @@ $f: See that $player don&#39;t kid, we&#39;re putting a lot of trust in $player 
 {
     (if: $pattyDone is false)[[Proceed to puzzle|pattypuz0]]
     (if: $pattyDone is true and $fritzDone is false)[[Proceed to puzzle|fritzpuz0]]
-    (if: $fritzDone is true and $edgarDone is false)[[Proceed to puzzle|ePuzz]]
+    (if: $fritzDone is true and $fritzDone is true and $edgarDone is false)[[Proceed to puzzle|ePuzz]]
 }]]</tw-passagedata><tw-passagedata pid="205" name="test" tags="" position="600,2600" size="100,100">j k e 
 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;f
 &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;g l m n o

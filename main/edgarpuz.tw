@@ -171,7 +171,7 @@ $e: The water level didn't move as far as I can see, we'd need more of these wei
 
 :: plwc
 $n: C'mon, now. That's just gonna push the water and $key farther away. What does the bird say? 
-[[So, did it work?| mistake]]
+[[So, did it work?|mistake]]
 
 :: success
 {

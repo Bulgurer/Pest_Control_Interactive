@@ -266,7 +266,7 @@ $n: $f heaves the last tag with all his fury into the trash chute, and he loses 
 $f: (text-style: "shudder")[//**I HATE THIS PLACE! LET ME OUT!**//]
 (link: "continue")[
 $n: $f clamps on to the wall and cries out loudly. Everyone is motionless as they watch him. He furiously claws and scratches at a small crack…and suddenly, the wall starts to break apart.
-[[fritzpuz8-0-2_3]]]]
+[[continue|fritzpuz8-0-2_3]]]]
 
 :: fritzpuz8-0-2_3
 $p: It's gonna be okay, $f! Stay with us!
@@ -284,9 +284,10 @@ $n: $f ripped a hole in a wall. With his bare hands. Which was awesome! Except�
 (link: "Not ideal")[
 $n: $player follow the cold air and scamper through the hole in the wall.
 (link: "continue")[
-(set: $fritz_faith = 0)] (set: $trust to $fritz_faith of $faithdm)//$f had a mental breakdown//
+{(set: $fritz_faith = 0) (set: $trust to $fritz_faith of $faithdm)}//$f had a mental breakdown//
 //$f $trust//
-[[Onwards|$ePuzz]]]]
+[[Onwards|postPuz]]]]]
+(set: $fritzDone to true)
 (set: $counter to 0)
 
 :: fritzpuz8-1
@@ -817,6 +818,7 @@ $f: We might just make it out of here, $player…let's go show the others.
 $n: $f lifts you into a pouch on his sash, and careens toward the open door. $p and $e seem impressed!
 [[Onwards!|postPuz]]
 (set: $fritzDone to true)
+
 :: goaway
 Display the crossword puzzle:
              R
