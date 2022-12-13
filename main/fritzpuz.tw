@@ -796,7 +796,7 @@ $n: As he stands at the foot of his grave, a chime plays through the room. A sma
 As he passes, $player catch a glimpse of the word (text-color:#eee077)[SPHINX] on the collar.
 $player follow behind him; $p and $e watch sullenly.
 (link: "continue")[
-$n: (text-color:#4c4c4c)[SPHINX]. (text-color:#eee077)[SPHINX]. (text-color:#eee077)[SPHINX]. Such a strange word, when you repeat it over and over. Not many words with X in them, these days. In fact, X is fairly rare. 26 letters in the alphabet, and some don't get their fair shake. Funny, that.
+$n: (text-color:#eee077)[SPHINX]. (text-color:#eee077)[SPHINX]. (text-color:#eee077)[SPHINX]. Such a strange word, when you repeat it over and over. Not many words with X in them, these days. In fact, X is fairly rare. 26 letters in the alphabet, and some don't get their fair shake. Funny, that.
 [[I wonder if the word's important...|postPuz]]]]]
 (set: $fritzDone to true)
 
